@@ -52,69 +52,23 @@ body
     z-index:0;
 }
 
-#VoidEyes
-{
-    position:absolute;
-
-    left:0%;
-    top:-4.5%;
-    aspect-ratio: 1/1;
-
-    width:clamp(5vw,30vw,30vw);
-    height:auto;
-
-    background-image: url("../../UniversalAssets/VoidEyeFull.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    pointer-events:none;
-}
-
-#Logo
-{
-    position:absolute;
-
-    right:1%;
-    top:0%;
-    aspect-ratio: 1/1;
-
-    width:clamp(1vw,10vw,15vw);
-    height:auto;
-
-    background-image: url("../../UniversalAssets/Favicon.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-    pointer-events:none;
-}
 
 
 #MainBackground
 {
     position:absolute;
-    height: 100%;
 
-    aspect-ratio: 16/9;
-    left:-107%;
+    height:150%;
+    aspect-ratio: 1/1;
+    left:-110%;
+    top:-25%;
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
-    background-size: 100%;
+    background-image: url(../../UniversalAssets/VoidLarge.png);
+    background-size: 100% 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
-}
-
-
-#AuliPage
-{
-    display:block;
-    position:absolute;
-    overflow:hidden;
-    pointer-events:auto;
-    width:100%;
-    height: 100%;
-    z-index:0;
 }
 
 
@@ -151,63 +105,283 @@ body
 }
 
 
-#LeftTransition,
-#FullLeftRightTransition
-{
-    z-index: 1000;
-}
-
-
-
-
-#ExtrasInfoBox
-{
-    position:absolute;
-    display:block;
-
-    top:27%;
-    left:1%;
-    height:72%;
-    width:98%;
-    right:0%;
-
-    overflow-y: hidden;
-    overflow-x: hidden;
-
-    pointer-events: auto;
-    image-rendering: pixelated;
-
-    background-image: url("../../UniversalAssets/MobileButtonInfoBox.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-
-}
-
-
-
-
-#ExtrasNESPlusInfoBox,
-#ExtrasRealmQuizInfoBox,
-#ExtrasStatQuizInfoBox
+#RightTransition
 {
     position:absolute;
     display:none;
 
-    top: 2%;
-    left:5%;
-    height:90%;
-    width:90%;
+    top:-10%;
+    width:100%;
+    height: 300%;
     right:0%;
 
-    overflow-y: auto;
-    overflow-x: hidden;
+    pointer-events: none;
 
+    background-image: url("../../UniversalAssets/MobileBottomTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+#LeftTransition,
+#RightTransition
+{
+    z-index: 1000;
+}
+
+#FullLeftRightTransition
+{
+     z-index: 2;
+}
+
+
+
+.ButtonBackground
+{
+    display: flex;
+    position: absolute;
+
+    left:1%;
+    top:4%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
     pointer-events: auto;
-    image-rendering: pixelated;
 
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    z-index: 0;
+
+    filter: brightness(75%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: absolute;
+
+    left:1%;
+    top:4%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(75%);
+}
+
+.Words
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+
+    text-align: center;
+    font-size: clamp(1vw,4.125vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+    white-space: pre-line;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ButtonText
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    left:50%;
+
+    text-align: center;
+    font-size: clamp(1vw,4vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+#StartingPage,
+#QuizPage,
+#TieBreakerPage,
+#ResultsPage
+{
+    display:none;
+    position:absolute;
+    overflow:hidden;
+    top:-0.1%;
+    left:-0.1%;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+}
+
+#StartingPage
+{
+    display:block;
+}
+
+
+.EimonButton
+{
+    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+}
+
+.ElusiaButton
+{
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+.GrimloweButton
+{
+    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
+}
+
+.SostrumButton
+{
+    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+
+}
+
+.VidulynButton
+{
+    background-image: url("../../UniversalAssets/VidulynButtonBackground.png");
+
+}
+
+.YumalonButton
+{
+    background-image: url("../../UniversalAssets/YumalonButtonBackground.png");
+
+}
+
+.IcolassButton
+{
+    background-image: url("../../UniversalAssets/IcolassButtonBackground.png");
+
+}
+
+.SanctumButton
+{
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+}
+
+.VoidButton
+{
+    background-image: url("../../UniversalAssets/VoidButtonBackground.png");
+}
+
+.VoidEyes
+{
+    position:absolute;
+
+   
+    aspect-ratio: 1/1;
+
+    
+    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#VoidEyes1
+{
+    width:clamp(5vw,40vw,50vw);
+    height:auto;
+    left:30%;
+    top:-6%;
+}
+
+
+#StartingPageText
+{
+    position: absolute;
+    top:35%;
+    left:50%;
+}
+
+#vertline
+{
+    position:absolute;
+    display:block;
+    left:50%;
+    top:-0%;
+    background-color: white;
+    width: 10px;
+    height:100%;
+}
+
+#horiline
+{
+    position:absolute;
+    display:block;
+    left:00%;
+    top:50%;
+    background-color: white;
+    height: 10px;
+    width:100%;
+}
+
+#StartQuizButton {
+    position: absolute;
+    width: 45%;
+    left:53%;
+    top:70%;
+    height: auto;
+    aspect-ratio: 440 / 90;
+    min-height: 0;
+
+    background-image: url("../../UniversalAssets/MobileQuizAnswerButton.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: brightness(100%);
+    z-index: 0;
+}
+
+#BackQuizStart {
+    position: absolute;
+    width: 45%;
+    left:03%;
+    top:70%;
+    height: auto;
+    aspect-ratio: 440 / 90;
+    min-height: 0;
+
+    background-image: url("../../UniversalAssets/MobileQuizAnswerButton.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: brightness(100%);
+    z-index: 0;
+}
+
+#BackDuringQuiz {
+    position: absolute;
+    width: 50%;
+    left:45%;
+    top:3%;
+    height: auto;
+    aspect-ratio: 440 / 65;
+    min-height: 0;
+
+    
 }
 
 .WideButton
@@ -249,130 +423,430 @@ body
 
 }
 
-.ThinButton
-{
-    appearance: none;
-    -webkit-appearance: none;
 
+#QuestionBox
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    aspect-ratio: 440/606;
+    width:98%;
+
+    image-rendering: pixelated ;
+
+    background-image: url("../../UniversalAssets/MobileButtonInfoBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#QuestionBoxText
+{
+    position:absolute;
+    display:block;
+
+    width:94%;
+    height:85%;
+    top:12%;
+    left:1%;
+    z-index: 0;
+    font-size: clamp(1vw,4vw,10vw);
+}
+
+
+#QuestionBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1.6%;
+    left:2.5%;
+    height:96.5%;
+    width: 95%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/VoidButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(100%);
+    z-index: 0;
+}
+
+
+.QuizButtonBackground
+{
+    display: flex;
     position: relative;
 
-    width: 92%;
-    aspect-ratio: 440/43;
+    left:0%;
+    top:0%;
+    width: 100%;
+    height: 95%;
 
-    background-color: transparent;
-    background-image: url("../../UniversalAssets/ThinMobileButton.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    background-image: url("../../UniversalAssets/VoidButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
 
-    border: none;
-    padding: 0;
+    z-index: 0;
+
+    filter: brightness(100%);
+}
+
+#AnswerButton1,
+#AnswerButton2,
+#AnswerButton3
+{
+    position:absolute;
     pointer-events: auto;
-    image-rendering: pixelated;
+    width:98%;
+    min-height: 0;
 
+    left:1%;
+
+    aspect-ratio: 440/90;
+    
+
+    background-image: url("../../UniversalAssets/MobileQuizAnswerButton.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: brightness(100%);
+    z-index: 0;
 
 }
 
-.ThinButton::after
+#AnswerButton1::after,
+#AnswerButton2::after,
+#AnswerButton3::after
 {
     content: "";
     position: absolute;
     inset: 0;
 
-    background-image: url("../../UniversalAssets/ThinMobileButton.png");
+    background-image: url("../../UniversalAssets/MobileQuizAnswerButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
+    image-rendering: pixelated;
     pointer-events: none;
-    z-index: 0;
-
+    z-index: 1;
 
 }
 
-
-
-
-.WideButtonBackground
+#AnswerButton1:hover .QuizButtonBackground,
+#AnswerButton2:hover .QuizButtonBackground,
+#AnswerButton3:hover .QuizButtonBackground
 {
-    display: flex;
-    position: absolute;
+    filter: brightness(100%);
+}
 
-    left:1%;
-    top:4%;
-    width: 98%;
-    height: 90%;
 
-    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
-    background-repeat: repeat;
-    background-size: 6px 6px;
+#RemainingText
+{
+    position:absolute;
+    top:6%;
+    left:19%;
+    width:50%;
+}
+
+#AnswerButton1
+{
+    top:64%;
+}
+
+#AnswerButton2
+{
+    top:77%;
+}
+
+#AnswerButton3
+{
+    top:90%;
+}
+
+
+#AnswerButton1Text,
+#AnswerButton2Text,
+#AnswerButton3Text
+{
+    top:42%;
+}
+
+#ArbiterTransitionEyes
+{
+    position:absolute;
+    display:block;
+    top:43%;
+    left:23%;
+    z-index: 11;
+    aspect-ratio: 1/1;
+    background-image: url(../../UniversalAssets/VoidEyeBlack.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:clamp(5vw,50vw,50vw);
+    height:auto;
+
+}
+
+#ArbiterTransitionText
+{
+    display:block;
+    top:50%;
+    left:46%;
+    width: 80%;
+    z-index: auto;
+}
+
+#QuizEyes {
+    width:clamp(5vw,20vw,50vw);
+    height:auto;
+    left:5.5%;
+    top:-1%;
+}
+
+#TB1Button,
+#TB2Button,
+#TB3Button,
+#TB4Button,
+#TB5Button,
+#TB6Button
+{
+    position:absolute;
+    display:block;
+    width: 40%;
+    height: auto;
+    aspect-ratio: 440 / 65;
+    z-index: 0;
     pointer-events: auto;
+}
 
-    z-index: 0;
+#TB1Button
+{
+    left:5%;
+    top:35%;
+}
 
-    filter: brightness(75%);
+#TB3Button
+{
+    left:5%;
+    top:50%;
+}
+
+#TB5Button
+{
+    left:5%;
+    top:65%;
 }
 
 
-
-.BackButtonBackground
+#TB4Button
 {
-    display: flex;
-    position: absolute;
+    left:55%;
+    top:35%;
+}
 
-    left:1%;
-    top:4%;
-    width: 98%;
-    height: 90%;
+#TB2Button
+{
+    left:55%;
+    top:50%;
+}
 
-    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
-    background-repeat: repeat;
-    background-size: 6px 6px;
-    pointer-events: auto;
+#TB6Button
+{
+    left:55%;
+    top:65%;
+    color:black;
+}
 
-    z-index: 0;
-
-    filter: brightness(75%);
+#TB6Button .ButtonText
+{
+    color:black;
 }
 
 
-.Words
-{
-    position: absolute;
+    
 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#TB1ButtonGraphics,
+#TB2ButtonGraphics,
+#TB3ButtonGraphics,
+#TB4ButtonGraphics,
+#TB5ButtonGraphics,
+#TB6ButtonGraphics
+{
+    position:absolute;
 
     width: 100%;
+    top:0%;
+    left:0%;
+    height: auto;
+    aspect-ratio: 440 / 65;
 
-    text-align: center;
-    font-size: clamp(1vw,6.125vw,10vw);
-    font-family: Ardron;
-    color: whitesmoke;
 
-    z-index: 1;
+    background-repeat: repeat;
+    background-size: 6px 6px;
     pointer-events: none;
+
+    z-index: 0;
+
+    filter: brightness(100%);
 }
 
-.ButtonText
+#TB1ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+}
+
+#TB2ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+#TB3ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
+}
+#TB4ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+}
+
+#TB5ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/VidulynButtonBackground.png");
+}
+
+#TB6ButtonGraphics
+{
+    background-image: url("../../UniversalAssets/YumalonButtonBackground.png");
+    
+}
+
+#choose
+{
+    position:absolute;
+    top:20%;
+}
+
+#LeftBanner
+{
+    position:absolute;
+    left:-2%;
+    width: 15%;
+    height:50%;
+
+    background-image: url(../../UniversalAssets/EimonBanner.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#RightBanner
+{
+    position:absolute;
+    left:87%;
+    width: 15%;
+    height:50%;
+
+    background-image: url(../../UniversalAssets/EimonBanner.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#ResultsInfoBox
+{
+    position:absolute;
+    display:flex;
+    width:73%;
+    height:99%;
+    left:13.5%;
+}
+
+#ResultsInfoBoxBack
+{
+    display: flex;
+    position: relative;
+
+    left:0%;
+    top:0%;
+    width: 99%;
+    height: 98%;
+
+    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(75%);
+}
+
+#ResultsInfoBox::after
+{
+    content:"";
+    position:absolute;
+    display:flex;
+    inset: 0;
+    
+    
+
+    
+
+    background-image: url(../../UniversalAssets/DesktopButtonBox.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#RealmResultText
 {
     position: absolute;
-
-    top: 50%;
+    display: block;
+    top: 51%;
+    padding-left: 1%;
+    padding-right: 1%;
     left: 50%;
-    transform: translate(-50%, -50%);
-
     width: 90%;
-    left:50%;
-
+    height: 90%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    pointer-events:auto;
+    white-space: pre-line;
+    line-height: 1.5;
     text-align: center;
-    font-size: clamp(1vw,6vw,10vw);
-    font-family: Ardron;
-    color: whitesmoke;
-
     z-index: 1;
-    pointer-events: none;
 }
 
+#CopyCodeButton
+{
+    position:absolute;
+    display:block;
+    top:3%;
+    left:4%;
+    width: 45%;
+    height: auto;
+    aspect-ratio: 440 / 65;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+#BackQuizEnd
+{
+    position:absolute;
+    display:block;
+    top:3%;
+    right:5%;
+    width: 45%;
+    height: auto;
+    aspect-ratio: 440 / 65;
+    z-index: 1;
+    pointer-events: auto;
+}
 
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
@@ -382,7 +856,7 @@ body
     .ButtonText
     {
         top: 55%;
-        font-size: clamp(1vw,5vw,10vw);
+        font-size: clamp(1vw,4vw,10vw);
     }
 }
 

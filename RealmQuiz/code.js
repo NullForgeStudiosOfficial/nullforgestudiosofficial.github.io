@@ -84,11 +84,12 @@ async function Start()
 
     QuizNextQuestion(-1)
 
-    await Sleep(100);
-    StartSite()
-    document.getElementById("StartupBlack").remove();
+    await Sleep(250);
     LastTime = performance.now();
     requestAnimationFrame(Update);
+
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 

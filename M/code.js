@@ -1,4 +1,25 @@
 // ----------- whateverthefuck
+let DoorRealm = document.getElementById("DoorRealm")
+let DoorRealmRotation = 0
+let VoidEyesImages = [
+    'url("../UniversalAssets/VoidEyeFull.png")',
+    'url("../UniversalAssets/VoidEyes66.png")',
+    'url("../UniversalAssets/VoidEyes33.png")',
+    'url("../UniversalAssets/VoidEyes0.png")',
+]
+
+
+let DoorEimon = document.getElementById("DoorEimon");
+let DoorElusia = document.getElementById("DoorElusia");
+let DoorGrimlowe = document.getElementById("DoorGrimlowe");
+let DoorSostrum = document.getElementById("DoorSostrum");
+let DoorVidulyn = document.getElementById("DoorVidulyn");
+let DoorYumalon = document.getElementById("DoorYumalon");
+let DoorIcolass = document.getElementById("DoorIcolass");
+let DoorSanctum = document.getElementById("DoorSanctum");
+
+
+
 
 let LastTime = 0;
 let DeltaTime = 0;
@@ -21,24 +42,6 @@ let StartSiteT = true;
 let StartTransitionX = 0;
 let PreviousPage = null
 let NextPage = null
-let DoorRealm = document.getElementById("DoorRealm")
-let DoorRealmRotation = 0
-let VoidEyesImages = [
-    'url("../UniversalAssets/VoidEyeFull.png")',
-    'url("../UniversalAssets/VoidEyes66.png")',
-    'url("../UniversalAssets/VoidEyes33.png")',
-    'url("../UniversalAssets/VoidEyes0.png")',
-]
-
-
-let DoorEimon = document.getElementById("DoorEimon");
-let DoorElusia = document.getElementById("DoorElusia");
-let DoorGrimlowe = document.getElementById("DoorGrimlowe");
-let DoorSostrum = document.getElementById("DoorSostrum");
-let DoorVidulyn = document.getElementById("DoorVidulyn");
-let DoorYumalon = document.getElementById("DoorYumalon");
-let DoorIcolass = document.getElementById("DoorIcolass");
-let DoorSanctum = document.getElementById("DoorSanctum");
 
 async function Start()
 {
@@ -59,9 +62,11 @@ async function Start()
     BlinkEyes()
 
     await Sleep(250);
-    document.getElementById("StartupBlack").remove();
     LastTime = performance.now();
     requestAnimationFrame(Update);
+
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 
@@ -457,6 +462,10 @@ async function ExtrasTurnOffBoxes()
     ExtrasNESPlusInfoBox.style.display = "none";
     ExtrasRealmQuizInfoBox.style.display = "none";
     ExtrasStatQuizInfoBox.style.display = "none";
+    KoFiInfoBox.style.display = "none";
+    BDMInfoBox.style.display = "none";
+    ExtrasConfirmButton.style.display = "block";
+
 }
 
 
@@ -515,6 +524,28 @@ ExtrasExitButton.addEventListener("click", function()
 });
 
 
+
+let BDMInfoBox = document.getElementById("BDMInfoBox");
+let KoFiInfoBox = document.getElementById("KoFiInfoBox");
+
+let KofiButton = document.getElementById("KofiButton");
+let BDMButton = document.getElementById("BDMButton");
+
+
+KofiButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    KoFiInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+});
+
+BDMButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    BDMInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+
+});
 //-------------------------------
 
 Start()

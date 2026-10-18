@@ -631,6 +631,29 @@ body
     word-wrap: break-word;
 }
 
+#KoFiInfoBox,
+#BDMInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top: 2%;
+    left:5%;
+    height:95%;
+    width:90%;
+    right:0%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
 .WideButton
 {
     appearance: none;
@@ -774,6 +797,28 @@ body
     pointer-events: none;
 }
 
+#LinkBackground
+{
+    position: absolute;
+
+    top: 14%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+
+    text-align: center;
+    font-size: clamp(1vw,6.125vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+    background-color: rgba(255, 166, 0, 0.562);
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
 .ButtonText
 {
     position: absolute;
@@ -833,7 +878,7 @@ body
     background-image: url("../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
-    filter: brightness(50%);
+    filter: brightness(75%);
 
     z-index: -1;
 }
@@ -856,7 +901,7 @@ body
     background-image: url("../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
-    filter: brightness(50%);
+    filter: brightness(75%);
     z-index: -1;
 }
 
@@ -942,6 +987,216 @@ body
 }
 
 
+
+
+
+
+
+
+.SpecialProfileAnswer
+{
+    font-family: Ardron;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,5vw,10vw);
+}
+
+
+#BDMPic1
+{
+    position: absolute;
+    
+    
+    top:25%;
+    left:3%;
+    aspect-ratio: 550/413;
+    width:90%;
+
+    background-image: url(/UniversalAssets/BDM1.jpg);
+    background-size: 100% 100%;
+}
+
+#BDMPic2
+{
+    position: absolute;
+    aspect-ratio: 1600/733;
+    width:80%;
+
+    top:1%;
+    left:8%;
+
+    background-image: url(/UniversalAssets/BDM2.jpg);
+    background-size: 100% 100%;
+}
+
+
+#BDMInfo
+{
+    position:absolute;
+    top:65%;
+}
+
+
+
+#VoidSupporters,
+#EimonSupporters,
+#SostrumSupporters,
+#ElusiaSupporters,
+#IcolassSupporters,
+#VidulynSupporters,
+#GrimloweSupporters,
+#YumalonSupporters
+{
+    position: absolute;
+    display: block;
+
+    aspect-ratio: 1/1;
+    width: 47%;
+
+    pointer-events: auto;
+    z-index: 0;
+    isolation: isolate;
+}
+
+
+#VoidSupporters::before,
+#EimonSupporters::before,
+#SostrumSupporters::before,
+#ElusiaSupporters::before,
+#IcolassSupporters::before,
+#VidulynSupporters::before,
+#GrimloweSupporters::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-repeat: repeat;
+    background-size: 6px 6px;
+
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+#YumalonSupporters::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-repeat: repeat;
+    background-size: 6px 6px;
+
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+.SupportersText
+{
+    position:relative;
+    white-space:pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    color:white;
+
+    font-size: clamp(0.5vw,3vw,10vw);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    top:2%;
+    filter: brightness(100%);
+}
+    
+
+#VoidSupporters
+{
+    top: 18%;
+    left: 0%;
+
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+}
+
+#EimonSupporters
+{
+    top: 18%;
+    left: 50%;
+
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    
+}
+
+#SostrumSupporters
+{
+    top: 47%;
+    left: 0%;
+
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+}
+
+
+
+#ElusiaSupporters
+{
+    top:47%;
+    left: 50%;
+
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+    
+}
+
+#IcolassSupporters
+{
+    top: 76%;
+    left: 0%;
+
+    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+    
+}
+
+#VidulynSupporters
+{
+    top: 76%;
+    left: 50%;
+
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+    
+}
+
+
+#GrimloweSupporters
+{
+    top: 105%;
+    left: 0%;
+
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+    
+}
+
+#YumalonSupporters
+{
+    top: 105%;
+    left: 50%;
+
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+    
+}
+
+    
+
+
+
+
+
+
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
 
@@ -1002,4 +1257,104 @@ body
     font-size: clamp(1vw,5vw,6vw);
     text-align: center;
 }
+
+
+
+
+
+#LinkBackground
+{
+    position: absolute;
+
+    top: 16%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+
+    text-align: center;
+    font-size: clamp(1vw,6.125vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+    background-color: rgba(255, 166, 0, 0.562);
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+#BDMPic1
+{
+    top:30%;
+}
+
+#BDMPic2
+{
+    top:1%;
+}
+
+
+#BDMInfo
+{
+    position:absolute;
+    top:85%;
+}
+
+
+#VoidSupporters
+{
+    top: 22%;
+
+}
+
+#EimonSupporters
+{
+    top: 22%;
+
+    
+}
+
+#SostrumSupporters
+{
+    top: 61%;
+
+}
+
+
+
+#ElusiaSupporters
+{
+    top:61%;
+
+}
+
+#IcolassSupporters
+{
+    top: 100%;
+}
+
+#VidulynSupporters
+{
+    top: 100%;
+
+}
+
+
+#GrimloweSupporters
+{
+    top: 138%;
+
+}
+
+#YumalonSupporters
+{
+    top: 138%;
+
+}
+
+    
+
+
+
 }

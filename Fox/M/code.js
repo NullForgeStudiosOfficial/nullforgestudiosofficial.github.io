@@ -41,9 +41,11 @@ async function Start()
     BlinkEyes()
 
     await Sleep(250);
-    document.getElementById("StartupBlack").remove();
     LastTime = performance.now();
     requestAnimationFrame(Update);
+
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 
@@ -244,10 +246,52 @@ function UpdateSiteTransition()
 
 }
 
+//  --------------------------------- Fox Page
+let FoxPage = document.getElementById("FoxPage");
+
+let FoxExitButton = document.getElementById("FoxExitButton");
+let FoxBioButton = document.getElementById("FoxBioButton");
+let FoxPersonalButton = document.getElementById("FoxPersonalButton");
+let FoxInfoBox = document.getElementById("FoxInfoBox");
+let FoxBioInfoBox = document.getElementById("FoxBioInfoBox");
+let FoxPersonalInfoBox = document.getElementById("FoxPersonalInfoBox");
+let FoxInfoBoxBack = document.getElementById("FoxInfoBoxBack");
+let FoxButtonBoxBack = document.getElementById("FoxButtonBoxBack");
+let FoxRefButton = document.getElementById("FoxRefButton");
 
 
+async function FoxTurnOffBoxes()
+{
+    FoxBioInfoBox.style.display = "none";
+    FoxPersonalInfoBox.style.display = "none";
+}
+
+FoxExitButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../index.html")
+});
+
+FoxBioButton.addEventListener("click", function()
+{
+    FoxTurnOffBoxes()
+    FoxBioInfoBox.style.display = "block";
+
+
+});
+
+FoxPersonalButton.addEventListener("click", function()
+{
+    FoxTurnOffBoxes()
+    FoxPersonalInfoBox.style.display = "block";
+});
+
+
+
+FoxRefButton.addEventListener("click", function()
+{
+    window.open("../../UniversalAssets/Foxpfp2.png", "_blank");
+});
 
 Start()
-
-//------------------------------butts
-

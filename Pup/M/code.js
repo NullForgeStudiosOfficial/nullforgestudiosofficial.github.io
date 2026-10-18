@@ -67,9 +67,11 @@ async function Start()
     BlinkEyes()
 
     await Sleep(250);
-    document.getElementById("StartupBlack").remove();
     LastTime = performance.now();
     requestAnimationFrame(Update);
+
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 

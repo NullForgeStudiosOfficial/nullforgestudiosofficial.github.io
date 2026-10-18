@@ -24,12 +24,12 @@ let RightTransition = document.getElementById("RightTransition")
 let WhichTransitionWeUsing = 0;
 let TransitionX = 0;
 let TransitionRunning = false;
-
 let SiteTransitionX = 0;
 let SiteTransitionRunning = false;
-
 let ChangedPage = false;
 let ChangedSite = false;
+let StartSiteT = true;
+let StartTransitionX = 0;
 let PreviousPage = null
 let NextPage = null
 
@@ -55,37 +55,76 @@ document.addEventListener("keydown", function(event)
     }
 });
 
+
 function Randomizer(min,max)
-{    
-    return Math.floor(Math.random() * (max - min + 1)) + min   
+{
+    //because why the hell is JS so complicated for RNG?
+    // The actual fuck is this doing?
+    // Math.random() gives: 0.0 -> 0.99
+    // Multiply by the size of our range.
+    // (max-min+1) counts BOTH endpoints.
+    // Example:
+    // 30-100
+    // 100-30+1 = 71 possible numbers.
+    // Math.floor() removes the decimal.
+    // Now we have: 0 -> 70
+    // Finally shift the range upward.
+    // +30 turns: 0 -> 30
+    // 70 ->100
+    // Yeah. JS is so dumb i actually wrote comments. congrats. 
+    // stupid ass language can do  [] + [] but not number ranges without a custom function xD
+
+    
+    return Math.floor(Math.random() * (max - min + 1)) + min
+    
 }
+
+document.addEventListener("keydown", function(event)
+{
+    if (event.key === "F12")
+    {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("keydown", function(event)
+{
+    if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I") ||
+        (event.ctrlKey && event.shiftKey && event.key === "J") ||
+        (event.ctrlKey && event.key === "U")
+    )
+    {
+        event.preventDefault();
+    }
+});
 
 
 
 
 async function Start()
 {
-
+    
+    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
 
     BlinkEyes()
 
-    
-
     await Sleep(250);
-    document.getElementById("StartupBlack").remove();
     LastTime = performance.now();
     requestAnimationFrame(Update);
 
-    ChangedSite = true
-    SiteTransitionX = 0;
-    SiteTransitionRunning = true
-    LeftTransition.style.display = "block";
-    WhichTransitionWeUsing = 2
-    InfoBoxBackgroundScroll = 0;
-    ButtonBackgroundScroll = 0;
-
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 
@@ -108,7 +147,11 @@ function Update(CurrentTime)
     {
         UpdateSiteTransition()
     }
-
+    
+    if (StartSiteT)
+    {
+        StartSite()
+    }
 
     requestAnimationFrame(Update);
 }
@@ -129,16 +172,6 @@ function ScrollButtonBackgrounds()
         Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
     }
 }
-
-function ScrollBoxBackgrounds()
-{
-    InfoBoxBackgroundScroll += 25 * DeltaTime;
-
-    VexInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    VexButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    
-}
-
 
 function Sleep(ms)
 {
@@ -198,7 +231,20 @@ async function ChangeSite()
 
 async function StartSite()
 {
+    LeftTransition.style.display = "block";
+    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
 
+    StartTransitionX -= 10000 * DeltaTime;
+    LeftTransition.style.left = StartTransitionX + "px";
+    LeftTransition.style.right = "auto";
+
+    if (StartSiteT && StartTransitionX <= StopX)
+    {
+            StartSiteT = false;
+            StartSiteT = false;
+            LeftTransition.style.display = "none";
+            return
+    }
 }
 
 async function LoadSite(SiteString)
@@ -262,41 +308,32 @@ function UpdateSiteTransition()
 {
     let usingthisthingy = null;
 
-    StopX = 0;
-
-    switch(WhichTransitionWeUsing)
-    {
-        case 0:
-            usingthisthingy = LeftRightTransition    
-        break;
-
-        case 1:
-            usingthisthingy = RightTransition
-            StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
-        break;
-
-        case 2:
-            usingthisthingy = LeftTransition
-            StopX = window.innerWidth - usingthisthingy.offsetWidth - 2000;
-        break;
-    }
-
+    usingthisthingy = RightTransition
+    StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
 
     if (ChangedSite && SiteTransitionX <= StopX)
     {
-            
+            ChangedSite = false;
             SiteTransitionRunning = false;
             WhichTransitionWeUsing = 0;
-            ChangedSite = false;
             return
     }
 
     SiteTransitionX -= 11000 * DeltaTime;
     usingthisthingy.style.left = SiteTransitionX + "px";
     usingthisthingy.style.right = "auto";
+
 }
 
 
+function ScrollBoxBackgrounds()
+{
+    InfoBoxBackgroundScroll += 25 * DeltaTime;
+
+    VexInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    VexButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    
+}
 
 
 //  --------------------------------- Vex Page

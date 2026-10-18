@@ -38,18 +38,16 @@ let RightTransition = document.getElementById("RightTransition")
 let WhichTransitionWeUsing = 0;
 let TransitionX = 0;
 let TransitionRunning = false;
-
 let SiteTransitionX = 0;
 let SiteTransitionRunning = false;
-
 let ChangedPage = false;
 let ChangedSite = false;
 let StartSiteT = true;
 let StartTransitionX = 0;
-
-
 let PreviousPage = null
 let NextPage = null
+
+
 let ExtrasPage = document.getElementById("ExtrasPage");
 let ExtrasExitButton = document.getElementById("ExtrasExitButton");
 
@@ -168,7 +166,7 @@ DoorSostrum.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("Special/index.html")
+    LoadSite("Fox/index.html")
 });
 
 
@@ -177,6 +175,10 @@ async function ExtrasTurnOffBoxes()
     ExtrasNESPlusInfoBox.style.display = "none";
     ExtrasRealmQuizInfoBox.style.display = "none";
     ExtrasStatQuizInfoBox.style.display = "none";
+    KoFiInfoBox.style.display = "none";
+    BDMInfoBox.style.display = "none";
+    ExtrasConfirmButton.style.display = "block";
+
 }
 
 
@@ -233,7 +235,7 @@ ExtrasConfirmButton.addEventListener("click", function()
 async function Start()
 {
     
-    LeftTransition.style.left = 0 + "px"
+    LeftTransition.style.left -200 + "px"
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
@@ -248,9 +250,11 @@ async function Start()
     BlinkEyes()
 
     await Sleep(250);
-    document.getElementById("StartupBlack").remove();
     LastTime = performance.now();
     requestAnimationFrame(Update);
+
+    await Sleep(100);
+    document.getElementById("StartupBlack").remove();
 
 }
 
@@ -460,6 +464,26 @@ function UpdateSiteTransition()
 }
 
 
+let BDMInfoBox = document.getElementById("BDMInfoBox");
+let KoFiInfoBox = document.getElementById("KoFiInfoBox");
 
+let KofiButton = document.getElementById("KofiButton");
+let BDMButton = document.getElementById("BDMButton");
+
+
+KofiButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    KoFiInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+});
+
+BDMButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    BDMInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+
+});
 
 Start()

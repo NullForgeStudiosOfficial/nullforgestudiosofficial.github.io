@@ -163,7 +163,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:80.5%;
-    left:24%;
+    left:28%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -801,7 +801,6 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     left:30%;
     aspect-ratio: 650/418;
     width:68.50%;
-    right:0%;
 
     overflow-y: hidden;
     overflow-x: hidden;
@@ -814,7 +813,6 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     background-size: 100% 100%;
 
 }
-
 
 
 
@@ -925,7 +923,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     width: 100%;
 
     text-align: center;
-    font-size: clamp(1vw,2.5vw,3vw);
+    font-size: clamp(1vw,2.25vw,3vw);
     font-family: Ardron;
     color: whitesmoke;
 
@@ -1073,6 +1071,237 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 
 
+.SpecialProfileQuestion
+{
+    font-family: Ardron;
+    font-size: clamp(0.5vw,2vw,3vw);
+    background-color:rgba(0, 255, 255, 0.333);
+    text-align: center;
+    position: relative;
+
+    left:1%;
+    padding-top: 1%;
+    width: 98.25%;
+}
+
+.SpecialProfileAnswer
+{
+    font-family: Ardron;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,1.50vw,1.10vw);
+}
+
+
+#BDMPic1
+{
+    position: absolute;
+    
+    
+    top:1%;
+    left:1%;
+    aspect-ratio: 550/413;
+    width:30%;
+
+    background-image: url(/UniversalAssets/BDM1.jpg);
+    background-size: 100% 100%;
+}
+
+#BDMPic2
+{
+    position: absolute;
+    aspect-ratio: 1600/733;
+    width:30%;
+
+    top:1%;
+    right:1%;
+
+    background-image: url(/UniversalAssets/BDM2.jpg);
+    background-size: 100% 100%;
+}
+
+
+#KoFiInfoBox,
+#BDMInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: auto;
+    scrollbar-color: white #222;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+
+#VoidSupporters,
+#EimonSupporters,
+#SostrumSupporters,
+#ElusiaSupporters,
+#IcolassSupporters,
+#VidulynSupporters,
+#GrimloweSupporters,
+#YumalonSupporters
+{
+    position: absolute;
+    display: block;
+
+    aspect-ratio: 1/1;
+    width: 30%;
+
+    pointer-events: auto;
+    z-index: 0;
+    isolation: isolate;
+}
+
+
+#VoidSupporters::before,
+#EimonSupporters::before,
+#SostrumSupporters::before,
+#ElusiaSupporters::before,
+#IcolassSupporters::before,
+#VidulynSupporters::before,
+#GrimloweSupporters::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-repeat: repeat;
+    background-size: 6px 6px;
+
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+#YumalonSupporters::before
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: inherit;
+    background-repeat: repeat;
+    background-size: 6px 6px;
+
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+.SupportersText
+{
+    position:relative;
+    white-space:pre-line;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    color:white;
+
+    font-size: clamp(0.5vw,1.50vw,2vw);
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-align: center;
+    top:2%;
+    filter: brightness(100%);
+}
+    
+
+#VoidSupporters
+{
+    top: 15%;
+    left: 1%;
+
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+}
+
+#EimonSupporters
+{
+    top: 15%;
+    left: 35%;
+
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    
+}
+
+#SostrumSupporters
+{
+    top: 15%;
+    left: 69%;
+
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+}
+
+
+
+#ElusiaSupporters
+{
+    top: 65%;
+    left: 1%;
+
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+    
+}
+
+#IcolassSupporters
+{
+    top: 65%;
+    left: 35%;
+
+    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+    
+}
+
+#VidulynSupporters
+{
+    top: 65%;
+    left: 69%;
+
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+    
+}
+
+
+#GrimloweSupporters
+{
+    top: 115%;
+    left: 19%;
+
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+    
+}
+
+#YumalonSupporters
+{
+    top: 115%;
+    left: 53%;
+
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+    
+}
+
+    
 
 
 @media (max-width: 1600px) {
@@ -1084,7 +1313,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     }
     #SostrumTitle
     {
-        left: 21%;
+        left: 25%;
     }
     
     #VidulynTitle,
@@ -1151,7 +1380,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
     #SostrumTitle
     {
-        left: 15%;
+        left: 18%;
     }
 
 
