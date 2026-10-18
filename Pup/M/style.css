@@ -1,6 +1,6 @@
 @font-face
 {
-    font-family: Lilita;
+    font-family: Lolita;
     src: url("../../UniversalAssets/LilitaOne.ttf")
 }
 
@@ -24,7 +24,7 @@ body
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:Lilita;
+    font-family:Lolita;
     color:white;
     background-color: black;
     image-rendering: pixelated;
@@ -99,14 +99,14 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-image: url(../../UniversalAssets/DesktopBackground.png);
     background-size: 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
 }
 
 
-#AuliPage
+#PupPage
 {
     display:block;
     position:absolute;
@@ -151,8 +151,26 @@ body
 }
 
 
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:100%;
+    height: 300%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/MobileBottomTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 #LeftTransition,
-#FullLeftRightTransition
+#FullLeftRightTransition,
+#RightTransition
 {
     z-index: 1000;
 }
@@ -160,7 +178,7 @@ body
 
 
 
-#ExtrasInfoBox
+#PupInfoBox
 {
     position:absolute;
     display:block;
@@ -183,19 +201,74 @@ body
 
 }
 
+#PupInfoBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    width:98%;
+    height:100%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(75%);
+
+    z-index: -1;
+}
+
+#ButtonBox
+{
+    position: absolute;
 
 
+    box-sizing: border-box;
+    width: 98%;
+    aspect-ratio: 440 / 203;
+    top: 5%;
+    left: 1%;
+    background-image: url("../../UniversalAssets/MobileButtonBox.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+}
 
-#ExtrasNESPlusInfoBox,
-#ExtrasRealmQuizInfoBox,
-#ExtrasStatQuizInfoBox
+#PupButtonBoxBack
+{
+    position:absolute;
+    display:flex;
+
+    top:2.10%;
+    left:1%;
+    height:95%;
+    width: 97%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated ;
+
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+
+#PupBioInfoBox,
+#PupPersonalInfoBox
 {
     position:absolute;
     display:none;
 
     top: 2%;
     left:5%;
-    height:90%;
+    height:96%;
     width:90%;
     right:0%;
 
@@ -209,6 +282,50 @@ body
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
+
+#PupEDHHDInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top: 1.5%;
+    left:2%;
+    height:96%;
+    width:97.75%;
+    right:0%;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+}
+
+
+#PupExitButton
+{
+    position:absolute;
+    left:4%;
+    top:7%;
+}
+
+#PupBioButton
+{
+    position:absolute;
+    left:4%;
+    top:28%;
+}
+#PupPersonalButton
+{
+    position:absolute;
+    left:4%;
+    top:49%;
+}
+
+#PupEDHHDButton
+{
+    position:absolute;
+    left:4%;
+    top:70%;
+}
+
 
 .WideButton
 {
@@ -257,7 +374,7 @@ body
     position: relative;
 
     width: 92%;
-    aspect-ratio: 440/43;
+    aspect-ratio: 440/32;
 
     background-color: transparent;
     background-image: url("../../UniversalAssets/ThinMobileButton.png");
@@ -345,8 +462,8 @@ body
     width: 100%;
 
     text-align: center;
-    font-size: clamp(1vw,6.125vw,10vw);
-    font-family: Lilita;
+    font-size: clamp(1vw,3vw,10vw);
+    font-family: Lolita;
     color: whitesmoke;
 
     z-index: 1;
@@ -357,7 +474,7 @@ body
 {
     position: absolute;
 
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -365,8 +482,8 @@ body
     left:50%;
 
     text-align: center;
-    font-size: clamp(1vw,6vw,10vw);
-    font-family: Lilita;
+    font-size: clamp(1vw,4vw,10vw);
+    font-family: Lolita;
     color: whitesmoke;
 
     z-index: 1;
@@ -374,15 +491,731 @@ body
 }
 
 
-@media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
+.PupProfileQuestion
+{
+    font-family: Lolita;
+    font-size: clamp(0.5vw,6vw,20vw);
+    background-color:rgb(0, 67, 125);
+    text-align: center;
+    position: relative;
+
+    left:1%;
+    padding-top: 1%;
+    width: 98.25%;
+}
+
+.PupProfileAnswer
+{
+    font-family: Lolita;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,4vw,20vw);
+}
+
+
+#PupPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp1.png");
+
+    width: 99%;
+    left:3%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Puppfp1credit
+{
+    position:absolute;
+    top:61%;
+    left:52%;
+    width: 200%;
+
+
+}
+
+
+#PupPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp2.png");
+    left:18%;
+    top:70%;
+    width: 65%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+#Puppfp2credit
+{
+    position:absolute;
+    top:117%;
+    left:50%;
+    width: 100%;
+
+
+}
+
+
+#PupBio
+{
+    position: absolute;
+    top:120%;
+    left:1%;
+    width:98%;
+    height:auto;
+}
+
+
+#PupRefButton
+{
+    position:absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: -16.5%;
+    left:-16.5%;
+    width:133%;
+    height:133%;
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+
+
+
+#GameTitle
+{
+    display:block;
+    font-family: Lolita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:97.25%;
+    height:100.5%;
+    left:1.30%;
+    top:1%;
+    font-size: clamp(0.5vw,3.5vw,4vw);
+
+    z-index: 0;
+}
+
+#PupHead
+{
+    display:block;
+    position: absolute;
+
+    width: 90%;
+    height: 100%;
+    left: 10%;
+    top: 10%;
+
+    background-image: url("../../UniversalAssets/DogHead.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position:0 0;
+
+    z-index: 6;
+    pointer-events: none;
+}
+
+#PupBody
+{
+    display:block;
+    position: absolute;
+
+    width: 48%;
+    height: 50%;
+    left: 29%;
+    top: 43.5%;
+
+    background-image: url("../../UniversalAssets/DogBody.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+#StartButton
+{
+    display:block;
+    position: absolute;
+    pointer-events: auto;
+
+    left: 10%;
+    bottom: 16%;
+
+    background-color: rgba(0, 121, 0, 0.500);
+    
+
+    width: 80%;
+    height:10%;
+
+}
+
+#StartText
+{
+    display:block;
+    position:absolute;
+    pointer-events: none;
+    font-family:Lolita;
+
+    left:0%;
+    bottom: 18%;
+    text-align: center;
+    width: 100%;
+    z-index: 0;
+    font-size: clamp(1vw,7vw,10vw);
+}
+
+#LastHighScore
 {
 
+    position: absolute;
+    display:block;
+    width:90%;
+    bottom: 4%;
+    left:-10%;
+    font-family:Lolita;
+
+    font-size: clamp(0.5vw,7vw,15vw);
+}
+
+
+
+
+
+#StartScreen
+{
+    position: absolute;
+    display:none;
+    width: 99%;
+    height: 100%;
+    background-color: #000;
+    top:0%;
+    left:0%;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+#PupLivesHead
+{
+    display:block;
+    position: absolute;
+
+    width: 50%;
+    height: 50%;
+    left: 10%;
+    top: 35%;
+
+    background-image: url("../../UniversalAssets/DogHead.png");
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+#PupLives
+{
+    display:block;
+    position: absolute;
+
+    width: 100%;
+    height: auto;
+    left: 20%;
+    top: 45%;
+
+    z-index: 0;
+
+    font-family: Lolita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    font-size: clamp(0.5vw,8vw,15vw);
+}
+
+#How2Play
+{
+    display:block;
+    position: absolute;
+    font-size: clamp(0.5vw,7vw,15vw);
+    font-family: Lolita;
+
+    width: 90%;
+    height: auto;
+    left: 10%;
+    top: 25%;
+}
+
+#GameInfoBar
+{
+    display:none;
+    position: absolute;
+
+    background-color: green;
+
+    width: 94%;
+    height: 10%;
+    left: 3%;
+    top: 3%;
+
+    z-index: -2;
+
+
+}
+
+#PupScore
+{
+    display:block;
+    width: 30%;
+    height: auto;
+    left: 3%;
+    top: 50%;
+    font-family: Lolita;
+    text-align: left;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+#PupScoreText
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    left: 3%;
+    top: 8%;
+    font-family: Lolita;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+
+
+
+#PupTime
+{
+    display:block;
+    width: 30%;
+    height: 10%;
+    left: 60%;
+    top: 50%;
+    text-align:right;
+    font-family: Lolita;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+#PupTimeText
+{   
+    display:block;
+    width: 90%;
+    height: auto;
+    right: -73%;
+    top: 8%;
+    font-family: Lolita;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+
+#PupCoins
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    right: 5%;
+    top: 50%;
+    text-align: center;
+    font-family: Lolita;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+
+
+
+#PupCoinsText
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    left: 48%;
+    top: 8%;
+    font-family: Lolita;
+    font-size: clamp(0.5vw,5vw,10vw);
+    position: absolute;
+}
+
+#PupSprite
+{
+    display:none;
+    position: absolute;
+
+    width: 25%;
+    height: 25%;
+    left: 1%;
+    bottom: -3.50%;
+
+    z-index: -2;
+
+    background-image: url("../../UniversalAssets/PupRun1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#PupHitBox
+{
+    position: absolute;
+    display:block;
+    inset: 0;
+
+    left: 30%;
+    top: 3%;
+    background-color: rgba(255, 0, 0, 0.404);
+
+    width: 40%;
+    height: 25%;
+    z-index: 3;
+}
+
+.Cloud
+{
+    position: absolute;
+    display:none;
+    width: 25%;
+    aspect-ratio: 2 / 1;
+
+    background-image: url("../../UniversalAssets/Cloud1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+
+
+
+    z-index: -3;
+}
+
+.Coin
+{
+    position:absolute;
+    display:none;
+    width: 7.5%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("../../UniversalAssets/Coin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    background-position: 0px 0px;
+
+    bottom:0%;
+
+    z-index: -1;
+}
+
+.Rock
+{
+    display:block;
+    position: absolute;
+
+    width: 20%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("../../UniversalAssets/Rock4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    left:100%;
+
+    bottom: 10%;
+
+    z-index: -1;
+}
+
+#JumpScreen
+{
+    display:none;
+    position: absolute;
+
+    width: 97%;
+    height: 99%;
+    left: 1.5%;
+    top: 2.25%;
+
+
+    z-index: 4;
+    pointer-events: none;
+}
+
+#Jump
+{
+    position: absolute;
+    display:block;
+
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+     border: none;
+    outline: none;
+
+    z-index: 4;
+    pointer-events: auto;
+}
+
+.RockHitBox
+{
+    display:block;
+    position: absolute;
+
+    width: 45%;
+    aspect-ratio: 1 / 1;
+
+    
+    pointer-events: none;
+    left:30%;
+    top:30%;
+
+    z-index: 1;
+}
+
+.CoinRockHitBox
+{
+    display:none;
+    position:absolute;
+    display:block;
+    width: 400%;
+    height:400%;
+    aspect-ratio: 1 / 1;
+    top:-150%;
+    left:-150%;
+    pointer-events: none;
+    background-position: 0px 0px;
+
+
+    z-index: 3;
+}
+
+#PupWin
+{
+    display:none;
+    position:absolute;
+
+    aspect-ratio: 998/494;
+    width:75%;
+
+    top:8%;
+    left:12.5%;
+
+    background-image: url(../UniversalAssets/PupWin.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+
+#Sky
+{
+    display:block;
+    position:absolute;
+    image-rendering: pixelated;
+    display:block;
+
+    height:auto;
+    width:98%;
+    height:300%;
+    top:-200%;
+
+
+    background-image:url("../../UniversalAssets/PupSky.png");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    pointer-events:none;
+    z-index: -3;
+}
+
+#PupGrass
+{
+    display:block;
+    position:absolute;
+    image-rendering: pixelated;
+    display:block;
+
+    height:15%;
+    top:86%;
+    left:0%;
+
+    width:100%;
+    z-index: -1;
+
+    background-image:url("../../UniversalAssets/PupGrass.png");
+    background-size:100% 100%;
+    background-repeat:repeat-x;
+
+    pointer-events:none;
+}
+
+#ScanLines
+{
+    display:block;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+
+    background-image: url("../../UniversalAssets/ScanLinesMobile.png");
+
+    background-size: 1.5%;
+    background-repeat: repeat;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+#DogTitle
+{
+    position:absolute;
+    top:1%;
+    left:2%;
+    width:95%;
+    font-size: clamp(1vw,9vw,15vw);
+    font-family: Lolita;
+}
+
+
+
+
+
+
+
+
+@media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
+{
+    #VoidEyes
+    {
+        top:-6%;
+    }
+
+    #ButtonBox
+    {
+        top: 6%;
+        left: 1%;
+        width: 98%;
+        height:20%;
+    }
    
 
     .ButtonText
     {
         top: 55%;
-        font-size: clamp(1vw,5vw,10vw);
+        font-size: clamp(1vw,3.5vw,10vw);
     }
+
+
+
+
+
+#PupPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp1.png");
+
+    width: 99%;
+    left:3%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Puppfp1credit
+{
+    position:absolute;
+    top:75%;
+    left:52%;
+    width: 200%;
+}
+
+
+#PupPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp2.png");
+    left:18%;
+    top:90%;
+    width: 65%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+#Puppfp2credit
+{
+    position:absolute;
+    top:147%;
+    left:50%;
+    width: 100%;
+
+
+}
+
+
+#PupBio
+{
+    position: absolute;
+    top:145%;
+    left:1%;
+    width:98%;
+    height:auto;
+}
+
+
+
+#PupSprite
+{
+    bottom: -2%;
+}
+
 }
 
