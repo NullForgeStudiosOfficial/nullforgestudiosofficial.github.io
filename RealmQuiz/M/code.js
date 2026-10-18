@@ -686,8 +686,8 @@ CopyCodeButton.addEventListener("click", async function()
 StartQuizButton.addEventListener("click", function()
 {
     ChangePage(StartingPage,QuizPage)
-    //ChangePage(StartingPage,ResultsPage)
     //ChangePage(StartingPage,TieBreakerPage)
+    //ChangePage(StartingPage,ResultsPage)
 });
 
 
@@ -722,6 +722,10 @@ function ShuffleArray(Array)
     }
 }
 
+function Randomizer(min,max)
+{
+    return Math.floor(Math.random() * (max - min + 1)) + min
+}
 
 async function ArbiterSequence()
 {

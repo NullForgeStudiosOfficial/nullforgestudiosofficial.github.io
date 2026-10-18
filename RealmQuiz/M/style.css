@@ -851,12 +851,76 @@ body
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
 
-   
+   #StartingPageText
+    {
+        position: absolute;
+        top:45%;
+        left:50%;
+    }
+
+    #StartQuizButton {
+    top:90%;
+}
+
+#BackQuizStart {
+    top:90%;
+}
 
     .ButtonText
     {
         top: 55%;
         font-size: clamp(1vw,4vw,10vw);
     }
+
+    #QuestionBox
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    width:98%;
+    height:60%;
+
+}
+
+
+#AnswerButton1
+{
+    top:62%;
+}
+
+#AnswerButton2
+{
+    top:75%;
+}
+
+#AnswerButton3
+{
+    top:88%;
+}
+
+#RemainingText
+{
+    top:8%;
+}
+
+#QuestionBoxText
+{
+
+    top:16%;
+
+}
+
+
+#MainBackground
+{
+    position:absolute;
+    left:-82%;
+    top:-25%;
+
+}
+
+
 }
 
