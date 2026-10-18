@@ -152,6 +152,28 @@ function Update(CurrentTime)
         StartSite()
     }
 
+    if (PupEDHHDInfoBox.style.display == "block")
+    {
+       ScrollLines()
+
+       if (OnChannel3)
+       {
+            UpdateClouds();
+       }
+
+       if (GameStarted)
+       {
+            UpdatePupTimeAndScore()
+            GrassScroll()
+            CheckPupCollisions();
+            UpdateRocks();
+            
+            UpdateCoins();
+            UpdatePupJump();
+
+       }
+    }
+
     requestAnimationFrame(Update);
 }
 
@@ -1127,7 +1149,7 @@ function PupJump()
         HeightScale *= 0.80;
     }
 
-    PupYVelocity = 400 * SpeedMultiplier * HeightScale;
+    PupYVelocity = 425 * SpeedMultiplier * HeightScale;
 }
 
 function UpdatePupJump()
