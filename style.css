@@ -818,7 +818,10 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 #ExtrasNESPlusInfoBox,
 #ExtrasRealmQuizInfoBox,
-#ExtrasStatQuizInfoBox
+#ExtrasStatQuizInfoBox,
+#KoFiInfoBox,
+#BDMInfoBox,
+#WorkLogInfoBox
 {
     position:absolute;
     display:none;
@@ -1035,7 +1038,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 #ExtrasConfirmButton
 {
     position:absolute;
-    display:flex;
+    display:none;
 
     top:90%;
     left:2%;
@@ -1126,34 +1129,6 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     background-image: url(/UniversalAssets/BDM2.jpg);
     background-size: 100% 100%;
 }
-
-
-#KoFiInfoBox,
-#BDMInfoBox
-{
-    position:absolute;
-    display:none;
-
-    top:3%;
-    left:1%;
-    padding-top: 10px;
-    aspect-ratio: 675/418;
-    width:97.5%;
-    right:0%;
-
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scrollbar-width: auto;
-    scrollbar-color: white #222;
-
-    pointer-events: auto;
-    image-rendering: pixelated;
-
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
-
 
 
 #VoidSupporters,

@@ -607,9 +607,13 @@ body
 
 
 
+
 #ExtrasNESPlusInfoBox,
 #ExtrasRealmQuizInfoBox,
-#ExtrasStatQuizInfoBox
+#ExtrasStatQuizInfoBox,
+#KoFiInfoBox,
+#BDMInfoBox,
+#WorkLogInfoBox
 {
     position:absolute;
     display:none;
@@ -953,7 +957,7 @@ body
 #ExtrasConfirmButton
 {
     position:absolute;
-    display:flex;
+    display:none;
 
     top:87%;
     left:3.5%;

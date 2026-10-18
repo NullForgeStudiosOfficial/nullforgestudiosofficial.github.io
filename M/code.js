@@ -456,6 +456,18 @@ DoorSostrum.addEventListener("click", function()
 });
 
 
+//----------------------------------------------------------------------------------
+
+
+let BDMInfoBox = document.getElementById("BDMInfoBox");
+let BDMButton = document.getElementById("BDMButton");
+
+let KofiButton = document.getElementById("KofiButton");
+let KoFiInfoBox = document.getElementById("KoFiInfoBox");
+
+let WorkLogButton = document.getElementById("WorkLogButton");
+let WorkLogInfoBox = document.getElementById("WorkLogInfoBox");
+
 
 async function ExtrasTurnOffBoxes()
 {
@@ -465,6 +477,7 @@ async function ExtrasTurnOffBoxes()
     KoFiInfoBox.style.display = "none";
     BDMInfoBox.style.display = "none";
     ExtrasConfirmButton.style.display = "block";
+    WorkLogInfoBox.style.display = "none";
 
 }
 
@@ -493,6 +506,28 @@ StatQuizButton.addEventListener("click", function()
     ExtrasCurrentSelection = "StatQuiz";
 });
 
+KofiButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    KoFiInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+});
+
+BDMButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    BDMInfoBox.style.display = "block";
+    ExtrasConfirmButton.style.display = "none";
+
+});
+
+WorkLogButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    WorkLogInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "WorkLogs";
+
+});
 ExtrasConfirmButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
@@ -511,41 +546,20 @@ ExtrasConfirmButton.addEventListener("click", function()
         case "StatQuiz":
             LoadSite("../StatQuiz/index.html")
             break;
+
+        case "WorkLogs":
+                window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
+        break;
     }
 });
-
-
-
-
 
 ExtrasExitButton.addEventListener("click", function()
 {
     ChangePage(ExtrasPage,DoorPage)
 });
 
-
-
-let BDMInfoBox = document.getElementById("BDMInfoBox");
-let KoFiInfoBox = document.getElementById("KoFiInfoBox");
-
-let KofiButton = document.getElementById("KofiButton");
-let BDMButton = document.getElementById("BDMButton");
-
-
-KofiButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-    KoFiInfoBox.style.display = "block";
-    ExtrasConfirmButton.style.display = "none";
-});
-
-BDMButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-    BDMInfoBox.style.display = "block";
-    ExtrasConfirmButton.style.display = "none";
-
-});
 //-------------------------------
+
+
 
 Start()

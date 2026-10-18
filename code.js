@@ -114,10 +114,6 @@ DoorSanctum.addEventListener("click", function()
     ChangePage(DoorPage,ExtrasPage)
 });
 
-ExtrasExitButton.addEventListener("click", function()
-{
-    ChangePage(ExtrasPage,DoorPage)
-});
 
 DoorYumalon.addEventListener("click", function()
 {
@@ -167,64 +163,6 @@ DoorSostrum.addEventListener("click", function()
     WhichTransitionWeUsing = 1
     ChangeSite()
     LoadSite("Fox/index.html")
-});
-
-
-async function ExtrasTurnOffBoxes()
-{
-    ExtrasNESPlusInfoBox.style.display = "none";
-    ExtrasRealmQuizInfoBox.style.display = "none";
-    ExtrasStatQuizInfoBox.style.display = "none";
-    KoFiInfoBox.style.display = "none";
-    BDMInfoBox.style.display = "none";
-    ExtrasConfirmButton.style.display = "block";
-
-}
-
-
-NESPlusButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-
-    ExtrasNESPlusInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "NESPlus";
-});
-
-RealmQuizButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-
-    ExtrasRealmQuizInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "RealmQuiz";
-});
-
-StatQuizButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-
-    ExtrasStatQuizInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "StatQuiz";
-});
-
-ExtrasConfirmButton.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    
-    switch(ExtrasCurrentSelection)
-    {
-        case "NESPlus":
-            LoadSite("NESPlus/index.html")
-            break;
-
-        case "RealmQuiz":
-            LoadSite("RealmQuiz/index.html")
-            break;
-
-        case "StatQuiz":
-            LoadSite("StatQuiz/index.html")
-            break;
-    }
 });
 
 
@@ -465,11 +403,51 @@ function UpdateSiteTransition()
 
 
 let BDMInfoBox = document.getElementById("BDMInfoBox");
-let KoFiInfoBox = document.getElementById("KoFiInfoBox");
-
-let KofiButton = document.getElementById("KofiButton");
 let BDMButton = document.getElementById("BDMButton");
 
+let KofiButton = document.getElementById("KofiButton");
+let KoFiInfoBox = document.getElementById("KoFiInfoBox");
+
+let WorkLogButton = document.getElementById("WorkLogButton");
+let WorkLogInfoBox = document.getElementById("WorkLogInfoBox");
+
+
+async function ExtrasTurnOffBoxes()
+{
+    ExtrasNESPlusInfoBox.style.display = "none";
+    ExtrasRealmQuizInfoBox.style.display = "none";
+    ExtrasStatQuizInfoBox.style.display = "none";
+    KoFiInfoBox.style.display = "none";
+    BDMInfoBox.style.display = "none";
+    ExtrasConfirmButton.style.display = "block";
+    WorkLogInfoBox.style.display = "none";
+
+}
+
+
+NESPlusButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasNESPlusInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "NESPlus";
+});
+
+RealmQuizButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasRealmQuizInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "RealmQuiz";
+});
+
+StatQuizButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasStatQuizInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "StatQuiz";
+});
 
 KofiButton.addEventListener("click", function()
 {
@@ -485,5 +463,44 @@ BDMButton.addEventListener("click", function()
     ExtrasConfirmButton.style.display = "none";
 
 });
+
+WorkLogButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+    WorkLogInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "WorkLogs";
+
+});
+
+ExtrasConfirmButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    
+    switch(ExtrasCurrentSelection)
+    {
+        case "NESPlus":
+            LoadSite("NESPlus/index.html")
+            break;
+
+        case "RealmQuiz":
+            LoadSite("RealmQuiz/index.html")
+            break;
+
+        case "StatQuiz":
+            LoadSite("StatQuiz/index.html")
+            break;
+
+        case "WorkLogs":
+                window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
+        break;
+    }
+});
+
+ExtrasExitButton.addEventListener("click", function()
+{
+    ChangePage(ExtrasPage,DoorPage)
+});
+
 
 Start()
