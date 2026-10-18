@@ -30,16 +30,6 @@ let VoidEyesImages = [
     'url("../../UniversalAssets/VoidEyes0.png")',
 ]
 
-
-let DoorEimon = document.getElementById("DoorEimon");
-let DoorElusia = document.getElementById("DoorElusia");
-let DoorGrimlowe = document.getElementById("DoorGrimlowe");
-let DoorSostrum = document.getElementById("DoorSostrum");
-let DoorVidulyn = document.getElementById("DoorVidulyn");
-let DoorYumalon = document.getElementById("DoorYumalon");
-let DoorIcolass = document.getElementById("DoorIcolass");
-let DoorSanctum = document.getElementById("DoorSanctum");
-
 async function Start()
 {
     

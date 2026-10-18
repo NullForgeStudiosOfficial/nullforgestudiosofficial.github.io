@@ -492,15 +492,15 @@ ExtrasConfirmButton.addEventListener("click", function()
     switch(ExtrasCurrentSelection)
     {
         case "NESPlus":
-            LoadSite("NESPlus/index.html")
+            LoadSite("../NESPlus/index.html")
             break;
 
         case "RealmQuiz":
-            LoadSite("RealmQuiz/index.html")
+            LoadSite("../RealmQuiz/index.html")
             break;
 
         case "StatQuiz":
-            LoadSite("StatQuiz/index.html")
+            LoadSite("../StatQuiz/index.html")
             break;
     }
 });
