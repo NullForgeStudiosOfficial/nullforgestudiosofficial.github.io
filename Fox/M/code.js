@@ -21,22 +21,22 @@ let StartSiteT = true;
 let StartTransitionX = 0;
 let PreviousPage = null
 let NextPage = null
-
+let DoorRealm = document.getElementById("DoorRealm")
+let DoorRealmRotation = 0
+let VoidEyesImages = [
+    'url("../../UniversalAssets/VoidEyeFull.png")',
+    'url("../../UniversalAssets/VoidEyes66.png")',
+    'url("../../UniversalAssets/VoidEyes33.png")',
+    'url("../../UniversalAssets/VoidEyes0.png")',
+]
 
 async function Start()
 {
     
     LeftTransition.style.left = 0 + "px"
-    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".WideButtonBackground"));
 
     BlinkEyes()
 
@@ -57,6 +57,7 @@ function Update(CurrentTime)
 
     ScrollBackground();
     ScrollButtonBackgrounds();
+    ScrollBoxBackgrounds();
 
     if (TransitionRunning)
     {
@@ -92,6 +93,16 @@ function ScrollButtonBackgrounds()
         Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
     }
 }
+
+function ScrollBoxBackgrounds()
+{
+    InfoBoxBackgroundScroll += 25 * DeltaTime;
+
+    FoxInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    ButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    
+}
+
 
 
 function Sleep(ms)
@@ -135,8 +146,7 @@ async function ChangePage(PageID1,PageID2)
     PreviousPage = PageID1
     NextPage = PageID2
 
-    QuizTransition = false
-    TransitionX = window.innerWidth;
+    TransitionX = window.innerHeight;
     ChangedPage = false;
     TransitionRunning = true
     LeftRightTransition.style.display = "block";
@@ -145,7 +155,7 @@ async function ChangePage(PageID1,PageID2)
 async function ChangeSite()
 {
     ChangedSite = true
-    SiteTransitionX = window.innerWidth;
+    SiteTransitionX = window.innerHeight;
     SiteTransitionRunning = true
     RightTransition.style.display = "block";
 }
@@ -153,11 +163,11 @@ async function ChangeSite()
 async function StartSite()
 {
     LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+    StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
 
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
+    StartTransitionX -= 5000 * DeltaTime;
+    LeftTransition.style.top = StartTransitionX + "px";
+    LeftTransition.style.bottom = "auto";
 
     if (StartSiteT && StartTransitionX <= StopX)
     {
@@ -181,7 +191,7 @@ async function LoadSite(SiteString)
 
 function UpdateTransition()
 {
-       TransitionX -= 11000 * DeltaTime;
+       TransitionX -= 5000 * DeltaTime;
 
         let usingthisthingy = null;
 
@@ -202,24 +212,23 @@ function UpdateTransition()
         }
 
 
-        usingthisthingy.style.left = TransitionX + "px";
+        usingthisthingy.style.top = TransitionX + "px";
 
         
 
-        if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
+        if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.innerHeight / 2)
         {
             ChangedPage = true;
             PreviousPage.style.display = "none";
             NextPage.style.display = "flex";
-            
         }
 
-        if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetWidth <= 0)
+        if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetHeight <= 0)
         {
             TransitionRunning = false;
             ChangedPage = false
-            TransitionX = window.innerWidth;
-            usingthisthingy.style.left = TransitionX + "px";
+            TransitionX = window.innerHeight;
+            usingthisthingy.style.top = TransitionX + "px";
         }
 
         
@@ -230,7 +239,7 @@ function UpdateSiteTransition()
     let usingthisthingy = null;
 
     usingthisthingy = RightTransition
-    StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
+    StopX = window.innerHeight - usingthisthingy.offsetHeight + 100;
 
     if (ChangedSite && SiteTransitionX <= StopX)
     {
@@ -240,9 +249,9 @@ function UpdateSiteTransition()
             return
     }
 
-    SiteTransitionX -= 11000 * DeltaTime;
-    usingthisthingy.style.left = SiteTransitionX + "px";
-    usingthisthingy.style.right = "auto";
+    SiteTransitionX -= 3000 * DeltaTime;
+    usingthisthingy.style.top = SiteTransitionX + "px";
+    usingthisthingy.style.bottom = "auto";
 
 }
 

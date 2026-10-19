@@ -1,7 +1,7 @@
 @font-face
 {
-    font-family: Ardron;
-    src: url("../../UniversalAssets/FontOfArdron.ttf")
+    font-family: Skranji;
+    src: url("../../UniversalAssets/Skranji.ttf")
 }
 
 
@@ -24,7 +24,7 @@ body
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:Ardron;
+    font-family:Skranji;
     color:white;
     background-color: black;
     image-rendering: pixelated;
@@ -99,14 +99,14 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-image: url(../../UniversalAssets/DesktopBackground.png);
     background-size: 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
 }
 
 
-#AuliPage
+#FoxPage
 {
     display:block;
     position:absolute;
@@ -151,8 +151,26 @@ body
 }
 
 
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:100%;
+    height: 300%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/MobileBottomTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 #LeftTransition,
-#FullLeftRightTransition
+#FullLeftRightTransition,
+#RightTransition
 {
     z-index: 1000;
 }
@@ -160,7 +178,7 @@ body
 
 
 
-#ExtrasInfoBox
+#FoxInfoBox
 {
     position:absolute;
     display:block;
@@ -183,19 +201,55 @@ body
 
 }
 
+#FoxInfoBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    width:98%;
+    height:100%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(75%);
+
+    z-index: -1;
+}
+
+#ButtonBox
+{
+    position: absolute;
+
+
+    box-sizing: border-box;
+    width: 98%;
+    aspect-ratio: 440 / 203;
+    top: 5%;
+    left: 1%;
+    background-image: url("../../UniversalAssets/MobileButtonBox.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+}
 
 
 
-#ExtrasNESPlusInfoBox,
-#ExtrasRealmQuizInfoBox,
-#ExtrasStatQuizInfoBox
+
+#FoxBioInfoBox,
+#FoxPersonalInfoBox
 {
     position:absolute;
     display:none;
 
     top: 2%;
     left:5%;
-    height:90%;
+    height:96%;
     width:90%;
     right:0%;
 
@@ -208,6 +262,46 @@ body
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
+}
+
+#ButtonBoxBack
+{
+    position:absolute;
+    display:flex;
+
+    top:2.10%;
+    left:1%;
+    height:95%;
+    width: 97%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated ;
+
+    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(75%);
+    z-index: -1;
+}
+
+#FoxExitButton
+{
+    position:absolute;
+    left:4%;
+    top:7%;
+}
+#FoxBioButton
+{
+    position:absolute;
+    left:4%;
+    top:28%;
+}
+#FoxPersonalButton
+{
+    position:absolute;
+    left:4%;
+    top:49%;
 }
 
 .WideButton
@@ -257,7 +351,7 @@ body
     position: relative;
 
     width: 92%;
-    aspect-ratio: 440/43;
+    aspect-ratio: 440/32;
 
     background-color: transparent;
     background-image: url("../../UniversalAssets/ThinMobileButton.png");
@@ -345,8 +439,8 @@ body
     width: 100%;
 
     text-align: center;
-    font-size: clamp(1vw,6.125vw,10vw);
-    font-family: Ardron;
+    font-size: clamp(1vw,3vw,10vw);
+    font-family: Skranji;
     color: whitesmoke;
 
     z-index: 1;
@@ -357,7 +451,7 @@ body
 {
     position: absolute;
 
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -365,8 +459,8 @@ body
     left:50%;
 
     text-align: center;
-    font-size: clamp(1vw,6vw,10vw);
-    font-family: Ardron;
+    font-size: clamp(1vw,4vw,10vw);
+    font-family: Skranji;
     color: whitesmoke;
 
     z-index: 1;
@@ -374,15 +468,204 @@ body
 }
 
 
+.FoxProfileQuestion
+{
+    font-family: Skranji;
+    font-size: clamp(0.5vw,6vw,20vw);
+    background-color:rgba(0, 158, 158, 0.884);
+    text-align: center;
+    position: relative;
+
+    left:1%;
+    padding-top: 1%;
+    width: 98.25%;
+}
+
+.FoxProfileAnswer
+{
+    font-family: Skranji;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,4vw,20vw);
+}
+
+
+#Bakugo
+{
+    position:relative;
+
+    background-image: url("../../UniversalAssets/bakugo.png");
+
+    width: 75%;
+    left:15%;
+    top:2%;
+    margin-bottom: 6%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+    
+}
+
+#FoxPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp1.png");
+
+    width: 75%;
+    left:15%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Foxpfp1credit
+{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width: 25%;
+
+
+}
+
+
+#FoxPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp2.png");
+    left:15%;
+    top:55%;
+    width: 65%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+
+
+#Foxpfp2credit
+{
+    position:absolute;
+    top:95%;
+    left:50%;
+    width: 100%;
+
+
+}
+
+
+
+#FoxPfp3
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp3.png");
+
+    width: 60%;
+    left:22%;
+    top:110%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Foxpfp3credit
+{
+    position:absolute;
+    top:153%;
+    left:50%;
+    width: 200%;
+
+
+}
+
+
+
+
+
+#FoxRefButton
+{
+    position:absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: -16.5%;
+    left:-16.5%;
+    width:133%;
+    height:133%;
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+
+#FoxBio
+{
+    position: absolute;
+    top:160%;
+}
+
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
+    #VoidEyes
+    {
+        top:-6%;
+    }
 
+    #ButtonBox
+    {
+        top: 6%;
+        left: 1%;
+        width: 98%;
+        height:20%;
+    }
    
 
     .ButtonText
     {
         top: 55%;
-        font-size: clamp(1vw,5vw,10vw);
+        font-size: clamp(1vw,3.5vw,10vw);
     }
+
+
+
+#FoxPfp2
+{
+    top:55%;
+}
+
+#Foxpfp2credit
+{
+    top:105%;
+}
+
+#FoxPfp3
+{
+    top:120%;
+}
+
+#Foxpfp3credit
+{
+    top:175%;
+}
+
+#FoxBio
+{
+    position: absolute;
+    top:180%;
+}
 }
 
