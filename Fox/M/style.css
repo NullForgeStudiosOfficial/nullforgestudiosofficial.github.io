@@ -264,6 +264,12 @@ body
     word-wrap: break-word;
 }
 
+#FoxBioInfoBox
+{
+    display:block;
+}
+
+
 #ButtonBoxBack
 {
     position:absolute;

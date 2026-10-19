@@ -265,6 +265,13 @@ body
     word-wrap: break-word;
 }
 
+#VexBioInfoBox
+{
+    display:block;
+
+}
+
+
 #ButtonBoxBack
 {
     position:absolute;

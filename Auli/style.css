@@ -150,7 +150,8 @@ body
 }
 
 
-#AuliBioInfoBox
+#AuliBioInfoBox,
+#AuliPersonalInfoBox
 {
     position:absolute;
     display:none;
@@ -174,31 +175,10 @@ body
 }
 
 
-
-#AuliPersonalInfoBox
+#AuliBioInfoBox
 {
-    position:absolute;
-    display:none;
-
-    top:3%;
-    left:1%;
-    padding-top: 10px;
-    aspect-ratio: 675/418;
-    width:97.5%;
-    right:0%;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    pointer-events: auto;
-    image-rendering: pixelated;
-
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
+    display:block;
 }
-
-
 
 .NormalButton
 {

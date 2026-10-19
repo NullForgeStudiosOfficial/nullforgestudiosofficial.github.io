@@ -264,6 +264,11 @@ body
     word-wrap: break-word;
 }
 
+#AuliBioInfoBox
+{
+    display:block;
+}
+
 #ButtonBoxBack
 {
     position:absolute;

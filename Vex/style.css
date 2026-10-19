@@ -192,31 +192,9 @@ body
 }
 
 
-#VexBioInfoBox
-{
-    position:absolute;
-    display:none;
-
-    top:3%;
-    left:1%;
-    padding-top: 10px;
-    aspect-ratio: 675/418;
-    width:97.5%;
-    right:0%;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    pointer-events: auto;
-    image-rendering: pixelated;
-
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-}
 
 
-
+#VexBioInfoBox,
 #VexPersonalInfoBox,
 #VexDevInfoBox
 {
@@ -239,6 +217,12 @@ body
     white-space: normal;
     overflow-wrap: break-word;
     word-wrap: break-word;
+}
+
+#VexBioInfoBox
+{
+    display:block;
+
 }
 
 

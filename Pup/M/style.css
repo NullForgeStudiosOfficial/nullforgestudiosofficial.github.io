@@ -293,6 +293,12 @@ body
     word-wrap: break-word;
 }
 
+#PupBioInfoBox
+{
+    display:block;    
+}
+
+
 #PupEDHHDInfoBox
 {
     position:absolute;
