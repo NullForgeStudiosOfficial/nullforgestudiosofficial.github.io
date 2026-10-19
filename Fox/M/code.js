@@ -279,7 +279,7 @@ FoxExitButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("../index.html")
+    LoadSite("../../index.html")
 });
 
 FoxBioButton.addEventListener("click", function()
