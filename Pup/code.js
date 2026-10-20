@@ -127,12 +127,6 @@ async function Start()
 
 }
 
-let FPSFrames = 0;
-let FPSTimer = 0;
-let FPSMinimum = Infinity;
-let FPSMaximum = 0;
-
-
 
 function Update(CurrentTime)
 {
@@ -140,12 +134,11 @@ function Update(CurrentTime)
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    if (!OnChannel3)
-    {
+
         ScrollBackground();
         ScrollButtonBackgrounds();
         ScrollBoxBackgrounds();
-    }
+    
 
     
 

@@ -912,7 +912,6 @@ body
 
     left: 30%;
     top: 3%;
-    background-color: rgba(255, 0, 0, 0.404);
 
     width: 40%;
     height: 25%;
@@ -1058,7 +1057,7 @@ body
     top:8%;
     left:12.5%;
 
-    background-image: url(../UniversalAssets/PupWin.png);
+    background-image: url(../../UniversalAssets/PupWin.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -1086,25 +1085,33 @@ body
     z-index: -3;
 }
 
+
 #PupGrass
 {
-    display:block;
-    position:absolute;
-    image-rendering: pixelated;
-    display:block;
-
-    height:15%;
-    top:86%;
-    left:0%;
-
-    width:100%;
+    overflow:hidden;
     z-index: -1;
+    aspect-ratio: 320/80;
+    width:98%;
+    position: absolute;
+    top:86.54%;
+    left:0%;
+}
 
-    background-image:url("../../UniversalAssets/PupGrass.png");
-    background-size:100% 100%;
-    background-repeat:repeat-x;
+#PupGrassScroll {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    pointer-events:none;
+    width: 200%;
+    height: 100%;
+
+    background-image: url("../../UniversalAssets/PupGrass.png");
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+
+    image-rendering: pixelated;
+    will-change: transform;
+    pointer-events: none;
 }
 
 #ScanLines
@@ -1232,6 +1239,15 @@ body
 {
     bottom: -2%;
 }
+
+    #PupGrass
+    {
+    aspect-ratio: 320/60;
+    width:98%;
+    position: absolute;
+    top:86.54%;
+    left:0%;
+    }
 
 }
 

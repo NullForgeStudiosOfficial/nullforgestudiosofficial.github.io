@@ -78,12 +78,17 @@ async function Start()
 
 function Update(CurrentTime)
 {
+
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    ScrollBackground();
-    ScrollButtonBackgrounds();
-    ScrollBoxBackgrounds();
+
+        ScrollBackground();
+        ScrollButtonBackgrounds();
+        ScrollBoxBackgrounds();
+    
+
+    
 
     if (TransitionRunning)
     {
@@ -100,13 +105,18 @@ function Update(CurrentTime)
         StartSite()
     }
 
+    if (DeltaTime > 0.025)
+    {
+        console.log("SLOW FRAME:", (DeltaTime * 1000).toFixed(2), "ms");
+    }
+
     if (PupEDHHDInfoBox.style.display == "block")
     {
        ScrollLines()
 
        if (OnChannel3)
        {
-            UpdateClouds();
+            MoveObjects(PupClouds, GrassSpeed / 3);
        }
 
        if (GameStarted)
@@ -114,11 +124,10 @@ function Update(CurrentTime)
             UpdatePupTimeAndScore()
             GrassScroll()
             CheckPupCollisions();
-            UpdateRocks();
-            
-            UpdateCoins();
-            UpdatePupJump();
+            MoveObjects(PupRocks, RockSpeed);
+            MoveObjects(PupCoins, RockSpeed);
 
+            UpdatePupJump();
        }
     }
 
@@ -402,8 +411,8 @@ let PupCloudImages = [
 ]
 
 let ScreenGracePeriod = false
-let GrassSpeed = 500
-let RockSpeed = 460
+let GrassSpeed = 300;
+let RockSpeed = 300;
 
 let PupHitBox = document.getElementById("PupHitBox");
 
@@ -685,11 +694,16 @@ async function PupSpriteAnimation()
 
 function GrassScroll()
 {
-    GrassScrollNumber -= GrassSpeed  * DeltaTime;
+    const GrassWidth = PupGrass.clientWidth;
 
-    PupGrass.style.backgroundPositionX = GrassScrollNumber + "px";
+    GrassScrollNumber -= GrassSpeed * DeltaTime;
+    GrassScrollNumber %= GrassWidth;
+
+    PupGrassScroll.style.transform =
+        `translate3d(${GrassScrollNumber}px, 0, 0)`;
 }
 
+let ScoreTimer = 0;
 function UpdatePupTimeAndScore()
 {
     if (ScreenGracePeriod)
@@ -697,15 +711,25 @@ function UpdatePupTimeAndScore()
         return;
     }
 
-    PupGameTime += DeltaTime;
+    ScoreTimer += DeltaTime;
+
+    if (ScoreTimer < 1)
+    {
+        return;
+    }
+
+    let ElapsedSeconds = Math.floor(ScoreTimer);
+    ScoreTimer -= ElapsedSeconds;
+
+    PupGameTime += ElapsedSeconds;
 
     let CoinMultiplier = 1 + (PupCoinAmount * 0.1);
 
-    PupScore += 100 * CoinMultiplier * DeltaTime;
+    PupScore += 100 * CoinMultiplier * ElapsedSeconds;
 
-    InfoBarScore.innerText = Math.floor(PupScore);
-    InfoBarTime.innerText = Math.floor(PupGameTime);
-    InfoBarCoins.innerText = PupCoinAmount
+    InfoBarScore.textContent = Math.floor(PupScore);
+    InfoBarTime.textContent = Math.floor(PupGameTime);
+    InfoBarCoins.textContent = PupCoinAmount;
 
 
 }
@@ -886,6 +910,8 @@ function SpawnRock()
 {
     let Rock = document.createElement("div");
 
+    Rock.GameX = 0;
+
     RandomRockImage = Randomizer(0, PupRockImages.length-1)
 
     Rock.style.backgroundImage = `url("${PupRockImages[RandomRockImage]}")`
@@ -938,6 +964,8 @@ function SpawnCoin()
 {
     let Coin = document.createElement("div");
 
+    Coin.GameX = 0;
+
     Coin.className = "Coin";
     Coin.style.display = "block";
     Coin.style.left = "100%";
@@ -957,6 +985,8 @@ function SpawnCoin()
 function SpawnCloud()
 {
     let Cloud = document.createElement("div");
+
+    Cloud.GameX = 0;
     
     RandomCloudImage = Randomizer(0, PupCloudImages.length-1)
 
@@ -987,71 +1017,20 @@ function SpawnCloud()
     PupClouds.push(Cloud);
 }
 
-function UpdateRocks()
+function MoveObjects(Objects, Speed)
 {
-    for (let i = PupRocks.length - 1; i >= 0; i--)
+    for (let i = Objects.length - 1; i >= 0; i--)
     {
-        let Rock = PupRocks[i];
+        let Object = Objects[i];
 
-        let CurrentLeft = Rock.offsetLeft;
+        Object.GameX -= Speed * DeltaTime;
 
-        Rock.style.left = `${CurrentLeft - (RockSpeed * DeltaTime)}px`;
+        Object.style.transform = `translateX(${Object.GameX}px)`;
 
-        if (Rock.offsetLeft + Rock.offsetWidth < 0)
+        if (Object.getBoundingClientRect().right < 0)
         {
-            Rock.remove();
-            PupRocks.splice(i, 1);
-        }
-    }
-}
-
-function UpdateCoins()
-{
-    for (let i = PupCoins.length - 1; i >= 0; i--)
-    {
-        let Coin = PupCoins[i];
-        let CoinRockHitBox = Coin.querySelector(".CoinRockHitBox");
-
-        let CurrentLeft = Coin.offsetLeft;
-
-        Coin.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
-
-        if (Coin.offsetLeft + Coin.offsetWidth < 0)
-        {
-            Coin.remove();
-            PupCoins.splice(i, 1);
-            continue;
-        }
-
-        for (let Rock of PupRocks)
-        {
-            let RockHitBox = Rock.querySelector(".RockHitBox");
-
-            if (IsColliding(CoinRockHitBox, RockHitBox))
-            {
-
-                Coin.remove();
-                PupCoins.splice(i, 1);
-                break;
-            }
-        }
-    }
-}
-
-function UpdateClouds()
-{
-    for (let i = PupClouds.length - 1; i >= 0; i--)
-    {
-        let Cloud = PupClouds[i];
-
-        let CurrentLeft = Cloud.offsetLeft;
-
-        Cloud.style.left = `${CurrentLeft - ((GrassSpeed/3) * DeltaTime)}px`;
-
-        if (Cloud.offsetLeft + Cloud.offsetWidth < 0)
-        {
-            Cloud.remove();
-            PupClouds.splice(i, 1);
+            Object.remove();
+            Objects.splice(i, 1);
         }
     }
 }
