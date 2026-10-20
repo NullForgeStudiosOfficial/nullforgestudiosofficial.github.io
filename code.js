@@ -51,17 +51,6 @@ let NextPage = null
 let ExtrasPage = document.getElementById("ExtrasPage");
 let ExtrasExitButton = document.getElementById("ExtrasExitButton");
 
-let NESPlusButton = document.getElementById("NESPlusButton");
-let RealmQuizButton = document.getElementById("RealmQuizButton");
-let StatQuizButton = document.getElementById("StatQuizButton");
-
-let ExtrasNESPlusInfoBox = document.getElementById("ExtrasNESPlusInfoBox");
-let ExtrasRealmQuizInfoBox = document.getElementById("ExtrasRealmQuizInfoBox");
-let ExtrasStatQuizInfoBox = document.getElementById("ExtrasStatQuizInfoBox");
-
-let ExtrasConfirmButton = document.getElementById("ExtrasConfirmButton");
-let ExtrasCurrentSelection = "None";
-
 
 function Randomizer(min,max)
 {
@@ -139,7 +128,7 @@ DoorVoid.addEventListener("click", function()
 
 DoorEimon.addEventListener("click", function()
 {
-    
+    ChangePage(DoorPage,QuizPage)
 });
 
 DoorElusia.addEventListener("click", function()
@@ -400,6 +389,14 @@ let PupButton = document.getElementById("PupButton");
 let VexButton = document.getElementById("VexButton");
 let FoxButton = document.getElementById("FoxButton");
 
+let ExitQuizes = document.getElementById("ExitQuizes");
+
+let QuizPage = document.getElementById("QuizPage");
+
+let NESPlusButton = document.getElementById("NESPlusButton");
+let RealmQuizButton = document.getElementById("RealmQuizButton");
+let StatQuizButton = document.getElementById("StatQuizButton");
+
 
 async function ExtrasTurnOffBoxes()
 {
@@ -455,6 +452,18 @@ FoxButton.addEventListener("click", function()
 ExtrasExitButton.addEventListener("click", function()
 {
     ChangePage(ExtrasPage,DoorPage)
+});
+
+ExitQuizes.addEventListener("click", function()
+{
+    ChangePage(QuizPage,DoorPage)
+});
+
+RealmQuizButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("RealmQuiz/index.html")
 });
 
 
@@ -529,6 +538,11 @@ async function LoadEverything()
     await Promise.all([...ImageURLs].map(async URL =>
     {
         const PreloadedImage = new Image();
+
+        if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
+        {
+            return;
+        }
 
         PreloadedImage.src = URL;
 

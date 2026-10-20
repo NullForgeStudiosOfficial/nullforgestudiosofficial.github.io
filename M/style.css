@@ -99,7 +99,8 @@ body
 }
 
 
-#ExtrasPage
+#ExtrasPage,
+#QuizPage
 {
     display:none;
     position:absolute;
@@ -1070,6 +1071,60 @@ body
 
 
 
+#vertline
+{
+    position:absolute;
+    display:block;
+    left:50%;
+    top:-0%;
+    background-color: white;
+    width: 10px;
+    height:100%;
+    z-index: -1;
+}
+
+#horiline
+{
+    position:absolute;
+    display:block;
+    left:00%;
+    top:50%;
+    background-color: white;
+    height: 10px;
+    width:100%;
+    z-index: -1;
+}
+
+#ExitQuizes
+{
+    position: absolute;
+    top:47.5%;
+    left:30.5%;
+    aspect-ratio: 144/40;
+    width:40%;
+
+}
+
+#RealmQuizButton
+{
+    position: absolute;
+    top:30%;
+    left:5%;
+    aspect-ratio: 144/40;
+    width:40%;
+
+}
+
+#RealmQuizInfo
+{
+    position: absolute;
+    top:16%;
+    left:25%;
+    width:40%;
+    font-size: clamp(1vw,4.5vw,10vw);
+    white-space: pre-line;
+
+}
 
 
 
@@ -1178,6 +1233,26 @@ body
 }
 
 
+#RealmQuizButton
+{
+    position: absolute;
+    top:38%;
+    left:5%;
+    aspect-ratio: 144/40;
+    width:40%;
+
+}
+
+#RealmQuizInfo
+{
+    position: absolute;
+    top:21%;
+    left:25%;
+    width:40%;
+    font-size: clamp(1vw,4.5vw,10vw);
+    white-space: pre-line;
+
+}
 
 
 

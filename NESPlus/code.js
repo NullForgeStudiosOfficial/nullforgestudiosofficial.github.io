@@ -373,6 +373,11 @@ async function LoadEverything()
     {
         const PreloadedImage = new Image();
 
+        if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
+        {
+            return;
+        }
+
         PreloadedImage.src = URL;
 
         try

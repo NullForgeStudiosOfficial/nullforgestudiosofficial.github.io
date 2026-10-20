@@ -22,6 +22,7 @@
     src: url("UniversalAssets/LilitaOne.ttf")
 }
 
+
 *
 {
     box-sizing: border-box;
@@ -82,7 +83,8 @@ body
 }
 
 
-#ExtrasPage
+#ExtrasPage,
+#QuizPage
 {
     display:none;
     position:absolute;
@@ -1120,6 +1122,62 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     background-image: url(UniversalAssets/ElusiaButtonBackground.png);
 }
 
+#vertline
+{
+    position:absolute;
+    display:block;
+    left:50%;
+    top:-0%;
+    background-color: white;
+    width: 10px;
+    height:100%;
+    z-index: -1;
+}
+
+#horiline
+{
+    position:absolute;
+    display:block;
+    left:00%;
+    top:50%;
+    background-color: white;
+    height: 10px;
+    width:100%;
+    z-index: -1;
+}
+
+#ExitQuizes
+{
+    position: absolute;
+    top:44.5%;
+    left:40.5%;
+    aspect-ratio: 144/40;
+    width:20%;
+
+}
+
+#RealmQuizButton
+{
+    position: absolute;
+    top:25%;
+    left:15%;
+    aspect-ratio: 144/40;
+    width:20%;
+
+}
+
+#RealmQuizInfo
+{
+    position: absolute;
+    top:14%;
+    left:25%;
+    width:60%;
+    font-size: clamp(1vw,1.75vw,3vw);
+    white-space: pre-line;
+
+}
+
+
 
 @media (max-width: 1600px) {
     #EimonTitle
@@ -1187,11 +1245,10 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
         top:1%;
     }
 
-
-
-
-
-    
+    #ExitQuizes
+    {
+        top:45.5%;
+    }
 }
 
 @media (max-width: 1000px) {
@@ -1270,6 +1327,10 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     {
         top:1%;
     }
-
+    
+    #ExitQuizes
+    {
+        top:47%;
+    }
 
 }

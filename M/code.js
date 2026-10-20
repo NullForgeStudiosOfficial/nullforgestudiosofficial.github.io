@@ -296,16 +296,7 @@ let DoorFrame = document.getElementById("DoorFrame");
 let DoorClosedOpen = document.getElementById("DoorClosedOpen"); 
 
 
-let NESPlusButton = document.getElementById("NESPlusButton");
-let RealmQuizButton = document.getElementById("RealmQuizButton");
-let StatQuizButton = document.getElementById("StatQuizButton");
 
-let ExtrasNESPlusInfoBox = document.getElementById("ExtrasNESPlusInfoBox");
-let ExtrasRealmQuizInfoBox = document.getElementById("ExtrasRealmQuizInfoBox");
-let ExtrasStatQuizInfoBox = document.getElementById("ExtrasStatQuizInfoBox");
-
-let ExtrasConfirmButton = document.getElementById("ExtrasConfirmButton");
-let ExtrasCurrentSelection = "None";
 
 EnterDoor.addEventListener("click", function()
 {
@@ -332,7 +323,7 @@ EnterDoor.addEventListener("click", function()
             break;
 
         case "Eimon":
-
+            ChangePage(DoorPage,QuizPage)
             break;
 
         case "Elusia":
@@ -459,6 +450,14 @@ let PupButton = document.getElementById("PupButton");
 let VexButton = document.getElementById("VexButton");
 let FoxButton = document.getElementById("FoxButton");
 
+let ExitQuizes = document.getElementById("ExitQuizes");
+let QuizPage = document.getElementById("QuizPage");
+
+let NESPlusButton = document.getElementById("NESPlusButton");
+let RealmQuizButton = document.getElementById("RealmQuizButton");
+let StatQuizButton = document.getElementById("StatQuizButton");
+
+
 
 async function ExtrasTurnOffBoxes()
 {
@@ -515,6 +514,20 @@ ExtrasExitButton.addEventListener("click", function()
 {
     ChangePage(ExtrasPage,DoorPage)
 });
+
+ExitQuizes.addEventListener("click", function()
+{
+    ChangePage(QuizPage,DoorPage)
+});
+
+RealmQuizButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../RealmQuiz/index.html")
+});
+
+
 
 //-------------------------------
 

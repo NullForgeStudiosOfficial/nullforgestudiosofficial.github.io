@@ -215,7 +215,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -284,7 +284,7 @@ body
     pointer-events: none;
     image-rendering: pixelated ;
 
-    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
