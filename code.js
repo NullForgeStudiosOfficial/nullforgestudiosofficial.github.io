@@ -117,7 +117,7 @@ DoorSanctum.addEventListener("click", function()
 
 DoorYumalon.addEventListener("click", function()
 {
-    window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
+    window.open("https://ko-fi.com/nullforgestudiosofficial", "_blank");
     
 });
 
@@ -129,7 +129,7 @@ DoorIcolass.addEventListener("click", function()
 
 DoorVidulyn.addEventListener("click", function()
 {
-    window.open("https://nullforgestudiosofficial.github.io/Wiki/");
+    window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
 });
 
 DoorVoid.addEventListener("click", function()
@@ -139,30 +139,22 @@ DoorVoid.addEventListener("click", function()
 
 DoorEimon.addEventListener("click", function()
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Auli/index.html")
+    
 });
 
 DoorElusia.addEventListener("click", function()
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Pup/index.html")
+    
 });
 
 DoorGrimlowe.addEventListener("click", function()
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Vex/index.html")
+    window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
 });
 
 DoorSostrum.addEventListener("click", function()
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Fox/index.html")
+    window.open("https://nullforgestudiosofficial.github.io/Wiki/");
 });
 
 
@@ -187,11 +179,9 @@ async function Start()
 
     BlinkEyes()
 
-    await Sleep(250);
     LastTime = performance.now();
     requestAnimationFrame(Update);
 
-    await Sleep(100);
     document.getElementById("StartupBlack").remove();
 
 }
@@ -405,97 +395,62 @@ function UpdateSiteTransition()
 let BDMInfoBox = document.getElementById("BDMInfoBox");
 let BDMButton = document.getElementById("BDMButton");
 
-let KofiButton = document.getElementById("KofiButton");
-let KoFiInfoBox = document.getElementById("KoFiInfoBox");
-
-let WorkLogButton = document.getElementById("WorkLogButton");
-let WorkLogInfoBox = document.getElementById("WorkLogInfoBox");
+let AuliButton = document.getElementById("AuliButton");
+let PupButton = document.getElementById("PupButton");
+let VexButton = document.getElementById("VexButton");
+let FoxButton = document.getElementById("FoxButton");
 
 
 async function ExtrasTurnOffBoxes()
 {
-    ExtrasNESPlusInfoBox.style.display = "none";
-    ExtrasRealmQuizInfoBox.style.display = "none";
-    ExtrasStatQuizInfoBox.style.display = "none";
-    KoFiInfoBox.style.display = "none";
     BDMInfoBox.style.display = "none";
-    ExtrasConfirmButton.style.display = "block";
-    WorkLogInfoBox.style.display = "none";
-
 }
 
 
 NESPlusButton.addEventListener("click", function()
 {
-    ExtrasTurnOffBoxes()
-
-    ExtrasNESPlusInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "NESPlus";
+    LoadSite("NESPlus/index.html")
 });
 
-RealmQuizButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-
-    ExtrasRealmQuizInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "RealmQuiz";
-});
-
-StatQuizButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-
-    ExtrasStatQuizInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "StatQuiz";
-});
-
-KofiButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-    KoFiInfoBox.style.display = "block";
-    ExtrasConfirmButton.style.display = "none";
-});
 
 BDMButton.addEventListener("click", function()
 {
     ExtrasTurnOffBoxes()
     BDMInfoBox.style.display = "block";
-    ExtrasConfirmButton.style.display = "none";
-
 });
 
-WorkLogButton.addEventListener("click", function()
-{
-    ExtrasTurnOffBoxes()
-    WorkLogInfoBox.style.display = "block";
-    ExtrasCurrentSelection = "WorkLogs";
-
-});
-
-ExtrasConfirmButton.addEventListener("click", function()
+AuliButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    
-    switch(ExtrasCurrentSelection)
-    {
-        case "NESPlus":
-            LoadSite("NESPlus/index.html")
-            break;
+    LoadSite("Auli/index.html")
 
-        case "RealmQuiz":
-            LoadSite("RealmQuiz/index.html")
-            break;
-
-        case "StatQuiz":
-            LoadSite("StatQuiz/index.html")
-            break;
-
-        case "WorkLogs":
-                window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
-        break;
-    }
 });
+
+PupButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Pup/index.html")
+
+});
+
+VexButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Vex/index.html")
+
+});
+
+FoxButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Fox/index.html")
+
+});
+
 
 ExtrasExitButton.addEventListener("click", function()
 {
@@ -503,4 +458,93 @@ ExtrasExitButton.addEventListener("click", function()
 });
 
 
-Start()
+async function LoadEverything()
+{
+    const ImageURLs = new Set();
+    for (const Element of document.querySelectorAll("*"))
+    {
+        const Background = getComputedStyle(Element).backgroundImage;
+
+        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        {
+            ImageURLs.add(Match[1]);
+        }
+    }
+
+    for (const Image of document.images)
+    {
+        if (Image.currentSrc || Image.src)
+        {
+            ImageURLs.add(Image.currentSrc || Image.src);
+        }
+    }
+
+    for (const EyeImage of VoidEyesImages)
+    {
+        const Match = EyeImage.match(/url\(\s*["']?(.*?)["']?\s*\)/);
+
+        if (Match)
+        {
+            ImageURLs.add(new URL(Match[1], document.baseURI).href);
+        }
+    }
+
+    function ScanRules(Rules, BaseURL)
+    {
+        for (const Rule of Rules)
+        {
+            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            {
+                const URLString = Match[1];
+
+                try
+                {
+                    ImageURLs.add(new URL(URLString, BaseURL).href);
+                }
+                catch (Error)
+                {
+                    console.warn("Invalid image URL:", URLString);
+                }
+            }
+
+            if (Rule.cssRules)
+            {
+                ScanRules(Rule.cssRules, BaseURL);
+            }
+        }
+    }
+
+    for (const Sheet of document.styleSheets)
+    {
+        try
+        {
+            ScanRules(Sheet.cssRules, Sheet.href || document.baseURI);
+        }
+        catch (Error)
+        {
+            console.warn("Couldn't scan stylesheet:", Sheet.href);
+        }
+    }
+
+    await Promise.all([...ImageURLs].map(async URL =>
+    {
+        const PreloadedImage = new Image();
+
+        PreloadedImage.src = URL;
+
+        try
+        {
+            await PreloadedImage.decode();
+        }
+        catch (Error)
+        {
+            console.warn("Failed to load image:", URL, Error);
+        }
+    }));
+
+    console.log("Image preload finished:", ImageURLs.size, "URLs");
+
+    Start();
+}
+
+window.addEventListener("load", LoadEverything);

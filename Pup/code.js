@@ -127,15 +127,27 @@ async function Start()
 
 }
 
+let FPSFrames = 0;
+let FPSTimer = 0;
+let FPSMinimum = Infinity;
+let FPSMaximum = 0;
+
+
 
 function Update(CurrentTime)
 {
+
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    ScrollBackground();
-    ScrollButtonBackgrounds();
-    ScrollBoxBackgrounds();
+    if (!OnChannel3)
+    {
+        ScrollBackground();
+        ScrollButtonBackgrounds();
+        ScrollBoxBackgrounds();
+    }
+
+    
 
     if (TransitionRunning)
     {
@@ -152,13 +164,18 @@ function Update(CurrentTime)
         StartSite()
     }
 
+    if (DeltaTime > 0.025)
+    {
+        console.log("SLOW FRAME:", (DeltaTime * 1000).toFixed(2), "ms");
+    }
+
     if (PupEDHHDInfoBox.style.display == "block")
     {
        ScrollLines()
 
        if (OnChannel3)
        {
-            UpdateClouds();
+            MoveObjects(PupClouds, GrassSpeed / 3);
        }
 
        if (GameStarted)
@@ -166,16 +183,18 @@ function Update(CurrentTime)
             UpdatePupTimeAndScore()
             GrassScroll()
             CheckPupCollisions();
-            UpdateRocks();
-            
-            UpdateCoins();
-            UpdatePupJump();
+            MoveObjects(PupRocks, RockSpeed);
+            MoveObjects(PupCoins, RockSpeed);
 
+            UpdatePupJump();
        }
     }
 
+
     requestAnimationFrame(Update);
 }
+
+
 
 async function ScrollBackground()
 {
@@ -450,7 +469,7 @@ let PupCloudImages = [
 
 let ScreenGracePeriod = false
 let GrassSpeed = 500
-let RockSpeed = 460
+let RockSpeed = 500
 
 let PupHitBox = document.getElementById("PupHitBox");
 
@@ -589,7 +608,7 @@ function CleanUpGame()
     if (window.innerHeight < 650)
     {
 
-        PupSky.style.bottom = "+" + 18.25 + "%";
+        PupSky.style.bottom = "+" + 12.25 + "%";
 
         
     }
@@ -741,11 +760,16 @@ async function PupSpriteAnimation()
 
 function GrassScroll()
 {
-    GrassScrollNumber -= GrassSpeed  * DeltaTime;
+    const GrassWidth = PupGrass.clientWidth;
 
-    PupGrass.style.backgroundPositionX = GrassScrollNumber + "px";
+    GrassScrollNumber -= GrassSpeed * DeltaTime;
+    GrassScrollNumber %= GrassWidth;
+
+    PupGrassScroll.style.transform =
+        `translate3d(${GrassScrollNumber}px, 0, 0)`;
 }
 
+let ScoreTimer = 0;
 function UpdatePupTimeAndScore()
 {
     if (ScreenGracePeriod)
@@ -753,15 +777,25 @@ function UpdatePupTimeAndScore()
         return;
     }
 
-    PupGameTime += DeltaTime;
+    ScoreTimer += DeltaTime;
+
+    if (ScoreTimer < 1)
+    {
+        return;
+    }
+
+    let ElapsedSeconds = Math.floor(ScoreTimer);
+    ScoreTimer -= ElapsedSeconds;
+
+    PupGameTime += ElapsedSeconds;
 
     let CoinMultiplier = 1 + (PupCoinAmount * 0.1);
 
-    PupScore += 100 * CoinMultiplier * DeltaTime;
+    PupScore += 100 * CoinMultiplier * ElapsedSeconds;
 
-    InfoBarScore.innerText = Math.floor(PupScore);
-    InfoBarTime.innerText = Math.floor(PupGameTime);
-    InfoBarCoins.innerText = PupCoinAmount
+    InfoBarScore.textContent = Math.floor(PupScore);
+    InfoBarTime.textContent = Math.floor(PupGameTime);
+    InfoBarCoins.textContent = PupCoinAmount;
 
 
 }
@@ -956,6 +990,8 @@ function SpawnRock()
 {
     let Rock = document.createElement("div");
 
+    Rock.GameX = 0;
+
     RandomRockImage = Randomizer(0, PupRockImages.length-1)
 
     Rock.style.backgroundImage = `url("${PupRockImages[RandomRockImage]}")`
@@ -1008,6 +1044,8 @@ function SpawnCoin()
 {
     let Coin = document.createElement("div");
 
+    Coin.GameX = 0;
+
     Coin.className = "Coin";
     Coin.style.display = "block";
     Coin.style.left = "100%";
@@ -1027,6 +1065,8 @@ function SpawnCoin()
 function SpawnCloud()
 {
     let Cloud = document.createElement("div");
+
+    Cloud.GameX = 0;
     
     RandomCloudImage = Randomizer(0, PupCloudImages.length-1)
 
@@ -1057,71 +1097,20 @@ function SpawnCloud()
     PupClouds.push(Cloud);
 }
 
-function UpdateRocks()
+function MoveObjects(Objects, Speed)
 {
-    for (let i = PupRocks.length - 1; i >= 0; i--)
+    for (let i = Objects.length - 1; i >= 0; i--)
     {
-        let Rock = PupRocks[i];
+        let Object = Objects[i];
 
-        let CurrentLeft = Rock.offsetLeft;
+        Object.GameX -= Speed * DeltaTime;
 
-        Rock.style.left = `${CurrentLeft - (RockSpeed * DeltaTime)}px`;
+        Object.style.transform = `translateX(${Object.GameX}px)`;
 
-        if (Rock.offsetLeft + Rock.offsetWidth < 0)
+        if (Object.getBoundingClientRect().right < 0)
         {
-            Rock.remove();
-            PupRocks.splice(i, 1);
-        }
-    }
-}
-
-function UpdateCoins()
-{
-    for (let i = PupCoins.length - 1; i >= 0; i--)
-    {
-        let Coin = PupCoins[i];
-        let CoinRockHitBox = Coin.querySelector(".CoinRockHitBox");
-
-        let CurrentLeft = Coin.offsetLeft;
-
-        Coin.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
-
-        if (Coin.offsetLeft + Coin.offsetWidth < 0)
-        {
-            Coin.remove();
-            PupCoins.splice(i, 1);
-            continue;
-        }
-
-        for (let Rock of PupRocks)
-        {
-            let RockHitBox = Rock.querySelector(".RockHitBox");
-
-            if (IsColliding(CoinRockHitBox, RockHitBox))
-            {
-
-                Coin.remove();
-                PupCoins.splice(i, 1);
-                break;
-            }
-        }
-    }
-}
-
-function UpdateClouds()
-{
-    for (let i = PupClouds.length - 1; i >= 0; i--)
-    {
-        let Cloud = PupClouds[i];
-
-        let CurrentLeft = Cloud.offsetLeft;
-
-        Cloud.style.left = `${CurrentLeft - ((GrassSpeed/3) * DeltaTime)}px`;
-
-        if (Cloud.offsetLeft + Cloud.offsetWidth < 0)
-        {
-            Cloud.remove();
-            PupClouds.splice(i, 1);
+            Object.remove();
+            Objects.splice(i, 1);
         }
     }
 }
@@ -1205,4 +1194,108 @@ function ScrollLines()
     
 }
 
-Start()
+async function LoadEverything()
+{
+    const ImageURLs = new Set();
+
+    const PupAssets = [
+    ...PupRunning,
+    ...PupRockImages,
+    ...PupCloudImages
+    ];
+
+    for (const Asset of PupAssets)
+    {
+        ImageURLs.add(new URL(Asset, document.baseURI).href);
+    }
+
+    for (const Element of document.querySelectorAll("*"))
+    {
+        const Background = getComputedStyle(Element).backgroundImage;
+
+        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        {
+            ImageURLs.add(Match[1]);
+        }
+    }
+
+    for (const Image of document.images)
+    {
+        if (Image.currentSrc || Image.src)
+        {
+            ImageURLs.add(Image.currentSrc || Image.src);
+        }
+    }
+
+    for (const EyeImage of VoidEyesImages)
+    {
+        const Match = EyeImage.match(/url\(\s*["']?(.*?)["']?\s*\)/);
+
+        if (Match)
+        {
+            ImageURLs.add(new URL(Match[1], document.baseURI).href);
+        }
+    }
+
+    function ScanRules(Rules, BaseURL)
+    {
+        for (const Rule of Rules)
+        {
+            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            {
+                const URLString = Match[1];
+
+                try
+                {
+                    ImageURLs.add(new URL(URLString, BaseURL).href);
+                }
+                catch (Error)
+                {
+                    console.warn("Invalid image URL:", URLString);
+                }
+            }
+
+            if (Rule.cssRules)
+            {
+                ScanRules(Rule.cssRules, BaseURL);
+            }
+        }
+    }
+
+    for (const Sheet of document.styleSheets)
+    {
+        try
+        {
+            ScanRules(Sheet.cssRules, Sheet.href || document.baseURI);
+        }
+        catch (Error)
+        {
+            console.warn("Couldn't scan stylesheet:", Sheet.href);
+        }
+    }
+
+    await Promise.all([...ImageURLs].map(async URL =>
+    {
+        const PreloadedImage = new Image();
+
+        if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
+        {
+            return;
+        }
+
+        PreloadedImage.src = URL;
+
+        try
+        {
+            await PreloadedImage.decode();
+        }
+        catch (Error)
+        {
+            console.warn("Failed to load image:", URL, Error);
+        }
+    }));
+
+    Start();
+}
+
+window.addEventListener("load", LoadEverything);

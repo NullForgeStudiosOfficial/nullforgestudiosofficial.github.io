@@ -646,8 +646,8 @@ body
     display:block;
     width:100%;
     text-align: center;
-    bottom: -22%;
-    left:-10%;
+    top:88%;
+    left:-22%;
 
     font-size: clamp(0.5vw,3.5vw,3vw);
 }
@@ -1010,23 +1010,30 @@ body
 
 #PupGrass
 {
-    display:block;
-    position:absolute;
-    image-rendering: pixelated;
-    display:block;
-
-    height:20%;
-    bottom:-2%;
-    left:1%;
-
-    width:98%;
+    overflow:hidden;
     z-index: -1;
+    aspect-ratio: 320/40;
+    width:98%;
+    position: absolute;
+    top:82.5%;
+    left:1%;
+}
 
-    background-image:url("../UniversalAssets/PupGrass.png");
-    background-size:100% 100%;
-    background-repeat:repeat-x;
+#PupGrassScroll {
+    position: absolute;
+    top: 0;
+    left: 0;
 
-    pointer-events:none;
+    width: 200%;
+    height: 100%;
+
+    background-image: url("../UniversalAssets/PupGrass.png");
+    background-size: 50% 100%;
+    background-repeat: repeat-x;
+
+    image-rendering: pixelated;
+    will-change: transform;
+    pointer-events: none;
 }
 
 #ScanLines
@@ -1041,10 +1048,10 @@ body
 
     background-image: url("../UniversalAssets/ScanLines.png");
 
-    background-size: 5%;
+    background-size: 3%;
     background-repeat: repeat;
 
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 }
 
@@ -1056,6 +1063,11 @@ body
 
 
 @media (max-width: 1600px) {
+
+    #PupGrass
+    {
+    top:84.5%;
+}
 
     #PupInfoBox
     {
@@ -1115,10 +1127,8 @@ body
 
     #LastHighScore
     {
-        width:100%;
-        text-align: center;
-        bottom: 6%;
-        left:-20%;
+        top: 90%;
+        left:-15%;
     }
 }
 
@@ -1149,11 +1159,11 @@ body
 
     #PupSprite
     {
-        top:75%;
+        top:80%;
     }
 
     .Rock{
-        top:73%;
+        top:79%;
     }
 
 
@@ -1185,6 +1195,17 @@ body
     {
         top:2%;
     }
+
+    #PupGrass
+    {
+    top:88%;
+}
+
+    #PupSky
+    {
+        top:100%;
+    }
+
 
     
 

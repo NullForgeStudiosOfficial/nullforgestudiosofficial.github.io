@@ -786,14 +786,14 @@ body
 {
     position: absolute;
 
-    top: 50%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     width: 100%;
 
     text-align: center;
-    font-size: clamp(1vw,6.125vw,10vw);
+    font-size: clamp(1vw,5vw,10vw);
     font-family: Ardron;
     color: whitesmoke;
 
@@ -1048,153 +1048,25 @@ body
 }
 
 
-
-#VoidSupporters,
-#EimonSupporters,
-#SostrumSupporters,
-#ElusiaSupporters,
-#IcolassSupporters,
-#VidulynSupporters,
-#GrimloweSupporters,
-#YumalonSupporters
+#AuliButton .WideButtonBackground
 {
-    position: absolute;
-    display: block;
-
-    aspect-ratio: 1/1;
-    width: 47%;
-
-    pointer-events: auto;
-    z-index: 0;
-    isolation: isolate;
+    background-image: url(../UniversalAssets/EimonButtonBackground.png);
 }
 
-
-#VoidSupporters::before,
-#EimonSupporters::before,
-#SostrumSupporters::before,
-#ElusiaSupporters::before,
-#IcolassSupporters::before,
-#VidulynSupporters::before,
-#GrimloweSupporters::before
+#PupButton .WideButtonBackground
 {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: repeat;
-    background-size: 6px 6px;
-
-    filter: brightness(75%);
-    z-index: -1;
+    background-image: url(../UniversalAssets/ElusiaButtonBackground.png);
 }
 
-#YumalonSupporters::before
+#VexButton .WideButtonBackground
 {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: repeat;
-    background-size: 6px 6px;
-
-    filter: brightness(75%);
-    z-index: -1;
+    background-image: url(../UniversalAssets/GrimloweButtonBackground.png);
 }
 
-.SupportersText
+#FoxButton .WideButtonBackground
 {
-    position:relative;
-    white-space:pre-line;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    color:white;
-
-    font-size: clamp(0.5vw,3vw,10vw);
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-    top:2%;
-    filter: brightness(100%);
+    background-image: url(../UniversalAssets/ElusiaButtonBackground.png);
 }
-    
-
-#VoidSupporters
-{
-    top: 18%;
-    left: 0%;
-
-    background-image: url("../UniversalAssets/VoidButtonBackground.png");
-}
-
-#EimonSupporters
-{
-    top: 18%;
-    left: 50%;
-
-    background-image: url("../UniversalAssets/EimonButtonBackground.png");
-    
-}
-
-#SostrumSupporters
-{
-    top: 47%;
-    left: 0%;
-
-    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
-}
-
-
-
-#ElusiaSupporters
-{
-    top:47%;
-    left: 50%;
-
-    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
-    
-}
-
-#IcolassSupporters
-{
-    top: 76%;
-    left: 0%;
-
-    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
-    
-}
-
-#VidulynSupporters
-{
-    top: 76%;
-    left: 50%;
-
-    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
-    
-}
-
-
-#GrimloweSupporters
-{
-    top: 105%;
-    left: 0%;
-
-    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
-    
-}
-
-#YumalonSupporters
-{
-    top: 105%;
-    left: 50%;
-
-    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
-    
-}
-
-    
 
 
 
@@ -1306,58 +1178,6 @@ body
 }
 
 
-#VoidSupporters
-{
-    top: 22%;
-
-}
-
-#EimonSupporters
-{
-    top: 22%;
-
-    
-}
-
-#SostrumSupporters
-{
-    top: 61%;
-
-}
-
-
-
-#ElusiaSupporters
-{
-    top:61%;
-
-}
-
-#IcolassSupporters
-{
-    top: 100%;
-}
-
-#VidulynSupporters
-{
-    top: 100%;
-
-}
-
-
-#GrimloweSupporters
-{
-    top: 138%;
-
-}
-
-#YumalonSupporters
-{
-    top: 138%;
-
-}
-
-    
 
 
 

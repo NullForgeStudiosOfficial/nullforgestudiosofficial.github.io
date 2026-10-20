@@ -133,7 +133,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:49.5%;
-    left:28%;
+    left:21%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -143,7 +143,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:59.5%;
-    left:28%;
+    left:27%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -153,7 +153,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:69.5%;
-    left:28%;
+    left:21%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -163,7 +163,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:80.5%;
-    left:28%;
+    left:24%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -1073,36 +1073,6 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 
 
-
-.SpecialProfileQuestion
-{
-    font-family: Ardron;
-    font-size: clamp(0.5vw,2vw,3vw);
-    background-color:rgba(0, 255, 255, 0.333);
-    text-align: center;
-    position: relative;
-
-    left:1%;
-    padding-top: 1%;
-    width: 98.25%;
-}
-
-.SpecialProfileAnswer
-{
-    font-family: Ardron;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    position: relative;
-    align-items: center;
-    white-space:pre-line;
-    padding-bottom: 30px;
-    width:90%;
-    left:4%;
-    font-size: clamp(0.5vw,1.50vw,1.10vw);
-}
-
-
 #BDMPic1
 {
     position: absolute;
@@ -1130,165 +1100,44 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     background-size: 100% 100%;
 }
 
-
-#VoidSupporters,
-#EimonSupporters,
-#SostrumSupporters,
-#ElusiaSupporters,
-#IcolassSupporters,
-#VidulynSupporters,
-#GrimloweSupporters,
-#YumalonSupporters
+#AuliButton .NormalButtonBackground
 {
-    position: absolute;
-    display: block;
-
-    aspect-ratio: 1/1;
-    width: 30%;
-
-    pointer-events: auto;
-    z-index: 0;
-    isolation: isolate;
+    background-image: url(UniversalAssets/EimonButtonBackground.png);
 }
 
-
-#VoidSupporters::before,
-#EimonSupporters::before,
-#SostrumSupporters::before,
-#ElusiaSupporters::before,
-#IcolassSupporters::before,
-#VidulynSupporters::before,
-#GrimloweSupporters::before
+#PupButton .NormalButtonBackground
 {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: repeat;
-    background-size: 6px 6px;
-
-    filter: brightness(75%);
-    z-index: -1;
+    background-image: url(UniversalAssets/ElusiaButtonBackground.png);
 }
 
-#YumalonSupporters::before
+#VexButton .NormalButtonBackground
 {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: inherit;
-    background-repeat: repeat;
-    background-size: 6px 6px;
-
-    filter: brightness(75%);
-    z-index: -1;
+    background-image: url(UniversalAssets/GrimloweButtonBackground.png);
 }
 
-.SupportersText
+#FoxButton .NormalButtonBackground
 {
-    position:relative;
-    white-space:pre-line;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    color:white;
-
-    font-size: clamp(0.5vw,1.50vw,2vw);
-    overflow-y: auto;
-    overflow-x: hidden;
-    text-align: center;
-    top:2%;
-    filter: brightness(100%);
+    background-image: url(UniversalAssets/ElusiaButtonBackground.png);
 }
-    
-
-#VoidSupporters
-{
-    top: 15%;
-    left: 1%;
-
-    background-image: url("../UniversalAssets/VoidButtonBackground.png");
-}
-
-#EimonSupporters
-{
-    top: 15%;
-    left: 35%;
-
-    background-image: url("../UniversalAssets/EimonButtonBackground.png");
-    
-}
-
-#SostrumSupporters
-{
-    top: 15%;
-    left: 69%;
-
-    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
-}
-
-
-
-#ElusiaSupporters
-{
-    top: 65%;
-    left: 1%;
-
-    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
-    
-}
-
-#IcolassSupporters
-{
-    top: 65%;
-    left: 35%;
-
-    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
-    
-}
-
-#VidulynSupporters
-{
-    top: 65%;
-    left: 69%;
-
-    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
-    
-}
-
-
-#GrimloweSupporters
-{
-    top: 115%;
-    left: 19%;
-
-    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
-    
-}
-
-#YumalonSupporters
-{
-    top: 115%;
-    left: 53%;
-
-    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
-    
-}
-
-    
 
 
 @media (max-width: 1600px) {
-    #EimonTitle,
-    #ElusiaTitle,
-    #GrimloweTitle
+    #EimonTitle
+    {
+        left: 18%;
+    }
+    #ElusiaTitle
     {
         left: 25%;
     }
+    #GrimloweTitle
+    {
+        left: 18%;
+    }
+    
     #SostrumTitle
     {
-        left: 25%;
+        left:21%;
     }
     
     #VidulynTitle,
@@ -1346,16 +1195,22 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 }
 
 @media (max-width: 1000px) {
-    #EimonTitle,
-    #ElusiaTitle,
+    #EimonTitle
+    {
+        left: 12%;
+    }
+    #ElusiaTitle
+    {
+        left: 19%;
+    }
     #GrimloweTitle
     {
-        left: 18%;
+        left: 12%;
     }
-
+    
     #SostrumTitle
     {
-        left: 18%;
+        left:15%;
     }
 
 

@@ -941,4 +941,94 @@ function QuizNextQuestion(buttonnumber)
     QuizQuestions.shift()
 }
 
-Start()
+
+async function LoadEverything()
+{
+    const ImageURLs = new Set();
+    for (const Element of document.querySelectorAll("*"))
+    {
+        const Background = getComputedStyle(Element).backgroundImage;
+
+        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        {
+            ImageURLs.add(Match[1]);
+        }
+    }
+
+    for (const Image of document.images)
+    {
+        if (Image.currentSrc || Image.src)
+        {
+            ImageURLs.add(Image.currentSrc || Image.src);
+        }
+    }
+
+    for (const EyeImage of VoidEyesImages)
+    {
+        const Match = EyeImage.match(/url\(\s*["']?(.*?)["']?\s*\)/);
+
+        if (Match)
+        {
+            ImageURLs.add(new URL(Match[1], document.baseURI).href);
+        }
+    }
+
+    function ScanRules(Rules, BaseURL)
+    {
+        for (const Rule of Rules)
+        {
+            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            {
+                const URLString = Match[1];
+
+                try
+                {
+                    ImageURLs.add(new URL(URLString, BaseURL).href);
+                }
+                catch (Error)
+                {
+                    console.warn("Invalid image URL:", URLString);
+                }
+            }
+
+            if (Rule.cssRules)
+            {
+                ScanRules(Rule.cssRules, BaseURL);
+            }
+        }
+    }
+
+    for (const Sheet of document.styleSheets)
+    {
+        try
+        {
+            ScanRules(Sheet.cssRules, Sheet.href || document.baseURI);
+        }
+        catch (Error)
+        {
+            console.warn("Couldn't scan stylesheet:", Sheet.href);
+        }
+    }
+
+    await Promise.all([...ImageURLs].map(async URL =>
+    {
+        const PreloadedImage = new Image();
+
+        PreloadedImage.src = URL;
+
+        try
+        {
+            await PreloadedImage.decode();
+        }
+        catch (Error)
+        {
+            console.warn("Failed to load image:", URL, Error);
+        }
+    }));
+
+    console.log("Image preload finished:", ImageURLs.size, "URLs");
+
+    Start();
+}
+
+window.addEventListener("load", LoadEverything);
