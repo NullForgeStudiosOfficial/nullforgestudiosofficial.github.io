@@ -319,7 +319,7 @@ body
 {
     font-family: Lexend;
     font-size: clamp(0.5vw,2vw,3vw);
-    background-color:rgba(0, 64, 125, 0.333);
+    background-color:rgba(0, 25, 75, 0.75);
     text-align: center;
     position: relative;
 

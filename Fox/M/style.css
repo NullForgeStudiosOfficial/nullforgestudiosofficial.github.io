@@ -478,7 +478,7 @@ body
 {
     font-family: Skranji;
     font-size: clamp(0.5vw,6vw,20vw);
-    background-color:rgba(0, 158, 158, 0.884);
+    background-color:rgba(0, 25, 75, 0.75);
     text-align: center;
     position: relative;
 
