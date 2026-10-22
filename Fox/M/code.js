@@ -300,7 +300,7 @@ FoxPersonalButton.addEventListener("click", function()
 
 FoxRefButton.addEventListener("click", function()
 {
-    window.open("../../UniversalAssets/Foxpfp2.png", "_blank");
+    window.open("../../UniversalAssets/Foxpfp3.png", "_blank");
 });
 
 
