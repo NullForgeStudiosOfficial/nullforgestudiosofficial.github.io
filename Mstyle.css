@@ -1300,6 +1300,13 @@ body
 
 }
 
+#MainBackground
+{
+    position:absolute;
+    left:-85%;
+    top:-25%;
+
+}
 
 
 }
