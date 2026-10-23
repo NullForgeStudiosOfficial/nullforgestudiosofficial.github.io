@@ -95,9 +95,10 @@ function Update(CurrentTime)
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    ScrollBackground();
+    VoidSpin()
     ScrollButtonBackgrounds();
     RotateDoorRealm();
+    
 
     if (TransitionRunning)
     {
@@ -405,6 +406,13 @@ async function BlinkEyes()
         Eye.style.backgroundImage = VoidEyesImages[0];
         await Sleep(75);
     }
+}
+function VoidSpin()
+{
+    MainBackgroundScroll += 100 * DeltaTime;
+
+    MainBackground.style.transform = `rotate(${MainBackgroundScroll}deg)`;
+
 }
 
 

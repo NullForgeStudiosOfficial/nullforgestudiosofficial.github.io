@@ -114,16 +114,17 @@ body
 #MainBackground
 {
     position:absolute;
-    height: 100%;
 
-    aspect-ratio: 16/9;
-    left:-107%;
+    height:150%;
+    aspect-ratio: 1/1;
+    left:-110%;
+    top:-25%;
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
-    background-size: 100%;
-    background-repeat: repeat-x;
+    background-image: url(../../UniversalAssets/VoidLarge.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     background-position: 0 (--var 0px);
 }
 

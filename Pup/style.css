@@ -78,7 +78,7 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-image: url(../UniversalAssets/ElusiaBack.png);
     background-size: 100% 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);

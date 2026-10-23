@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: Skranji;
-    src: url("../../UniversalAssets/Skranji.ttf")
+    src: url("../UniversalAssets/Skranji.ttf")
 }
 
 
@@ -63,7 +63,7 @@ body
     width:clamp(5vw,30vw,30vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-image: url("../UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -81,7 +81,7 @@ body
     width:clamp(1vw,10vw,15vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/Favicon.png");
+    background-image: url("../UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -99,7 +99,7 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../../UniversalAssets/DesktopBackground.png);
+    background-image: url(../UniversalAssets/EimonBack.png);
     background-size: 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
@@ -129,7 +129,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileTopDownTransition.png");
+    background-image: url("../UniversalAssets/MobileTopDownTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -145,7 +145,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileTopTransition.png");
+    background-image: url("../UniversalAssets/MobileTopTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -163,7 +163,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileBottomTransition.png");
+    background-image: url("../UniversalAssets/MobileBottomTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -195,7 +195,7 @@ body
     pointer-events: auto;
     image-rendering: pixelated;
 
-    background-image: url("../../UniversalAssets/MobileButtonInfoBox.png");
+    background-image: url("../UniversalAssets/MobileButtonInfoBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -215,7 +215,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -233,7 +233,7 @@ body
     aspect-ratio: 440 / 203;
     top: 5%;
     left: 1%;
-    background-image: url("../../UniversalAssets/MobileButtonBox.png");
+    background-image: url("../UniversalAssets/MobileButtonBox.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 }
@@ -283,7 +283,7 @@ body
     pointer-events: none;
     image-rendering: pixelated ;
 
-    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -320,7 +320,7 @@ body
     aspect-ratio: 440/65;
 
     background-color: transparent;
-    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-image: url("../UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -338,7 +338,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-image: url("../UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -359,7 +359,7 @@ body
     aspect-ratio: 440/32;
 
     background-color: transparent;
-    background-image: url("../../UniversalAssets/ThinMobileButton.png");
+    background-image: url("../UniversalAssets/ThinMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -377,7 +377,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../../UniversalAssets/ThinMobileButton.png");
+    background-image: url("../UniversalAssets/ThinMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -400,7 +400,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -422,7 +422,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -506,7 +506,7 @@ body
 {
     position:relative;
 
-    background-image: url("../../UniversalAssets/bakugo.png");
+    background-image: url("../UniversalAssets/bakugo.png");
 
     width: 75%;
     left:15%;
@@ -521,7 +521,7 @@ body
 {
     position:absolute;
 
-    background-image: url("../../UniversalAssets/Aulipfp1.png");
+    background-image: url("../UniversalAssets/Aulipfp1.png");
 
     width: 75%;
     left:15%;
@@ -545,7 +545,7 @@ body
 {
     position:absolute;
 
-    background-image: url("../../UniversalAssets/Aulipfp2.png");
+    background-image: url("../UniversalAssets/Aulipfp2.png");
     left:20%;
     top:60%;
     width: 65%;
@@ -565,7 +565,7 @@ body
     left:-16.5%;
     width:133%;
     height:133%;
-    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("../UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
     pointer-events: auto;
 

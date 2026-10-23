@@ -910,9 +910,9 @@ CopyCodeButton.addEventListener("click", async function()
 
 StartQuizButton.addEventListener("click", function()
 {
-    //ChangePage(StartingPage,QuizPage)
+    ChangePage(StartingPage,QuizPage)
     //ChangePage(StartingPage,TieBreakerPage)
-    ChangePage(StartingPage,ResultsPage)
+    //ChangePage(StartingPage,ResultsPage)
     
 });
 
