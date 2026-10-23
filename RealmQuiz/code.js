@@ -1,22 +1,18 @@
 // ----------- whateverthefuck
+const DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+
+let Desktop = DesktopQuery.matches;
+
+DesktopQuery.addEventListener("change", () => {
+    Desktop = DesktopQuery.matches;
+});
 
 let LastTime = 0;
 let DeltaTime = 0;
-
 let MainBackground = document.getElementById("MainBackground")
 let MainBackgroundScroll = 0
-
 let ButtonBackgrounds = []
 let ButtonBackgroundScroll = 0;
-let InfoBoxBackgroundScroll = 0;
-
-let VoidEyesImages = [
-    'url("../UniversalAssets/VoidEyeFull.png")',
-    'url("../UniversalAssets/VoidEyes66.png")',
-    'url("../UniversalAssets/VoidEyes33.png")',
-    'url("../UniversalAssets/VoidEyes0.png")',
-]
-
 let LeftRightTransition = document.getElementById("FullLeftRightTransition")
 let LeftTransition = document.getElementById("LeftTransition")
 let RightTransition = document.getElementById("RightTransition")
@@ -31,6 +27,14 @@ let StartSiteT = true;
 let StartTransitionX = 0;
 let PreviousPage = null
 let NextPage = null
+
+//--------- Add These
+
+function Sleep(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 
 
 function Randomizer(min,max)
@@ -58,6 +62,7 @@ document.addEventListener("keydown", function(event)
         event.preventDefault();
     }
 });
+
 
 
 async function Start()
@@ -120,6 +125,8 @@ function Update(CurrentTime)
     requestAnimationFrame(Update);
 }
 
+
+
 function ScrollButtonBackgrounds()
 {
     ButtonBackgroundScroll -= 25 * DeltaTime;
@@ -130,55 +137,30 @@ function ScrollButtonBackgrounds()
     }
 }
 
-function VoidSpin()
-{
-    MainBackgroundScroll += 100 * DeltaTime;
-
-    MainBackground.style.transform = `rotate(${MainBackgroundScroll}deg)`;
-
-}
-
-function Sleep(ms)
-{
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 
-async function BlinkEyes()
-{
-
-    while (true)
-    {
-        for (let Eye of VoidEyesThings)
-        {
-            
-        Eye.style.backgroundImage = VoidEyesImages[0];
-
-        await Sleep(Math.random() * 3000 + 3000);
-
-        Eye.style.backgroundImage = VoidEyesImages[1];
-        await Sleep(75);
-
-        Eye.style.backgroundImage = VoidEyesImages[2];
-        await Sleep(75);
-
-        Eye.style.backgroundImage = VoidEyesImages[3];
-        await Sleep(75);
-
-        Eye.style.backgroundImage = VoidEyesImages[2];
-        await Sleep(75);
-
-        Eye.style.backgroundImage = VoidEyesImages[1];
-        await Sleep(75);
-
-        Eye.style.backgroundImage = VoidEyesImages[0];
-        await Sleep(75);
-        }
-    }
-}
 
 async function ChangePage(PageID1,PageID2)
 {
+    PreviousPage = PageID1
+    NextPage = PageID2
+
+    
+
+    if (Desktop)
+    {
+        TransitionX = window.innerWidth;
+    }
+    else
+    {
+        TransitionX = window.innerHeight;
+    }
+
+    QuizTransition = false
+    ChangedPage = false;
+    TransitionRunning = true
+    LeftRightTransition.style.display = "block";
+
     if (PageID2 === ResultsPage)
     {
         let highestresult = 0
@@ -237,19 +219,20 @@ async function ChangePage(PageID1,PageID2)
 
     }
 
-    PreviousPage = PageID1
-    NextPage = PageID2
-
-    QuizTransition = false
-    TransitionX = window.innerWidth;
-    ChangedPage = false;
-    TransitionRunning = true
+    
 }
 
 async function ChangeSite()
 {
     ChangedSite = true
-    SiteTransitionX = window.innerWidth;
+    if (Desktop)
+    {
+        SiteTransitionX = window.innerWidth;
+    }
+    else
+    {
+        SiteTransitionX = window.innerHeight;
+    }
     SiteTransitionRunning = true
     RightTransition.style.display = "block";
 }
@@ -257,18 +240,29 @@ async function ChangeSite()
 async function StartSite()
 {
     LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+   
 
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
+    if (Desktop)
+    {
+        StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+        StartTransitionX -= 10000 * DeltaTime;
+        LeftTransition.style.left = StartTransitionX + "px";
+        LeftTransition.style.right = "auto";
+    }
+    else
+    {
+        StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
+        StartTransitionX -= 5000 * DeltaTime;
+        LeftTransition.style.top = StartTransitionX + "px";
+        LeftTransition.style.bottom = "auto";
+    }
+    
 
     if (StartSiteT && StartTransitionX <= StopX)
     {
-            StartSiteT = false;
-            StartSiteT = false;
-            LeftTransition.style.display = "none";
-            return
+        StartSiteT = false;
+        LeftTransition.style.display = "none";
+        return
     }
 }
 
@@ -283,72 +277,122 @@ async function LoadSite(SiteString)
     window.location.href = SiteString
 }
 
-
 function UpdateTransition()
 {
     
     if (!QuizTransition)
     {
         LeftRightTransition.style.display = "block";
-        TransitionX -= 15000 * DeltaTime;
-        LeftRightTransition.style.left = TransitionX + "px";
-
-        if (!ChangedPage && TransitionX + LeftRightTransition.offsetWidth / 2 <= window.innerWidth / 2)
+        if (Desktop)
         {
-            ChangedPage = true;
-            PreviousPage.style.display = "none";
-            NextPage.style.display = "flex";
-            
-        }
-
-        if(ChangedPage && TransitionX + LeftRightTransition.offsetWidth <= 0)
-        {
-            TransitionRunning = false;
-            ChangedPage = false
-            TransitionX = window.innerWidth;
+            TransitionX -= 10000 * DeltaTime;
             LeftRightTransition.style.left = TransitionX + "px";
-            LeftRightTransition.style.display = "none";
+
+            if (!ChangedPage && TransitionX + LeftRightTransition.offsetWidth / 2 <= window.innerWidth / 2)
+            {
+                ChangedPage = true;
+                PreviousPage.style.display = "none";
+                NextPage.style.display = "flex";
+                
+            }
+
+            if(ChangedPage && TransitionX + LeftRightTransition.offsetWidth <= 0)
+            {
+                TransitionRunning = false;
+                ChangedPage = false
+                TransitionX = window.innerWidth;
+                LeftRightTransition.style.left = TransitionX + "px";
+                LeftRightTransition.style.display = "none";
+            }
+        }
+        else
+        {
+            TransitionX -= 5000 * DeltaTime;
+            LeftRightTransition.style.top = TransitionX + "px";
+
+            if (!ChangedPage && TransitionX + LeftRightTransition.offsetHeight / 2 <= window.innerHeight / 2)
+            {
+                ChangedPage = true;
+                PreviousPage.style.display = "none";
+                NextPage.style.display = "flex";
+                
+            }
+
+            if(ChangedPage && TransitionX + LeftRightTransition.offsetHeight <= 0)
+            {
+                TransitionRunning = false;
+                ChangedPage = false
+                TransitionX = window.innerHeight;
+                LeftRightTransition.style.top = TransitionX + "px";
+                LeftRightTransition.style.display = "none";
+            }
         }
     }
     else
     {
-
-        if (!QuizTransitionPause1)
+        if (Desktop)
         {
-            LeftRightTransition.style.display = "block";
-            TransitionX -= 13500 * DeltaTime;
-            LeftRightTransition.style.left = TransitionX + "px";
+            if (!QuizTransitionPause1)
+            {
+                LeftRightTransition.style.display = "block";
+                TransitionX -= 10000 * DeltaTime;
+                LeftRightTransition.style.left = TransitionX + "px";
+            }
+
+            if (!QuizTransitionPause1 && TransitionX + LeftRightTransition.offsetWidth / 2 <= window.innerWidth / 2)
+            {
+                QuizTransitionPause1 = true;
+                ArbiterSequence()
+            }
+
+            if (QuizTransitionPause2)
+            {
+                TransitionX -= 10000 * DeltaTime;
+                LeftRightTransition.style.left = TransitionX + "px";
+            }
+
+            if(QuizTransitionPause2 && TransitionX + LeftRightTransition.offsetWidth <= 0)
+            {
+                TransitionRunning = false;
+                QuizTransitionPause2 = false
+                QuizTransitionPause1 = false
+                TransitionX = window.innerWidth;
+                LeftRightTransition.style.left = TransitionX + "px";
+                LeftRightTransition.style.display = "none";
+            }
         }
-
-        if (!QuizTransitionPause1 && TransitionX + LeftRightTransition.offsetWidth / 2 <= window.innerWidth / 2)
+        else
         {
-            QuizTransitionPause1 = true;
+            if (!QuizTransitionPause1)
+            {
+                LeftRightTransition.style.display = "block";
+                TransitionX -= 5000 * DeltaTime;
+                LeftRightTransition.style.top = TransitionX + "px";
+            }
 
-            ArbiterSequence()
-            
-        }
+            if (!QuizTransitionPause1 && TransitionX + LeftRightTransition.offsetHeight / 2 <= window.innerHeight / 2)
+            {
+                QuizTransitionPause1 = true;
+                ArbiterSequence()
+            }
 
-        if (QuizTransitionPause2)
-        {
+            if (QuizTransitionPause2)
+            {
+                TransitionX -= 5000 * DeltaTime;
+                LeftRightTransition.style.top = TransitionX + "px";
+            }
 
-            TransitionX -= 15000 * DeltaTime;
-            LeftRightTransition.style.left = TransitionX + "px";
-        }
-
-        if(QuizTransitionPause2 && TransitionX + LeftRightTransition.offsetWidth <= 0)
-        {
-            TransitionRunning = false;
-            QuizTransitionPause2 = false
-            QuizTransitionPause1 = false
-            TransitionX = window.innerWidth;
-            LeftRightTransition.style.left = TransitionX + "px";
-            LeftRightTransition.style.display = "none";
-            
+            if(QuizTransitionPause2 && TransitionX + LeftRightTransition.offsetHeight <= 0)
+            {
+                TransitionRunning = false;
+                QuizTransitionPause2 = false
+                QuizTransitionPause1 = false
+                TransitionX = window.innerHeight;
+                LeftRightTransition.style.top = TransitionX + "px";
+                LeftRightTransition.style.display = "none";
+            }
         }
     }
-
-    
-
 }
 
 function UpdateSiteTransition()
@@ -356,7 +400,15 @@ function UpdateSiteTransition()
     let usingthisthingy = null;
 
     usingthisthingy = RightTransition
-    StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
+    if (Desktop)
+    {
+        StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
+    }
+    else
+    {
+        StopX = window.innerHeight - usingthisthingy.offsetHeight + 200;
+    }
+    
 
     if (ChangedSite && SiteTransitionX <= StopX)
     {
@@ -366,14 +418,105 @@ function UpdateSiteTransition()
             return
     }
 
-    SiteTransitionX -= 11000 * DeltaTime;
-    usingthisthingy.style.left = SiteTransitionX + "px";
-    usingthisthingy.style.right = "auto";
-
+    if(Desktop)
+    {
+        SiteTransitionX -= 11000 * DeltaTime;
+        usingthisthingy.style.left = SiteTransitionX + "px";
+        usingthisthingy.style.right = "auto";
+    }
+    else
+    {
+        SiteTransitionX -= 5000 * DeltaTime;
+        usingthisthingy.style.top = SiteTransitionX + "px";
+        usingthisthingy.style.bottom = "auto";
+    }
 }
 
 
-//------------------------- QUIZ STUFF
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------- QUIZ STUFF
+
+
+
+
+function VoidSpin()
+{
+    MainBackgroundScroll += 100 * DeltaTime;
+
+    MainBackground.style.transform = `rotate(${MainBackgroundScroll}deg)`;
+
+}
+
+async function BlinkEyes()
+{
+
+    while (true)
+    {
+        for (let Eye of VoidEyesThings)
+        {
+            
+        Eye.style.backgroundImage = VoidEyesImages[0];
+
+        await Sleep(Math.random() * 3000 + 3000);
+
+        Eye.style.backgroundImage = VoidEyesImages[1];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[2];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[3];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[2];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[1];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[0];
+        await Sleep(75);
+        }
+    }
+}
+
+
+
+
+let InfoBoxBackgroundScroll = 0;
+
+let VoidEyesImages = [
+    'url("../UniversalAssets/VoidEyeFull.png")',
+    'url("../UniversalAssets/VoidEyes66.png")',
+    'url("../UniversalAssets/VoidEyes33.png")',
+    'url("../UniversalAssets/VoidEyes0.png")',
+]
+
 
 let ArbiterLines = [
 "Not what I would've chose...",
@@ -767,9 +910,10 @@ CopyCodeButton.addEventListener("click", async function()
 
 StartQuizButton.addEventListener("click", function()
 {
-    ChangePage(StartingPage,QuizPage)
-    //ChangePage(StartingPage,ResultsPage)
+    //ChangePage(StartingPage,QuizPage)
     //ChangePage(StartingPage,TieBreakerPage)
+    ChangePage(StartingPage,ResultsPage)
+    
 });
 
 

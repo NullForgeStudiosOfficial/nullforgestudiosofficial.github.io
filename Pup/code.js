@@ -1,22 +1,18 @@
+// ----------- whateverthefuck
+const DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+
+let Desktop = DesktopQuery.matches;
+
+DesktopQuery.addEventListener("change", () => {
+    Desktop = DesktopQuery.matches;
+});
 
 let LastTime = 0;
 let DeltaTime = 0;
-
 let MainBackground = document.getElementById("MainBackground")
 let MainBackgroundScroll = 0
-
 let ButtonBackgrounds = []
 let ButtonBackgroundScroll = 0;
-let InfoBoxBackgroundScroll = 0;
-
-
-let VoidEyesImages = [
-    'url("../../UniversalAssets/VoidEyeFull.png")',
-    'url("../../UniversalAssets/VoidEyes66.png")',
-    'url("../../UniversalAssets/VoidEyes33.png")',
-    'url("../../UniversalAssets/VoidEyes0.png")',
-]
-
 let LeftRightTransition = document.getElementById("FullLeftRightTransition")
 let LeftTransition = document.getElementById("LeftTransition")
 let RightTransition = document.getElementById("RightTransition")
@@ -32,50 +28,18 @@ let StartTransitionX = 0;
 let PreviousPage = null
 let NextPage = null
 
+//--------- Add These
 
-document.addEventListener("keydown", function(event)
+function Sleep(ms)
 {
-    if (event.key === "F12")
-    {
-        event.preventDefault();
-    }
-});
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-document.addEventListener("keydown", function(event)
-{
-    if (
-        event.key === "F12" ||
-        (event.ctrlKey && event.shiftKey && event.key === "I") ||
-        (event.ctrlKey && event.shiftKey && event.key === "J") ||
-        (event.ctrlKey && event.key === "U")
-    )
-    {
-        event.preventDefault();
-    }
-});
 
 
 function Randomizer(min,max)
 {
-    //because why the hell is JS so complicated for RNG?
-    // The actual fuck is this doing?
-    // Math.random() gives: 0.0 -> 0.99
-    // Multiply by the size of our range.
-    // (max-min+1) counts BOTH endpoints.
-    // Example:
-    // 30-100
-    // 100-30+1 = 71 possible numbers.
-    // Math.floor() removes the decimal.
-    // Now we have: 0 -> 70
-    // Finally shift the range upward.
-    // +30 turns: 0 -> 30
-    // 70 ->100
-    // Yeah. JS is so dumb i actually wrote comments. congrats. 
-    // stupid ass language can do  [] + [] but not number ranges without a custom function xD
-
-    
     return Math.floor(Math.random() * (max - min + 1)) + min
-    
 }
 
 document.addEventListener("keydown", function(event)
@@ -101,28 +65,26 @@ document.addEventListener("keydown", function(event)
 
 
 
-
 async function Start()
 {
     
-    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
+    if (Desktop)
+    {
+        LeftTransition.style.left -200 + "px"
+    }
+    else
+    {
+        LeftTransition.style.top -200 + "px"
+    }
+    
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
 
     BlinkEyes()
 
-    await Sleep(250);
     LastTime = performance.now();
     requestAnimationFrame(Update);
 
-    await Sleep(100);
     document.getElementById("StartupBlack").remove();
 
 }
@@ -130,17 +92,12 @@ async function Start()
 
 function Update(CurrentTime)
 {
-
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-
-        ScrollBackground();
-        ScrollButtonBackgrounds();
-        ScrollBoxBackgrounds();
-    
-
-    
+    ScrollBackground();
+    ScrollButtonBackgrounds();
+    ScrollBoxBackgrounds();
 
     if (TransitionRunning)
     {
@@ -155,11 +112,6 @@ function Update(CurrentTime)
     if (StartSiteT)
     {
         StartSite()
-    }
-
-    if (DeltaTime > 0.025)
-    {
-        console.log("SLOW FRAME:", (DeltaTime * 1000).toFixed(2), "ms");
     }
 
     if (PupEDHHDInfoBox.style.display == "block")
@@ -183,11 +135,8 @@ function Update(CurrentTime)
        }
     }
 
-
     requestAnimationFrame(Update);
 }
-
-
 
 async function ScrollBackground()
 {
@@ -206,10 +155,229 @@ function ScrollButtonBackgrounds()
     }
 }
 
-function Sleep(ms)
+
+
+
+async function ChangePage(PageID1,PageID2)
 {
-    return new Promise(resolve => setTimeout(resolve, ms));
+    PreviousPage = PageID1
+    NextPage = PageID2
+
+    if (Desktop)
+    {
+        TransitionX = window.innerWidth;
+    }
+    else
+    {
+        TransitionX = window.innerHeight;
+    }
+    
+    ChangedPage = false;
+    TransitionRunning = true
+    LeftRightTransition.style.display = "block";
 }
+
+async function ChangeSite()
+{
+    ChangedSite = true
+    if (Desktop)
+    {
+        SiteTransitionX = window.innerWidth;
+    }
+    else
+    {
+        SiteTransitionX = window.innerHeight;
+    }
+    SiteTransitionRunning = true
+    RightTransition.style.display = "block";
+}
+
+async function StartSite()
+{
+    LeftTransition.style.display = "block";
+   
+
+    if (Desktop)
+    {
+        StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+        StartTransitionX -= 10000 * DeltaTime;
+        LeftTransition.style.left = StartTransitionX + "px";
+        LeftTransition.style.right = "auto";
+    }
+    else
+    {
+        StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
+        StartTransitionX -= 5000 * DeltaTime;
+        LeftTransition.style.top = StartTransitionX + "px";
+        LeftTransition.style.bottom = "auto";
+    }
+    
+
+    if (StartSiteT && StartTransitionX <= StopX)
+    {
+        StartSiteT = false;
+        LeftTransition.style.display = "none";
+        return
+    }
+}
+
+async function LoadSite(SiteString)
+{
+    while (ChangedSite)
+    {
+        await Sleep(100)
+        continue
+    }
+
+    window.location.href = SiteString
+}
+
+function UpdateTransition()
+{
+        if (Desktop)
+        {
+            TransitionX -= 10000 * DeltaTime;
+        }
+        else
+        {
+            TransitionX -= 5000 * DeltaTime;
+        }
+       
+
+        let usingthisthingy = null;
+
+        switch(WhichTransitionWeUsing)
+        {
+            case 0:
+                usingthisthingy = LeftRightTransition
+            break;
+
+            case 1:
+                usingthisthingy = RightTransition
+            break;
+
+            case 2:
+                usingthisthingy = LeftTransition
+            break;
+        }
+
+        if (Desktop)
+        {
+            usingthisthingy.style.left = TransitionX + "px";
+        }
+        else
+        {
+            usingthisthingy.style.top = TransitionX + "px";
+        }
+
+        
+        
+        if (Desktop)
+        {
+            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
+            {
+                ChangedPage = true;
+                PreviousPage.style.display = "none";
+                NextPage.style.display = "flex";    
+            }
+        }
+        else
+        {
+            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.innerHeight / 2)
+            {
+                ChangedPage = true;
+                PreviousPage.style.display = "none";
+                NextPage.style.display = "flex";    
+                LeftRightTransition.style.display = "none";
+            }
+        }
+
+        if (Desktop)
+        {
+            if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetWidth <= 0)
+            {
+                TransitionRunning = false;
+                ChangedPage = false
+                TransitionX = window.innerWidth;
+                usingthisthingy.style.left = TransitionX + "px";
+            }
+        }
+        else
+        {
+            if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetHeight <= 0)
+            {
+                TransitionRunning = false;
+                ChangedPage = false
+                TransitionX = window.innerHeight;
+                usingthisthingy.style.top = TransitionX + "px";
+            }
+        }
+
+        
+
+        
+}
+
+function UpdateSiteTransition()
+{
+    let usingthisthingy = null;
+
+    usingthisthingy = RightTransition
+    if (Desktop)
+    {
+        StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
+    }
+    else
+    {
+        StopX = window.innerHeight - usingthisthingy.offsetHeight + 200;
+    }
+    
+
+    if (ChangedSite && SiteTransitionX <= StopX)
+    {
+            ChangedSite = false;
+            SiteTransitionRunning = false;
+            WhichTransitionWeUsing = 0;
+            return
+    }
+
+    if(Desktop)
+    {
+        SiteTransitionX -= 11000 * DeltaTime;
+        usingthisthingy.style.left = SiteTransitionX + "px";
+        usingthisthingy.style.right = "auto";
+    }
+    else
+    {
+        SiteTransitionX -= 5000 * DeltaTime;
+        usingthisthingy.style.top = SiteTransitionX + "px";
+        usingthisthingy.style.bottom = "auto";
+    }
+}
+
+
+
+
+
+
+//  --------------------------------- Pup Page
+let InfoBoxBackgroundScroll = 0;
+
+function ScrollBoxBackgrounds()
+{
+    InfoBoxBackgroundScroll += 25 * DeltaTime;
+
+    PupInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    PupButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    
+}
+
+let VoidEyesImages = [
+    'url("../../UniversalAssets/VoidEyeFull.png")',
+    'url("../../UniversalAssets/VoidEyes66.png")',
+    'url("../../UniversalAssets/VoidEyes33.png")',
+    'url("../../UniversalAssets/VoidEyes0.png")',
+]
 
 
 async function BlinkEyes()
@@ -242,134 +410,7 @@ async function BlinkEyes()
     }
 }
 
-async function ChangePage(PageID1,PageID2)
-{
-    PreviousPage = PageID1
-    NextPage = PageID2
 
-    QuizTransition = false
-    TransitionX = window.innerWidth;
-    ChangedPage = false;
-    TransitionRunning = true
-    LeftRightTransition.style.display = "block";
-}
-
-async function ChangeSite()
-{
-    ChangedSite = true
-    SiteTransitionX = window.innerWidth;
-    SiteTransitionRunning = true
-    RightTransition.style.display = "block";
-}
-
-async function StartSite()
-{
-    LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
-
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
-
-    if (StartSiteT && StartTransitionX <= StopX)
-    {
-            StartSiteT = false;
-            StartSiteT = false;
-            LeftTransition.style.display = "none";
-            return
-    }
-}
-
-async function LoadSite(SiteString)
-{
-    while (ChangedSite)
-    {
-        await Sleep(100)
-        continue
-    }
-
-    window.location.href = SiteString
-}
-
-function UpdateTransition()
-{
-       TransitionX -= 11000 * DeltaTime;
-
-        let usingthisthingy = null;
-
-        switch(WhichTransitionWeUsing)
-        {
-            case 0:
-                usingthisthingy = LeftRightTransition
-                
-                break;
-
-                case 1:
-                    usingthisthingy = RightTransition
-                    break;
-
-                    case 2:
-                        usingthisthingy = LeftTransition
-                        break;
-        }
-
-
-        usingthisthingy.style.left = TransitionX + "px";
-
-        
-
-        if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
-        {
-            ChangedPage = true;
-            PreviousPage.style.display = "none";
-            NextPage.style.display = "flex";
-            
-        }
-
-        if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetWidth <= 0)
-        {
-            TransitionRunning = false;
-            ChangedPage = false
-            TransitionX = window.innerWidth;
-            usingthisthingy.style.left = TransitionX + "px";
-        }
-
-        
-}
-
-function UpdateSiteTransition()
-{
-    let usingthisthingy = null;
-
-    usingthisthingy = RightTransition
-    StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
-
-    if (ChangedSite && SiteTransitionX <= StopX)
-    {
-            ChangedSite = false;
-            SiteTransitionRunning = false;
-            WhichTransitionWeUsing = 0;
-            return
-    }
-
-    SiteTransitionX -= 11000 * DeltaTime;
-    usingthisthingy.style.left = SiteTransitionX + "px";
-    usingthisthingy.style.right = "auto";
-
-}
-
-function ScrollBoxBackgrounds()
-{
-    InfoBoxBackgroundScroll += 25 * DeltaTime;
-
-    PupInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    PupButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    
-}
-
-
-
-//  --------------------------------- Pup Page
 let PupPage = document.getElementById("PupPage");
 let PupExitButton = document.getElementById("PupExitButton");
 let PupBioButton = document.getElementById("PupBioButton");
@@ -772,7 +813,7 @@ function UpdatePupTimeAndScore()
 
     ScoreTimer += DeltaTime;
 
-    if (ScoreTimer < 1)
+    if (ScoreTimer < 0.5)
     {
         return;
     }

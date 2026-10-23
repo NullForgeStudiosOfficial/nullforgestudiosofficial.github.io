@@ -163,7 +163,7 @@ body
     width:97.5%;
     right:0%;
 
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
 
     pointer-events: auto;

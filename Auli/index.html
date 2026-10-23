@@ -11,16 +11,11 @@
 
     <link rel="icon" type="image/png" href="../UniversalAssets/AuliFavicon.png">
 
-    <script>
-    const AspectRatio = window.innerWidth / window.innerHeight;
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
 
-    if (AspectRatio < 1.2)
-    {
-        window.location.replace("M/index.html");
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
 
 </head>
 
@@ -78,7 +73,7 @@
                     </div>
                     <div class = "Words" id = "Aulipfp2credit">Credit: ChatGPT?</div>
 
-                    <div class = "AuliProfileAnswer">
+                    <div class = "AuliProfileAnswer" id = "AuliBio">
                     Hey there! I'm Auli! 🦦💙
                     My Ardron realm is Eimon!
 
@@ -119,7 +114,7 @@
                         <div class = "AuliProfileAnswer">OPTIONS. Give me options. Let me customize my character, choose how I play, decide where I go, pick what I wear, decorate things, make choices, and generally stick my grubby little hands into the game and make it mine. Even if the choice changes absolutely nothing mechanically, I still want the choice.</div>
 
                         <div class = "AuliProfileQuestion">What's something that will instantly put you in a good mood?</div>
-                        <div class = "AuliProfileAnswer"><img src="../../UniversalAssets/bakugo.png"> </div>
+                        <div class = "AuliProfileAnswer"> <div id = Bakugo></div></div>
 
                         <div class = "AuliProfileQuestion">Are you a morning person, night person, or some forbidden third thing?</div>
                         <div class = "AuliProfileAnswer">Some forbidden third thing. I love the wee hours of the morning, when the world hasn't quite awakened yet. When the morning glories slowly open their petals and everything is still jeweled with dew. There's something peaceful about those hours, when the air is cool and quiet and it feels like you've caught the world before everyone else gets their hands on it. 

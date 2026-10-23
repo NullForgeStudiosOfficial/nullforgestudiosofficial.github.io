@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: Ardron;
-    src: url("../../UniversalAssets/FontOfArdron.ttf")
+    src: url("../UniversalAssets/FontOfArdron.ttf")
 }
 
 
@@ -63,7 +63,7 @@ body
     width:clamp(5vw,30vw,30vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-image: url("../UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -81,7 +81,7 @@ body
     width:clamp(1vw,13vw,15vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/Favicon.png");
+    background-image: url("../UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -118,7 +118,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileTopDownTransition.png");
+    background-image: url("../UniversalAssets/MobileTopDownTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -134,7 +134,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileTopTransition.png");
+    background-image: url("../UniversalAssets/MobileTopTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -152,7 +152,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/MobileBottomTransition.png");
+    background-image: url("../UniversalAssets/MobileBottomTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -178,7 +178,7 @@ body
     aspect-ratio: 440 / 203;
     top: 5%;
     left: 1%;
-    background-image: url("../../UniversalAssets/MobileButtonBox.png");
+    background-image: url("../UniversalAssets/MobileButtonBox.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 }
@@ -200,7 +200,7 @@ body
     pointer-events: none;
     image-rendering: pixelated ;
 
-    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -208,7 +208,7 @@ body
 }
 
 
-.WideButton
+.NormalButton
 {
     appearance: none;
     -webkit-appearance: none;
@@ -219,7 +219,7 @@ body
     aspect-ratio: 440/65;
 
     background-color: transparent;
-    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-image: url("../UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -231,13 +231,13 @@ body
 
 }
 
-.WideButton::after
+.NormalButton::after
 {
     content: "";
     position: absolute;
     inset: 0;
 
-    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-image: url("../UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -247,7 +247,7 @@ body
 
 }
 
-.WideButtonBackground
+.NormalButtonBackground
 {
     display: flex;
     position: absolute;
@@ -257,7 +257,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -279,7 +279,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -374,11 +374,11 @@ body
 #Skip
 {
     position:absolute;
-    top:29%;
-    width:90%;
+    top:33%;
+    width:95%;
     aspect-ratio:  440/65;
     
-    left:5%;
+    left:3%;
 }
 
 
@@ -454,6 +454,20 @@ body
     font-size: clamp(1vw,3vw,15vw);
     color:white;
 }
+
+
+#SkipText
+{
+    font-family: Ardron;
+    position:absolute;
+
+    Width:90%;
+    top:30%;
+    left:5%;
+    font-size: clamp(1vw,7vw,15vw);
+    color:white;
+}
+
 
 #Words
 {

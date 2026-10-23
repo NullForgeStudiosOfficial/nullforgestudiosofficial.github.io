@@ -380,6 +380,17 @@ body
     pointer-events: auto;
 }
 
+#SkipText
+{
+    font-family: Ardron;
+    position:absolute;
+
+    Width:90%;
+    top:25%;
+    left:5%;
+    font-size: clamp(1vw,2vw,15vw);
+    color:white;
+}
 
 
 #ExtrasExitButton

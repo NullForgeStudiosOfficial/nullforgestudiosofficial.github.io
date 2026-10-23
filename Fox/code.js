@@ -68,7 +68,15 @@ document.addEventListener("keydown", function(event)
 async function Start()
 {
     
-    LeftTransition.style.left -200 + "px"
+    if (Desktop)
+    {
+        LeftTransition.style.left -200 + "px"
+    }
+    else
+    {
+        LeftTransition.style.top -300 + "px"
+    }
+    
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
 
@@ -166,11 +174,23 @@ async function ChangeSite()
 async function StartSite()
 {
     LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+   
 
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
+    if (Desktop)
+    {
+        StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+        StartTransitionX -= 10000 * DeltaTime;
+        LeftTransition.style.left = StartTransitionX + "px";
+        LeftTransition.style.right = "auto";
+    }
+    else
+    {
+        StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
+        StartTransitionX -= 5000 * DeltaTime;
+        LeftTransition.style.top = StartTransitionX + "px";
+        LeftTransition.style.bottom = "auto";
+    }
+    
 
     if (StartSiteT && StartTransitionX <= StopX)
     {
@@ -193,7 +213,15 @@ async function LoadSite(SiteString)
 
 function UpdateTransition()
 {
-       TransitionX -= 11000 * DeltaTime;
+        if (Desktop)
+        {
+            TransitionX -= 10000 * DeltaTime;
+        }
+        else
+        {
+            TransitionX -= 5000 * DeltaTime;
+        }
+       
 
         let usingthisthingy = null;
 
@@ -212,7 +240,16 @@ function UpdateTransition()
             break;
         }
 
-        usingthisthingy.style.left = TransitionX + "px";
+        if (Desktop)
+        {
+            usingthisthingy.style.left = TransitionX + "px";
+        }
+        else
+        {
+            usingthisthingy.style.top = TransitionX + "px";
+        }
+
+        
         
         if (Desktop)
         {
@@ -229,7 +266,8 @@ function UpdateTransition()
             {
                 ChangedPage = true;
                 PreviousPage.style.display = "none";
-                NextPage.style.display = "flex";    
+                NextPage.style.display = "flex";
+                LeftRightTransition.style.display = "none"
             }
         }
 
@@ -295,14 +333,6 @@ function UpdateSiteTransition()
         usingthisthingy.style.bottom = "auto";
     }
 }
-function ScrollBoxBackgrounds()
-{
-    InfoBoxBackgroundScroll += 25 * DeltaTime;
-
-    FoxInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    FoxButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
-    
-}
 
 
 
@@ -336,6 +366,16 @@ async function BlinkEyes()
         await Sleep(75);
     }
 }
+
+function ScrollBoxBackgrounds()
+{
+    InfoBoxBackgroundScroll += 25 * DeltaTime;
+
+    FoxInfoBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    FoxButtonBoxBack.style.backgroundPositionY = InfoBoxBackgroundScroll + "px";
+    
+}
+
 
 
 let VoidEyesImages = [

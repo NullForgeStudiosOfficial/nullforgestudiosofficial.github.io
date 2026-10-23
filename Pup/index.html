@@ -11,16 +11,11 @@
 
     <link rel="icon" type="image/png" href="../../UniversalAssets/PupFavicon.png">
 
-    <script>
-    const AspectRatio = window.innerWidth / window.innerHeight;
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
 
-    if (AspectRatio < 1.2)
-    {
-        window.location.replace("M/index.html");
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=1.1">
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
 
 </head>
 
@@ -87,7 +82,7 @@
                     </div>
                     <div class = "Words" id = "Puppfp2credit">Credit: ChatGPT?</div>
 
-                    <div class = "PupProfileAnswer">
+                    <div class = "PupProfileAnswer" id = "PupBio">
                     Sup I'm Pup
 
                     <a href ="https://www.youtube.com/watch?v=swmuqGWgZCc" target="_blank" rel="noopener noreferrer">🎵 I'm a dog and I like socks

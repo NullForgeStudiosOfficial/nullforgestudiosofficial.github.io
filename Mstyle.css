@@ -160,7 +160,7 @@ body
     display:none;
     position:absolute;
     font-family: Ardron;
-    top:45%;
+    top:37%;
     left:31%;
     width: 44%;
     font-size: clamp(1vw,7vw,10vw);
@@ -698,7 +698,7 @@ body
 
 }
 
-.ThinButton
+.NormalButton
 {
     appearance: none;
     -webkit-appearance: none;
@@ -721,7 +721,7 @@ body
 
 }
 
-.ThinButton::after
+.NormalButton::after
 {
     content: "";
     position: absolute;
@@ -740,7 +740,7 @@ body
 
 
 
-.WideButtonBackground
+.NormalButtonBackground
 {
     display: flex;
     position: absolute;
@@ -1049,22 +1049,22 @@ body
 }
 
 
-#AuliButton .WideButtonBackground
+#AuliButton .NormalButtonBackground
 {
     background-image: url(../UniversalAssets/EimonButtonBackground.png);
 }
 
-#PupButton .WideButtonBackground
+#PupButton .NormalButtonBackground
 {
     background-image: url(../UniversalAssets/ElusiaButtonBackground.png);
 }
 
-#VexButton .WideButtonBackground
+#VexButton .NormalButtonBackground
 {
     background-image: url(../UniversalAssets/GrimloweButtonBackground.png);
 }
 
-#FoxButton .WideButtonBackground
+#FoxButton .NormalButtonBackground
 {
     background-image: url(../UniversalAssets/ElusiaButtonBackground.png);
 }
@@ -1126,6 +1126,30 @@ body
 
 }
 
+#GateEntry
+{
+    display:none;
+    position:absolute;
+    aspect-ratio: 200/40;
+    width:37%;
+    top:78%;
+    left:34%;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+
+#EnterText
+{
+    font-size: clamp(1vw,2vw,10vw);
+    position:absolute;
+    top:55%;
+    left:50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
 
 
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
@@ -1182,10 +1206,10 @@ body
     display:none;
     position:absolute;
     font-family: Ardron;
-    top:45%;
+    top:40%;
     left:31%;
     width: 44%;
-    font-size: clamp(1vw,5vw,6vw);
+    font-size: clamp(1vw,4vw,10vw);
     text-align: center;
 }
 

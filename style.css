@@ -117,7 +117,7 @@ body
     top:2%;
     text-align: center;
     width: 100%;
-    font-size: clamp(1vw,2.5vw,3vw);
+    font-size: clamp(1vw,1.75vw,3vw);
    
 }
 
@@ -128,87 +128,37 @@ body
     text-align: center;
     pointer-events:none;
     width: 25%;
+    display:none;
+    
 }
 
-#EimonTitle
+#EimonTitle,
+#ElusiaTitle,
+#GrimloweTitle,
+#SostrumTitle,
+#VidulynTitle,
+#YumalonTitle,
+#IcolassTitle,
+#VoidTitle,
+#SanctumTitle
 {
+    display:none;
     position:absolute;
     font-family: Ardron;
-    top:49.5%;
-    left:21%;
-    width: 25%;
+    width: 19%;
     font-size: clamp(1vw,2.5vw,3vw);
+    top:38%;
+    left:42%;
+    text-align: center;
 }
 
-#ElusiaTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:59.5%;
-    left:27%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
-
-#GrimloweTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:69.5%;
-    left:21%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
-
-#SostrumTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:80.5%;
-    left:24%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
-
-#VidulynTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:49%;
-    left:66.5%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
 
 #YumalonTitle
 {
-    position:absolute;
-    font-family: Ardron;
-    top:60%;
-    left:66.5%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
+    color:black;
 }
 
-#IcolassTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:70%;
-    left:66.5%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
 
-#VoidTitle
-{
-    position:absolute;
-    font-family: Ardron;
-    top:81%;
-    left:66.5%;
-    width: 25%;
-    font-size: clamp(1vw,2.5vw,3vw);
-}
 
 
 #DoorFrame
@@ -372,136 +322,6 @@ body
     filter: brightness(50%);
 }
 
-
-.DoorButton:hover .EimonButton,
-.DoorButton:hover .ElusiaButton,
-.DoorButton:hover .GrimloweButton,
-.DoorButton:hover .SostrumButton,
-.DoorButton:hover .VidulynButton,
-.DoorButton:hover .YumalonButton,
-.DoorButton:hover .IcolassButton,
-.DoorButton:hover .SanctumButton,
-.DoorButton:hover .VoidButton
-{
-    filter: brightness(100%);
-}
-
-body:has(#DoorEimon:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameEimon.png");
-}
-
-body:has(#DoorElusia:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameElusia.png");
-}
-
-body:has(#DoorGrimlowe:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameGrimlowe.png");
-}
-
-body:has(#DoorSostrum:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameSostrum.png");
-}
-
-body:has(#DoorVidulyn:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameVidulyn.png");
-}
-
-body:has(#DoorYumalon:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameYumalon.png");
-}
-
-body:has(#DoorIcolass:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameIcolass.png");
-}
-
-body:has(#DoorSanctum:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameSanctum.png");
-}
-
-body:has(#DoorVoid:hover) #DoorFrame
-{
-    background-image: url("UniversalAssets/MainDoorFrameVoid.png");
-}
-
-body:has(#DoorSanctum:hover) #MimicClosed
-{
-    background-image: url("UniversalAssets/MimicOpen.png");
-}
-
-
-
-body:has(#DoorEimon:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/EimonBack.png");
-}
-
-body:has(#DoorElusia:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/ElusiaBack.png");
-}
-
-body:has(#DoorGrimlowe:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/GrimloweBack.png");
-}
-
-body:has(#DoorSostrum:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/SostrumBack.png");
-}
-
-body:has(#DoorVidulyn:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/VidulynBack.png");
-}
-
-body:has(#DoorYumalon:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/YumalonBack.png");
-}
-
-body:has(#DoorIcolass:hover) #DoorRealm
-{
-   background-image: url("UniversalAssets/IcolassBack.png");
-}
-
-body:has(#DoorSanctum:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/SanctumBack.png");
-}
-
-body:has(#DoorVoid:hover) #DoorRealm
-{
-    background-image: url("UniversalAssets/VoidBack.png");
-}
-
-
-
-
-
-
-
-
-body:has(#DoorEimon:hover) #DoorClosedOpen,
-body:has(#DoorElusia:hover) #DoorClosedOpen,
-body:has(#DoorGrimlowe:hover) #DoorClosedOpen,
-body:has(#DoorSostrum:hover) #DoorClosedOpen,
-body:has(#DoorVidulyn:hover) #DoorClosedOpen,
-body:has(#DoorYumalon:hover) #DoorClosedOpen,
-body:has(#DoorIcolass:hover) #DoorClosedOpen,
-body:has(#DoorSanctum:hover) #DoorClosedOpen,
-body:has(#DoorVoid:hover) #DoorClosedOpen
-{
-    background-image: url("UniversalAssets/MainMenuDoorOpen.png");
-}
 
 
 
@@ -780,7 +600,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     position:absolute;
     display:block;
 
-    top:5%;
+    top:7%;
     left:0%;
     aspect-ratio: 288/436;
     width:29.5%;
@@ -799,7 +619,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     position:absolute;
     display:block;
 
-    top:5%;
+    top:7%;
     left:30%;
     aspect-ratio: 650/418;
     width:68.50%;
@@ -868,6 +688,22 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 
 }
+
+.NormalButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("UniversalAssets/DesktopButton.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+
 
 .NormalButtonBackground
 {
@@ -1015,7 +851,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 #ExtrasButtonBoxFrame
 {
     position: absolute;
-    top: 5%;
+    top: 7%;
     left: 0%;
     width: 29.5%;
     aspect-ratio: 288 / 436;
@@ -1177,7 +1013,29 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 }
 
+#GateEntry
+{
+    display:none;
+    position:absolute;
+    aspect-ratio: 200/40;
+    width:37%;
+    top:78%;
+    left:34%;
+    pointer-events: auto;
+    z-index: 1;
+}
 
+
+
+#EnterText
+{
+    font-size: clamp(1vw,2vw,10vw);
+    position:absolute;
+    top:55%;
+    left:50%;
+    z-index: 0;
+    pointer-events: none;
+}
 
 @media (max-width: 1600px) {
     #EimonTitle

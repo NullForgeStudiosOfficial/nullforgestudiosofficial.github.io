@@ -75,7 +75,7 @@ body
     pointer-events:none;
     background-image: url(../UniversalAssets/VoidLarge.png);
     background-size: 100% 100%;
-    background-repeat: repeat-x;
+    background-repeat: no-repeat;
     background-position: 0 (--var 0px);
 }
 

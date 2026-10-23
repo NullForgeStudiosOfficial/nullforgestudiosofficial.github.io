@@ -348,7 +348,7 @@ body
 
 }
 
-.ThinButton
+.NormalButton
 {
     appearance: none;
     -webkit-appearance: none;
@@ -390,7 +390,7 @@ body
 
 
 
-.WideButtonBackground
+.NormalButtonBackground
 {
     display: flex;
     position: absolute;

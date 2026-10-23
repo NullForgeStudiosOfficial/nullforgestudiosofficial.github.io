@@ -11,16 +11,11 @@
 
     <link rel="icon" type="image/png" href="../UniversalAssets/Favicon.png">
 
-    <script>
-    const AspectRatio = window.innerWidth / window.innerHeight;
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
 
-    if (AspectRatio < 1.2)
-    {
-        window.location.replace("M/index.html");
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=1.1"> 
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
 
 </head>
 
@@ -61,7 +56,7 @@
                 <div class="NormalButtonBackground">
                 </div>
 
-                <div id ="ButtonText">Skip</div>
+                <div id ="SkipText">Skip</div>
             </button>
 
             <br> <br><br><br><br><br>

@@ -11,16 +11,11 @@
 
     <link rel="icon" type="image/png" href="../UniversalAssets/Favicon.png">
 
-    <script>
-    const AspectRatio = window.innerWidth / window.innerHeight;
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
 
-    if (AspectRatio < 1.2)
-    {
-        window.location.replace("M/index.html");
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
 
 </head>
 
@@ -40,22 +35,33 @@
 
     <div id = DoorPage>
 
-        <div id="MainTitle">Welcome to the Nexus of Ardron</div>
+        <div id="MainTitle">Welcome to the Nexus of Ardron<br> Select a Realm on the door</div>
 
         <div id = RealmWindow><div id = DoorRealm></div></div>
 
-        <div class="DoorTitle" id="EimonTitle">AU:Quizes</div>
-        <div class="DoorTitle" id="ElusiaTitle">TBA</div>
-        <div class="DoorTitle" id="GrimloweTitle">AU:Steam</div>
-        <div class="DoorTitle" id="SostrumTitle">AU:Wiki</div>
-        <div class="DoorTitle" id="VidulynTitle">NFSO:Logs</div>
-        <div class="DoorTitle" id="YumalonTitle">NFSO:Ko-fi</div>
-        <div class="DoorTitle" id="IcolassTitle">NFSO:Discord</div>
-        <div class="DoorTitle" id="VoidTitle">NFSO:Twitch</div>
+        <div class="DoorTitle" id="EimonTitle">Ardron<br>Universe<br>Quizes</div>
+        <div class="DoorTitle" id="ElusiaTitle">Work<br>In<br>Progress<br> / <br> To <br> Be <br> Announced</div>
+        <div class="DoorTitle" id="GrimloweTitle">Ardron<br>Universe<br>Steam<br>Page</div>
+        <div class="DoorTitle" id="SostrumTitle">Ardron<br>Universe<br>Wiki</div>
+        <div class="DoorTitle" id="VidulynTitle">NFSO<br>Work<br>Logs</div>
+        <div class="DoorTitle" id="YumalonTitle">NFSO<br>Ko-fi<br></div>
+        <div class="DoorTitle" id="IcolassTitle">NFSO<br>Discord<br>& <br> Daemon Protocol</div>
+        <div class="DoorTitle" id="VoidTitle">NFSO<br>Twitch.tv<br>(Live Streams)</div>
+        <div class="DoorTitle" id="SanctumTitle">Fun<br>Extras!</div>
 
         <div id ="DoorFrame">
 
-            <div id = DoorClosedOpen></div>
+            <button class="NormalButton" id="GateEntry">
+                    <div class="NormalButtonBackground" >
+                
+                    </div>
+
+                 <div class ="Words" id = "EnterText">Enter</div>
+            </button>
+
+            <div id = DoorClosedOpen>
+            
+            </div>
 
             <button class="DoorButton" id="DoorEimon">
                 <div class="EimonButton" >
