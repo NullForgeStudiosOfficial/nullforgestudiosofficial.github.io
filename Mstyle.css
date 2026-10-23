@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: Ardron;
-    src: url("../../UniversalAssets/FontOfArdron.ttf");
+    src: url("../UniversalAssets/FontOfArdron.ttf");
 }
 
 
@@ -63,7 +63,7 @@ body
     width:clamp(5vw,30vw,30vw);
     height:auto;
 
-    background-image: url("../UniversalAssets/VoidEyeFull.png");
+    background-image: url("UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -81,7 +81,7 @@ body
     width:clamp(1vw,10vw,15vw);
     height:auto;
 
-    background-image: url("../UniversalAssets/Favicon.png");
+    background-image: url("UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -198,7 +198,7 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-image: url("../UniversalAssets/MainDoorFrame.png");
+    background-image: url("UniversalAssets/MainDoorFrame.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -215,7 +215,7 @@ body
     aspect-ratio: 1 / 1;
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -241,9 +241,11 @@ body
 {
     position:absolute;
     display:flex;
-    top:53.25%;
-    left:18.6%;
+    
     width:9%;
+
+    top:41.75%;
+    left:72.25%;
 
 }
 
@@ -252,9 +254,11 @@ body
 {
     position:absolute;
     display:flex;
-    top:65%;
-    left:18.6%;
+    
     width:9%;
+
+    top:53.25%;
+    left:18.6%;
 
 }
 
@@ -263,9 +267,11 @@ body
 {
     position:absolute;
     display:flex;
-    top:76.75%;
-    left:18.6%;
+    
     width:9%;
+
+    top:53.25%;
+    left:72.25%;
 
 }
 
@@ -274,8 +280,9 @@ body
 {
     position:absolute;
     display:flex;
-    top:41.75%;
-    left:72.25%;
+    top:65%;
+    left:18.6%;
+    
     width:9%;
 
 }
@@ -285,9 +292,10 @@ body
 {
     position:absolute;
     display:flex;
-    top:53.25%;
-    left:72.25%;
+    
     width:9%;
+    top:65%;
+    left:72.25%;
 
 }
 
@@ -296,8 +304,9 @@ body
 {
     position:absolute;
     display:flex;
-    top:65%;
-    left:72.25%;
+    top:76.75%;
+    left:18.6%;
+    
     width:9%;
 
 }
@@ -307,9 +316,11 @@ body
 {
     position:absolute;
     display:flex;
-    top:1.25%;
-    left:46%;
-    width:7.75%;
+    
+    width:9%;
+
+    top:76.75%;
+    left:72.25%;
 
 }
 
@@ -317,9 +328,11 @@ body
 {
    position:absolute;
     display:flex;
-    top:76.75%;
-    left:72.25%;
+    top:1.25%;
+    left:46%;
+    
     width:9%;
+    top:500%;
 
 }
 
@@ -358,6 +371,7 @@ body
 #YumalonSigil,
 #IcolassSigil,
 #VoidSigil,
+#SanctumSigil,
 #MimicClosed
 {
     image-rendering: pixelated;
@@ -375,98 +389,105 @@ body
 
 #IcolassSigil
 {
-    background-image: url("../UniversalAssets/Iccolas.png");
+    background-image: url("UniversalAssets/Iccolas.png");
 }
 
 #EimonSigil
 {
-    background-image: url("../UniversalAssets/Eimon.png");
+    background-image: url("UniversalAssets/Eimon.png");
 }
 
 #ElusiaSigil
 {
-    background-image: url("../UniversalAssets/Elusia.png");
+    background-image: url("UniversalAssets/Elusia.png");
 }
 
 #GrimloweSigil
 {
-    background-image: url("../UniversalAssets/Grimlowe.png");
+    background-image: url("UniversalAssets/Grimlowe.png");
 }
 
 #SostrumSigil
 {
-    background-image: url("../UniversalAssets/Sostrum.png");
+    background-image: url("UniversalAssets/Sostrum.png");
 }
 
 #VidulynSigil
 {
-    background-image: url("../UniversalAssets/Vidulyn.png");
+    background-image: url("UniversalAssets/Vidulyn.png");
 }
 
 #YumalonSigil
 {
-    background-image: url("../UniversalAssets/Yumalon.png");
+    background-image: url("UniversalAssets/Yumalon.png");
 }
 
 #VoidSigil
 {
-    background-image: url("../UniversalAssets/Void.png");
+    background-image: url("UniversalAssets/Void.png");
 }
+
+#SanctumSigil
+{
+    background-image: url("UniversalAssets/Sanctum.png");
+}
+
+
 
 #MimicClosed
 {
-    background-image: url("../UniversalAssets/MimicClosed.png");
+    background-image: url("UniversalAssets/MimicClosed.png");
 }
 
 
 
 .EimonButton
 {
-    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("UniversalAssets/EimonButtonBackground.png");
 }
 
 .ElusiaButton
 {
-    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+    background-image: url("UniversalAssets/ElusiaButtonBackground.png");
 }
 
 .GrimloweButton
 {
-    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+    background-image: url("UniversalAssets/GrimloweButtonBackground.png");
 }
 
 .SostrumButton
 {
-    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+    background-image: url("UniversalAssets/SostrumButtonBackground.png");
 
 }
 
 .VidulynButton
 {
-    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+    background-image: url("UniversalAssets/VidulynButtonBackground.png");
 
 }
 
 .YumalonButton
 {
-    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+    background-image: url("UniversalAssets/YumalonButtonBackground.png");
 
 }
 
 .IcolassButton
 {
-    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("UniversalAssets/IcolassButtonBackground.png");
 
 }
 
 .SanctumButton
 {
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
 }
 
 .VoidButton
 {
-    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+    background-image: url("UniversalAssets/VoidButtonBackground.png");
 }
 
 #DoorClosedOpen
@@ -481,7 +502,7 @@ body
     left: 48.50%;
     transform: translate(-50%, -50%);
 
-    background-image: url("../UniversalAssets/MainDoorClosed.png");
+    background-image: url("UniversalAssets/MainDoorClosed.png");
     background-size: 103% 103%;
     background-repeat: no-repeat;
     pointer-events: none;
@@ -497,8 +518,8 @@ body
     left:-15%;
     pointer-events: none;
 
-    -webkit-mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
-    mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
+    -webkit-mask-image: url("UniversalAssets/MainMenuDoorOpenMASK.png");
+    mask-image: url("UniversalAssets/MainMenuDoorOpenMASK.png");
 
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
@@ -535,7 +556,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/MobileTopDownTransition.png");
+    background-image: url("UniversalAssets/MobileTopDownTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -551,7 +572,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/MobileTopTransition.png");
+    background-image: url("UniversalAssets/MobileTopTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -567,7 +588,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/MobileBottomTransition.png");
+    background-image: url("UniversalAssets/MobileBottomTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -600,7 +621,7 @@ body
     pointer-events: auto;
     image-rendering: pixelated;
 
-    background-image: url("../UniversalAssets/MobileButtonInfoBox.png");
+    background-image: url("UniversalAssets/MobileButtonInfoBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -671,7 +692,7 @@ body
     aspect-ratio: 440/65;
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/WideMobileButton.png");
+    background-image: url("UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -689,7 +710,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../UniversalAssets/WideMobileButton.png");
+    background-image: url("UniversalAssets/WideMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -710,7 +731,7 @@ body
     aspect-ratio: 440/43;
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/ThinMobileButton.png");
+    background-image: url("UniversalAssets/ThinMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -728,7 +749,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../UniversalAssets/ThinMobileButton.png");
+    background-image: url("UniversalAssets/ThinMobileButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -751,7 +772,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -773,7 +794,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -881,7 +902,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -904,7 +925,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(75%);
@@ -946,7 +967,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../UniversalAssets/MobileButtonBox.png");
+    background-image: url("UniversalAssets/MobileButtonBox.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 

@@ -79,6 +79,14 @@ async function Start()
     
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
 
     BlinkEyes()
 
@@ -428,7 +436,7 @@ GateEntry.addEventListener("click", function()
             break;
 
         case "Yumalon":
-            window.open("https://ko-fi.com/nullforgestudiosofficial", "_blank");
+                ChangePage(DoorPage,QuizPage)
             break;
 
         case "Icolass":
@@ -439,24 +447,27 @@ GateEntry.addEventListener("click", function()
             window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
             break;
 
-        case "Void":
+        case "Eimon":
             window.open("https://www.twitch.tv/nullforgestudiosofficial", "_blank");
             break;
 
-        case "Eimon":
-            ChangePage(DoorPage,QuizPage)
-            break;
-
         case "Elusia":
-
+                window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
             break;
 
         case "Grimlowe":
-            window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
+            window.open("https://ko-fi.com/nullforgestudiosofficial", "_blank");
             break;
 
         case "Sostrum":
             window.open("https://nullforgestudiosofficial.github.io/Wiki/");
+            break;
+
+
+
+
+        case "Void":
+            
             break;
     }
 });
@@ -473,7 +484,7 @@ function DoorTurnOff()
     IcolassTitle.style.display = "none";
     VoidTitle.style.display = "none";
     SanctumTitle.style.display = "none";
-    MimicClosed.style.backgroundImage = 'url("../UniversalAssets/MimicClosed.png")';
+    //MimicClosed.style.backgroundImage = 'url("../UniversalAssets/MimicClosed.png")';
     DoorClosedOpen.style.backgroundImage = 'url("../UniversalAssets/MainMenuDoorOpen.png")';
     GateEntry.style.display = "block";
 }
@@ -485,7 +496,7 @@ DoorSanctum.addEventListener("click", function()
     SanctumTitle.style.display = "block";
     DoorFrame.style.backgroundImage = 'url("../UniversalAssets/MainDoorFrameSanctum.png")';
     DoorRealm.style.backgroundImage = 'url("../UniversalAssets/SanctumBack.png")';
-    MimicClosed.style.backgroundImage = 'url("../UniversalAssets/MimicOpen.png")';
+    //MimicClosed.style.backgroundImage = 'url("../UniversalAssets/MimicOpen.png")';
 });
 
 DoorYumalon.addEventListener("click", function()
