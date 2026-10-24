@@ -708,6 +708,22 @@ body
     word-wrap: break-word;
 }
 
+#BDMInfo
+{
+    font-family: Ardron;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,1.0vw,1vw);
+}
+
+
 .NormalButton
 {
     appearance: none;
