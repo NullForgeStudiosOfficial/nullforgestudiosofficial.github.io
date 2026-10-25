@@ -58,8 +58,17 @@ async function Start()
 {
     
     LeftTransition.style.left -200 + "px"
-    ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VoidButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
+
 
     LastTime = performance.now();
     requestAnimationFrame(Update);

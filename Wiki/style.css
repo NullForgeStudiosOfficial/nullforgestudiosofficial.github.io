@@ -76,6 +76,11 @@ body
     Width:100%;
     Height:10%;
     background-color: black;
+
+    pointer-events:none;
+    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-size: 256px 256px;
+    background-repeat: repeat;
 }
 
 
@@ -277,6 +282,7 @@ body
 .NormalButton
 {
     background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    filter: brightness(100%);
 }
 
 #Logo
@@ -318,6 +324,10 @@ body
     pointer-events: none;
 }
 
+#BlackText
+{
+    color:black;
+}
 
 @media (max-width: 1600px) {
 
