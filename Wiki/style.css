@@ -537,6 +537,35 @@ body
     color:black;
 }
 
+
+
+
+#NavigationTabButton
+{
+    position: absolute;
+    left:95%;
+    top:45%;
+    aspect-ratio: 1/1;
+    width:25%;
+
+
+    background-color:  transparent;;
+    border: none;
+    padding: 0;
+    pointer-events:auto;
+    z-index: 0;
+    
+}
+
+#NavigationTab
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    background-image: url(../UniversalAssets/TabLeft.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
 @media (max-width: 1600px) {
 
 }
