@@ -1,5 +1,12 @@
 // ----------- whateverthefuck
-let Desktop = true;
+const DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+
+let Desktop = DesktopQuery.matches;
+
+DesktopQuery.addEventListener("change", () => {
+    Desktop = DesktopQuery.matches;
+});
+
 let LastTime = 0;
 let DeltaTime = 0;
 let MainBackground = document.getElementById("MainBackground")
@@ -89,6 +96,7 @@ function Update(CurrentTime)
     LastTime = CurrentTime;
 
     ScrollButtonBackgrounds();
+    ScrollBackground();
 
     if (TransitionRunning)
     {
@@ -105,6 +113,11 @@ function Update(CurrentTime)
         StartSite()
     }
 
+    if (TopBarTransition || NavigationBarTransition)
+    {
+        UpdateBarTransition();
+    }
+
     requestAnimationFrame(Update);
 }
 function ScrollButtonBackgrounds()
@@ -116,6 +129,8 @@ function ScrollButtonBackgrounds()
         Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
     }
 }
+
+
 
 
 
@@ -287,8 +302,75 @@ function UpdateSiteTransition()
     }
 }
 
+
 //-----------------------------------------
 
+let TopBarGraphics = document.getElementById("TopBarGraphics")
+let TopBarScroll = 0
+let WikiNagivationPanelBackground = document.getElementById("WikiNagivationPanelBackground")
+let NavigationBackgroundScroll = 0;
+
+async function ScrollBackground()
+{
+    TopBarScroll += 100 * DeltaTime;
+
+    TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
+
+    NavigationBackgroundScroll +=100 * DeltaTime;
+
+    WikiNagivationPanelBackground.style.backgroundPositionY = NavigationBackgroundScroll + "px";
+}
+
+
+function UpdateBarTransition()
+{
+    if (TopBarTransition)
+    {
+        if(Desktop)
+        {
+            let Target = TopBarOpen ? 0 : -10;
+
+            TopBarPosition += (Target - TopBarPosition) * Math.min(1, 10 * DeltaTime);
+
+            TopBar.style.top = TopBarPosition + "%";
+
+            if (Math.abs(Target - TopBarPosition) < 0.01)
+            {
+                TopBarPosition = Target;
+                TopBarTransition = false;
+            }
+        }
+        else
+        {
+
+        }
+            
+
+    }
+
+    if (NavigationBarTransition)
+    {
+        if (Desktop)
+        {
+            let Target = NavigationOpen ? 0 : -15.5;
+
+            NavigationBarPosition += (Target - NavigationBarPosition) * Math.min(1, 10 * DeltaTime);
+
+            WikiNavigationPanelFrame.style.left = NavigationBarPosition + "%";
+
+            if (Math.abs(Target - NavigationBarPosition) < 0.01)
+            {
+                NavigationBarPosition = Target;
+                WikiNavigationPanelFrame.style.left = Target + "%";
+                NavigationBarTransition = false;
+            }
+        }
+        else
+        {
+
+        }
+    }
+}
 
 let ArdronUniverse = document.getElementById("ArdronUniverse")
 
@@ -365,9 +447,64 @@ SFButton.addEventListener("click", function()
     LoadSite("Falatur/index.html")
 });
 
+let NavigationTabButton = document.getElementById("NavigationTabButton")
+let TopBarTabButton = document.getElementById("TopBarTabButton")
 
+let NavigationTab = document.getElementById("NavigationTab")
+let TopBarTab = document.getElementById("TopBarTab")
 
+let TopBar = document.getElementById("TopBar")
+let WikiNavigationPanelFrame = document.getElementById("WikiNavigationPanelFrame")
 
+let NavigationOpen = true;
+let TopBarOpen = true;
+let NavigationBarTransition = false;
+let TopBarTransition = false;
+let TopBarPosition = 0;
+let NavigationBarPosition = 0;
+
+NavigationTabButton.addEventListener("click", function()
+{
+    if (NavigationBarTransition)
+    {
+        return;
+    }
+
+    if (NavigationOpen)
+    {
+        NavigationOpen = false;
+        NavigationTab.style.backgroundImage = 'url("../UniversalAssets/TabRight.png")';
+    }
+    else
+    {
+        NavigationOpen = true;
+        NavigationTab.style.backgroundImage = 'url("../UniversalAssets/TabLeft.png")';
+    }
+
+    NavigationBarTransition = true;
+});
+
+TopBarTabButton.addEventListener("click", function()
+{
+    if (TopBarTransition)
+    {
+        return;
+    }
+
+    if (TopBarOpen)
+    {
+        TopBarOpen = false;
+        TopBarTab.style.backgroundImage = 'url("../UniversalAssets/TabDown.png")';
+    }
+    else
+    {
+        TopBarOpen = true;
+        TopBarTab.style.backgroundImage = 'url("../UniversalAssets/TabUp.png")';
+    }
+
+    TopBarTransition = true;
+
+});
 
 async function PreLoadEverything()
 {
