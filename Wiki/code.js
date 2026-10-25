@@ -24,6 +24,10 @@ let NextPage = null
 
 //--------- Add These
 
+function Sleep(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 function Randomizer(min,max)
@@ -285,7 +289,7 @@ function UpdateSiteTransition()
 //-----------------------------------------
 
 
-let ExitButton = document.getElementById("ExitButton")
+let ArdronUniverse = document.getElementById("ArdronUniverse")
 
 let AoAButton = document.getElementById("AoAButton")
 let VTButton = document.getElementById("VTButton")
@@ -297,7 +301,7 @@ let DPButton = document.getElementById("DPButton")
 let SFButton = document.getElementById("SFButton")
 
 
-ExitButton.addEventListener("click", function()
+ArdronUniverse.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
