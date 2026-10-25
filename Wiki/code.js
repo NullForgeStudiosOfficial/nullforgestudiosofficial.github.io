@@ -61,8 +61,6 @@ async function Start()
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
 
-    BlinkEyes()
-
     LastTime = performance.now();
     requestAnimationFrame(Update);
 
@@ -76,7 +74,6 @@ function Update(CurrentTime)
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    ScrollBackground();
     ScrollButtonBackgrounds();
 
     if (TransitionRunning)
@@ -96,14 +93,6 @@ function Update(CurrentTime)
 
     requestAnimationFrame(Update);
 }
-
-async function ScrollBackground()
-{
-    MainBackgroundScroll += 100 * DeltaTime;
-
-    MainBackground.style.backgroundPositionX = MainBackgroundScroll + "px";
-}
-
 function ScrollButtonBackgrounds()
 {
     ButtonBackgroundScroll -= 25 * DeltaTime;
@@ -284,14 +273,83 @@ function UpdateSiteTransition()
     }
 }
 
+//-----------------------------------------
 
 
+let ExitButton = document.getElementById("ExitButton")
+
+let AoAButton = document.getElementById("AoAButton")
+let VTButton = document.getElementById("VTButton")
+let ACButton = document.getElementById("ACButton")
+let EoAButton = document.getElementById("EoAButton")
+let RRButton = document.getElementById("RRButton")
+let GLButton = document.getElementById("GLButton")
+let DPButton = document.getElementById("DPButton")
+let SFButton = document.getElementById("SFButton")
 
 
+ExitButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../index.html")
+});
 
+AoAButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("AshesOfArcanum/index.html")
+});
 
+VTButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("VerdantThesis/index.html")
+});
 
+ACButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Ashbound/index.html")
+});
 
+EoAButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("EchosOfAria/index.html")
+});
+
+RRButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("RimaltsRecollection/index.html")
+});
+
+GLButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("GracesLament/index.html")
+});
+
+DPButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("DaemonProtocol/index.html")
+});
+
+SFButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Falatur/index.html")
+});
 
 
 

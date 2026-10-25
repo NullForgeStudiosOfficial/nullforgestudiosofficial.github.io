@@ -1,27 +1,10 @@
-@font-face
-{
-    font-family: Ardron;
-    src: url("UniversalAssets/FontOfArdron.ttf");
-}
 
 @font-face
 {
     font-family: Lexend;
-    src: url("UniversalAssets/Lexend.ttf")
-}
+    src: url("../UniversalAssets/Lexend.ttf")
 
-@font-face
-{
-    font-family: Skranji;
-    src: url("UniversalAssets/Skranji.ttf")
 }
-
-@font-face
-{
-    font-family: Lilita;
-    src: url("UniversalAssets/LilitaOne.ttf")
-}
-
 
 *
 {
@@ -81,21 +64,259 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(UniversalAssets/DesktopBackground.png);
-    background-size: 100% 100%;
-    background-repeat: repeat-x;
-    background-position: 0 (--var 0px);
+    background-image: url(../UniversalAssets/WIkiBackground.png);
+    background-size: 256px 256px;
+    background-repeat: repeat;
 }
 
 
+#TopBar
+{
+    position:absolute;
+    Width:100%;
+    Height:10%;
+    background-color: black;
+}
 
 
+.SquareButton
+{
+    position: absolute;
+    
+
+    background-color: transparent;
+    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events:auto;
+
+}
+
+.SquareButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
 
 
+#ExitButton
+{
+    position: absolute;
+    top:15%;
+    left:0%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#AoAButton
+{
+    position:absolute;
+    top:15%;
+    left:10%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#VTButton
+{
+    position: absolute;
+    top:15%;
+    left:20%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#ACButton
+{
+    position: absolute;
+    top:15%;
+    left:30%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#EoAButton
+{
+    position: absolute;
+    top:15%;
+    left:40%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#RRButton
+{
+    position: absolute;
+    top:15%;
+    left:55%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#GLButton
+{
+    position: absolute;
+    top:15%;
+    left:65%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#ATButton
+{
+    position: absolute;
+    top:15%;
+    left:75%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#DPButton
+{
+    position: absolute;
+    top:15%;
+    left:85%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#SFButton
+{
+    position: absolute;
+    top:15%;
+    left:95%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
 
 
+.EimonButton,
+.ElusiaButton,
+.GrimloweButton,
+.SostrumButton,
+.VidulynButton,
+.YumalonButton,
+.IcolassButton,
+.VoidButton,
+.NormalButton,
+.SanctumButton
+{
+    display:flex;
+    position: relative;
+    width: 90%;
+    height: 90%;
+
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    z-index: 0;
+
+    filter: brightness(50%);
+}
+
+.EimonButton
+{
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+}
+
+.ElusiaButton
+{
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+.GrimloweButton
+{
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+}
+
+.SostrumButton
+{
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+
+}
+
+.VidulynButton
+{
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+
+}
+
+.YumalonButton
+{
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+
+}
+
+.IcolassButton
+{
+    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+
+}
+
+.SanctumButton
+{
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+}
+
+.VoidButton
+{
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+}
+
+.NormalButton
+{
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:48.50%;
+    top:1%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,4.50vw,5vw);
+    height:auto;
+
+    background-image: url("../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
 
 
+.TopBarText
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(1vw,1vw,3vw);
+    font-family: Lexend;
+    font-weight: 500;
+    color: whitesmoke;
+
+    z-index: 10;
+    pointer-events: none;
+}
 
 
 @media (max-width: 1600px) {

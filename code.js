@@ -415,6 +415,8 @@ async function BlinkEyes()
         await Sleep(75);
     }
 }
+
+
 function VoidSpin()
 {
     MainBackgroundScroll += 100 * DeltaTime;
