@@ -130,11 +130,6 @@ function ScrollButtonBackgrounds()
     }
 }
 
-
-
-
-
-
 async function ChangePage(PageID1,PageID2)
 {
     PreviousPage = PageID1
@@ -172,18 +167,29 @@ async function ChangeSite()
 async function StartSite()
 {
     LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+   
 
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
+    if (Desktop)
+    {
+        StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+        StartTransitionX -= 10000 * DeltaTime;
+        LeftTransition.style.left = StartTransitionX + "px";
+        LeftTransition.style.right = "auto";
+    }
+    else
+    {
+        StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
+        StartTransitionX -= 5000 * DeltaTime;
+        LeftTransition.style.top = StartTransitionX + "px";
+        LeftTransition.style.bottom = "auto";
+    }
+    
 
     if (StartSiteT && StartTransitionX <= StopX)
     {
-            StartSiteT = false;
-            StartSiteT = false;
-            LeftTransition.style.display = "none";
-            return
+        StartSiteT = false;
+        LeftTransition.style.display = "none";
+        return
     }
 }
 
@@ -200,7 +206,15 @@ async function LoadSite(SiteString)
 
 function UpdateTransition()
 {
-       TransitionX -= 11000 * DeltaTime;
+        if (Desktop)
+        {
+            TransitionX -= 10000 * DeltaTime;
+        }
+        else
+        {
+            TransitionX -= 5000 * DeltaTime;
+        }
+       
 
         let usingthisthingy = null;
 
@@ -219,7 +233,17 @@ function UpdateTransition()
             break;
         }
 
-        usingthisthingy.style.left = TransitionX + "px";
+        if (Desktop)
+        {
+            usingthisthingy.style.left = TransitionX + "px";
+        }
+        else
+        {
+            usingthisthingy.style.top = TransitionX + "px";
+        }
+
+        
+        
         if (Desktop)
         {
             if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
@@ -231,11 +255,12 @@ function UpdateTransition()
         }
         else
         {
-            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.offsetWidth / 2)
+            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.innerHeight / 2)
             {
                 ChangedPage = true;
                 PreviousPage.style.display = "none";
-                NextPage.style.display = "flex";    
+                NextPage.style.display = "flex";
+                LeftRightTransition.style.display = "none"
             }
         }
 
@@ -276,7 +301,7 @@ function UpdateSiteTransition()
     }
     else
     {
-        StopX = window.innerHeight - usingthisthingy.innerHeight + 200;
+        StopX = window.innerHeight - usingthisthingy.offsetHeight + 200;
     }
     
 
@@ -296,14 +321,14 @@ function UpdateSiteTransition()
     }
     else
     {
-        SiteTransitionX -= 11000 * DeltaTime;
+        SiteTransitionX -= 5000 * DeltaTime;
         usingthisthingy.style.top = SiteTransitionX + "px";
         usingthisthingy.style.bottom = "auto";
     }
 }
 
 
-//-----------------------------------------
+
 
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
@@ -505,6 +530,16 @@ TopBarTabButton.addEventListener("click", function()
     TopBarTransition = true;
 
 });
+
+//-----------------------------------------
+
+
+
+
+
+
+
+//-----------------------------------------
 
 async function PreLoadEverything()
 {
