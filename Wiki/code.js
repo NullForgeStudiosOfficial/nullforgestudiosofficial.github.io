@@ -62,7 +62,8 @@ async function Start()
 {
     
     LeftTransition.style.left -200 + "px"
-    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
