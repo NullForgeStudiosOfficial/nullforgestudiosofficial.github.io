@@ -308,17 +308,17 @@ function UpdateSiteTransition()
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
 let WikiNagivationPanelBackground = document.getElementById("WikiNagivationPanelBackground")
-let NavigationBackgroundScroll = 0;
+let WikiInfoPanelFrameBackground = document.getElementById("WikiInfoPanelFrameBackground")
+
+
 
 async function ScrollBackground()
 {
     TopBarScroll += 100 * DeltaTime;
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
-
-    NavigationBackgroundScroll +=100 * DeltaTime;
-
-    WikiNagivationPanelBackground.style.backgroundPositionY = NavigationBackgroundScroll + "px";
+    WikiNagivationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
+    WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
 
 
