@@ -462,7 +462,9 @@ GateEntry.addEventListener("click", function()
             break;
 
         case "Sostrum":
-            window.open("https://nullforgestudiosofficial.github.io/Wiki/");
+            WhichTransitionWeUsing = 1
+    ChangeSite()
+            LoadSite("Wiki/ArdronUniverse/index.html")
             break;
 
 

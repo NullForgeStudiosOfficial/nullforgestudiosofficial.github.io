@@ -44,6 +44,67 @@ body
 }
 
 
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftRightTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/RightFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#LeftTransition,
+#RightTransition,
+#FullLeftRightTransition
+{
+    z-index: 1000;
+}
+
+
 #BackgroundContainer
 {
     position:fixed;

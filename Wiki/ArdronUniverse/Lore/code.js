@@ -497,12 +497,12 @@ NavigationTabButton.addEventListener("click", function()
     if (NavigationOpen)
     {
         NavigationOpen = false;
-        NavigationTab.style.backgroundImage = 'url("../UniversalAssets/TabRight.png")';
+        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabRight.png")';
     }
     else
     {
         NavigationOpen = true;
-        NavigationTab.style.backgroundImage = 'url("../UniversalAssets/TabLeft.png")';
+        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabLeft.png")';
     }
 
     NavigationBarTransition = true;
@@ -518,12 +518,12 @@ TopBarTabButton.addEventListener("click", function()
     if (TopBarOpen)
     {
         TopBarOpen = false;
-        TopBarTab.style.backgroundImage = 'url("../UniversalAssets/TabDown.png")';
+        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabDown.png")';
     }
     else
     {
         TopBarOpen = true;
-        TopBarTab.style.backgroundImage = 'url("../UniversalAssets/TabUp.png")';
+        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabUp.png")';
     }
 
     TopBarTransition = true;
