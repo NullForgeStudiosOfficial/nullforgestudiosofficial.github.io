@@ -68,7 +68,14 @@ document.addEventListener("keydown", function(event)
 async function Start()
 {
     
-    LeftTransition.style.left -200 + "px"
+    if (Desktop)
+    {
+        LeftTransition.style.left -200 + "px"
+    }
+    else
+    {
+        LeftTransition.style.top -300 + "px"
+    }
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
