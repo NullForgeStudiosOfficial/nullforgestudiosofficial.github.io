@@ -2,7 +2,7 @@
 @font-face
 {
     font-family: Lexend;
-    src: url("../UniversalAssets/Lexend.ttf")
+    src: url("../../UniversalAssets/Lexend.ttf")
 
 }
 
@@ -64,7 +64,7 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../UniversalAssets/WIkiBackground.png);
+    background-image: url(../../UniversalAssets/WIkiBackground.png);
     background-size: 256px 256px;
     background-repeat: repeat;
 }
@@ -85,7 +85,7 @@ body
     height:100%;
     width:100%;
     pointer-events:none;
-    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-image: url(../../UniversalAssets/DesktopBackground.png);
     background-size: 256px 256px;
     background-repeat: repeat;
 
@@ -99,7 +99,7 @@ body
     
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -115,7 +115,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 
@@ -241,56 +241,56 @@ body
 
 .EimonButton
 {
-    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
 }
 
 .ElusiaButton
 {
-    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
 }
 
 .GrimloweButton
 {
-    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
 }
 
 .SostrumButton
 {
-    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+    background-image: url("../../UniversalAssets/SostrumButtonBackground.png");
 
 }
 
 .VidulynButton
 {
-    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+    background-image: url("../../UniversalAssets/VidulynButtonBackground.png");
 
 }
 
 .YumalonButton
 {
-    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+    background-image: url("../../UniversalAssets/YumalonButtonBackground.png");
 
 }
 
 .IcolassButton
 {
-    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("../../UniversalAssets/IcolassButtonBackground.png");
 
 }
 
 .SanctumButton
 {
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
 }
 
 .VoidButton
 {
-    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+    background-image: url("../../UniversalAssets/VoidButtonBackground.png");
 }
 
 .AUButton
 {
-    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
     filter: brightness(100%);
 }
 
@@ -305,7 +305,7 @@ body
     width:clamp(1vw,4.50vw,5vw);
     height:auto;
 
-    background-image: url("../UniversalAssets/Favicon.png");
+    background-image: url("../../UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -356,7 +356,7 @@ body
 {
     aspect-ratio: 1/1;
     width:100%;
-    background-image: url(../UniversalAssets/TabUp.png);
+    background-image: url(../../UniversalAssets/TabUp.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -401,7 +401,7 @@ body
     left:3%;
     position:absolute;
 
-    background-image: url(../UniversalAssets/NoneButtonBackground.png);
+    background-image: url(../../UniversalAssets/NoneButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -419,7 +419,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url(../UniversalAssets/WikiNavigationBox.png);
+    background-image: url(../../UniversalAssets/WikiNavigationBox.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -450,7 +450,7 @@ body
     aspect-ratio: 144/40;
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/DesktopButton.png");
+    background-image: url("../../UniversalAssets/DesktopButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -468,7 +468,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url("../UniversalAssets/DesktopButton.png");
+    background-image: url("../../UniversalAssets/DesktopButton.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 
@@ -487,7 +487,7 @@ body
     width: 90%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;
@@ -506,7 +506,7 @@ body
     width: 90%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -557,7 +557,7 @@ body
 {
     aspect-ratio: 1/1;
     width:100%;
-    background-image: url(../UniversalAssets/TabLeft.png);
+    background-image: url(../../UniversalAssets/TabLeft.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -618,7 +618,7 @@ body
     left:0%;
     position:absolute;
 
-    background-image: url(../UniversalAssets/NoneButtonBackground.png);
+    background-image: url(../../UniversalAssets/NoneButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -633,7 +633,7 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url(../UniversalAssets/WikiDesktopInfoPanel.png);
+    background-image: url(../../UniversalAssets/WikiDesktopInfoPanel.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
 

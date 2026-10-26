@@ -398,7 +398,6 @@ function UpdateBarTransition()
 }
 
 let ArdronUniverse = document.getElementById("ArdronUniverse")
-
 let AoAButton = document.getElementById("AoAButton")
 let VTButton = document.getElementById("VTButton")
 let ACButton = document.getElementById("ACButton")
@@ -413,63 +412,63 @@ ArdronUniverse.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("../index.html")
+    LoadSite("../../../Wiki/ArdronUniverse/index.html")
 });
 
 AoAButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("AshesOfArcanum/index.html")
+    LoadSite("../../../Wiki/AshesOfArcanum/index.html")
 });
 
 VTButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("VerdantThesis/index.html")
+    LoadSite("../../../Wiki/VerdantThesis/index.html")
 });
 
 ACButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("Ashbound/index.html")
+    LoadSite("../../../Wiki/Ashbound/index.html")
 });
 
 EoAButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("EchosOfAria/index.html")
+    LoadSite("../../../Wiki/EchosOfAria/index.html")
 });
 
 RRButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("RimaltsRecollection/index.html")
+    LoadSite("../../../Wiki/RimaltsRecollection/index.html")
 });
 
 GLButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("GracesLament/index.html")
+    LoadSite(".../../../Wiki/GracesLament/index.html")
 });
 
 DPButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("DaemonProtocol/index.html")
+    LoadSite("../../../Wiki/DaemonProtocol/index.html")
 });
 
 SFButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite("Falatur/index.html")
+    LoadSite("../../../Wiki/Falatur/index.html")
 });
 
 let NavigationTabButton = document.getElementById("NavigationTabButton")
@@ -533,11 +532,53 @@ TopBarTabButton.addEventListener("click", function()
 
 //-----------------------------------------
 
+let ChapterButtons = [];
+let ChapterPages = [];
 
+for (let i = 1; i <= 33; i++)
+{
+    ChapterButtons.push(document.getElementById("Ch" + i));
+    ChapterPages.push(document.getElementById("Ch" + i + "Page"));
+}
 
+function ShowChapter(ChapterNumber)
+{
+    let SelectedButton = ChapterButtons[ChapterNumber - 1];
 
+    if (SelectedButton.querySelector(".DisabledButtonBackground"))
+    {
+        return;
+    }
 
+    for (let Page of ChapterPages)
+    {
+        Page.style.display = "none";
+    }
 
+    for (let Button of ChapterButtons)
+    {
+        let Background = Button.querySelector(".NormalButtonBackground");
+
+        if (Background)
+        {
+            Background.style.filter = "brightness(75%)";
+        }
+    }
+
+    ChapterPages[ChapterNumber - 1].style.display = "block";
+
+    SelectedButton.querySelector(".NormalButtonBackground").style.filter = "brightness(100%)";
+
+    WikiInfoPanel.scrollTop = 0;
+}
+
+ChapterButtons.forEach((Button, Index) =>
+{
+    Button.addEventListener("click", function()
+    {
+        ShowChapter(Index + 1);
+    });
+});
 
 //-----------------------------------------
 
@@ -622,6 +663,38 @@ async function PreLoadEverything()
 
     console.log("Image preload finished:", ImageURLs.size, "URLs");
 
+    FitButtonText()
+}
+
+function FitButtonText()
+{
+    const Canvas = document.createElement("canvas");
+    const Context = Canvas.getContext("2d");
+
+    document.querySelectorAll(".SmolNavigationButtonText").forEach(Text =>
+    {
+        Text.style.fontSize = "";
+        Text.style.whiteSpace = "nowrap";
+
+        let Style = getComputedStyle(Text);
+        let Size = parseFloat(Style.fontSize);
+
+        const MaxWidth = Text.clientWidth - 10;
+
+        while (Size > 8)
+        {
+            Context.font = `${Style.fontWeight} ${Size}px ${Style.fontFamily}`;
+
+            let TextWidth = Context.measureText(Text.textContent.trim()).width;
+
+            if (TextWidth <= MaxWidth)
+                break;
+
+            Size -= 0.5;
+        }
+
+        Text.style.fontSize = Size + "px";
+    });
     Start();
 }
 
