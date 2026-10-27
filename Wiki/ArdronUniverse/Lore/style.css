@@ -735,6 +735,32 @@ body
      5px  5px 10px black;
 }
 
+.WordsCentered
+{
+    position: relative;
+
+
+    width: 98%;
+    left:1%;
+
+    text-align: center;
+    font-size: clamp(1vw,1.25vw,3vw);
+    font-family: Lexend;
+    color: whitesmoke;
+    white-space: pre-line;
+    padding:0.5%;
+    padding-bottom: 3%;
+
+    z-index: 1;
+    pointer-events: none;
+
+    text-shadow:
+    -5px -5px 10px black,
+     5px -5px 10px black,
+    -5px  5px 10px black,
+     5px  5px 10px black;
+}
+
 .Title1
 {
     position: relative;
