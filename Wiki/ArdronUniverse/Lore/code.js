@@ -340,7 +340,7 @@ function UpdateSiteTransition()
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
 let WikiNagivationPanelBackground = document.getElementById("WikiNagivationPanelBackground")
-let WikiInfoPanelFrameBackground = document.getElementById("WikiInfoPanelFrameBackground")
+
 
 
 
@@ -350,7 +350,8 @@ async function ScrollBackground()
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
     WikiNagivationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
-    WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
+    WikiInfoPanelFrameBackground1.style.backgroundPositionY = (TopBarScroll/2) + "px";
+    WikiInfoPanelFrameBackground2.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
 
 
@@ -538,11 +539,111 @@ TopBarTabButton.addEventListener("click", function()
 });
 
 //-----------------------------------------
+const Speakers = [
+    { ID: "None",  Background: 'url("../../../UniversalAssets/NoneButtonBackground.png")' },
+    { ID: "Iwata",  Background: 'url("../../../UniversalAssets/EimonButtonBackground.png")' },
+    { ID: "Sythys", Background: 'url("../../../UniversalAssets/ElusiaButtonBackground.png")' },
+    { ID: "Entar",  Background: 'url("../../../UniversalAssets/GrimloweButtonBackground.png")' },
+    { ID: "Zykius", Background: 'url("../../../UniversalAssets/SostrumButtonBackground.png")' },
+    { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
+    { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
+    { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }
+];
+
+
+let WikiInfoPanelFrameBackground1 = document.getElementById("WikiInfoPanelFrameBackground1")
+let WikiInfoPanelFrameBackground2 = document.getElementById("WikiInfoPanelFrameBackground2")
+const SpeakerTitles = WikiInfoPanel.querySelectorAll("[Speaker]");
+const DefaultBackground = getComputedStyle(WikiInfoPanel).backgroundImage;
+let CurrentSpeaker = null;
+const Background1 = document.getElementById("WikiInfoPanelFrameBackground1");
+const Background2 = document.getElementById("WikiInfoPanelFrameBackground2");
+
+let Background1Opacity = 1;
+let Background2Opacity = 0;
+
+let Target1Opacity = 1;
+let Target2Opacity = 0;
+
+
+
+const InitialBackground = Speakers.find(S => S.ID === "Void").Background;
+
+Background1.style.backgroundImage = InitialBackground;
+Background2.style.backgroundImage = InitialBackground;
+
+function UpdateSpeakerBackground()
+{
+    const PanelTop = WikiInfoPanel.getBoundingClientRect().top;
+    const PanelHeight = WikiInfoPanel.clientHeight;
+    const PanelBottom = PanelTop + PanelHeight;
+
+    let PreviousSpeaker = "Void";
+    let NextSpeaker = null;
+    let NextTitle = null;
+
+    let SpeakerIndex = 0;
+
+    for (const Title of SpeakerTitles)
+    {
+        const SpeakerID = Title.getAttribute("Speaker");
+        const TitleTop = Title.getBoundingClientRect().top;
+        if (SpeakerID === PreviousSpeaker)
+        {
+            continue;
+        }
+        if (TitleTop <= PanelTop)
+        {
+            PreviousSpeaker = SpeakerID;
+            SpeakerIndex++;
+        }
+        else
+        {
+            NextSpeaker = SpeakerID;
+            NextTitle = Title;
+            break;
+        }
+    }
+    const Previous = Speakers.find(S => S.ID === PreviousSpeaker);
+    const Next = Speakers.find(S => S.ID === NextSpeaker);
+
+    if (!Previous) return;
+
+    let Progress = 0;
+
+    if (NextTitle && Next)
+    {
+        Progress = Math.max(0, Math.min(1,
+            (PanelBottom - NextTitle.getBoundingClientRect().top) / PanelHeight
+        ));
+    }
+
+    const OldBackground = SpeakerIndex % 2 === 0 ? Background1 : Background2;
+    const NewBackground = SpeakerIndex % 2 === 0 ? Background2 : Background1;
+
+    OldBackground.style.backgroundImage = Previous.Background;
+    NewBackground.style.backgroundImage = Next ? Next.Background : Previous.Background;
+
+    OldBackground.style.zIndex = 0;
+    OldBackground.style.opacity = 1;
+
+    NewBackground.style.zIndex = 1;
+    NewBackground.style.opacity = Progress;
+}
+
+WikiInfoPanel.addEventListener("scroll", UpdateSpeakerBackground);
+
+UpdateSpeakerBackground();
+
+
 
 let ChapterButtons = [];
 let ChapterPages = [];
 
-for (let i = 1; i <= 33; i++)
+ChapterButtons.push(document.getElementById("ChIntro"));
+ChapterPages.push(document.getElementById("ChIntroPage"));
+
+for (let i = 0; i <= 33; i++)
 {
     ChapterButtons.push(document.getElementById("Ch" + i));
     ChapterPages.push(document.getElementById("Ch" + i + "Page"));
@@ -550,40 +651,30 @@ for (let i = 1; i <= 33; i++)
 
 function ShowChapter(ChapterNumber)
 {
-    let SelectedButton = ChapterButtons[ChapterNumber - 1];
+    let Target = document.getElementById("Ch" + ChapterNumber + "Page");
 
-    if (SelectedButton.querySelector(".DisabledButtonBackground"))
-    {
-        return;
-    }
+    if (!Target) return;
 
-    for (let Page of ChapterPages)
-    {
-        Page.style.display = "none";
-    }
-
-    for (let Button of ChapterButtons)
-    {
-        let Background = Button.querySelector(".NormalButtonBackground");
-
-        if (Background)
-        {
-            Background.style.filter = "brightness(75%)";
-        }
-    }
-
-    ChapterPages[ChapterNumber - 1].style.display = "block";
-
-    SelectedButton.querySelector(".NormalButtonBackground").style.filter = "brightness(100%)";
-
-    WikiInfoPanel.scrollTop = 0;
+    WikiInfoPanel.scrollTo({
+        top: Target.getBoundingClientRect().top
+           - WikiInfoPanel.getBoundingClientRect().top
+           + WikiInfoPanel.scrollTop,
+        behavior: "smooth"
+    });
 }
 
 ChapterButtons.forEach((Button, Index) =>
 {
     Button.addEventListener("click", function()
     {
-        ShowChapter(Index + 1);
+        const Target = ChapterPages[Index];
+
+        WikiInfoPanel.scrollTo({
+            top: Target.getBoundingClientRect().top
+                - WikiInfoPanel.getBoundingClientRect().top
+                + WikiInfoPanel.scrollTop,
+            behavior: "smooth"
+        });
     });
 });
 
