@@ -44,7 +44,6 @@ body
 }
 
 
-
 #FullLeftRightTransition
 {
     position:absolute;
@@ -57,7 +56,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../../UniversalAssets/LeftRightTransition.png");
+    background-image: url("../../UniversalAssets/LeftRightTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -74,7 +73,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../../UniversalAssets/LeftFade.png");
+    background-image: url("../../UniversalAssets/LeftFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -84,6 +83,7 @@ body
 {
     position:absolute;
     display:none;
+
     top:-10%;
     width:300%;
     height: 110%;
@@ -91,7 +91,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../../UniversalAssets/RightFade.png");
+    background-image: url("../../UniversalAssets/RightFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -435,7 +435,7 @@ body
 
 }
 
-#WikiNagivationPanel
+#WikiNavigationPanel
 {
     display: flex;
     flex-direction: column;
@@ -454,7 +454,7 @@ body
     height:97%;
 }
 
-#WikiNagivationPanelBackground 
+#WikiNavigationPanelBackground 
 {
     aspect-ratio: 1/1;
     width:92%;
@@ -641,7 +641,7 @@ body
 #WikiInfoPanelFrame
 {
     position:absolute;
-    aspect-ratio: 820/412;
+    aspect-ratio: 850/412;
     height:84.5%;
     Right:0%;
     top:12.5%;
@@ -798,10 +798,44 @@ body
 
 
 @media (max-width: 1600px) {
-
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 700/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
 }
 
 @media (max-width: 1000px) {
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 490/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
+
+    #Logo
+    {
+        position:absolute;
+
+        right:46.75%;
+        top:8%;
+        aspect-ratio: 1/1;
+
+        width:clamp(1vw,6vw,10vw);
+        height:auto;
+
+        background-image: url("../../UniversalAssets/Favicon.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        pointer-events:none;
+    }
+
 
 }
 

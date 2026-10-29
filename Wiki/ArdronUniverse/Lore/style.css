@@ -433,7 +433,7 @@ body
 
 }
 
-#WikiNagivationPanel
+#WikiNavigationPanel
 {
     display: flex;
     flex-direction: column;
@@ -452,7 +452,7 @@ body
     height:97%;
 }
 
-#WikiNagivationPanelBackground 
+#WikiNavigationPanelBackground 
 {
     aspect-ratio: 1/1;
     width:92%;

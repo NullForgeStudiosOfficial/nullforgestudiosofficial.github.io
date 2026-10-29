@@ -120,10 +120,11 @@ function Update(CurrentTime)
         StartSite()
     }
 
-    if (TopBarTransition || NavigationBarTransition)
-    {
-        UpdateBarTransition();
-    }
+    
+    //if (TopBarTransition || NavigationBarTransition)
+    //{
+    //    UpdateBarTransition();
+    //}
 
     requestAnimationFrame(Update);
 }
@@ -339,7 +340,7 @@ function UpdateSiteTransition()
 
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
-let WikiNagivationPanelBackground = document.getElementById("WikiNagivationPanelBackground")
+let WikiNavigationPanelBackground = document.getElementById("WikiNavigationPanelBackground")
 let WikiInfoPanelFrameBackground = document.getElementById("WikiInfoPanelFrameBackground")
 
 
@@ -349,7 +350,7 @@ async function ScrollBackground()
     TopBarScroll += 100 * DeltaTime;
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
-    WikiNagivationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
+    WikiNavigationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
     WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
 
@@ -478,6 +479,7 @@ SFButton.addEventListener("click", function()
     LoadSite("../../../Wiki/Falatur/index.html")
 });
 
+/*
 let NavigationTabButton = document.getElementById("NavigationTabButton")
 let TopBarTabButton = document.getElementById("TopBarTabButton")
 
@@ -536,6 +538,8 @@ TopBarTabButton.addEventListener("click", function()
     TopBarTransition = true;
 
 });
+
+*/
 
 //-----------------------------------------
 

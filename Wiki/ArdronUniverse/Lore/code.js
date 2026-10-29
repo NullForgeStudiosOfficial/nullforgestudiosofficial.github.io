@@ -1,5 +1,5 @@
 // ----------- whateverthefuck
-const DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+let DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
 
 let Desktop = DesktopQuery.matches;
 
@@ -70,12 +70,29 @@ async function Start()
     
     if (Desktop)
     {
-        LeftTransition.style.left -200 + "px"
+        LeftTransition.style.left = -200 + "px"
+        
     }
     else
     {
-        LeftTransition.style.top -300 + "px"
+        LeftTransition.style.top = -300 + "px"
+
     }
+
+    Speakers = [
+    { ID: "None",  Background: 'url("../../../UniversalAssets/NoneButtonBackground.png")' },
+    { ID: "Iwata",  Background: 'url("../../../UniversalAssets/EimonButtonBackground.png")' },
+    { ID: "Sythys", Background: 'url("../../../UniversalAssets/ElusiaButtonBackground.png")' },
+    { ID: "Entar",  Background: 'url("../../../UniversalAssets/GrimloweButtonBackground.png")' },
+    { ID: "Zykius", Background: 'url("../../../UniversalAssets/SostrumButtonBackground.png")' },
+    { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
+    { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
+    { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }];
+    InitialBackground =  Speakers.find(S => S.ID === "Void").Background;
+    Background1.style.backgroundImage = InitialBackground;
+    Background2.style.backgroundImage = InitialBackground;
+
+
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
@@ -339,7 +356,7 @@ function UpdateSiteTransition()
 
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
-let WikiNagivationPanelBackground = document.getElementById("WikiNagivationPanelBackground")
+let WikiNavigationPanelBackground = document.getElementById("WikiNavigationPanelBackground")
 
 
 
@@ -349,7 +366,7 @@ async function ScrollBackground()
     TopBarScroll += 100 * DeltaTime;
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
-    WikiNagivationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
+    WikiNavigationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
     WikiInfoPanelFrameBackground1.style.backgroundPositionY = (TopBarScroll/2) + "px";
     WikiInfoPanelFrameBackground2.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
@@ -539,25 +556,20 @@ TopBarTabButton.addEventListener("click", function()
 });
 
 //-----------------------------------------
-const Speakers = [
-    { ID: "None",  Background: 'url("../../../UniversalAssets/NoneButtonBackground.png")' },
-    { ID: "Iwata",  Background: 'url("../../../UniversalAssets/EimonButtonBackground.png")' },
-    { ID: "Sythys", Background: 'url("../../../UniversalAssets/ElusiaButtonBackground.png")' },
-    { ID: "Entar",  Background: 'url("../../../UniversalAssets/GrimloweButtonBackground.png")' },
-    { ID: "Zykius", Background: 'url("../../../UniversalAssets/SostrumButtonBackground.png")' },
-    { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
-    { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
-    { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }
-];
+
+Speakers = []
+
+
+
 
 
 let WikiInfoPanelFrameBackground1 = document.getElementById("WikiInfoPanelFrameBackground1")
 let WikiInfoPanelFrameBackground2 = document.getElementById("WikiInfoPanelFrameBackground2")
-const SpeakerTitles = WikiInfoPanel.querySelectorAll("[Speaker]");
-const DefaultBackground = getComputedStyle(WikiInfoPanel).backgroundImage;
+let SpeakerTitles = WikiInfoPanel.querySelectorAll("[Speaker]");
+let DefaultBackground = getComputedStyle(WikiInfoPanel).backgroundImage;
 let CurrentSpeaker = null;
-const Background1 = document.getElementById("WikiInfoPanelFrameBackground1");
-const Background2 = document.getElementById("WikiInfoPanelFrameBackground2");
+let Background1 = document.getElementById("WikiInfoPanelFrameBackground1");
+let Background2 = document.getElementById("WikiInfoPanelFrameBackground2");
 
 let Background1Opacity = 1;
 let Background2Opacity = 0;
@@ -567,16 +579,17 @@ let Target2Opacity = 0;
 
 
 
-const InitialBackground = Speakers.find(S => S.ID === "Void").Background;
+let InitialBackground
 
-Background1.style.backgroundImage = InitialBackground;
-Background2.style.backgroundImage = InitialBackground;
+
+
+
 
 function UpdateSpeakerBackground()
 {
-    const PanelTop = WikiInfoPanel.getBoundingClientRect().top;
-    const PanelHeight = WikiInfoPanel.clientHeight;
-    const PanelBottom = PanelTop + PanelHeight;
+    let PanelTop = WikiInfoPanel.getBoundingClientRect().top;
+    let PanelHeight = WikiInfoPanel.clientHeight;
+    let PanelBottom = PanelTop + PanelHeight;
 
     let PreviousSpeaker = "Void";
     let NextSpeaker = null;
@@ -584,10 +597,10 @@ function UpdateSpeakerBackground()
 
     let SpeakerIndex = 0;
 
-    for (const Title of SpeakerTitles)
+    for (let Title of SpeakerTitles)
     {
-        const SpeakerID = Title.getAttribute("Speaker");
-        const TitleTop = Title.getBoundingClientRect().top;
+        let SpeakerID = Title.getAttribute("Speaker");
+        let TitleTop = Title.getBoundingClientRect().top;
         if (SpeakerID === PreviousSpeaker)
         {
             continue;
@@ -604,8 +617,8 @@ function UpdateSpeakerBackground()
             break;
         }
     }
-    const Previous = Speakers.find(S => S.ID === PreviousSpeaker);
-    const Next = Speakers.find(S => S.ID === NextSpeaker);
+    let Previous = Speakers.find(S => S.ID === PreviousSpeaker);
+    let Next = Speakers.find(S => S.ID === NextSpeaker);
 
     if (!Previous) return;
 
@@ -618,8 +631,8 @@ function UpdateSpeakerBackground()
         ));
     }
 
-    const OldBackground = SpeakerIndex % 2 === 0 ? Background1 : Background2;
-    const NewBackground = SpeakerIndex % 2 === 0 ? Background2 : Background1;
+    let OldBackground = SpeakerIndex % 2 === 0 ? Background1 : Background2;
+    let NewBackground = SpeakerIndex % 2 === 0 ? Background2 : Background1;
 
     OldBackground.style.backgroundImage = Previous.Background;
     NewBackground.style.backgroundImage = Next ? Next.Background : Previous.Background;
@@ -667,7 +680,7 @@ ChapterButtons.forEach((Button, Index) =>
 {
     Button.addEventListener("click", function()
     {
-        const Target = ChapterPages[Index];
+        let Target = ChapterPages[Index];
 
         WikiInfoPanel.scrollTo({
             top: Target.getBoundingClientRect().top
@@ -682,18 +695,18 @@ ChapterButtons.forEach((Button, Index) =>
 
 async function PreLoadEverything()
 {
-    const ImageURLs = new Set();
-    for (const Element of document.querySelectorAll("*"))
+    let ImageURLs = new Set();
+    for (let Element of document.querySelectorAll("*"))
     {
-        const Background = getComputedStyle(Element).backgroundImage;
+        let Background = getComputedStyle(Element).backgroundImage;
 
-        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        for (let Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
         {
             ImageURLs.add(Match[1]);
         }
     }
 
-    for (const Image of document.images)
+    for (let Image of document.images)
     {
         if (Image.currentSrc || Image.src)
         {
@@ -703,11 +716,11 @@ async function PreLoadEverything()
 
     function ScanRules(Rules, BaseURL)
     {
-        for (const Rule of Rules)
+        for (let Rule of Rules)
         {
-            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            for (let Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
             {
-                const URLString = Match[1];
+                let URLString = Match[1];
 
                 try
                 {
@@ -726,7 +739,7 @@ async function PreLoadEverything()
         }
     }
 
-    for (const Sheet of document.styleSheets)
+    for (let Sheet of document.styleSheets)
     {
         try
         {
@@ -740,7 +753,7 @@ async function PreLoadEverything()
 
     await Promise.all([...ImageURLs].map(async URL =>
     {
-        const PreloadedImage = new Image();
+        let PreloadedImage = new Image();
 
         if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
         {
@@ -766,8 +779,8 @@ async function PreLoadEverything()
 
 function FitButtonText()
 {
-    const Canvas = document.createElement("canvas");
-    const Context = Canvas.getContext("2d");
+    let Canvas = document.createElement("canvas");
+    let Context = Canvas.getContext("2d");
 
     document.querySelectorAll(".SmolNavigationButtonText").forEach(Text =>
     {
@@ -777,7 +790,7 @@ function FitButtonText()
         let Style = getComputedStyle(Text);
         let Size = parseFloat(Style.fontSize);
 
-        const MaxWidth = Text.clientWidth - 10;
+        let MaxWidth = Text.clientWidth - 10;
 
         while (Size > 8)
         {
