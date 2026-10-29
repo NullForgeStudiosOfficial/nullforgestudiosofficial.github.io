@@ -1,0 +1,1010 @@
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("../../../UniversalAssets/Lexend.ttf")
+
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Ardron;
+    color:white;
+    background-color: black;
+    image-rendering: pixelated;
+    margin: 0px;
+
+}
+
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../../UniversalAssets/MobileTopDownTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../../../UniversalAssets/MobileTopTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../../UniversalAssets/MobileBottomTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#LeftTransition,
+#RightTransition,
+#FullLeftRightTransition
+{
+    z-index: 1000;
+}
+
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+#MainBackground
+{
+    position:absolute;
+
+    width:100%;
+    height: 100%;
+
+    z-index:-9;
+    pointer-events:none;
+    background-image: url("../../../UniversalAssets/WIkiBackground.png");
+    background-size: 256px 256px;
+    background-repeat: repeat;
+}
+
+
+#TopBar
+{
+    position:absolute;
+    Width:100%;
+    Height:5%;
+    background-color: black;
+
+    
+}
+
+#TopBarGraphics
+{
+    height:100%;
+    width:100%;
+    pointer-events:none;
+    background-image: url("../../../UniversalAssets/DesktopBackground.png");
+    background-size: 256px 256px;
+    background-repeat: repeat;
+
+    z-index: 5;
+}
+
+
+.SquareButton
+{
+    position: absolute;
+    
+
+    background-color: transparent;
+    background-image: url("../../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events:auto;
+
+}
+
+.SquareButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+
+#ArdronUniverse
+{
+    position: absolute;
+    top:15%;
+    left:0%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#AoAButton
+{
+    position:absolute;
+    top:15%;
+    left:9%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#VTButton
+{
+    position: absolute;
+    top:15%;
+    left:18%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#ACButton
+{
+    position: absolute;
+    top:15%;
+    left:27%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#EoAButton
+{
+    position: absolute;
+    top:15%;
+    left:36%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#RRButton
+{
+    position: absolute;
+    top:15%;
+    left:55%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#GLButton
+{
+    position: absolute;
+    top:15%;
+    left:64%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#ATButton
+{
+    position: absolute;
+    top:15%;
+    left:73%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#DPButton
+{
+    position: absolute;
+    top:15%;
+    left:82%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+#SFButton
+{
+    position: absolute;
+    top:15%;
+    left:91.5%;
+    aspect-ratio: 1/1;
+    height:75%;
+}
+
+
+.EimonButton,
+.ElusiaButton,
+.GrimloweButton,
+.SostrumButton,
+.VidulynButton,
+.YumalonButton,
+.IcolassButton,
+.VoidButton,
+.AUButton,
+.SanctumButton
+{
+    display:flex;
+    position: relative;
+    width: 90%;
+    height: 90%;
+
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    z-index: 0;
+
+    filter: brightness(50%);
+}
+
+.EimonButton
+{
+    background-image: url("../../../UniversalAssets/EimonButtonBackground.png");
+}
+
+.ElusiaButton
+{
+    background-image: url("../../../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+.GrimloweButton
+{
+    background-image: url("../../../UniversalAssets/GrimloweButtonBackground.png");
+}
+
+.SostrumButton
+{
+    background-image: url("../../../UniversalAssets/SostrumButtonBackground.png");
+
+}
+
+.VidulynButton
+{
+    background-image: url("../../../UniversalAssets/VidulynButtonBackground.png");
+
+}
+
+.YumalonButton
+{
+    background-image: url("../../../UniversalAssets/YumalonButtonBackground.png");
+
+}
+
+.IcolassButton
+{
+    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+
+}
+
+.SanctumButton
+{
+    background-image: url("../../../UniversalAssets/SanctumButtonBackground.png");
+}
+
+.VoidButton
+{
+    background-image: url("../../../UniversalAssets/VoidButtonBackground.png");
+}
+
+.AUButton
+{
+    background-image: url("../../../UniversalAssets/NoneButtonBackground.png");
+    filter: brightness(100%);
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:46%;
+    top:10%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,9vw,10vw);
+    height:auto;
+
+    background-image: url("../../../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+
+.TopBarText
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(1vw,2.5vw,3vw);
+    font-family: Lexend;
+    font-weight: 500;
+    color: whitesmoke;
+
+    z-index: 10;
+    pointer-events: none;
+}
+
+#WikiNavigationPanelFrame
+{
+    position:absolute;
+    aspect-ratio: 440/203;
+    height:20.5%;
+    left:1%;
+    top:5%;
+    overflow: hidden;
+
+}
+
+#WikiNavigationPanel
+{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-right:5%;
+    padding-top:4%;
+    padding-left:5%;
+    padding-bottom: 5%;
+    box-sizing: border-box;
+    width:100%;
+    height:100%;
+}
+
+#WikiNavigationPanelBackground 
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:98%;
+    left:1%;
+    position:absolute;
+
+    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(33%);
+
+    
+}
+
+
+
+
+#WikiNavigationPanelFrame::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../../UniversalAssets/MobileButtonBox.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+#WikiNavigationPanel > button
+{
+    position: relative;
+    inset: auto;
+    flex-shrink: 0;
+    max-width: 100%;
+    z-index: auto;
+}
+
+
+
+.NormalButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 100%;
+    aspect-ratio: 440/43;
+
+    background-color: transparent;
+    background-image: url("../../../UniversalAssets/ThinMobileButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.NormalButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../../UniversalAssets/ThinMobileButton.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+
+.NormalButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:1%;
+    width: 98%;
+    height: 99%;
+
+    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -0;
+
+    filter: brightness(75%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../../../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.NormalButton:hover .NormalButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.NormalButton:hover .BackButtonBackground
+{
+    filter: brightness(100%);
+}
+
+
+
+#BlackText
+{
+    color:black;
+}
+
+
+
+
+
+.NavigationButtonText
+{
+    position: absolute;
+    font-family: Lexend;
+    width:100%;
+    height:100%;
+    top:15%;
+    left:0%;
+    font-size: clamp(1vw,4vw,5vw);
+    color:white;
+}
+
+
+
+#WikiInfoPanelFrame
+{
+    
+    position:absolute;
+    aspect-ratio: 440/606;
+    height:63%;
+    Right:0%;
+    top:26%;
+}
+
+#WikiInfoPanel
+{
+    position: absolute;
+
+    top: 0%;
+    left: 0%;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    width: 98%;
+    height: 98%;
+
+    padding-left:4%;
+    padding-top:3%;
+    margin-top: 2%;
+    padding-bottom: 1%;
+    padding-right: 3%;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#WikiInfoPanelFrameBackground 
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:100%;
+    left:0%;
+    position:absolute;
+
+    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(33%);
+
+    
+}
+
+#WikiInfoPanelFrame::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../../UniversalAssets/MobileButtonInfoBox.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+.Words
+{
+    position: relative;
+
+
+    width: 100%;
+
+    text-align: left;
+    font-size: clamp(1vw,3vw,30vw);
+    font-family: Lexend;
+    color: whitesmoke;
+    white-space: pre-line;
+
+    z-index: 1;
+    pointer-events: none;
+
+    text-shadow:
+    -5px -5px 10px black,
+     5px -5px 10px black,
+    -5px  5px 10px black,
+     5px  5px 10px black;
+}
+
+
+.WordsCentered
+{
+    position: relative;
+
+
+    width: 98%;
+    left:1%;
+
+    text-align: center;
+    font-size: clamp(1vw,3vw,10vw);
+    font-family: Lexend;
+    color: whitesmoke;
+    white-space: pre-line;
+    padding:0.5%;
+    padding-bottom: 3%;
+
+    z-index: 1;
+    pointer-events: none;
+
+    text-shadow:
+    -5px -5px 10px black,
+     5px -5px 10px black,
+    -5px  5px 10px black,
+     5px  5px 10px black;
+}
+
+.Title1
+{
+    position: relative;
+
+
+    width: 98%;
+
+    text-align: center;
+    font-size: clamp(1vw,8vw,15vw);
+    font-family: Lexend;
+    color: whitesmoke;
+    white-space: pre-line;
+
+    z-index: 1;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.50);
+    text-shadow:
+    -5px -5px 10px black,
+     5px -5px 10px black,
+    -5px  5px 10px black,
+     5px  5px 10px black;
+}
+
+.Title2
+{
+    position: relative;
+
+
+    width: 98%;
+
+    text-align: center;
+    font-size: clamp(1vw,6vw,30vw);
+    font-family: Lexend;
+    color: whitesmoke;
+    white-space: pre-line;
+
+    z-index: 1;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.50);
+    text-shadow:
+    -5px -5px 7px black,
+     5px -5px 7px black,
+    -5px  5px 7px black,
+     5px  5px 7px black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#WikiInfoPanelFrameBackground1
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:100%;
+    left:0%;
+    position:absolute;
+
+    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(33%);
+    pointer-events: none;
+}
+
+#WikiInfoPanelFrameBackground2
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:100%;
+    left:0%;
+    position:absolute;
+
+    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(33%);
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#MiniButtonListFrame
+{
+    position: relative;
+    width: 95%;
+    left:2.50%;
+    height: auto;
+    aspect-ratio: auto;
+    top: -9%;
+    flex-shrink: 0;
+}
+
+#MiniButtonList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    padding-right:3%;
+    padding-top:5%;
+    padding-left:3%;
+    margin-bottom: 3%;
+    width: 98%;
+    height:97%;
+}
+
+#MiniButtonList > button
+{
+    position: relative;
+    inset: auto;
+    flex-shrink: 0;
+    max-width: 100%;
+    z-index: auto;
+}
+
+
+#MiniButtonListBackground 
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:98%;
+    left:0%;
+    position:absolute;
+
+    background-image: url(../../../UniversalAssets/IcolassButtonBackground.png);
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(15%);
+
+    
+}
+
+
+
+
+#MiniButtonListFrame::after
+{
+    height: 98.5%;
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url(../../../UniversalAssets/WikiNavigationBoxMini.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+
+
+.SmolNavigationButtonText
+{
+    position: absolute;
+    top: 0;
+    left: 5%;
+
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Lexend;
+    font-size: 4.5vw;
+    color: white;
+    white-space: nowrap;
+}
+
+#ChIntro,#Ch0, #Ch1, #Ch2, #Ch3, #Ch4, #Ch5,
+#Ch6, #Ch7, #Ch8, #Ch9, #Ch10,
+#Ch11, #Ch12, #Ch13, #Ch14, #Ch15,
+#Ch16, #Ch17, #Ch18, #Ch19, #Ch20,
+#Ch21, #Ch22, #Ch23, #Ch24, #Ch25,
+#Ch26, #Ch27, #Ch28, #Ch29, #Ch30,
+#Ch31, #Ch32, #Ch33
+{
+    display: block;
+    position: relative;
+    width: 95%;
+    left: 0%;
+    aspect-ratio: 440/43;
+}
+
+.DisabledButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:0%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../../../UniversalAssets/IcolassButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -0;
+
+    filter: brightness(40%);
+}
+
+#WikiInfoPanel > div[id^="Ch"][id$="Page"]
+{
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+#LoreButton .NormalButtonBackground
+{
+    filter:brightness(100%);
+}
+
+
+@media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
+{
+    #WikiNavigationPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 545/203;
+        height:20.5%;
+        left:1%;
+        top:6%;
+    }
+
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 465/606;
+        height:72%;
+        Left:1%;
+        top:28%;
+    }
+
+    #Logo
+    {
+        position:absolute;
+
+        right:48%;
+        top:10%;
+        aspect-ratio: 1/1;
+
+        width:clamp(1vw,7vw,10vw);
+        height:auto;
+
+        background-image: url("../../../UniversalAssets/Favicon.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        pointer-events:none;
+    }
+
+}
+
+
+
+
+
+

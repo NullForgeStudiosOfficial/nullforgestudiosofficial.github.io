@@ -88,9 +88,6 @@ async function Start()
     { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
     { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
     { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }];
-    InitialBackground =  Speakers.find(S => S.ID === "Void").Background;
-    Background1.style.backgroundImage = InitialBackground;
-    Background2.style.backgroundImage = InitialBackground;
 
 
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
@@ -358,69 +355,15 @@ let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
 let WikiNavigationPanelBackground = document.getElementById("WikiNavigationPanelBackground")
 
-
-
-
 async function ScrollBackground()
 {
     TopBarScroll += 100 * DeltaTime;
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
     WikiNavigationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
-    WikiInfoPanelFrameBackground1.style.backgroundPositionY = (TopBarScroll/2) + "px";
-    WikiInfoPanelFrameBackground2.style.backgroundPositionY = (TopBarScroll/2) + "px";
+    WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
 
-
-function UpdateBarTransition()
-{
-    if (TopBarTransition)
-    {
-        if(Desktop)
-        {
-            let Target = TopBarOpen ? 0 : -10;
-
-            TopBarPosition += (Target - TopBarPosition) * Math.min(1, 10 * DeltaTime);
-
-            TopBar.style.top = TopBarPosition + "%";
-
-            if (Math.abs(Target - TopBarPosition) < 0.01)
-            {
-                TopBarPosition = Target;
-                TopBarTransition = false;
-            }
-        }
-        else
-        {
-
-        }
-            
-
-    }
-
-    if (NavigationBarTransition)
-    {
-        if (Desktop)
-        {
-            let Target = NavigationOpen ? 0 : -15.5;
-
-            NavigationBarPosition += (Target - NavigationBarPosition) * Math.min(1, 10 * DeltaTime);
-
-            WikiNavigationPanelFrame.style.left = NavigationBarPosition + "%";
-
-            if (Math.abs(Target - NavigationBarPosition) < 0.01)
-            {
-                NavigationBarPosition = Target;
-                WikiNavigationPanelFrame.style.left = Target + "%";
-                NavigationBarTransition = false;
-            }
-        }
-        else
-        {
-
-        }
-    }
-}
 
 let ArdronUniverse = document.getElementById("ArdronUniverse")
 let AoAButton = document.getElementById("AoAButton")
@@ -496,202 +439,84 @@ SFButton.addEventListener("click", function()
     LoadSite("../../../Wiki/Falatur/index.html")
 });
 
-/*
-let NavigationTabButton = document.getElementById("NavigationTabButton")
-let TopBarTabButton = document.getElementById("TopBarTabButton")
-
-let NavigationTab = document.getElementById("NavigationTab")
-let TopBarTab = document.getElementById("TopBarTab")
-
-let TopBar = document.getElementById("TopBar")
-let WikiNavigationPanelFrame = document.getElementById("WikiNavigationPanelFrame")
-
-let NavigationOpen = true;
-let TopBarOpen = true;
-let NavigationBarTransition = false;
-let TopBarTransition = false;
-let TopBarPosition = 0;
-let NavigationBarPosition = 0;
-
-NavigationTabButton.addEventListener("click", function()
-{
-    if (NavigationBarTransition)
-    {
-        return;
-    }
-
-    if (NavigationOpen)
-    {
-        NavigationOpen = false;
-        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabRight.png")';
-    }
-    else
-    {
-        NavigationOpen = true;
-        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabLeft.png")';
-    }
-
-    NavigationBarTransition = true;
-});
-
-TopBarTabButton.addEventListener("click", function()
-{
-    if (TopBarTransition)
-    {
-        return;
-    }
-
-    if (TopBarOpen)
-    {
-        TopBarOpen = false;
-        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabDown.png")';
-    }
-    else
-    {
-        TopBarOpen = true;
-        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabUp.png")';
-    }
-
-    TopBarTransition = true;
-
-});
-
-*/
 //-----------------------------------------
-
-Speakers = []
-
-
-
-
-
-let WikiInfoPanelFrameBackground1 = document.getElementById("WikiInfoPanelFrameBackground1")
-let WikiInfoPanelFrameBackground2 = document.getElementById("WikiInfoPanelFrameBackground2")
-let SpeakerTitles = WikiInfoPanel.querySelectorAll("[Speaker]");
-let DefaultBackground = getComputedStyle(WikiInfoPanel).backgroundImage;
-let CurrentSpeaker = null;
-let Background1 = document.getElementById("WikiInfoPanelFrameBackground1");
-let Background2 = document.getElementById("WikiInfoPanelFrameBackground2");
-
-let Background1Opacity = 1;
-let Background2Opacity = 0;
-
-let Target1Opacity = 1;
-let Target2Opacity = 0;
+let ArmorButton = document.getElementById("ArmorButton")
+let BestiaryButton = document.getElementById("BestiaryButton")
+let CombatButton = document.getElementById("CombatButton")
+let DLLButton = document.getElementById("DLLButton")
+let GuideButton = document.getElementById("GuideButton")
+let ItemButton = document.getElementById("ItemButton")
+let QuestButton = document.getElementById("QuestButton")
+let StatsButton = document.getElementById("StatsButton")
+let WeaponsButton = document.getElementById("WeaponsButton")
 
 
-
-let InitialBackground
-
-
-
-
-
-function UpdateSpeakerBackground()
+//-----------------------------------------
+ArmorButton.addEventListener("click", function()
 {
-    let PanelTop = WikiInfoPanel.getBoundingClientRect().top;
-    let PanelHeight = WikiInfoPanel.clientHeight;
-    let PanelBottom = PanelTop + PanelHeight;
-
-    let PreviousSpeaker = "Void";
-    let NextSpeaker = null;
-    let NextTitle = null;
-
-    let SpeakerIndex = 0;
-
-    for (let Title of SpeakerTitles)
-    {
-        let SpeakerID = Title.getAttribute("Speaker");
-        let TitleTop = Title.getBoundingClientRect().top;
-        if (SpeakerID === PreviousSpeaker)
-        {
-            continue;
-        }
-        if (TitleTop <= PanelTop)
-        {
-            PreviousSpeaker = SpeakerID;
-            SpeakerIndex++;
-        }
-        else
-        {
-            NextSpeaker = SpeakerID;
-            NextTitle = Title;
-            break;
-        }
-    }
-    let Previous = Speakers.find(S => S.ID === PreviousSpeaker);
-    let Next = Speakers.find(S => S.ID === NextSpeaker);
-
-    if (!Previous) return;
-
-    let Progress = 0;
-
-    if (NextTitle && Next)
-    {
-        Progress = Math.max(0, Math.min(1,
-            (PanelBottom - NextTitle.getBoundingClientRect().top) / PanelHeight
-        ));
-    }
-
-    let OldBackground = SpeakerIndex % 2 === 0 ? Background1 : Background2;
-    let NewBackground = SpeakerIndex % 2 === 0 ? Background2 : Background1;
-
-    OldBackground.style.backgroundImage = Previous.Background;
-    NewBackground.style.backgroundImage = Next ? Next.Background : Previous.Background;
-
-    OldBackground.style.zIndex = 0;
-    OldBackground.style.opacity = 1;
-
-    NewBackground.style.zIndex = 1;
-    NewBackground.style.opacity = Progress;
-}
-
-WikiInfoPanel.addEventListener("scroll", UpdateSpeakerBackground);
-
-UpdateSpeakerBackground();
-
-
-
-let ChapterButtons = [];
-let ChapterPages = [];
-
-ChapterButtons.push(document.getElementById("ChIntro"));
-ChapterPages.push(document.getElementById("ChIntroPage"));
-
-for (let i = 0; i <= 33; i++)
-{
-    ChapterButtons.push(document.getElementById("Ch" + i));
-    ChapterPages.push(document.getElementById("Ch" + i + "Page"));
-}
-
-function ShowChapter(ChapterNumber)
-{
-    let Target = document.getElementById("Ch" + ChapterNumber + "Page");
-
-    if (!Target) return;
-
-    WikiInfoPanel.scrollTo({
-        top: Target.getBoundingClientRect().top
-           - WikiInfoPanel.getBoundingClientRect().top
-           + WikiInfoPanel.scrollTop,
-        behavior: "smooth"
-    });
-}
-
-ChapterButtons.forEach((Button, Index) =>
-{
-    Button.addEventListener("click", function()
-    {
-        let Target = ChapterPages[Index];
-
-        WikiInfoPanel.scrollTo({
-            top: Target.getBoundingClientRect().top
-                - WikiInfoPanel.getBoundingClientRect().top
-                + WikiInfoPanel.scrollTop,
-            behavior: "smooth"
-        });
-    });
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Armor/index.html")
 });
+
+BestiaryButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Bestiary/index.html")
+});
+
+CombatButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Combat/index.html")
+});
+
+DLLButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/DLLs/index.html")
+});
+
+GuideButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Guide/index.html")
+});
+
+ItemButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Items/index.html")
+});
+
+QuestButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Quests/index.html")
+});
+
+StatsButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Stats/index.html")
+});
+
+WeaponsButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/Weapons/index.html")
+});
+
+
+
 
 //-----------------------------------------
 
@@ -778,6 +603,7 @@ async function PreLoadEverything()
 
     FitButtonText()
 }
+
 function FitButtonText()
 {
     let Canvas = document.createElement("canvas");

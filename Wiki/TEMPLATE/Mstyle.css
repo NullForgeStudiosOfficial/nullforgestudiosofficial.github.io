@@ -963,6 +963,7 @@ body
 }
 
 
+
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
     #WikiNavigationPanelFrame
@@ -994,7 +995,7 @@ body
         width:clamp(1vw,7vw,10vw);
         height:auto;
 
-        background-image: url("../../../UniversalAssets/Favicon.png");
+        background-image: url("../../UniversalAssets/Favicon.png");
         background-repeat: no-repeat;
         background-size: 100% 100%;
 
@@ -1002,6 +1003,7 @@ body
     }
 
 }
+
 
 
 

@@ -424,7 +424,7 @@ body
 {
     position:absolute;
     aspect-ratio: 164/436;
-    height:85%;
+    height:87%;
     left:0%;
     top:12.5%;
 
@@ -435,21 +435,23 @@ body
 
 #WikiNavigationPanel
 {
+    position:relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 
-    padding-right:0%;
-    padding-top:8%;
+    padding-right:2%;
+    margin-top:6%;
+    padding-top:4%;
     padding-left:5%;
-    margin-bottom: 3%;
+    padding-bottom:5%;
     box-sizing: border-box;
-    width: 95%;
-    height:97%;
+    width: 94%;
+    height:95.5%;
 }
 
 #WikiNavigationPanelBackground 
@@ -630,8 +632,8 @@ body
 {
     position:absolute;
     aspect-ratio: 820/412;
-    height:84.5%;
-    Right:0.25%;
+    height:87%;
+    Right:0.50%;
     top:12.5%;
     background-color: black;
 }
@@ -664,7 +666,7 @@ body
     background:transparent;
 }
 
-#WikiInfoPanelFrameBackground1
+#WikiInfoPanelFrameBackground
 {
     aspect-ratio: 1/1;
     width:100%;
@@ -672,27 +674,14 @@ body
     left:0%;
     position:absolute;
 
-    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
+    background-image: url(../../../UniversalAssets/NoneButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
     filter: brightness(33%);
 }
 
-#WikiInfoPanelFrameBackground2
-{
-    aspect-ratio: 1/1;
-    width:100%;
-    height:100%;
-    left:0%;
-    position:absolute;
 
-    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
-    background-size:  12px 12px;
-    background-repeat: repeat;
-
-    filter: brightness(33%);
-}
 
 #WikiInfoPanelFrame::after
 {
@@ -965,12 +954,49 @@ body
     filter:brightness(100%);
 }
 
-@media (max-width: 1600px) {
 
+
+@media (max-width: 1600px) {
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 700/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
 }
 
 @media (max-width: 1000px) {
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 490/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
+
+    #Logo
+    {
+        position:absolute;
+
+        right:46.75%;
+        top:8%;
+        aspect-ratio: 1/1;
+
+        width:clamp(1vw,6vw,10vw);
+        height:auto;
+
+        background-image: url("../../UniversalAssets/Favicon.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        pointer-events:none;
+    }
+
 
 }
+
 
 

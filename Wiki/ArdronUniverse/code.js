@@ -1,5 +1,5 @@
 // ----------- whateverthefuck
-const DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+let DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
 
 let Desktop = DesktopQuery.matches;
 
@@ -71,11 +71,28 @@ async function Start()
     if (Desktop)
     {
         LeftTransition.style.left = -200 + "px"
+        
     }
     else
     {
         LeftTransition.style.top = -300 + "px"
+
     }
+
+    Speakers = [
+    { ID: "None",  Background: 'url("../../../UniversalAssets/NoneButtonBackground.png")' },
+    { ID: "Iwata",  Background: 'url("../../../UniversalAssets/EimonButtonBackground.png")' },
+    { ID: "Sythys", Background: 'url("../../../UniversalAssets/ElusiaButtonBackground.png")' },
+    { ID: "Entar",  Background: 'url("../../../UniversalAssets/GrimloweButtonBackground.png")' },
+    { ID: "Zykius", Background: 'url("../../../UniversalAssets/SostrumButtonBackground.png")' },
+    { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
+    { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
+    { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }];
+    InitialBackground =  Speakers.find(S => S.ID === "None").Background;
+    Background1.style.backgroundImage = InitialBackground;
+    Background2.style.backgroundImage = InitialBackground;
+
+
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
@@ -120,7 +137,6 @@ function Update(CurrentTime)
         StartSite()
     }
 
-    
     //if (TopBarTransition || NavigationBarTransition)
     //{
     //    UpdateBarTransition();
@@ -341,7 +357,7 @@ function UpdateSiteTransition()
 let TopBarGraphics = document.getElementById("TopBarGraphics")
 let TopBarScroll = 0
 let WikiNavigationPanelBackground = document.getElementById("WikiNavigationPanelBackground")
-let WikiInfoPanelFrameBackground = document.getElementById("WikiInfoPanelFrameBackground")
+
 
 
 
@@ -351,7 +367,8 @@ async function ScrollBackground()
 
     TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
     WikiNavigationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
-    WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
+    WikiInfoPanelFrameBackground1.style.backgroundPositionY = (TopBarScroll/2) + "px";
+    WikiInfoPanelFrameBackground2.style.backgroundPositionY = (TopBarScroll/2) + "px";
 }
 
 
@@ -506,12 +523,12 @@ NavigationTabButton.addEventListener("click", function()
     if (NavigationOpen)
     {
         NavigationOpen = false;
-        NavigationTab.style.backgroundImage = 'url("../../UniversalAssets/TabRight.png")';
+        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabRight.png")';
     }
     else
     {
         NavigationOpen = true;
-        NavigationTab.style.backgroundImage = 'url("../../UniversalAssets/TabLeft.png")';
+        NavigationTab.style.backgroundImage = 'url("../../../UniversalAssets/TabLeft.png")';
     }
 
     NavigationBarTransition = true;
@@ -527,12 +544,12 @@ TopBarTabButton.addEventListener("click", function()
     if (TopBarOpen)
     {
         TopBarOpen = false;
-        TopBarTab.style.backgroundImage = 'url("../../UniversalAssets/TabDown.png")';
+        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabDown.png")';
     }
     else
     {
         TopBarOpen = true;
-        TopBarTab.style.backgroundImage = 'url("../../UniversalAssets/TabUp.png")';
+        TopBarTab.style.backgroundImage = 'url("../../../UniversalAssets/TabUp.png")';
     }
 
     TopBarTransition = true;
@@ -540,90 +557,158 @@ TopBarTabButton.addEventListener("click", function()
 });
 
 */
-
 //-----------------------------------------
 
-
-
-let LoreButton = document.getElementById("LoreButton")
-let RealmsButton = document.getElementById("RealmsButton")
-let GodsButton = document.getElementById("GodsButton")
-let CharactersButton = document.getElementById("CharactersButton")
-let FactionsButton = document.getElementById("FactionsButton")
-let LocationsButton = document.getElementById("LocationsButton")
-let ManaButton = document.getElementById("ManaButton")
+Speakers = []
 
 
 
-LoreButton.addEventListener("click", function()
+
+
+let WikiInfoPanelFrameBackground1 = document.getElementById("WikiInfoPanelFrameBackground1")
+let WikiInfoPanelFrameBackground2 = document.getElementById("WikiInfoPanelFrameBackground2")
+let SpeakerTitles = WikiInfoPanel.querySelectorAll("[Speaker]");
+let DefaultBackground = getComputedStyle(WikiInfoPanel).backgroundImage;
+let CurrentSpeaker = null;
+let Background1 = document.getElementById("WikiInfoPanelFrameBackground1");
+let Background2 = document.getElementById("WikiInfoPanelFrameBackground2");
+
+let Background1Opacity = 1;
+let Background2Opacity = 0;
+
+let Target1Opacity = 1;
+let Target2Opacity = 0;
+
+
+
+let InitialBackground
+
+
+
+
+
+function UpdateSpeakerBackground()
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Lore/index.html")
-});
+    let PanelTop = WikiInfoPanel.getBoundingClientRect().top;
+    let PanelHeight = WikiInfoPanel.clientHeight;
+    let PanelBottom = PanelTop + PanelHeight;
 
-RealmsButton.addEventListener("click", function()
+    let PreviousSpeaker = "Void";
+    let NextSpeaker = null;
+    let NextTitle = null;
+
+    let SpeakerIndex = 0;
+
+    for (let Title of SpeakerTitles)
+    {
+        let SpeakerID = Title.getAttribute("Speaker");
+        let TitleTop = Title.getBoundingClientRect().top;
+        if (SpeakerID === PreviousSpeaker)
+        {
+            continue;
+        }
+        if (TitleTop <= PanelTop)
+        {
+            PreviousSpeaker = SpeakerID;
+            SpeakerIndex++;
+        }
+        else
+        {
+            NextSpeaker = SpeakerID;
+            NextTitle = Title;
+            break;
+        }
+    }
+    let Previous = Speakers.find(S => S.ID === PreviousSpeaker);
+    let Next = Speakers.find(S => S.ID === NextSpeaker);
+
+    if (!Previous) return;
+
+    let Progress = 0;
+
+    if (NextTitle && Next)
+    {
+        Progress = Math.max(0, Math.min(1,
+            (PanelBottom - NextTitle.getBoundingClientRect().top) / PanelHeight
+        ));
+    }
+
+    let OldBackground = SpeakerIndex % 2 === 0 ? Background1 : Background2;
+    let NewBackground = SpeakerIndex % 2 === 0 ? Background2 : Background1;
+
+    OldBackground.style.backgroundImage = Previous.Background;
+    NewBackground.style.backgroundImage = Next ? Next.Background : Previous.Background;
+
+    OldBackground.style.zIndex = 0;
+    OldBackground.style.opacity = 1;
+
+    NewBackground.style.zIndex = 1;
+    NewBackground.style.opacity = Progress;
+}
+
+WikiInfoPanel.addEventListener("scroll", UpdateSpeakerBackground);
+
+UpdateSpeakerBackground();
+
+
+
+let ChapterButtons = [];
+let ChapterPages = [];
+
+ChapterButtons.push(document.getElementById("ChIntro"));
+ChapterPages.push(document.getElementById("ChIntroPage"));
+
+for (let i = 0; i <= 34; i++)
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Realms/index.html")
-});
+    ChapterButtons.push(document.getElementById("Ch" + i));
+    ChapterPages.push(document.getElementById("Ch" + i + "Page"));
+}
 
-GodsButton.addEventListener("click", function()
+function ShowChapter(ChapterNumber)
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Gods/index.html")
-});
+    let Target = document.getElementById("Ch" + ChapterNumber + "Page");
 
-CharactersButton.addEventListener("click", function()
+    if (!Target) return;
+
+    WikiInfoPanel.scrollTo({
+        top: Target.getBoundingClientRect().top
+           - WikiInfoPanel.getBoundingClientRect().top
+           + WikiInfoPanel.scrollTop,
+        behavior: "smooth"
+    });
+}
+
+ChapterButtons.forEach((Button, Index) =>
 {
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Characters/index.html")
+    Button.addEventListener("click", function()
+    {
+        let Target = ChapterPages[Index];
+
+        WikiInfoPanel.scrollTo({
+            top: Target.getBoundingClientRect().top
+                - WikiInfoPanel.getBoundingClientRect().top
+                + WikiInfoPanel.scrollTop,
+            behavior: "smooth"
+        });
+    });
 });
-
-FactionsButton.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Factions/index.html")
-});
-
-LocationsButton.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Locations/index.html")
-});
-
-
-ManaButton.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("../../../Wiki/ArdronUniverse/Mana/index.html")
-});
-
-
-
 
 //-----------------------------------------
 
 async function PreLoadEverything()
 {
-    const ImageURLs = new Set();
-    for (const Element of document.querySelectorAll("*"))
+    let ImageURLs = new Set();
+    for (let Element of document.querySelectorAll("*"))
     {
-        const Background = getComputedStyle(Element).backgroundImage;
+        let Background = getComputedStyle(Element).backgroundImage;
 
-        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        for (let Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
         {
             ImageURLs.add(Match[1]);
         }
     }
 
-    for (const Image of document.images)
+    for (let Image of document.images)
     {
         if (Image.currentSrc || Image.src)
         {
@@ -633,11 +718,11 @@ async function PreLoadEverything()
 
     function ScanRules(Rules, BaseURL)
     {
-        for (const Rule of Rules)
+        for (let Rule of Rules)
         {
-            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            for (let Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
             {
-                const URLString = Match[1];
+                let URLString = Match[1];
 
                 try
                 {
@@ -656,7 +741,7 @@ async function PreLoadEverything()
         }
     }
 
-    for (const Sheet of document.styleSheets)
+    for (let Sheet of document.styleSheets)
     {
         try
         {
@@ -670,7 +755,7 @@ async function PreLoadEverything()
 
     await Promise.all([...ImageURLs].map(async URL =>
     {
-        const PreloadedImage = new Image();
+        let PreloadedImage = new Image();
 
         if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
         {
@@ -690,6 +775,39 @@ async function PreLoadEverything()
     }));
 
     console.log("Image preload finished:", ImageURLs.size, "URLs");
+
+    FitButtonText()
+}
+function FitButtonText()
+{
+    let Canvas = document.createElement("canvas");
+    let Context = Canvas.getContext("2d");
+
+    document.querySelectorAll(".SmolNavigationButtonText").forEach(Text =>
+    {
+        Text.style.fontSize = "";
+        Text.style.whiteSpace = "nowrap";
+
+        let Style = getComputedStyle(Text);
+        let Size = parseFloat(Style.fontSize);
+
+        let MaxWidth = Text.clientWidth - (Desktop ? 10 : 8);
+        let MinimumSize = Desktop ? 8 : 4;
+
+        while (Size > MinimumSize)
+        {
+            Context.font = `${Style.fontWeight} ${Size}px ${Style.fontFamily}`;
+
+            let TextWidth = Context.measureText(Text.textContent.trim()).width;
+
+            if (TextWidth <= MaxWidth)
+                break;
+
+            Size -= 0.5;
+        }
+
+        Text.style.fontSize = Size + "px";
+    });
 
     Start();
 }

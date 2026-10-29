@@ -334,7 +334,7 @@ body
 .IcolassButton
 {
     background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
-
+    filter: brightness(100%);
 }
 
 .SanctumButton
@@ -350,7 +350,7 @@ body
 .AUButton
 {
     background-image: url("../../../UniversalAssets/NoneButtonBackground.png");
-    filter: brightness(100%);
+    
 }
 
 #Logo
@@ -424,7 +424,7 @@ body
 {
     position:absolute;
     aspect-ratio: 164/436;
-    height:85%;
+    height:87%;
     left:0%;
     top:12.5%;
 
@@ -435,21 +435,23 @@ body
 
 #WikiNavigationPanel
 {
+    position:relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
 
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
 
-    padding-right:0%;
-    padding-top:8%;
+    padding-right:2%;
+    margin-top:6%;
+    padding-top:4%;
     padding-left:5%;
-    margin-bottom: 3%;
+    padding-bottom:5%;
     box-sizing: border-box;
-    width: 95%;
-    height:97%;
+    width: 94%;
+    height:95.5%;
 }
 
 #WikiNavigationPanelBackground 
@@ -460,7 +462,7 @@ body
     left:3%;
     position:absolute;
 
-    background-image: url(../../../UniversalAssets/NoneButtonBackground.png);
+    background-image: url(../../../UniversalAssets/IcolassButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -546,7 +548,7 @@ body
     width: 90%;
     height: 90%;
 
-    background-image: url("../../../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;
@@ -630,8 +632,8 @@ body
 {
     position:absolute;
     aspect-ratio: 820/412;
-    height:84.5%;
-    Right:0.25%;
+    height:87%;
+    Right:0.50%;
     top:12.5%;
     background-color: black;
 }
@@ -664,7 +666,7 @@ body
     background:transparent;
 }
 
-#WikiInfoPanelFrameBackground1
+#WikiInfoPanelFrameBackground
 {
     aspect-ratio: 1/1;
     width:100%;
@@ -672,27 +674,14 @@ body
     left:0%;
     position:absolute;
 
-    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
+    background-image: url(../../../UniversalAssets/IcolassButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
     filter: brightness(33%);
 }
 
-#WikiInfoPanelFrameBackground2
-{
-    aspect-ratio: 1/1;
-    width:100%;
-    height:100%;
-    left:0%;
-    position:absolute;
 
-    background-image: url(../../../UniversalAssets/VoidButtonBackground.png);
-    background-size:  12px 12px;
-    background-repeat: repeat;
-
-    filter: brightness(33%);
-}
 
 #WikiInfoPanelFrame::after
 {
@@ -858,7 +847,7 @@ body
     left:3%;
     position:absolute;
 
-    background-image: url(../../../UniversalAssets/NoneButtonBackground.png);
+    background-image: url(../../../UniversalAssets/IcolassButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
