@@ -70,11 +70,11 @@ async function Start()
     
     if (Desktop)
     {
-        LeftTransition.style.left -200 + "px"
+        LeftTransition.style.left = -200 + "px"
     }
     else
     {
-        LeftTransition.style.top -300 + "px"
+        LeftTransition.style.top = -300 + "px"
     }
     ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
     ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));

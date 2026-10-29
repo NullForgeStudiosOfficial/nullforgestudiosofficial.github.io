@@ -443,7 +443,7 @@ body
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding-right:3%;
+    padding-right:0%;
     padding-top:8%;
     padding-left:5%;
     margin-bottom: 3%;
@@ -825,9 +825,9 @@ body
 {
     position:relative;
     height:auto;
-    width:100%;
-    left:10%;
-    top:-1.5%;
+    width:90%;
+    left:-1%;
+    top:-1%;
 
 }
 
@@ -842,19 +842,19 @@ body
     overflow-x: hidden;
 
     padding-right:3%;
-    padding-top:5%;
+    padding-top:10%;
     padding-left:-0%;
-    margin-bottom: 3%;
+    padding-bottom: 15%;
     box-sizing: border-box;
     width: 100%;
-    height:97%;
+    height:100%;
 }
 
 #MiniButtonListBackground 
 {
     aspect-ratio: 1/1;
     width:98%;
-    height:98%;
+    height:100%;
     left:3%;
     position:absolute;
 
@@ -876,13 +876,15 @@ body
     position: absolute;
     inset: 0;
 
-    background-image: url(../../../UniversalAssets/WikiNavigationBoxMini.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    border: 8px solid transparent;
+
+    border-image-source: url("../../../UniversalAssets/WikiNavigationBoxMini.png");
+    border-image-slice: 8 fill;
+    border-image-width: 8px;
+    border-image-repeat: stretch;
 
     pointer-events: none;
     z-index: 10;
-
 }
 
 #WikiNavigationPanel > button
