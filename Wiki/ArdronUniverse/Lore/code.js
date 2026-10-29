@@ -137,10 +137,10 @@ function Update(CurrentTime)
         StartSite()
     }
 
-    if (TopBarTransition || NavigationBarTransition)
-    {
-        UpdateBarTransition();
-    }
+    //if (TopBarTransition || NavigationBarTransition)
+    //{
+    //    UpdateBarTransition();
+    //}
 
     requestAnimationFrame(Update);
 }
@@ -496,6 +496,7 @@ SFButton.addEventListener("click", function()
     LoadSite("../../../Wiki/Falatur/index.html")
 });
 
+/*
 let NavigationTabButton = document.getElementById("NavigationTabButton")
 let TopBarTabButton = document.getElementById("TopBarTabButton")
 
@@ -555,6 +556,7 @@ TopBarTabButton.addEventListener("click", function()
 
 });
 
+*/
 //-----------------------------------------
 
 Speakers = []
@@ -776,7 +778,6 @@ async function PreLoadEverything()
 
     FitButtonText()
 }
-
 function FitButtonText()
 {
     let Canvas = document.createElement("canvas");
@@ -790,9 +791,10 @@ function FitButtonText()
         let Style = getComputedStyle(Text);
         let Size = parseFloat(Style.fontSize);
 
-        let MaxWidth = Text.clientWidth - 10;
+        let MaxWidth = Text.clientWidth - (Desktop ? 10 : 8);
+        let MinimumSize = Desktop ? 8 : 4;
 
-        while (Size > 8)
+        while (Size > MinimumSize)
         {
             Context.font = `${Style.fontWeight} ${Size}px ${Style.fontFamily}`;
 
@@ -806,6 +808,7 @@ function FitButtonText()
 
         Text.style.fontSize = Size + "px";
     });
+
     Start();
 }
 

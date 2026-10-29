@@ -394,34 +394,6 @@ body
     pointer-events: none;
 }
 
-
-
-#TopBarTabButton
-{
-    position: absolute;
-    left:15.5%;
-    top:-100%;
-    aspect-ratio: 1/1;
-    width:4%;
-
-
-    background-color:  transparent;;
-    border: none;
-    padding: 0;
-    pointer-events:auto;
-    z-index: 0;
-    
-}
-
-#TopBarTab
-{
-    aspect-ratio: 1/1;
-    width:100%;
-    background-image: url("../../../UniversalAssets/TabUp.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 #WikiNavigationPanelFrame
 {
     position:absolute;
@@ -429,6 +401,7 @@ body
     height:20.5%;
     left:1%;
     top:5%;
+    overflow: hidden;
 
 }
 
@@ -443,7 +416,7 @@ body
     overflow-y: auto;
     overflow-x: hidden;
 
-    padding-right:10%;
+    padding-right:5%;
     padding-top:4%;
     padding-left:5%;
     padding-bottom: 5%;
@@ -543,7 +516,7 @@ body
     position: relative;
 
     left:1%;
-    width: 99%;
+    width: 98%;
     height: 99%;
 
     background-image: url("../../../UniversalAssets/NoneButtonBackground.png");
@@ -595,32 +568,6 @@ body
 
 
 
-#NavigationTabButton
-{
-    position: absolute;
-    left:-100%;
-    top:45%;
-    aspect-ratio: 1/1;
-    width:25%;
-
-
-    background-color:  transparent;;
-    border: none;
-    padding: 0;
-    pointer-events:auto;
-    z-index: 0;
-    
-}
-
-#NavigationTab
-{
-    aspect-ratio: 1/1;
-    width:100%;
-    background-image: url("../../../UniversalAssets/TabLeft.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
 
 .NavigationButtonText
 {
@@ -663,7 +610,8 @@ body
     height: 98%;
 
     padding-left:4%;
-    padding-top:4%;
+    padding-top:3%;
+    margin-top: 2%;
     padding-bottom: 1%;
     padding-right: 3%;
     box-sizing: border-box;
@@ -860,6 +808,161 @@ body
 
 
 
+
+
+
+
+
+
+
+
+
+
+#MiniButtonListFrame
+{
+    position: relative;
+    width: 95%;
+    left:2.50%;
+    height: auto;
+    aspect-ratio: auto;
+    top: -9%;
+    flex-shrink: 0;
+}
+
+#MiniButtonList
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    padding-right:3%;
+    padding-top:5%;
+    padding-left:3%;
+    margin-bottom: 3%;
+    width: 98%;
+    height:97%;
+}
+
+#MiniButtonList > button
+{
+    position: relative;
+    inset: auto;
+    flex-shrink: 0;
+    max-width: 100%;
+    z-index: auto;
+}
+
+
+#MiniButtonListBackground 
+{
+    aspect-ratio: 1/1;
+    width:100%;
+    height:98%;
+    left:0%;
+    position:absolute;
+
+    background-image: url(../../../UniversalAssets/NoneButtonBackground.png);
+    background-size:  12px 12px;
+    background-repeat: repeat;
+
+    filter: brightness(15%);
+
+    
+}
+
+
+
+
+#MiniButtonListFrame::after
+{
+    height: 98.5%;
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url(../../../UniversalAssets/WikiNavigationBoxMini.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+
+
+.SmolNavigationButtonText
+{
+    position: absolute;
+    top: 0;
+    left: 5%;
+
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Lexend;
+    font-size: 4.5vw;
+    color: white;
+    white-space: nowrap;
+}
+
+#ChIntro,#Ch0, #Ch1, #Ch2, #Ch3, #Ch4, #Ch5,
+#Ch6, #Ch7, #Ch8, #Ch9, #Ch10,
+#Ch11, #Ch12, #Ch13, #Ch14, #Ch15,
+#Ch16, #Ch17, #Ch18, #Ch19, #Ch20,
+#Ch21, #Ch22, #Ch23, #Ch24, #Ch25,
+#Ch26, #Ch27, #Ch28, #Ch29, #Ch30,
+#Ch31, #Ch32, #Ch33
+{
+    display: block;
+    position: relative;
+    width: 95%;
+    left: 0%;
+    aspect-ratio: 440/43;
+}
+
+.DisabledButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:0%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../../../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -0;
+
+    filter: brightness(40%);
+}
+
+#WikiInfoPanel > div[id^="Ch"][id$="Page"]
+{
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: auto;
+}
+
+#LoreButton .NormalButtonBackground
+{
+    filter:brightness(100%);
+}
+
+
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
     #WikiNavigationPanelFrame
@@ -903,167 +1006,5 @@ body
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-#MiniButtonListFrame
-{
-    position:relative;
-    aspect-ratio: 164/436;
-    height:100%;
-    width:98%;
-    left:3%;
-    top:0%;
-
-}
-
-#MiniButtonList
-{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    padding-right:3%;
-    padding-top:5%;
-    padding-left:-0%;
-    margin-bottom: 3%;
-    box-sizing: border-box;
-    width: 100%;
-    height:97%;
-}
-
-#MiniButtonListBackground 
-{
-    aspect-ratio: 1/1;
-    width:92%;
-    height:98%;
-    left:3%;
-    position:absolute;
-
-    background-image: url(../../../UniversalAssets/NoneButtonBackground.png);
-    background-size:  12px 12px;
-    background-repeat: repeat;
-
-    filter: brightness(15%);
-
-    
-}
-
-
-
-
-#MiniButtonListFrame::after
-{
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background-image: url(../../../UniversalAssets/WikiNavigationBoxMini.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-
-    pointer-events: none;
-    z-index: 10;
-
-}
-
-#WikiNavigationPanel > button
-{
-    position: relative;
-    inset: auto;
-    flex-shrink: 0;
-    max-width: 100%;
-    z-index: auto;
-}
-
-
-
-.SmolNavigationButtonText
-{
-    position: absolute;
-    top: 0;
-    left: 5%;
-
-    width: 90%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Lexend;
-    font-size: 1.25vw;
-    color: white;
-    white-space: nowrap;
-}
-
-#Ch0, #Ch1, #Ch2, #Ch3, #Ch4, #Ch5,
-#Ch6, #Ch7, #Ch8, #Ch9, #Ch10,
-#Ch11, #Ch12, #Ch13, #Ch14, #Ch15,
-#Ch16, #Ch17, #Ch18, #Ch19, #Ch20,
-#Ch21, #Ch22, #Ch23, #Ch24, #Ch25,
-#Ch26, #Ch27, #Ch28, #Ch29, #Ch30,
-#Ch31, #Ch32, #Ch33
-{
-    display: block;
-    position: relative;
-    width: 90%;
-    left: 0%;
-    aspect-ratio: 144/40;
-}
-
-.DisabledButtonBackground
-{
-    display: flex;
-    position: relative;
-
-    left:5%;
-    width: 90%;
-    height: 90%;
-
-    background-image: url("../../../../UniversalAssets/NoneButtonBackground.png");
-    background-repeat: repeat;
-    background-size: 6px 6px;
-     pointer-events: auto;
-
-     z-index: -0;
-
-    filter: brightness(40%);
-}
-
-#WikiInfoPanel > div[id^="Ch"][id$="Page"]
-{
-    display: block;
-    position: relative;
-    flex-shrink: 0;
-    width: 100%;
-    height: auto;
-}
-
-#LoreButton .NormalButtonBackground
-{
-    filter:brightness(100%);
-}
-
-@media (max-width: 1600px) {
-
-}
-
-@media (max-width: 1000px) {
-
-}
 
 

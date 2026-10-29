@@ -448,7 +448,7 @@ body
     padding-left:5%;
     margin-bottom: 3%;
     box-sizing: border-box;
-    width: calc(100% - 20px);
+    width: 95%;
     height:97%;
 }
 
@@ -824,11 +824,10 @@ body
 #MiniButtonListFrame
 {
     position:relative;
-    aspect-ratio: 164/436;
-    height:100%;
-    width:98%;
-    left:3%;
-    top:0%;
+    height:auto;
+    width:100%;
+    left:10%;
+    top:-1.5%;
 
 }
 
@@ -839,7 +838,7 @@ body
     align-items: center;
     gap: 15px;
 
-    overflow-y: auto;
+    overflow-y: hidden;
     overflow-x: hidden;
 
     padding-right:3%;
@@ -854,7 +853,7 @@ body
 #MiniButtonListBackground 
 {
     aspect-ratio: 1/1;
-    width:92%;
+    width:98%;
     height:98%;
     left:3%;
     position:absolute;
