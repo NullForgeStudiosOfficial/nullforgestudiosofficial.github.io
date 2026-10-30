@@ -13,6 +13,8 @@ let MainBackground = document.getElementById("MainBackground")
 let MainBackgroundScroll = 0
 let ButtonBackgrounds = []
 let ButtonBackgroundScroll = 0;
+let BestiaryBackgrounds = []
+let BestiaryScroll = 0;
 let InfoBoxBackgroundScroll = 0;
 let LeftRightTransition = document.getElementById("FullLeftRightTransition")
 let LeftTransition = document.getElementById("LeftTransition")
@@ -102,6 +104,8 @@ async function Start()
     ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
 
+    BestiaryBackgrounds.push(...document.querySelectorAll(".CreatureCardBackground"));
+
 
     LastTime = performance.now();
     requestAnimationFrame(Update);
@@ -144,10 +148,17 @@ function Update(CurrentTime)
 function ScrollButtonBackgrounds()
 {
     ButtonBackgroundScroll -= 25 * DeltaTime;
+    BestiaryScroll -= 50 * DeltaTime
+
 
     for (let Button of ButtonBackgrounds)
     {
         Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
+    }
+
+    for (let Button of BestiaryBackgrounds)
+    {
+        Button.style.backgroundPositionY = BestiaryScroll + "px";
     }
 }
 
@@ -589,6 +600,47 @@ EchelonButton.addEventListener("click", function()
     EchelonPage.style.display = "block";
     EchelonButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
 });
+
+
+
+
+
+
+function FlipCard(Card)
+{
+    if (Card.dataset.Flipping === "true")
+    {
+        return;
+    }
+
+    Card.dataset.Flipping = "true";
+    Card.style.transform = "rotateY(90deg)";
+
+    setTimeout(function()
+    {
+        let Front = Card.querySelector(".CardFront");
+        let Back = Card.querySelector(".CardBack");
+
+        if (Front.style.display === "none")
+        {
+            Front.style.display = "block";
+            Back.style.display = "none";
+        }
+        else
+        {
+            Front.style.display = "none";
+            Back.style.display = "block";
+        }
+
+        Card.style.transform = "rotateY(0deg)";
+
+        setTimeout(function()
+        {
+            Card.dataset.Flipping = "false";
+        }, 250);
+
+    }, 250);
+}
 //-----------------------------------------
 
 async function PreLoadEverything()
