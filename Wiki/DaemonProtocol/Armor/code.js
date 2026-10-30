@@ -107,6 +107,7 @@ async function Start()
     requestAnimationFrame(Update);
 
     document.getElementById("StartupBlack").remove();
+    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
 
 }
 
@@ -450,8 +451,6 @@ let QuestButton = document.getElementById("QuestButton")
 let StatsButton = document.getElementById("StatsButton")
 let WeaponsButton = document.getElementById("WeaponsButton")
 
-
-//-----------------------------------------
 ArmorButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
@@ -515,8 +514,47 @@ WeaponsButton.addEventListener("click", function()
     LoadSite("../../../Wiki/DaemonProtocol/Weapons/index.html")
 });
 
+let InformationButton = document.getElementById("InformationButton")
+let ArmorListButton = document.getElementById("ArmorListButton")
+let ModifiersButton = document.getElementById("ModifiersButton")
+
+let InformationPanel = document.getElementById("InformationPanel")
+let ArmorListPanel = document.getElementById("ArmorListPanel")
+let ModifierPanel = document.getElementById("ModifierPanel")
+
+function ResetPages()
+{
+    
+    InformationPanel.style.display = "none";
+    ArmorListPanel.style.display = "none";
+    ModifierPanel.style.display = "none";
+
+    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    ArmorListButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    ModifiersButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+}
 
 
+InformationButton.addEventListener("click", function()
+{
+    ResetPages();
+    InformationPanel.style.display = "block";
+    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+ArmorListButton.addEventListener("click", function()
+{
+    ResetPages();
+    ArmorListPanel.style.display = "block";
+    ArmorListButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+ModifiersButton.addEventListener("click", function()
+{
+    ResetPages();
+    ModifierPanel.style.display = "block";
+    ModifiersButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
 
 //-----------------------------------------
 

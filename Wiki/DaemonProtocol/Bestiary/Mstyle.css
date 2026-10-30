@@ -352,7 +352,7 @@ body
 .AUButton
 {
     background-image: url("../../../UniversalAssets/NoneButtonBackground.png");
-    filter: brightness(100%);
+    filter: brightness(150%);
 }
 
 #Logo
@@ -957,10 +957,54 @@ body
     height: auto;
 }
 
-#LoreButton .NormalButtonBackground
+#BestiaryButton .NormalButtonBackground
 {
-    filter:brightness(100%);
+    filter:brightness(150%)
 }
+
+.TableEntry
+{
+    width: 95%;
+    margin-left: 3%;
+    font-size: 24px;
+    color: white;
+    font-family: Lexend;
+}
+
+.Table
+{
+    width: 100%;
+    font-family: Lexend;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: clamp(1vw,3vw,10vw);
+}
+
+.Table th,
+.Table td
+{
+    border: 3px solid #777;
+    padding: 0px;
+    font-family: Lexend;
+}
+
+.Table th
+{
+    background: rgb(60, 60, 0);
+}
+
+.Table tbody td
+{
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.Table tbody tr:nth-child(even) td:nth-child(even),
+.Table tbody tr:nth-child(even) td:nth-child(odd)
+{
+    background: rgba(60, 60, 60, 0.75);
+}
+
+
 
 
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)

@@ -334,7 +334,7 @@ body
 .IcolassButton
 {
     background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
-    filter: brightness(100%);
+    filter: brightness(150%);
 }
 
 .SanctumButton
@@ -949,16 +949,47 @@ body
     height: auto;
 }
 
-#LoreButton .NormalButtonBackground
-{
-    filter:brightness(100%);
-}
+
 
 @media (max-width: 1600px) {
-
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 700/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
 }
 
 @media (max-width: 1000px) {
+    #WikiInfoPanelFrame
+    {
+        position:absolute;
+        aspect-ratio: 490/412;
+        height:84.5%;
+        Right:0%;
+        top:12.5%;
+    }
+
+    #Logo
+    {
+        position:absolute;
+
+        right:46.75%;
+        top:8%;
+        aspect-ratio: 1/1;
+
+        width:clamp(1vw,6vw,10vw);
+        height:auto;
+
+        background-image: url("../../UniversalAssets/Favicon.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        pointer-events:none;
+    }
+
 
 }
 

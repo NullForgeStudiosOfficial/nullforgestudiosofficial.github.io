@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AU — </title>
+    <title>DP — Bestiary</title>
 
-    <link rel="icon" type="image/png" href="../../UniversalAssets/WikiFavicon.png">
+    <link rel="icon" type="image/png" href="../../../UniversalAssets/WikiFavicon.png">
 
     <link rel="stylesheet" href="style.css"
       media="(min-aspect-ratio: 6/5)">
@@ -118,10 +118,48 @@
                 <div class = NavigationButtonText>Armor</div>
             </button>
 
+            
             <button class = "NormalButton" id = "BestiaryButton">
                 <div class = "NormalButtonBackground"></div>
                 <div class = NavigationButtonText>Bestiary</div>
             </button>
+
+            <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id = MiniButtonList>
+
+                        <button class="NormalButton" id="InformationButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Information</div>
+                        </button>
+
+                        <button class="NormalButton" id="HalycyonButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Halycyon</div>
+                        </button>
+
+                        <button class="NormalButton" id="VectorButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Vector</div>
+                        </button>
+
+                        <button class="NormalButton" id="MeridianButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Meridian</div>
+                        </button>
+
+                        <button class="NormalButton" id="PraxisButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Praxis</div>
+                        </button>
+
+                        <button class="NormalButton" id="EchelonButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Echelon</div>
+                        </button>
+                    </div>
+                </div>
 
             <button class = "NormalButton" id = "CombatButton">
                 <div class = "NormalButtonBackground"></div>
@@ -134,7 +172,7 @@
             </button>
 
             <button class = "NormalButton" id = "GuideButton">
-                <div class = "NormalButtonBackground"></div>
+                    <div class = "NormalButtonBackground"></div>
                 <div class = NavigationButtonText>Guide</div>
             </button>
 
@@ -164,12 +202,43 @@
     <div id="WikiInfoPanelFrameBackground"></div>
 
     <div id="WikiInfoPanel" >
-        <div class = "Title1">Welcome to the Daemon Protocol Wiki. </div>
+        <div id="InformationPage">
+            <div class="Title1">Bestiary Information</div>
 
+            <div class="Words">
+                The Bestiary contains information about the various creatures and enemies found throughout Ardron.
 
-        <div class = WordsCentered>Please select a category.</div>
+                Each entry provides information about a creature's attributes, abilities, and other characteristics that may be useful when encountering it.
+
+                Creatures are organized by their respective regions, allowing you to explore the inhabitants of Halycyon, Vector, Meridian, Praxis, and Echelon.
+
+                Some creatures may be relatively harmless, while others can pose a significant threat to even experienced adventurers.
+
+                Knowing what you're up against can mean the difference between victory and a very unfortunate encounter.
+            </div>
+        </div>
+
+        <div id = "HalycyonPage">
+
+        </div>
+
+        <div id = "VectorPage">
             
-    </div>
+        </div>
+
+        <div id = "MeridianPage">
+
+        </div>
+
+        <div id = "PraxisPage">
+
+        </div>
+
+        <div id = "EchelonPage">
+            
+        </div>
+
+        
 </div>
 
 

@@ -7,9 +7,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AU — </title>
+    <title>DP — Armor</title>
 
-    <link rel="icon" type="image/png" href="../../UniversalAssets/WikiFavicon.png">
+    <link rel="icon" type="image/png" href="../../../UniversalAssets/WikiFavicon.png">
 
     <link rel="stylesheet" href="style.css"
       media="(min-aspect-ratio: 6/5)">
@@ -122,17 +122,17 @@
                     <div id = "MiniButtonListBackground"></div>
 
                     <div id = MiniButtonList>
-                        <button class="NormalButton" id="Information">
+                        <button class="NormalButton" id="InformationButton">
                             <div class="NormalButtonBackground"></div>
                             <div class="SmolNavigationButtonText">Information</div>
                         </button>
 
-                        <button class="NormalButton" id="ArmorList">
+                        <button class="NormalButton" id="ArmorListButton">
                             <div class="NormalButtonBackground"></div>
                             <div class="SmolNavigationButtonText">Armor List</div>
                         </button>
 
-                        <button class="NormalButton" id="Modifiers">
+                        <button class="NormalButton" id="ModifiersButton">
                             <div class="NormalButtonBackground"></div>
                             <div class="SmolNavigationButtonText">Modifiers</div>
                         </button>
@@ -155,7 +155,7 @@
             </button>
 
             <button class = "NormalButton" id = "GuideButton">
-                <div class = "NormalButtonBackground"></div>
+                    <div class = "NormalButtonBackground"></div>
                 <div class = NavigationButtonText>Guide</div>
             </button>
 
@@ -186,18 +186,513 @@
 
     <div id="WikiInfoPanel" >
         <div id = "InformationPanel">
+            <div class = Title1>Armor Information</div>
 
+            <div class = "Words">
+            Armor is equipment that provides defensive bonuses to your character.
+
+            Each armor has a base set of values distributed across four defensive attributes: Evasion, Defense, Ward, and Impedance.
+
+            Armor is divided into three classifications:
+
+            Light Armor:
+            Focuses on a single defensive attribute, primarily Evasion, or Ward.
+
+            Medium Armor:
+            Distributes its defensive bonuses across multiple attributes, allowing for more balanced defensive builds.
+
+            Heavy Armor:
+            Focuses on a single defensive attribute, primarily Defense or Impedance.</div>
+
+            <div class = Title1>Armor Protections</div>
+
+            <div class = "Words">Armor provides four types of protection against incoming attacks:
+
+                • Evasion: Chance to avoid physical attacks.
+                • Ward: Chance to avoid or protect against magical attacks.
+                • Defense: Flat reduction to physical damage. (e.g. 50 damage - 45 defense = 5 damage. )
+                • Impedance: Flat reduction to magical damage.
+            </div> 
+
+            <div class = Title1>Armor Upgrades</div>
+
+            <div class = "Words">Armor may be upgraded if you have the correct materials to do so, and you know a friend with a high enough Blacksmithing Trade tier.
+
+                Armor may be upgraded up to 6 times.
+
+                Each upgrade increases the armor's protection values by 15%, compounded from the previous level. Only the displayed values are rounded down.
+
+                (e.g. Gambeson Level 0 increased to Gambeson Level 1 goes from 45 Evasion to 51 Evasion.)
+
+                The higher the tier an armor is, the more difficult it is to upgrade it. 
+
+                If an Armor has Modifiers, it also becomes more difficult to upgrade it. 
+            </div> 
+
+            <div class = Title1>Extra Attributes</div>
+
+            <div class = "Words">Armor may also possess positive and negative modifiers that alter its properties.
+
+            Positive modifiers can improve defensive attributes, increase other character statistics, or provide resistance to specific damage types.
+
+            Negative modifiers can reduce character statistics or introduce weaknesses to specific damage types.
+
+            See the Armor List for individual armor statistics, or Modifiers for a complete list of available equipment modifiers.</div> 
         </div>
 
         <div id = "ArmorListPanel">
+            <div class="Title1">Armor List</div>
 
-        </div>
+            <div class="Words">
+                All armor types,values, and materials required for upgrading.
+            </div>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Gambeson — Light Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>45</td><td>—</td></tr>
+                        <tr><td>1</td><td>51</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>58</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>66</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>75</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>86</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>98</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">WispWeave — Light Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Ward</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>45</td><td>—</td></tr>
+                        <tr><td>1</td><td>51</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>58</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>66</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>75</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>86</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>98</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Platemail — Heavy Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Defense</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>45</td><td>—</td></tr>
+                        <tr><td>1</td><td>51</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>58</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>66</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>75</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>86</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>98</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">RuneForged — Heavy Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>45</td><td>—</td></tr>
+                        <tr><td>1</td><td>51</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>58</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>66</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>75</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>86</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>98</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Chainmail — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Ward</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>20</td><td>20</td><td>—</td></tr>
+                        <tr><td>1</td><td>23</td><td>23</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>34</td><td>34</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>40</td><td>40</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>46</td><td>46</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Dragonskin — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Defense</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>20</td><td>20</td><td>—</td></tr>
+                        <tr><td>1</td><td>23</td><td>23</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>34</td><td>34</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>40</td><td>40</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>46</td><td>46</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Brigandine — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Defense</th>
+                            <th>Ward</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>20</td><td>20</td><td>—</td></tr>
+                        <tr><td>1</td><td>23</td><td>23</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>34</td><td>34</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>40</td><td>40</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>46</td><td>46</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Leather — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>20</td><td>20</td><td>—</td></tr>
+                        <tr><td>1</td><td>23</td><td>23</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>34</td><td>34</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>40</td><td>40</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>46</td><td>46</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Vanguard — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Defense</th>
+                            <th>Ward</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>11</td><td>11</td><td>11</td><td>11</td><td>—</td></tr>
+                        <tr><td>1</td><td>12</td><td>12</td><td>12</td><td>12</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>14</td><td>14</td><td>14</td><td>14</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>16</td><td>16</td><td>16</td><td>16</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>19</td><td>19</td><td>19</td><td>19</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>22</td><td>22</td><td>22</td><td>22</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>25</td><td>25</td><td>25</td><td>25</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Scalemail — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Defense</th>
+                            <th>Ward</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>15</td><td>15</td><td>15</td><td>—</td></tr>
+                        <tr><td>1</td><td>17</td><td>17</td><td>17</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>19</td><td>19</td><td>19</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>22</td><td>22</td><td>22</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>26</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>30</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>34</td><td>34</td><td>34</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Lamellar — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Defense</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>15</td><td>15</td><td>15</td><td>—</td></tr>
+                        <tr><td>1</td><td>17</td><td>17</td><td>17</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>19</td><td>19</td><td>19</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>22</td><td>22</td><td>22</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>26</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>30</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>34</td><td>34</td><td>34</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Hauberk — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Evasion</th>
+                            <th>Ward</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>15</td><td>15</td><td>15</td><td>—</td></tr>
+                        <tr><td>1</td><td>17</td><td>17</td><td>17</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>19</td><td>19</td><td>19</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>22</td><td>22</td><td>22</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>26</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>30</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>34</td><td>34</td><td>34</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class = "WordsClose">Segmentata — Medium Armor</div>
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Defense</th>
+                            <th>Ward</th>
+                            <th>Impedance</th>
+                            <th>Materials</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>0</td><td>15</td><td>15</td><td>15</td><td>—</td></tr>
+                        <tr><td>1</td><td>17</td><td>17</td><td>17</td><td>TBD</td></tr>
+                        <tr><td>2</td><td>19</td><td>19</td><td>19</td><td>TBD</td></tr>
+                        <tr><td>3</td><td>22</td><td>22</td><td>22</td><td>TBD</td></tr>
+                        <tr><td>4</td><td>26</td><td>26</td><td>26</td><td>TBD</td></tr>
+                        <tr><td>5</td><td>30</td><td>30</td><td>30</td><td>TBD</td></tr>
+                        <tr><td>6</td><td>34</td><td>34</td><td>34</td><td>TBD</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+        </div> 
+
 
         <div id = "ModifierPanel">
-            
+            <div class="Title1">Armor Modifiers</div>
+
+            <div class="Words">
+                Armor like weapons can possess up to 2 Modifiers. They can be either positive or negative in nature. 
+
+                A Positive Modifier's level is dependant on the Armors Rarity. 
+                Negative Modifiers can always be 0-6 regardless of the Armors Rarity. 
+            </div>
+
+            <div class="TableEntry">
+                <div class="WordsClose">Positive Modifiers</div>
+
+                <table class="Table">
+                    <thead>
+                    <tr>
+                        <th>Modifier</th>
+                        <th>Description</th>
+                        <th>Per Level</th>
+                    </tr>
+                </thead>
+
+                    <tbody>
+                        <tr><td>Reinforced</td><td>Increases Defense</td><td>+3</td></tr>
+                        <tr><td>Agile</td><td>Increases Evasion</td><td>+3</td></tr>
+                        <tr><td>Warded</td><td>Increases Ward</td><td>+3</td></tr>
+                        <tr><td>Anchored</td><td>Increases Impedance</td><td>+3</td></tr>
+                        <tr><td>Barbed</td><td>Increases Thorns</td><td>+3</td></tr>
+                        <tr><td>Accelerated</td><td>Increases Speed</td><td>+5</td></tr>
+                        <tr><td>Attuned</td><td>Increases Maximum Mana</td><td>+2</td></tr>
+                        <tr><td>Bludgeoning Resistance</td><td>Grants resistance to Bludgeoning damage</td><td>—</td></tr>
+                        <tr><td>Piercing Resistance</td><td>Grants resistance to Piercing damage</td><td>—</td></tr>
+                        <tr><td>Slashing Resistance</td><td>Grants resistance to Slashing damage</td><td>—</td></tr>
+                        <tr><td>Ether Resistance</td><td>Grants resistance to Ether damage</td><td>—</td></tr>
+                        <tr><td>Necrotic Resistance</td><td>Grants resistance to Necrotic damage</td><td>—</td></tr>
+                        <tr><td>Dark Resistance</td><td>Grants resistance to Dark damage</td><td>—</td></tr>
+                        <tr><td>Holy Resistance</td><td>Grants resistance to Holy damage</td><td>—</td></tr>
+                        <tr><td>Kinetic Resistance</td><td>Grants resistance to Kinetic damage</td><td>—</td></tr>
+                        <tr><td>Fire Resistance</td><td>Grants resistance to Fire damage</td><td>—</td></tr>
+                        <tr><td>Lightning Resistance</td><td>Grants resistance to Lightning damage</td><td>—</td></tr>
+                        <tr><td>Ice Resistance</td><td>Grants resistance to Ice damage</td><td>—</td></tr>
+                        <tr><td>Water Resistance</td><td>Grants resistance to Water damage</td><td>—</td></tr>
+                        <tr><td>Earth Resistance</td><td>Grants resistance to Earth damage</td><td>—</td></tr>
+                        <tr><td>Acid Resistance</td><td>Grants resistance to Acid damage</td><td>—</td></tr>
+                        <tr><td>Poison Resistance</td><td>Grants resistance to Poison damage</td><td>—</td></tr>
+                        <tr><td>Vitality Resistance</td><td>Grants resistance to Vitality damage</td><td>—</td></tr>
+                        <tr><td>Psychic Resistance</td><td>Grants resistance to Psychic damage</td><td>—</td></tr>
+                        <tr><td>Chaos Resistance</td><td>Grants resistance to Chaos damage</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+
+            <div class="TableEntry">
+                <div class="WordsClose">Negative Modifiers</div>
+
+                <table class="Table">
+                    <thead>
+                        <tr>
+                            <th>Modifier</th>
+                            <th>Description</th>
+                            <th>Per Level</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr><td>Heavy</td><td>Decreases Evasion</td><td>-3</td></tr>
+                        <tr><td>Fractured</td><td>Decreases Ward</td><td>-3</td></tr>
+                        <tr><td>Unstable</td><td>Decreases Impedance</td><td>-3</td></tr>
+                        <tr><td>Encumbered</td><td>Decreases Speed</td><td>-5</td></tr>
+                        <tr><td>Vulnerable</td><td>Increases damage received</td><td>TBD</td></tr>
+                        <tr><td>Disrupted</td><td>Decreases Maximum Mana</td><td>-3</td></tr>
+                        <tr><td>Bludgeoning Weakness</td><td>Take additional damage from Bludgeoning attacks</td><td>—</td></tr>
+                        <tr><td>Piercing Weakness</td><td>Take additional damage from Piercing attacks</td><td>—</td></tr>
+                        <tr><td>Slashing Weakness</td><td>Take additional damage from Slashing attacks</td><td>—</td></tr>
+                        <tr><td>Ether Weakness</td><td>Take additional damage from Ether attacks</td><td>—</td></tr>
+                        <tr><td>Necrotic Weakness</td><td>Take additional damage from Necrotic attacks</td><td>—</td></tr>
+                        <tr><td>Dark Weakness</td><td>Take additional damage from Dark attacks</td><td>—</td></tr>
+                        <tr><td>Holy Weakness</td><td>Take additional damage from Holy attacks</td><td>—</td></tr>
+                        <tr><td>Kinetic Weakness</td><td>Take additional damage from Kinetic attacks</td><td>—</td></tr>
+                        <tr><td>Fire Weakness</td><td>Take additional damage from Fire attacks</td><td>—</td></tr>
+                        <tr><td>Lightning Weakness</td><td>Take additional damage from Lightning attacks</td><td>—</td></tr>
+                        <tr><td>Ice Weakness</td><td>Take additional damage from Ice attacks</td><td>—</td></tr>
+                        <tr><td>Water Weakness</td><td>Take additional damage from Water attacks</td><td>—</td></tr>
+                        <tr><td>Earth Weakness</td><td>Take additional damage from Earth attacks</td><td>—</td></tr>
+                        <tr><td>Acid Weakness</td><td>Take additional damage from Acid attacks</td><td>—</td></tr>
+                        <tr><td>Poison Weakness</td><td>Take additional damage from Poison attacks</td><td>—</td></tr>
+                        <tr><td>Vitality Weakness</td><td>Take additional damage from Vitality attacks</td><td>—</td></tr>
+                        <tr><td>Psychic Weakness</td><td>Take additional damage from Psychic attacks</td><td>—</td></tr>
+                        <tr><td>Chaos Weakness</td><td>Take additional damage from Chaos attacks</td><td>—</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
         </div>
-            
-    </div>
 </div>
 
 

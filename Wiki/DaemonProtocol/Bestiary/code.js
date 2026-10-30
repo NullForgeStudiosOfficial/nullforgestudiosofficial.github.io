@@ -450,8 +450,6 @@ let QuestButton = document.getElementById("QuestButton")
 let StatsButton = document.getElementById("StatsButton")
 let WeaponsButton = document.getElementById("WeaponsButton")
 
-
-//-----------------------------------------
 ArmorButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
@@ -518,6 +516,79 @@ WeaponsButton.addEventListener("click", function()
 
 
 
+let InformationButton = document.getElementById("InformationButton")
+let HalycyonButton = document.getElementById("HalycyonButton")
+let VectorButton = document.getElementById("VectorButton")
+let MeridianButton = document.getElementById("MeridianButton")
+let PraxisButton = document.getElementById("PraxisButton")
+let EchelonButton = document.getElementById("EchelonButton")
+
+
+let InformationPage = document.getElementById("InformationPage")
+let HalycyonPage = document.getElementById("HalycyonPage")
+let VectorPage = document.getElementById("VectorPage")
+let MeridianPage = document.getElementById("MeridianPage")
+let PraxisPage = document.getElementById("PraxisPage")
+let EchelonPage = document.getElementById("EchelonPage")
+
+function ResetPages()
+{
+    InformationPage.style.display = "none";
+    HalycyonPage.style.display = "none";
+    VectorPage.style.display = "none";
+    MeridianPage.style.display = "none";
+    PraxisPage.style.display = "none";
+    EchelonPage.style.display = "none";
+
+    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    HalycyonButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    VectorButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    MeridianButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    PraxisButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    EchelonButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+}
+
+InformationButton.addEventListener("click", function()
+{
+    ResetPages();
+    InformationPage.style.display = "block";
+    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+HalycyonButton.addEventListener("click", function()
+{
+    ResetPages();
+    HalycyonPage.style.display = "block";
+    HalycyonButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+VectorButton.addEventListener("click", function()
+{
+    ResetPages();
+    VectorPage.style.display = "block";
+    VectorButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+MeridianButton.addEventListener("click", function()
+{
+    ResetPages();
+    MeridianPage.style.display = "block";
+    MeridianButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+PraxisButton.addEventListener("click", function()
+{
+    ResetPages();
+    PraxisPage.style.display = "block";
+    PraxisButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
+
+EchelonButton.addEventListener("click", function()
+{
+    ResetPages();
+    EchelonPage.style.display = "block";
+    EchelonButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+});
 //-----------------------------------------
 
 async function PreLoadEverything()
