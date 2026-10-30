@@ -369,6 +369,7 @@ async function ScrollBackground()
 let ArdronUniverse = document.getElementById("ArdronUniverse")
 let AoAButton = document.getElementById("AoAButton")
 let VTButton = document.getElementById("VTButton")
+let ATButton = document.getElementById("ATButton")
 let ACButton = document.getElementById("ACButton")
 let EoAButton = document.getElementById("EoAButton")
 let RRButton = document.getElementById("RRButton")
@@ -438,6 +439,13 @@ SFButton.addEventListener("click", function()
     WhichTransitionWeUsing = 1
     ChangeSite()
     LoadSite("../../../Wiki/Falatur/index.html")
+});
+
+ATButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/ArcaneTitans/index.html")
 });
 
 //-----------------------------------------

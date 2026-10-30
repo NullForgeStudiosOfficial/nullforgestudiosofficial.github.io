@@ -1,5 +1,12 @@
 // ----------- whateverthefuck
-let Desktop = true;
+let DesktopQuery = window.matchMedia("(min-aspect-ratio: 6/5)");
+
+let Desktop = DesktopQuery.matches;
+
+DesktopQuery.addEventListener("change", () => {
+    Desktop = DesktopQuery.matches;
+});
+
 let LastTime = 0;
 let DeltaTime = 0;
 let MainBackground = document.getElementById("MainBackground")
@@ -24,6 +31,10 @@ let NextPage = null
 
 //--------- Add These
 
+function Sleep(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 function Randomizer(min,max)
@@ -57,11 +68,40 @@ document.addEventListener("keydown", function(event)
 async function Start()
 {
     
-    LeftTransition.style.left -200 + "px"
-    ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
-    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    if (Desktop)
+    {
+        LeftTransition.style.left = -200 + "px"
+        
+    }
+    else
+    {
+        LeftTransition.style.top = -300 + "px"
 
-    BlinkEyes()
+    }
+
+    Speakers = [
+    { ID: "None",  Background: 'url("../../../UniversalAssets/NoneButtonBackground.png")' },
+    { ID: "Iwata",  Background: 'url("../../../UniversalAssets/EimonButtonBackground.png")' },
+    { ID: "Sythys", Background: 'url("../../../UniversalAssets/ElusiaButtonBackground.png")' },
+    { ID: "Entar",  Background: 'url("../../../UniversalAssets/GrimloweButtonBackground.png")' },
+    { ID: "Zykius", Background: 'url("../../../UniversalAssets/SostrumButtonBackground.png")' },
+    { ID: "Astus",  Background: 'url("../../../UniversalAssets/VidulynButtonBackground.png")' },
+    { ID: "Tynos",  Background: 'url("../../../UniversalAssets/YumalonButtonBackground.png")' },
+    { ID: "Void", Background: 'url("../../../UniversalAssets/VoidButtonBackground.png")' }];
+
+
+    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".AUButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VoidButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
+
 
     LastTime = performance.now();
     requestAnimationFrame(Update);
@@ -76,8 +116,8 @@ function Update(CurrentTime)
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
-    ScrollBackground();
     ScrollButtonBackgrounds();
+    ScrollBackground();
 
     if (TransitionRunning)
     {
@@ -94,16 +134,13 @@ function Update(CurrentTime)
         StartSite()
     }
 
+    //if (TopBarTransition || NavigationBarTransition)
+    //{
+    //    UpdateBarTransition();
+    //}
+
     requestAnimationFrame(Update);
 }
-
-async function ScrollBackground()
-{
-    MainBackgroundScroll += 100 * DeltaTime;
-
-    MainBackground.style.backgroundPositionX = MainBackgroundScroll + "px";
-}
-
 function ScrollButtonBackgrounds()
 {
     ButtonBackgroundScroll -= 25 * DeltaTime;
@@ -113,9 +150,6 @@ function ScrollButtonBackgrounds()
         Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
     }
 }
-
-
-
 
 async function ChangePage(PageID1,PageID2)
 {
@@ -154,18 +188,29 @@ async function ChangeSite()
 async function StartSite()
 {
     LeftTransition.style.display = "block";
-    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+   
 
-    StartTransitionX -= 10000 * DeltaTime;
-    LeftTransition.style.left = StartTransitionX + "px";
-    LeftTransition.style.right = "auto";
+    if (Desktop)
+    {
+        StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
+        StartTransitionX -= 10000 * DeltaTime;
+        LeftTransition.style.left = StartTransitionX + "px";
+        LeftTransition.style.right = "auto";
+    }
+    else
+    {
+        StopX = window.innerHeight - LeftTransition.offsetHeight - 2000;
+        StartTransitionX -= 5000 * DeltaTime;
+        LeftTransition.style.top = StartTransitionX + "px";
+        LeftTransition.style.bottom = "auto";
+    }
+    
 
     if (StartSiteT && StartTransitionX <= StopX)
     {
-            StartSiteT = false;
-            StartSiteT = false;
-            LeftTransition.style.display = "none";
-            return
+        StartSiteT = false;
+        LeftTransition.style.display = "none";
+        return
     }
 }
 
@@ -182,7 +227,15 @@ async function LoadSite(SiteString)
 
 function UpdateTransition()
 {
-       TransitionX -= 11000 * DeltaTime;
+        if (Desktop)
+        {
+            TransitionX -= 10000 * DeltaTime;
+        }
+        else
+        {
+            TransitionX -= 5000 * DeltaTime;
+        }
+       
 
         let usingthisthingy = null;
 
@@ -201,7 +254,17 @@ function UpdateTransition()
             break;
         }
 
-        usingthisthingy.style.left = TransitionX + "px";
+        if (Desktop)
+        {
+            usingthisthingy.style.left = TransitionX + "px";
+        }
+        else
+        {
+            usingthisthingy.style.top = TransitionX + "px";
+        }
+
+        
+        
         if (Desktop)
         {
             if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
@@ -213,11 +276,12 @@ function UpdateTransition()
         }
         else
         {
-            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.offsetWidth / 2)
+            if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetHeight / 2 <= window.innerHeight / 2)
             {
                 ChangedPage = true;
                 PreviousPage.style.display = "none";
-                NextPage.style.display = "flex";    
+                NextPage.style.display = "flex";
+                LeftRightTransition.style.display = "none"
             }
         }
 
@@ -258,7 +322,7 @@ function UpdateSiteTransition()
     }
     else
     {
-        StopX = window.innerHeight - usingthisthingy.innerHeight + 200;
+        StopX = window.innerHeight - usingthisthingy.offsetHeight + 200;
     }
     
 
@@ -278,7 +342,7 @@ function UpdateSiteTransition()
     }
     else
     {
-        SiteTransitionX -= 11000 * DeltaTime;
+        SiteTransitionX -= 5000 * DeltaTime;
         usingthisthingy.style.top = SiteTransitionX + "px";
         usingthisthingy.style.bottom = "auto";
     }
@@ -287,30 +351,123 @@ function UpdateSiteTransition()
 
 
 
+let TopBarGraphics = document.getElementById("TopBarGraphics")
+let TopBarScroll = 0
+let WikiNavigationPanelBackground = document.getElementById("WikiNavigationPanelBackground")
+
+async function ScrollBackground()
+{
+    TopBarScroll += 100 * DeltaTime;
+
+    TopBarGraphics.style.backgroundPositionY = TopBarScroll + "px";
+    WikiNavigationPanelBackground.style.backgroundPositionY = TopBarScroll + "px";
+    WikiInfoPanelFrameBackground.style.backgroundPositionY = (TopBarScroll/2) + "px";
+}
+
+
+let ArdronUniverse = document.getElementById("ArdronUniverse")
+let AoAButton = document.getElementById("AoAButton")
+let VTButton = document.getElementById("VTButton")
+let ATButton = document.getElementById("ATButton")
+let ACButton = document.getElementById("ACButton")
+let EoAButton = document.getElementById("EoAButton")
+let RRButton = document.getElementById("RRButton")
+let GLButton = document.getElementById("GLButton")
+let DPButton = document.getElementById("DPButton")
+let SFButton = document.getElementById("SFButton")
+
+
+ArdronUniverse.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/ArdronUniverse/index.html")
+});
+
+AoAButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/AshesOfArcanum/index.html")
+});
+
+VTButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/VerdantThesis/index.html")
+});
+
+ACButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Ashbound/index.html")
+});
+
+EoAButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/EchosOfAria/index.html")
+});
+
+RRButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/RimaltsRecollection/index.html")
+});
+
+GLButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite(".../../../Wiki/GracesLament/index.html")
+});
+
+DPButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/DaemonProtocol/index.html")
+});
+
+SFButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/index.html")
+});
+
+ATButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/ArcaneTitans/index.html")
+});
+
+//-----------------------------------------
 
 
 
 
-
-
-
-
-
+//-----------------------------------------
 
 async function PreLoadEverything()
 {
-    const ImageURLs = new Set();
-    for (const Element of document.querySelectorAll("*"))
+    let ImageURLs = new Set();
+    for (let Element of document.querySelectorAll("*"))
     {
-        const Background = getComputedStyle(Element).backgroundImage;
+        let Background = getComputedStyle(Element).backgroundImage;
 
-        for (const Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+        for (let Match of Background.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
         {
             ImageURLs.add(Match[1]);
         }
     }
 
-    for (const Image of document.images)
+    for (let Image of document.images)
     {
         if (Image.currentSrc || Image.src)
         {
@@ -320,11 +477,11 @@ async function PreLoadEverything()
 
     function ScanRules(Rules, BaseURL)
     {
-        for (const Rule of Rules)
+        for (let Rule of Rules)
         {
-            for (const Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
+            for (let Match of Rule.cssText.matchAll(/url\(\s*["']?(.*?)["']?\s*\)/g))
             {
-                const URLString = Match[1];
+                let URLString = Match[1];
 
                 try
                 {
@@ -343,7 +500,7 @@ async function PreLoadEverything()
         }
     }
 
-    for (const Sheet of document.styleSheets)
+    for (let Sheet of document.styleSheets)
     {
         try
         {
@@ -357,7 +514,7 @@ async function PreLoadEverything()
 
     await Promise.all([...ImageURLs].map(async URL =>
     {
-        const PreloadedImage = new Image();
+        let PreloadedImage = new Image();
 
         if (!/\.(png|jpg|jpeg|gif|webp|avif|svg|bmp)(\?.*)?$/i.test(URL))
         {
@@ -377,6 +534,40 @@ async function PreLoadEverything()
     }));
 
     console.log("Image preload finished:", ImageURLs.size, "URLs");
+
+    FitButtonText()
+}
+
+function FitButtonText()
+{
+    let Canvas = document.createElement("canvas");
+    let Context = Canvas.getContext("2d");
+
+    document.querySelectorAll(".SmolNavigationButtonText").forEach(Text =>
+    {
+        Text.style.fontSize = "";
+        Text.style.whiteSpace = "nowrap";
+
+        let Style = getComputedStyle(Text);
+        let Size = parseFloat(Style.fontSize);
+
+        let MaxWidth = Text.clientWidth - (Desktop ? 10 : 8);
+        let MinimumSize = Desktop ? 8 : 4;
+
+        while (Size > MinimumSize)
+        {
+            Context.font = `${Style.fontWeight} ${Size}px ${Style.fontFamily}`;
+
+            let TextWidth = Context.measureText(Text.textContent.trim()).width;
+
+            if (TextWidth <= MaxWidth)
+                break;
+
+            Size -= 0.5;
+        }
+
+        Text.style.fontSize = Size + "px";
+    });
 
     Start();
 }
