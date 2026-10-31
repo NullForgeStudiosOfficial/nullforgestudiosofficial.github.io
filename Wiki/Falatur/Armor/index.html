@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Falatur — Armor</title>
+
+    <link rel="icon" type="image/png" href="../../../UniversalAssets/WikiFavicon.png">
+
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
+
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
+
+</head>
+
+<body>
+
+    <div id = StartupBlack></div>
+
+    <div id="BackgroundContainer">
+        <div id="MainBackground"></div>
+
+    </div>
+
+    <div id = TopBar>
+        <div id ="TopBarGraphics"></div>
+
+        <button class="SquareButton" id = ArdronUniverse>
+            <div class="AUButton" ></div>
+
+            <div class ="TopBarText">AU</div>
+        </button>
+
+        <button class="SquareButton" id = AoAButton>
+            <div class="EimonButton" ></div>
+
+            <div class ="TopBarText">AoA</div>
+        </button> 
+
+        <button class="SquareButton" id = VTButton>
+            <div class="ElusiaButton" ></div>
+
+            <div class ="TopBarText">VT</div>
+        </button> 
+
+        <button class="SquareButton" id = ACButton>
+            <div class="GrimloweButton" ></div>
+
+            <div class ="TopBarText">AC</div>
+        </button> 
+
+        <button class="SquareButton" id = EoAButton>
+            <div class="SostrumButton" ></div>
+
+            <div class ="TopBarText">EoA</div>
+        </button> 
+
+        <div id = Logo></div>
+
+        <button class="SquareButton" id = RRButton>
+            <div class="VidulynButton" ></div>
+
+            <div class ="TopBarText">RR</div>
+        </button> 
+
+        <button class="SquareButton" id = GLButton>
+            <div class="YumalonButton" ></div>
+
+            <div class ="TopBarText" id = "BlackText">GL</div>
+        </button> 
+
+        <button class="SquareButton" id = ATButton>
+            <div class="VoidButton" ></div>
+
+            <div class ="TopBarText">AT</div>
+        </button> 
+
+        <button class="SquareButton" id = DPButton>
+            <div class="IcolassButton" ></div>
+
+            <div class ="TopBarText">DP</div>
+        </button> 
+
+        <button class="SquareButton" id = SFButton>
+            <div class="SanctumButton" ></div>
+
+            <div class ="TopBarText">FT</div>
+        </button> 
+
+
+    </div>
+
+    <div id = "WikiNavigationPanelFrame">
+        <div id = WikiNavigationPanelBackground></div>
+        <div id = "WikiNavigationPanel">
+
+            <!--
+                <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id = MiniButtonList>
+                        <button class="NormalButton" id="MINIBUTTON">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">-</div>
+                        </button>
+                    </div>
+                </div>
+            --> 
+
+            <button class = "NormalButton" id = "RulesButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Rules</div>
+            </button>
+
+            
+
+            <button class = "NormalButton" id = "CombatButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Combat</div>
+            </button>
+
+            <button class = "NormalButton" id = "WeaponsButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Weapons</div>
+            </button>
+
+            <button class = "NormalButton" id = "ArmorButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Armor</div>
+            </button>
+
+			<div id="MiniButtonListFrame">
+                <div id="MiniButtonListBackground"></div>
+
+                <div id="MiniButtonList">
+                    <button class="NormalButton" id="ArmorOverviewButton">
+            			<div class="NormalButtonBackground"></div>
+            			<div class="SmolNavigationButtonText">Overview</div>
+        			</button>
+
+        			<button class="NormalButton" id="ArmorClassesButton">
+            			<div class="NormalButtonBackground"></div>
+            			<div class="SmolNavigationButtonText">Armor Classes</div>
+        			</button>
+
+        			<button class="NormalButton" id="ArmorDamageButton">
+            			<div class="NormalButtonBackground"></div>
+            			<div class="SmolNavigationButtonText">Armor Damage</div>
+        			</button>
+
+        			<button class="NormalButton" id="ArmorRestrictionsButton">
+            			<div class="NormalButtonBackground"></div>
+            			<div class="SmolNavigationButtonText">Restrictions</div>
+        			</button>
+                </div>
+            </div>
+
+            <button class = "NormalButton" id = "SmithingButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Smithing</div>
+            </button>
+
+        </div>
+    </div>
+
+    <div id="WikiInfoPanelFrame">
+        <div id="WikiInfoPanelFrameBackground"></div>
+
+        <div id="WikiInfoPanel">
+			<div id="ArmorOverviewSection">
+    			<div class="Title2">Armor Overview</div>
+    			<div class="Words">Armor provides additional protection against incoming attacks, allowing players to withstand damage that would otherwise injure them.
+
+					Falatur simplifies the many different forms of armor into two classifications: <b>Light Armor</b> and <b>Heavy Armor</b>.
+
+					Armor is classified by its weight rather than the material from which it is constructed. This allows players to create a wide variety of armor designs without being restricted to specific materials.
+
+					Each armor classification provides a different amount of Hit Points, which absorb damage before it reaches the player.
+
+					Unlike individual limbs, armor does not track damage separately for each piece. Instead, all equipped armor shares a single Hit Point pool.
+
+					<b>Armor Classification</b>
+
+					A player's armor classification is determined by the lowest qualifying armor piece they have equipped that is outwardly visible.
+
+					If any equipped armor piece belongs to a lower classification, the player's entire suit is considered to belong to that classification.
+
+					For example, a player wearing a Heavy chest piece with Light arm protection is considered to be wearing Light Armor.
+
+					<b>Armor Inspection</b>
+
+					Armor must be inspected and approved by a Judge before being used in combat.
+
+					A Judge will determine its classification based on the weight of its individual pieces.
+
+					Players are responsible for ensuring their armor remains compliant with all applicable rules.
+    			</div>
+			</div>
+
+			<div id="ArmorClassesSection">
+	    		<div class="Title2">Armor Classes</div>
+    			<div class="Words">Falatur divides armor into two classifications: <b>Light Armor</b> and <b>Heavy Armor</b>.
+
+					Each classification has its own weight requirements and provides a different amount of protection.
+
+					Armor is classified according to the weight of its individual pieces, not the materials used in its construction.
+
+					<b>Light Armor</b>
+
+					Light Armor consists of armor pieces that do not meet the minimum weight requirements for Heavy Armor.
+
+					Light Armor provides <b>2 Armor Hit Points</b>.
+
+					<b>Light Armor Weight Requirements</b>
+
+					• Chest: 0–6 pounds.
+					• Arms: 0–4 pounds.
+					• Legs: 0–4 pounds.
+
+					<b>Heavy Armor</b>
+
+					Heavy Armor consists of armor pieces that meet or exceed the minimum weight requirements for Heavy Armor.
+
+					Heavy Armor provides <b>4 Armor Hit Points</b>.
+
+					<b>Heavy Armor Weight Requirements</b>
+
+					• Chest: 7 pounds or more.
+					• Arms: 5 pounds or more.
+					• Legs: 5 pounds or more.
+
+					<b>Mixed Armor Classifications</b>
+
+					When a player wears armor pieces belonging to different classifications, their entire suit is classified according to the lowest qualifying armor piece that is outwardly visible.
+
+					For example, a player wearing a 7-pound chest piece and 2-pound arm protection is considered to be wearing Light Armor.
+
+					That player receives 2 Armor Hit Points rather than 4.
+
+					To qualify for Heavy Armor, all qualifying outwardly visible armor pieces must meet the Heavy Armor weight requirements.
+    			</div>
+			</div>
+
+			<div id="ArmorDamageSection">
+	    		<div class="Title2">Armor Damage</div>
+    			<div class="Words">Armor protects players by absorbing incoming damage before it reaches their Hit Points.
+
+					All equipped armor shares a single Hit Point pool, determined by the player's Armor Classification.
+
+					<b>Armor Hit Points</b>
+
+					Light Armor provides 2 Armor Hit Points.
+
+					Heavy Armor provides 4 Armor Hit Points.
+
+					Armor Hit Points are shared across the entire suit, regardless of how many individual pieces are equipped.
+
+					For example, a player wearing Heavy Armor who receives 2 damage to their armored chest has 2 Armor Hit Points remaining.
+
+					If their next attack strikes an armored arm for another 2 damage, their armor is destroyed.
+
+					<b>Taking Damage</b>
+
+					When an attack strikes a location protected by armor, applicable damage is subtracted from the armor's remaining Hit Points.
+
+					Damage to any protected location affects the entire suit.
+
+					Attacks against locations not covered by armor damage the player normally.
+
+					<b>Damage Types</b>
+
+					<b>Slashing Damage:</b> Damages armor before affecting the player.
+
+					<b>Bludgeoning Damage:</b> Damages armor before affecting the player.
+
+					<b>Piercing Damage:</b> Bypasses armor entirely, dealing damage directly to the player.
+
+					When an attack deals multiple Damage Types, each type is resolved according to its normal rules.
+
+					<b>Destroyed Armor</b>
+
+					When Armor Hit Points reach 0, the armor is considered destroyed.
+
+					Destroyed armor no longer provides protection against incoming attacks.
+
+					<b>Excess Damage</b>
+
+					Armor absorbs the entirety of any applicable attack that strikes it, regardless of its remaining Hit Points.
+
+					If an attack deals more damage than the armor has remaining, the armor is destroyed, but the excess damage does not carry over to the player.
+
+					For example, a player wearing Light Armor with 2 Armor Hit Points remaining is struck by a Hammer dealing 4 Bludgeoning Damage.
+
+					The armor is destroyed, but the player receives no damage from the attack.
+
+					This also applies to attacks that would otherwise injure or Sever a limb. If the armor absorbs the attack, the protected limb is unaffected.
+
+					Once armor is destroyed, subsequent attacks against the player are resolved normally, as though the armor were not present.
+    			</div>
+			</div>
+
+			<div id="ArmorRestrictionsSection">
+	    		<div class="Title2">Armor Restrictions</div>
+    			<div class="Words">Armor must meet all applicable classification and safety requirements before being used in combat.
+
+					Falatur does not require armor to be constructed from specific materials or replicate any particular historical design.
+
+					Players are encouraged to create armor that suits their preferences, provided it remains safe and complies with the rules.
+
+					<b>Weight Requirements</b>
+
+					Armor classification is determined by the weight of each individual armor piece rather than the combined weight of the entire suit.
+
+					Players may not combine the weight of multiple pieces to meet the requirements of a higher Armor Classification.
+
+					If any outwardly visible qualifying armor piece belongs to a lower classification, the entire suit is considered to belong to that classification.
+
+					<b>Armor Coverage</b>
+
+					Armor only protects the areas of the body it physically covers.
+
+					Attacks striking exposed areas are resolved normally and do not reduce Armor Hit Points.
+
+					Players may not claim armor protection for areas that are not actually covered by their equipment.
+
+					<b>Armor Construction</b>
+
+					Armor must be constructed without exposed sharp edges, hazardous protrusions, or other features that could reasonably injure another player.
+
+					All armor must remain securely attached during combat.
+
+					Armor may not contain intentionally dangerous components or modifications designed to harm opponents.
+
+					<b>Armor Inspection</b>
+
+					Armor must be inspected and approved by a Judge before being used in combat.
+
+					Judges may examine individual armor pieces to verify their weight, classification, construction, and safety.
+
+					Armor that fails inspection may not be used until the identified issues have been corrected.
+
+					<b>Damaged Armor</b>
+
+					Armor that becomes physically damaged during combat must remain safe to wear.
+
+					If an armor piece develops dangerous edges, loose components, or other hazards, it must be removed or repaired before combat continues.
+
+					<b>Judge Discretion</b>
+
+					Judges have final authority regarding armor classification, construction, and safety.
+
+					Armor that technically meets its weight requirements may still be rejected if its construction presents an unreasonable safety risk.
+    			</div>
+			</div>
+        </div>
+    </div>
+
+    <div id ="FullLeftRightTransition"></div>
+    <div id ="LeftTransition"></div>
+    <div id ="RightTransition"></div>
+
+    
+
+    <script src="code.js"></script>
+
+    
+
+</body>
+
+
+
+
+</html>
+

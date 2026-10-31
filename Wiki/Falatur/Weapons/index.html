@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Falatur — Weapons</title>
+
+    <link rel="icon" type="image/png" href="../../../UniversalAssets/WikiFavicon.png">
+
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
+
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
+
+</head>
+
+<body>
+
+    <div id = StartupBlack></div>
+
+    <div id="BackgroundContainer">
+        <div id="MainBackground"></div>
+
+    </div>
+
+    <div id = TopBar>
+        <div id ="TopBarGraphics"></div>
+
+        <button class="SquareButton" id = ArdronUniverse>
+            <div class="AUButton" ></div>
+
+            <div class ="TopBarText">AU</div>
+        </button>
+
+        <button class="SquareButton" id = AoAButton>
+            <div class="EimonButton" ></div>
+
+            <div class ="TopBarText">AoA</div>
+        </button> 
+
+        <button class="SquareButton" id = VTButton>
+            <div class="ElusiaButton" ></div>
+
+            <div class ="TopBarText">VT</div>
+        </button> 
+
+        <button class="SquareButton" id = ACButton>
+            <div class="GrimloweButton" ></div>
+
+            <div class ="TopBarText">AC</div>
+        </button> 
+
+        <button class="SquareButton" id = EoAButton>
+            <div class="SostrumButton" ></div>
+
+            <div class ="TopBarText">EoA</div>
+        </button> 
+
+        <div id = Logo></div>
+
+        <button class="SquareButton" id = RRButton>
+            <div class="VidulynButton" ></div>
+
+            <div class ="TopBarText">RR</div>
+        </button> 
+
+        <button class="SquareButton" id = GLButton>
+            <div class="YumalonButton" ></div>
+
+            <div class ="TopBarText" id = "BlackText">GL</div>
+        </button> 
+
+        <button class="SquareButton" id = ATButton>
+            <div class="VoidButton" ></div>
+
+            <div class ="TopBarText">AT</div>
+        </button> 
+
+        <button class="SquareButton" id = DPButton>
+            <div class="IcolassButton" ></div>
+
+            <div class ="TopBarText">DP</div>
+        </button> 
+
+        <button class="SquareButton" id = SFButton>
+            <div class="SanctumButton" ></div>
+
+            <div class ="TopBarText">FT</div>
+        </button> 
+
+
+    </div>
+
+    <div id = "WikiNavigationPanelFrame">
+        <div id = WikiNavigationPanelBackground></div>
+        <div id = "WikiNavigationPanel">
+
+            <!--
+                <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id = MiniButtonList>
+                        <button class="NormalButton" id="MINIBUTTON">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">-</div>
+                        </button>
+                    </div>
+                </div>
+            --> 
+
+            <button class = "NormalButton" id = "RulesButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Rules</div>
+            </button>
+
+            
+
+            <button class = "NormalButton" id = "CombatButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Combat</div>
+            </button>
+
+            <button class = "NormalButton" id = "WeaponsButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Weapons</div>
+            </button>
+
+            <div id="MiniButtonListFrame">
+                <div id="MiniButtonListBackground"></div>
+
+                <div id="MiniButtonList">
+                    <button class="NormalButton" id="WeaponsOverviewButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Overview</div>
+                    </button>
+
+                    <button class="NormalButton" id="WeaponDamageTypesButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Damage Types</div>
+                    </button>
+
+                    <button class="NormalButton" id="WeaponLengthsButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Weapon Lengths</div>
+                    </button>
+
+                    <button class="NormalButton" id="WeaponDamageButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Weapon Damage</div>
+                    </button>
+
+                    <button class="NormalButton" id="WeaponFamiliesButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Weapon Families</div>
+                    </button>
+
+                    <button class="NormalButton" id="WeaponPropertiesButton">
+                        <div class="NormalButtonBackground"></div>
+                        <div class="SmolNavigationButtonText">Weapon Properties</div>
+                    </button>
+                </div>
+            </div>
+
+            <button class = "NormalButton" id = "ArmorButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Armor</div>
+            </button>
+
+            <button class = "NormalButton" id = "SmithingButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Smithing</div>
+            </button>
+
+        </div>
+    </div>
+
+    <div id="WikiInfoPanelFrame">
+        <div id="WikiInfoPanelFrameBackground"></div>
+
+        <div id="WikiInfoPanel">
+            <div id="WeaponsOverviewSection">
+                <div class="Title2">Weapons Overview</div>
+                <div class="Words">Weapons are the primary means of combat in Falatur.
+
+					Every weapon must meet the following requirements before being used in combat:
+
+					• Pass inspection by a Judge.
+					• Be assigned a Primary Damage Type.
+					• Be marked with the appropriate color band.
+
+					<b>Primary Damage Types</b>
+
+					Every weapon is assigned a Primary Damage Type during inspection, based on its construction and intended use.
+
+					The Primary Damage Type determines which Damage Type properties and Weapon Properties apply to the weapon.
+
+					<b>Secondary Damage Types</b>
+
+					A weapon may also be assigned one Secondary Damage Type if its construction supports a distinct method of attack using that Damage Type.
+
+					Secondary Damage Types may also be granted through Weapon Properties, abilities, or other effects.
+
+					Secondary Damage Types do not benefit from special properties or bonuses associated with their Damage Type or method of attack.
+
+					Only the weapon's Primary Damage Type may benefit from such properties unless a rule specifically states otherwise.
+
+					<b>A weapon may never possess more than two Damage Types simultaneously.</b>
+
+					<b>Weapon Classification</b>
+
+					Weapons are classified according to their size, construction, and intended function.
+
+					Weapon size determines its base damage, while its Weapon Family may grant additional properties or modify how the weapon functions.
+
+					Weapons must reasonably resemble the weapons they are intended to represent in both appearance and function.
+
+					<b>Inspection and Approval</b>
+
+					Judges are responsible for determining a weapon's approved Damage Types and classification.
+
+					A weapon may not be assigned a Damage Type simply because some part of its construction could theoretically produce that type of damage.
+
+					For example, a Mace should not receive Slashing Damage merely because some portion of its construction could theoretically be used to cut.
+
+					Once approved, a weapon's Primary or Secondary Damage Type may not be changed without reinspection by a Judge.
+
+					Judges have final discretion when determining weapon classifications, Damage Types, and whether a weapon is appropriate for combat.
+                </div>
+            </div>
+
+            <div id="WeaponDamageTypesSection">
+                <div class="Title2">Damage Types</div>
+                <div class="Words">Weapons in Falatur use three different Damage Types: Piercing, Slashing, and Bludgeoning.
+
+					Each Damage Type has its own properties and interactions with Armor, Shields, and limbs.
+
+					A weapon's Primary Damage Type must be identified by a clearly visible color band.
+
+					<b>Piercing Damage</b>
+
+					<span style="color:#009900;"><b>Green</b></span>
+
+					Piercing weapons concentrate force into a single point, allowing attacks to bypass Armor and strike the target beneath.
+
+					• Ignores Armor completely.
+					• Deals no damage to Shields.
+					• Cannot Sever or Break limbs.
+					• Reduces limb Hit Points normally.
+
+					<b>Slashing Damage</b>
+
+					<span style="color:#ff0000;"><b>Red</b></span>
+
+					Slashing weapons use a defined cutting edge to deliver attacks.
+
+					• Deals normal damage to Armor.
+					• Deals no damage to Shields.
+					• Can Sever limbs when reducing them to 0 Hit Points.
+
+					<b>Bludgeoning Damage</b>
+
+					<span style="color:#0000ff;"><b>Blue</b></span>
+
+					Bludgeoning weapons deliver force through impact rather than cutting or piercing.
+
+					• Deals normal damage to Armor.
+					• Deals damage to Shields.
+					• Can Break limbs when reducing them to 0 Hit Points.
+
+					<b>Combined Damage Types</b>
+
+					Some weapons may possess both a Primary and Secondary Damage Type.
+
+					A weapon may never possess more than two Damage Types simultaneously.
+
+					When multiple Damage Types contribute to reducing a limb to 0 Hit Points, the Damage Type responsible for the final damage determines the resulting injury.
+
+					If a single attack deals multiple Damage Types, only the weapon's Primary Damage Type determines the injury inflicted.
+
+					Secondary Damage Types may still affect Armor, Shields, and other applicable mechanics normally.
+
+					<b>Damage Type Restrictions</b>
+
+					A weapon's Damage Types must reflect its approved construction and intended function.
+
+					Secondary Damage Types do not receive special bonuses or properties associated with their Damage Type unless explicitly stated otherwise.
+
+					Any changes to a weapon's approved Damage Types require reinspection by a Judge.
+                </div>
+            </div>
+
+            <div id="WeaponLengthsSection">
+                <div class="Title2">Weapon Lengths</div>
+                <div class="Words">
+					Weapons in Falatur are divided into three size classifications: Small, Medium, and Large.
+
+					Weapon size is determined by comparing the weapon's length to the body proportions of its wielder, rather than using fixed measurements.
+
+					This allows weapon classifications to scale naturally with the size of each player.
+
+					<b>Small Weapons</b>
+
+					A Small weapon must be no longer than the distance from the wielder's hip to their knee.
+
+					Weapons exceeding this length are considered Medium, provided they meet the requirements for that classification.
+
+					<b>Medium Weapons</b>
+
+					A Medium weapon must be longer than the distance from the wielder's hip to their knee, but no longer than the distance from the ground to their elbow.
+
+					Medium weapons may be wielded with one or two hands, depending on their construction and intended function.
+
+					<b>Large Weapons</b>
+
+					A Large weapon must be longer than the distance from the ground to the wielder's shoulder.
+
+					Large weapons must be wielded with two hands when performing attacks.
+
+					Large weapons receive additional damage bonuses according to their Damage Type and Weapon Family.
+
+					<b>Unclassified Weapon Lengths</b>
+
+					Weapons exceeding the maximum length of Medium weapons, but failing to meet the minimum length of Large weapons, are not permitted in combat.
+
+					This restriction maintains a clear distinction between Medium weapons and the significantly larger weapons capable of receiving additional damage bonuses.
+
+					<b>Compression Testing</b>
+
+					Weapon size is determined by its compression-tested length rather than its resting, uncompressed length.
+
+					To compression test a weapon, place its striking tip against the ground and apply reasonable downward pressure to compress any safety padding.
+
+					Compare the resulting length against the wielder's appropriate body measurement.
+
+					Compressible safety padding does not increase a weapon's size classification beyond its compressed length.
+
+					Non-compressible or minimally compressible components, such as EVA foam used for core protection, count toward the weapon's measured length.
+
+					Pommel padding that does not contribute to the weapon's effective reach does not need to be included in its size classification.
+
+					<b>Length Restrictions</b>
+
+					Padding may not be excessively extended for the purpose of gaining additional reach or manipulating a weapon's size classification.
+
+					Judges have final discretion when determining whether padding is reasonably constructed for safety or is being used to circumvent weapon-size restrictions.
+
+					A weapon's classification is determined relative to its current wielder. A weapon approved for one player may fall into a different classification when used by another.
+                </div>
+            </div>
+
+            <div id = "WeaponLengthExample"></div>
+
+            <div id="WeaponDamageSection">
+                <div class="Title2">Weapon Damage</div>
+                <div class="Words">Weapons in Falatur deal damage according to their Size Classification and Primary Damage Type.
+
+					Small, Medium, and Large weapons each have their own damage values.
+
+					Certain weapons may also receive additional damage through Weapon Properties, abilities, or other effects.
+
+					<b>Small Weapon Damage</b>
+
+					• Slashing: 1 Slashing Damage.
+					• Piercing: 1 Piercing Damage.
+					• Bludgeoning: 2 Bludgeoning Damage.
+
+					Small weapons receive no additional damage bonuses from their size.
+
+					<b>Medium Weapon Damage</b>
+
+					• Slashing: 2 Slashing Damage.
+					• Piercing: 2 Piercing Damage.
+					• Bludgeoning: 2 Bludgeoning Damage.
+
+					Medium weapons receive no additional damage bonuses from their size.
+
+					<b>Large Weapon Damage</b>
+
+					• Slashing: 2 Slashing Damage + 2 Bludgeoning Damage.
+					• Piercing: 2 Piercing Damage + 1 Bludgeoning Damage.
+					• Bludgeoning: 2 Bludgeoning Damage + 2 Bludgeoning Damage.
+
+					Large weapons receive additional Bludgeoning Damage according to their Primary Damage Type.
+
+					These bonuses are applied alongside the weapon's normal damage, rather than replacing it.
+
+					<b>Weapon Properties</b>
+
+					Some Weapon Families possess special properties that modify their damage or grant additional methods of attack.
+
+					These properties may increase damage, introduce Secondary Damage Types, or alter how a weapon functions.
+
+					Weapon Properties take precedence over the standard damage values when explicitly stated.
+
+					<b>Combined Damage</b>
+
+					When an attack deals multiple Damage Types, only the Primary Damage Type determines the injury inflicted upon a limb.
+
+					Secondary Damage Types may still affect Armor, Shields, and other applicable mechanics normally.
+
+					For example, a Large Slashing weapon dealing 2 Slashing Damage and 2 Bludgeoning Damage may damage a Shield through its Bludgeoning component.
+
+					However, when determining whether a limb is Severed or Broken, only the weapon's Primary Slashing Damage Type is considered.
+
+					<b>Damage Restrictions</b>
+
+					Weapons may not receive bonuses or special effects beyond those granted by their approved classification, Weapon Properties, abilities, or other applicable rules.
+
+					A weapon's damage values must be approved during inspection and may not be changed without reinspection by a Judge.
+                </div>
+            </div>
+
+            <div id="WeaponFamiliesSection">
+                <div class="Title2">Weapon Families</div>
+                <div class="Words">Weapons in Falatur are divided into different Weapon Families based on their construction, appearance, and intended function.
+
+					While many weapons share similar dimensions, they may function very differently in combat.
+
+					Each Weapon Family has its own requirements, Damage Types, and potentially unique Weapon Properties.
+                    <hr><b>Daggers</b>
+
+					A Dagger is a Small weapon with a continuous rigid blade.
+
+					Daggers deal <b>1 Piercing Damage</b>.
+
+					Daggers possess the Slashing property, allowing them to deal 1 Slashing Damage when performing a Slashing attack.
+
+					<hr><b>Rapiers</b>
+
+					A Rapier is a Medium weapon with a continuous rigid blade terminating in a distinct thrusting tip.
+
+					Rapiers must possess an enclosed hand guard, such as a basket hilt, for identification.
+
+					Rapiers deal <b>2 Piercing Damage</b>.
+
+					Rapiers cannot slash like normal, but they are still capable of drawcuts. Rapier drawcuts deal 1 Slashing damage.
+
+					<hr><b>Spears</b>
+
+					A Spear is a Large weapon consisting of a rigid shaft terminating in a distinct thrusting tip.
+
+					Spears deal <b>2 Piercing Damage</b>.
+
+					Spears possess the Punch Through property, granting an additional 1 Bludgeoning Damage when wielded with two hands.
+
+					<hr><b>Swords</b>
+
+					A Sword is a weapon with a continuous rigid blade and an exposed handle no longer than one-third of its overall length.
+
+					Swords deal <b>2 Slashing Damage</b>.
+
+					Large Swords possess the Momentum property, granting an additional 1 Bludgeoning Damage when wielded with two hands.
+
+					Swords without a hilt that possess a stabbing tip may deal 1 Piercing Damage using that tip.
+
+					<hr><b>Axes</b>
+
+					An Axe is a weapon with a rigid axe head mounted to a haft.
+
+					The axe head must not exceed one-third of the weapon's overall length.
+
+					Axes deal <b>2 Slashing Damage</b>.
+
+					Large Axes possess the Momentum property, granting an additional 1 Bludgeoning Damage when wielded with two hands.
+
+					<hr><b>Clubs</b>
+
+					A Club is a weapon with a continuous rigid striking surface and no defined edge.
+
+					The exposed handle must not exceed one-third of the weapon's overall length.
+
+					Clubs deal <b>2 Bludgeoning Damage</b>.
+
+					Large Clubs possess the Momentum property, allowing them to deal 4 Bludgeoning Damage when wielded with two hands.
+
+					<hr><b>Hammers</b>
+
+					A Hammer is a weapon with a distinct rigid striking head mounted to a haft.
+
+					The striking head must not exceed one-third of the weapon's overall length.
+
+					Hammers deal <b>2 Bludgeoning Damage</b>.
+
+					Large Hammers possess the Momentum property, allowing them to deal 4 Bludgeoning Damage when wielded with two hands.
+
+					<hr><b>Flails</b>
+
+					A Flail is a weapon with a distinct striking head connected to a haft by a flexible tether.
+
+					Flails must extend above the wielder's elbow, but must not reach the ground when measured from the wielder's elbow.
+
+					The striking head must not exceed one-third of the weapon's overall length.
+
+					Flails deal <b>2 Bludgeoning Damage</b>.
+
+					Flails possess no additional Weapon Properties.
+
+					<hr><b>Bows</b>
+
+					A Bow is a ranged weapon designed to launch arrows.
+
+					Bows may not be used to perform melee attacks.
+
+					A Bow must not exceed a draw weight of 30 pounds at a 30-inch draw.
+
+					Arrows deal <b>2 Piercing Damage</b> when fired from a Bow.
+
+					Arrows may also be used as thrusting weapons, dealing 1 Piercing Damage.
+
+					Arrows must weigh less than 16 ounces.
+
+					Bows possess the Ammunition property and require an arrow to be nocked before firing.
+
+					<hr><b>Halberds</b>
+
+					A Halberd is a polearm with multiple functional striking surfaces mounted to a rigid haft.
+
+					When the butt of the haft rests on the ground beside the wielder, the highest striking surface must reach at least the wielder's shoulder.
+
+					Halberds must possess at least two distinct functional striking surfaces belonging to different weapon types.
+
+					Each striking surface must be clearly distinguishable.
+
+					Halberds deal <b>1 Damage</b> of the appropriate Damage Type for the striking surface used.
+
+					Halberds possess the Versatile property, allowing them to deal Slashing, Piercing, or Bludgeoning Damage depending on the striking surface used.
+
+					<hr><b>Javelins</b>
+
+					A Javelin is a ranged weapon with a rigid shaft terminating in a distinct thrusting tip.
+
+					Javelins must weigh less than 16 ounces.
+
+					Javelins deal <b>2 Piercing Damage</b> when thrown.
+
+					When used as thrusting weapons, Javelins deal 1 Piercing Damage.
+
+					Javelins possess the Thrown property and must be thrown to deal their full damage.
+
+					<hr><b>Whips</b>
+
+					A Whip is a flexible weapon consisting of a handle connected to a flexible striking length.
+
+					Whips must be constructed in 6-inch sections, with gaps no greater than 1 inch between sections.
+
+					Whips deal <b>2 Bludgeoning Damage</b>.
+
+					Whips possess no additional Weapon Properties.
+
+					<hr><b>Chakrams</b>
+
+					A Chakram is a circular throwing weapon consisting of a complete ring with a padded striking edge.
+
+					Chakrams deal <b>1 Slashing Damage</b> when thrown.
+
+					Chakrams may not be used as melee weapons or wielded like Daggers.
+
+					Chakrams possess the Thrown property.
+
+					<hr><b>Unusual Weapons</b>
+
+					Weapons must reasonably resemble the Weapon Family they are intended to represent.
+
+					Weapons with unusual designs are permitted, provided they meet all applicable safety and construction requirements.
+
+					If a weapon does not clearly fit an existing Weapon Family, a Judge will determine its classification.
+
+					Weapons may not be intentionally designed to confuse players or circumvent the rules.
+                </div>
+            </div>
+
+            <div id="WeaponPropertiesSection">
+                <div class="Title2">Weapon Properties</div>
+                <div class="Words">
+					Weapon Properties are special rules assigned to certain Weapon Families that modify how they function in combat.
+
+					These properties may alter a weapon's Damage Types, increase its damage, or introduce additional methods of attack.
+
+					Weapon Properties only apply when their specific requirements are met.
+
+					<b>Slashing</b>
+
+					The Slashing property allows certain weapons whose Primary Damage Type is Piercing to perform Slashing attacks.
+
+					<b>Daggers:</b> May perform Slashing attacks dealing 1 Slashing Damage.
+
+					<b>Rapiers:</b> May perform Draw Cuts dealing 1 Slashing Damage. Rapiers may not perform conventional Slashing attacks.
+
+					Slashing attacks are subject to the normal rules for Slashing Damage, including the ability to Sever limbs.
+
+					<b>Momentum</b>
+
+					The Momentum property allows certain Large weapons to deal additional damage when wielded with two hands.
+
+					The bonus depends on the weapon's family.
+
+					• Large Swords: +1 Bludgeoning Damage.
+					• Large Axes: +1 Bludgeoning Damage.
+					• Large Clubs: Deal 4 Bludgeoning Damage instead of 2.
+					• Large Hammers: Deal 4 Bludgeoning Damage instead of 2.
+
+					Momentum does not apply to Medium or Small weapons.
+
+					<b>Punch Through</b>
+
+					Punch Through allows Spears to deal additional Bludgeoning Damage when wielded with two hands.
+
+					A Spear using Punch Through deals its normal 2 Piercing Damage and an additional 1 Bludgeoning Damage.
+
+					<b>Versatile</b>
+
+					The Versatile property allows a weapon to deal different Damage Types depending on the striking surface used.
+
+					<b>Halberds:</b> May deal Slashing, Piercing, or Bludgeoning Damage using their corresponding approved striking surfaces.
+
+					Each successful attack deals 1 Damage of the appropriate type.
+
+					Each striking surface must be clearly distinguishable and approved during inspection.
+
+					<b>Ammunition</b>
+
+					The Ammunition property applies to weapons that require a separate projectile to perform ranged attacks.
+
+					<b>Bows:</b> Must have an arrow nocked before firing.
+
+					Projectiles must meet all applicable construction and safety requirements.
+
+					<b>Thrown</b>
+
+					The Thrown property allows a weapon to be intentionally thrown at another player.
+
+					Only weapons specifically designed and approved for throwing may use this property.
+
+					<b>Javelins:</b> Deal 2 Piercing Damage when thrown, or 1 Piercing Damage when used as thrusting weapons.
+
+					<b>Chakrams:</b> Deal 1 Slashing Damage when thrown and may not be used as melee weapons.
+
+					<b>Weapons Without Properties</b>
+
+					Some Weapon Families possess no additional properties.
+
+					These weapons function according to their normal Damage Types, damage values, and applicable combat rules.
+
+					<b>Property Restrictions</b>
+
+					Weapon Properties may only be used by weapons that meet their requirements.
+
+					A weapon may not benefit from properties associated with its Secondary Damage Type unless explicitly permitted by the applicable rule.
+
+					Judges have final authority when determining whether a weapon qualifies for a particular property.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id ="FullLeftRightTransition"></div>
+    <div id ="LeftTransition"></div>
+    <div id ="RightTransition"></div>
+
+    
+
+    <script src="code.js"></script>
+
+    
+
+</body>
+
+
+
+
+</html>
+

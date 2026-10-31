@@ -436,7 +436,7 @@ body
     left:1%;
     position:absolute;
 
-    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("../../../UniversalAssets/SostrumButtonBackground.png");
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -522,7 +522,7 @@ body
     width: 98%;
     height: 99%;
 
-    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("../../../UniversalAssets/SostrumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;
@@ -631,7 +631,7 @@ body
     left:0%;
     position:absolute;
 
-    background-image: url("../../../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("../../../UniversalAssets/SostrumButtonBackground.png");
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -868,7 +868,7 @@ body
     left:0%;
     position:absolute;
 
-    background-image: url(../../../UniversalAssets/IcolassButtonBackground.png);
+    background-image: url(../../../UniversalAssets/SostrumButtonBackground.png);
     background-size:  12px 12px;
     background-repeat: repeat;
 
@@ -941,7 +941,7 @@ body
     width: 98%;
     height: 90%;
 
-    background-image: url("../../../../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("../../../../UniversalAssets/SostrumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;

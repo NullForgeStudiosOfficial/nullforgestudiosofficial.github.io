@@ -448,8 +448,47 @@ ATButton.addEventListener("click", function()
 });
 
 //-----------------------------------------
+let RulesButton = document.getElementById("RulesButton")
+let CombatButton = document.getElementById("CombatButton")
+let WeaponsButton = document.getElementById("WeaponsButton")
+let ArmorButton = document.getElementById("ArmorButton")
+let SmithingButton = document.getElementById("SmithingButton")
 
+RulesButton.addEventListener("click", function()
+{
+    console.log("wat")
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/Rules/index.html")
+});
 
+CombatButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/Combat/index.html")
+});
+
+WeaponsButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/Weapons/index.html")
+});
+
+ArmorButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/Armor/index.html")
+});
+
+SmithingButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("../../../Wiki/Falatur/Smithing/index.html")
+});
 
 
 //-----------------------------------------

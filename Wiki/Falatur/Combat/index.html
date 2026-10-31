@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Falatur — Combat</title>
+
+    <link rel="icon" type="image/png" href="../../../UniversalAssets/WikiFavicon.png">
+
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
+
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
+
+</head>
+
+<body>
+
+    <div id = StartupBlack></div>
+
+    <div id="BackgroundContainer">
+        <div id="MainBackground"></div>
+
+    </div>
+
+    <div id = TopBar>
+        <div id ="TopBarGraphics"></div>
+
+        <button class="SquareButton" id = ArdronUniverse>
+            <div class="AUButton" ></div>
+
+            <div class ="TopBarText">AU</div>
+        </button>
+
+        <button class="SquareButton" id = AoAButton>
+            <div class="EimonButton" ></div>
+
+            <div class ="TopBarText">AoA</div>
+        </button> 
+
+        <button class="SquareButton" id = VTButton>
+            <div class="ElusiaButton" ></div>
+
+            <div class ="TopBarText">VT</div>
+        </button> 
+
+        <button class="SquareButton" id = ACButton>
+            <div class="GrimloweButton" ></div>
+
+            <div class ="TopBarText">AC</div>
+        </button> 
+
+        <button class="SquareButton" id = EoAButton>
+            <div class="SostrumButton" ></div>
+
+            <div class ="TopBarText">EoA</div>
+        </button> 
+
+        <div id = Logo></div>
+
+        <button class="SquareButton" id = RRButton>
+            <div class="VidulynButton" ></div>
+
+            <div class ="TopBarText">RR</div>
+        </button> 
+
+        <button class="SquareButton" id = GLButton>
+            <div class="YumalonButton" ></div>
+
+            <div class ="TopBarText" id = "BlackText">GL</div>
+        </button> 
+
+        <button class="SquareButton" id = ATButton>
+            <div class="VoidButton" ></div>
+
+            <div class ="TopBarText">AT</div>
+        </button> 
+
+        <button class="SquareButton" id = DPButton>
+            <div class="IcolassButton" ></div>
+
+            <div class ="TopBarText">DP</div>
+        </button> 
+
+        <button class="SquareButton" id = SFButton>
+            <div class="SanctumButton" ></div>
+
+            <div class ="TopBarText">FT</div>
+        </button> 
+
+
+    </div>
+
+    <div id = "WikiNavigationPanelFrame">
+        <div id = WikiNavigationPanelBackground></div>
+        <div id = "WikiNavigationPanel">
+
+            <!--
+                <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id = MiniButtonList>
+                        <button class="NormalButton" id="MINIBUTTON">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">-</div>
+                        </button>
+                    </div>
+                </div>
+            --> 
+
+            <button class = "NormalButton" id = "RulesButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Rules</div>
+            </button>
+
+            
+
+            <button class = "NormalButton" id = "CombatButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Combat</div>
+            </button>
+
+            <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id="MiniButtonList">
+                        <button class="NormalButton" id="CombatOverviewButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Combat Overview</div>
+                        </button>
+
+                        <button class="NormalButton" id="HitPointsButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Hit Points</div>
+                        </button>
+
+                        <button class="NormalButton" id="ValidHitsButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Valid Hits</div>
+                        </button>
+
+                        <button class="NormalButton" id="DamageTypesButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Damage Types</div>
+                        </button>
+
+                        <button class="NormalButton" id="WeaponHandlingButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Weapon Handling</div>
+                        </button>
+
+                        <button class="NormalButton" id="ShieldsButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Shields</div>
+                        </button>
+
+                        <button class="NormalButton" id="InjuriesButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Injuries</div>
+                        </button>
+
+                        <button class="NormalButton" id="DeathAndRevivalButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Death & Revival</div>
+                        </button>
+
+                        <button class="NormalButton" id="SpecialCombatRulesButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Special Combat Rules</div>
+                        </button>
+                    </div>
+            </div>
+
+            <button class = "NormalButton" id = "WeaponsButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Weapons</div>
+            </button>
+            <button class = "NormalButton" id = "ArmorButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Armor</div>
+            </button>
+
+            <button class = "NormalButton" id = "SmithingButton">
+                <div class = "NormalButtonBackground"></div>
+                <div class = NavigationButtonText>Smithing</div>
+            </button>
+
+            
+
+
+            
+        </div>
+    </div>
+
+    <div id="WikiInfoPanelFrame">
+        <div id="WikiInfoPanelFrameBackground"></div>
+
+        <div id="WikiInfoPanel">
+
+            <div id="CombatOverviewSection">
+                <div class="Title2">Combat Overview</div>
+                <div class="Words">Falatur combat is built upon the Rule of Honor. Players are responsible for acknowledging valid hits, tracking their own injuries, and ensuring that combat remains safe and fair.
+
+                    <b>Combat Basics</b>
+
+                    All players begin with the same number of Hit Points.
+
+                    Each arm, each leg, and the torso have 2 Hit Points.
+
+                    Weapons deal damage according to their classification, with different damage types affecting players and their limbs in different ways.
+
+                    A hit is only valid when both players acknowledge that it was delivered with reasonable force and that it does not violate the rules governing illegal hits.
+
+                    <b>Defeat</b>
+
+                    A player is killed when their torso reaches 0 Hit Points, regardless of the condition of their limbs.
+
+                    A killed player must be Revived before returning to combat in a skirmish.
+
+                    <b>Rule of Honor</b>
+
+                    Players are expected to acknowledge valid hits honestly, respect their opponents, and prioritize safety over victory.
+
+                    When uncertainty arises, players should resolve disagreements respectfully or request a Judge.
+
+                    <b>When in doubt, favor your opponent.</b>
+                </div>
+            </div>
+
+            <div id="HitPointsSection">
+                <div class="Title2">Hit Points</div>
+                <div class="Words">All players have the same number of Hit Points.
+					
+					Each arm, each leg, and the torso have 2 Hit Points.
+					
+					A player is killed when their torso is reduced to 0 Hit Points, regardless of the condition of their limbs.
+					
+					A killed player must be Revived before returning to play in a skirmish.
+					
+					If a limb at 0 Hit Points is struck again, the damage is transferred to the torso instead, unless the limb is Severed.
+					
+					<b>Hit Locations</b>
+					
+					The following are considered part of the Arm:
+					• Hand
+					• Forearm
+					• Upper arm
+					• Shoulder
+					
+					The following are considered part of the Leg:
+					• Foot
+					• Lower Leg
+					• Thigh
+					
+					The following are considered part of the Torso:
+					• Chest
+					• Abdomen
+					• Back
+					• Hips
+					• Underarm
+                </div>
+            </div>
+
+            <div id="ValidHitsSection">
+                <div class="Title2">Valid Hits</div>
+                <div class="Words">
+					A slashing weapon may perform a <b>draw cut</b> by sliding its striking surface across a target with reasonable force.
+
+					If a player catches or grabs the striking surface of a slashing weapon, the hand is considered hit and the weapon must immediately be released.
+
+					A piercing attack may be delivered by either a thrust or a push.
+
+					A push is the application of continuous forward pressure with a legal striking tip until both players acknowledge that sufficient force has been applied under the Rule of Honor.
+
+					A hit is only valid if both players acknowledge that it was delivered with reasonable force, as described in the Rule of Honor, and it is not considered an Illegal Hit.
+
+					<hr>
+					<b>Illegal Hits</b>
+
+					A hit to a player's head or groin results in the attacker's immediate death, regardless of armor or remaining Hit Points.
+
+					If the struck player believes the hit was accidental, they may waive this penalty under the Rule of Honor.
+
+					No portion of a weapon may be used to protect a valid target.
+
+					Any body part enclosed by a weapon remains a valid target, unless the enclosure is a natural part of the weapon's real-world design. (e.g. the basket hilt of a rapier.)
+
+					<b>Shields are exempt from this rule.</b>
+
+					A player may not use a weapon to cover a valid target in an attempt to prevent damage.
+
+					If a weapon is positioned over a valid target, the covered body part is still considered struck. (e.g. laying the flat of a sword across the torso.)
+
+					<b>Shields are exempt from this rule.</b>
+
+					A weapon must strike a player directly to score a valid hit.
+
+					Hits resulting solely from a weapon rebounding or deflecting off another weapon do not count.
+                </div>
+            </div>
+
+            <div id="DamageTypesSection">
+                <div class="Title2">Damage Types</div>
+                <div class="Words">
+					Falatur recognizes three Damage Types: <b>Piercing, Slashing, and Bludgeoning.</b>
+
+					Each Damage Type interacts differently with armor, shields, and limbs.
+
+					A weapon may never possess more than two Damage Types at once.
+
+					<b>Piercing Damage</b>
+
+					Piercing weapons concentrate force into a single point, slipping past armor and striking the target beneath.
+
+					• Ignores Armor completely.
+					• Deals no damage to Shields.
+					• Cannot Sever or Break limbs.
+					• Damage dealt to a limb reduces its Hit Points normally. Once the limb reaches 0 Hit Points, no further effects occur.
+
+					<b>Slashing Damage</b>
+
+					Slashing weapons deal damage through their designated cutting surfaces.
+
+					• Deals regular damage to Armor.
+					• Deals no damage to Shields.
+					• Slashing damage Severs limbs.
+
+					A Severed limb may no longer be used.
+
+					<b>Bludgeoning Damage</b>
+
+					Bludgeoning weapons deal damage through blunt force.
+
+					• Deals regular damage to Armor.
+					• Deals damage to Shields.
+					• Bludgeoning damage Breaks limbs.
+
+					A Broken limb cannot be used to attack, block, or perform actions requiring normal use of that limb.
+                </div>
+            </div>
+
+            <div id="WeaponHandlingSection">
+                <div class="Title2">Weapon Handling</div>
+                <div class="Words">Weapons are the primary means of combat in Falatur.
+
+					Weapons must be used according to their approved Damage Types and weapon properties.
+
+					<b>Grabbing Weapons</b>
+
+					If a player catches or grabs the striking surface of a Slashing weapon, the hand is considered hit and the weapon must immediately be released.
+
+					<b>Blocking With Weapons</b>
+
+					No portion of a weapon may be used to protect a valid target unless specifically permitted by the rules.
+
+					A weapon positioned over a valid target does not prevent that body part from being struck.
+
+					Shields are exempt from this restriction.
+
+					<b>Weapon Deflections</b>
+
+					A weapon must strike a player directly to score a valid hit.
+
+					Hits resulting solely from a weapon rebounding or deflecting off another weapon do not count.
+
+					<b>Approved Weapon Functions</b>
+
+					A weapon's Primary Damage Type is determined during inspection based on its construction and intended use.
+
+					A weapon may also possess one Secondary Damage Type if its construction or properties permit it.
+
+					Secondary Damage Types do not benefit from special properties or bonuses associated with that damage type unless specifically stated otherwise.
+
+					A weapon's approved Damage Types may not be changed without reinspection by a Judge.
+
+					<b>Draw Cuts</b>
+
+					Slashing weapons may perform a <b>draw cut</b> by sliding their designated striking surface across a valid target with reasonable force.
+
+					A draw cut must maintain continuous contact with the target for a distance equal to at least half the weapon's length.
+
+					A successful draw cut deals the weapon's normal Slashing Damage, as though the target had been struck by a regular attack.
+
+					As with any other attack, both players must acknowledge that sufficient force was applied under the Rule of Honor.
+                </div>
+            </div>
+
+            <div id="ShieldsSection">
+                <div class="Title2">Shields</div>
+                <div class="Words">
+					Shields are handheld or arm-mounted pieces of equipment designed primarily to intercept and block incoming weapon attacks.
+
+					A Shield must have a broad defensive surface distinct from a weapon's normal striking surfaces.
+
+					A weapon's guard, basket, hilt, or other component intended primarily to protect the hand does not count as a Shield.
+
+					<b>Shield Hit Points</b>
+
+					All Shields have <b>4 Hit Points</b>, regardless of their size.
+
+					Only Bludgeoning Damage can reduce a Shield's Hit Points.
+
+					Slashing and Piercing Damage deal no damage to Shields.
+
+					When a Shield reaches 0 Hit Points, it is considered Broken and no longer provides protection.
+
+					A Broken Shield may be repaired when its wielder is Revived, or when a Medic revives the equipment.
+
+					<b>Broken Shields</b>
+
+					A Broken Shield is treated as though it no longer exists for the purpose of blocking attacks.
+
+					If a weapon strikes a Broken Shield, the attack continues through it and deals damage to any valid target behind it as normal.
+
+					Players may continue carrying a Broken Shield, but it cannot be used to prevent incoming damage.
+
+					<b>Shields and Injured Limbs</b>
+
+					A Shield remains a valid target regardless of the condition of the limb carrying it.
+
+					As long as the Shield physically intercepts an attack, its Hit Points are accounted for normally.
+
+					This includes Shields carried by Broken or otherwise disabled limbs.
+
+					<b>Shield Restrictions</b>
+
+					Shields must meet the following minimum construction requirements:
+
+					• At least 4 inches thick.
+					• At least 12 inches wide.
+					• Outside layers must be adequately padded.
+					• All exposed edges and rims must be adequately padded.
+
+					All Shields must pass equipment inspection before being used in combat.
+
+					<b>Shield Attacks</b>
+
+					A Shield may be used offensively, provided it has a clearly defined striking surface, such as a boss or point.
+
+					The striking surface must be color-banded to indicate its approved Damage Type.
+
+					A Shield approved for dealing damage has its maximum Hit Points reduced by 1, giving it a total of <b>3 Hit Points</b> instead of 4.
+
+					Simply having a boss, point, or other striking surface does not reduce a Shield's maximum Hit Points.
+
+					The reduction only applies when the Shield is color-banded and approved as an attacking Shield.
+
+					<b>Shields without an approved, color-banded striking surface deal no damage.</b>
+
+					This applies regardless of whether the player performs a Shield bash, shove, or other offensive action using the Shield.
+                </div>
+            </div>
+
+            <div id="InjuriesSection">
+                <div class="Title2">Injuries</div>
+                <div class="Words">In Falatur, limbs can become injured or disabled depending on the Damage Type of the attack that reduces their Hit Points.
+
+					Each limb has 2 Hit Points.
+
+					Limbs may be Healthy, Severed, Broken, or Dead.
+
+					<b>Healthy Limbs</b>
+
+					A Healthy limb is undamaged and functions normally.
+
+					Limbs are restored to the Healthy state when the player is Revived.
+
+					<b>Severed Limbs</b>
+
+					Limbs are Severed by weapons dealing Slashing Damage.
+
+					A Severed limb may no longer be used.
+
+					If an arm is Severed, anything held by that arm must be dropped immediately.
+
+					Players using strap Shields may simply allow the arm to hang, as attempting to remove the Shield during combat may result in death.
+
+					If a leg is Severed, the player must balance on their remaining leg, hopping if necessary.
+
+					A second successful hit to a Severed limb results in the player's death.
+
+					<b>Safety Exception</b>
+
+					Players may temporarily place weight on a Severed leg to maintain balance, prevent a fall, or otherwise avoid injury.
+
+					Players may also land on a Severed foot when jumping, leaping, or recovering from movement.
+
+					This exception is strictly for safety and does not permit the Severed leg to be used for normal movement, walking, running, or combat.
+
+					<b>Broken Limbs</b>
+
+					Limbs are Broken by weapons dealing Bludgeoning Damage.
+
+					A Broken limb may hold a weapon, Shield, or item, but may not attack, block, or perform any action requiring normal use of that limb.
+
+					Weapons and Shields held by a Broken limb may still receive incoming strikes normally.
+
+					<b>Dead Limbs</b>
+
+					A limb is considered Dead when it reaches 0 Hit Points for any reason.
+
+					If a limb at 0 Hit Points is struck again, the damage is transferred to the torso instead, unless the limb is Severed.
+
+					Piercing Damage cannot Sever or Break limbs. It reduces the limb's Hit Points normally, with no additional effects once the limb reaches 0 Hit Points.
+
+					<b>Combined Damage Types</b>
+
+					If a limb is reduced to 0 Hit Points by multiple Damage Types, the injury suffered is determined by the Damage Type that reduced the limb to 0 Hit Points.
+
+					If an attack deals more than one Damage Type, only the weapon's Primary Damage Type determines injuries to limbs.
+
+					Secondary Damage Types continue to affect Armor, Shields, and other applicable mechanics normally.
+                </div>
+            </div>
+
+            <div id="DeathAndRevivalSection">
+                <div class="Title2">Death &amp; Revival</div>
+                <div class="Words"><b>Death</b>
+
+					A player is considered Dead when any of the following conditions are met:
+
+					• Their Torso reaches 0 Hit Points.
+					• Two of their limbs have been Severed.
+					• Three of their limbs are Dead.
+
+					When a player dies, they must immediately lie on the ground at the location of their death and remain there until Revived.
+
+					In matches using Respawns, Dead players must instead return to their designated Respawn Point.
+
+					Dead players may adjust their position slightly for comfort or safety, but may not intentionally obstruct living players.
+
+					Dead players may call for a Medic, but may not otherwise communicate or participate in the battle.
+
+					<b>Revival</b>
+
+					Reviving a player restores all of their Hit Points, returns their limbs to the Healthy state, and fully repairs their Armor.
+
+					Only designated Medics may revive other players.
+
+					Any player may revive their own revivable equipment.
+
+					To Revive a player or item, the person performing the Revival must maintain uninterrupted physical contact with both hands while audibly counting from <b>"Revivify One"</b> through <b>"Revivify Ten."</b>
+
+					If physical contact is interrupted, or the person performing the Revival is struck, the Revival fails and the countdown must be restarted.
+
+					<b>Medics</b>
+
+					Medics are designated players capable of Reviving fallen allies.
+
+					To qualify as a Medic, a player must meet the following requirements:
+
+					• They may not wear Armor.
+					• They must be approved by a Judge.
+					• They must wear a clearly visible Medic insignia.
+
+					A Medic automatically Revives 30 seconds after their own death.
+                </div>
+            </div>
+
+            <div id="SpecialCombatRulesSection">
+                <div class="Title2">Special Combat Rules</div>
+                <div class="Words"><b>Controlled Force</b>
+
+					All players must fight using controlled force.
+
+					Excessive force, reckless behavior, or intentionally attempting to injure another player is strictly prohibited.
+
+					Regardless of the weapon being used, attacks must remain within the limits of the Rule of Honor.
+
+					<b>Blind Attacks</b>
+
+					Players may not intentionally strike targets they cannot reasonably see.
+
+					Equipment may not be used to intentionally obstruct a player's vision.
+
+					<b>Physical Contact</b>
+
+					Intentional punching, kicking, elbowing, kneeing, grappling, tackling, and body-checking are prohibited unless explicitly permitted by the scenario.
+
+					Incidental physical contact during normal combat is expected.
+
+					<b>Thrown Weapons</b>
+
+					Weapons may not be intentionally thrown unless they have been specifically designed and approved for throwing.
+
+					<b>Unsafe Conditions</b>
+
+					If a player notices an unsafe condition, they should immediately call <b>"Hold!"</b>
+
+					All players must immediately stop fighting when "Hold!" is called.
+
+					Combat may only resume once a Judge has declared the battlefield safe.
+
+					<b>Environmental Hazards</b>
+
+					Players must remain aware of their surroundings during combat.
+
+					This includes hazards such as holes, uneven ground, rocks, low branches, spectators, and wildlife.
+
+					A Judge may modify, suspend, or stop combat if the battlefield becomes unsafe.
+
+					<b>Equipment Safety</b>
+
+					All weapons, Shields, and other combat equipment must pass inspection before being used.
+
+					Equipment that becomes unsafe during combat must be removed from the battlefield immediately.
+
+					A Judge may inspect equipment at any time.
+
+					Any significant modification to previously approved equipment requires reinspection before it may be used again.
+
+					<b>Judge's Discretion</b>
+
+					Judges have final authority over combat safety and rule enforcement.
+
+					Any action or piece of equipment deemed unsafe may be prohibited, even if it technically complies with the written rules.
+
+					Players may not intentionally exploit ambiguities or loopholes in the rules to gain an advantage.
+
+					The Judge's decision is final.
+
+					<b>Safety Above Victory</b>
+
+					Players are expected to prioritize their own safety and the safety of others above winning.
+
+					If a situation feels unsafe, stop combat and consult a Judge.
+
+					No rule, objective, or victory is more important than a player's safety.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id ="FullLeftRightTransition"></div>
+    <div id ="LeftTransition"></div>
+    <div id ="RightTransition"></div>
+
+    
+
+    <script src="code.js"></script>
+
+    
+
+</body>
+
+
+
+
+</html>
+
