@@ -434,7 +434,7 @@ GLButton.addEventListener("click", function()
 {
     WhichTransitionWeUsing = 1
     ChangeSite()
-    LoadSite(".../../../Wiki/GracesLament/index.html")
+    LoadSite("../../../Wiki/GracesLament/index.html")
 });
 
 DPButton.addEventListener("click", function()

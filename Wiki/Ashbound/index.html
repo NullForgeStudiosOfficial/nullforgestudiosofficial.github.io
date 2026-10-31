@@ -7,20 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>INSERTTITLE</title>
+    <title>Ashbound Wiki </title>
 
-    <link rel="icon" type="image/png" href="../UniversalAssets/INSERTFAVICON.png">
+    <link rel="icon" type="image/png" href="../../UniversalAssets/WikiFavicon.png">
 
-    <script>
-    const AspectRatio = window.innerWidth / window.innerHeight;
+    <link rel="stylesheet" href="style.css"
+      media="(min-aspect-ratio: 6/5)">
 
-    if (AspectRatio < 1.2)
-    {
-        window.location.replace("M/index.html");
-    }
-    </script>
-
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="Mstyle.css"
+      media="(max-aspect-ratio: 1199/1000)">
 
 </head>
 
@@ -33,11 +28,130 @@
 
     </div>
 
+    <div id = TopBar>
+        <div id ="TopBarGraphics"></div>
+
+        <button class="SquareButton" id = ArdronUniverse>
+            <div class="AUButton" ></div>
+
+            <div class ="TopBarText">AU</div>
+        </button>
+
+        <button class="SquareButton" id = AoAButton>
+            <div class="EimonButton" ></div>
+
+            <div class ="TopBarText">AoA</div>
+        </button> 
+
+        <button class="SquareButton" id = VTButton>
+            <div class="ElusiaButton" ></div>
+
+            <div class ="TopBarText">VT</div>
+        </button> 
+
+        <button class="SquareButton" id = ACButton>
+            <div class="GrimloweButton" ></div>
+
+            <div class ="TopBarText">AC</div>
+        </button> 
+
+        <button class="SquareButton" id = EoAButton>
+            <div class="SostrumButton" ></div>
+
+            <div class ="TopBarText">EoA</div>
+        </button> 
+
+        <div id = Logo></div>
+
+        <button class="SquareButton" id = RRButton>
+            <div class="VidulynButton" ></div>
+
+            <div class ="TopBarText">RR</div>
+        </button> 
+
+        <button class="SquareButton" id = GLButton>
+            <div class="YumalonButton" ></div>
+
+            <div class ="TopBarText" id = "BlackText">GL</div>
+        </button> 
+
+        <button class="SquareButton" id = ATButton>
+            <div class="VoidButton" ></div>
+
+            <div class ="TopBarText">AT</div>
+        </button> 
+
+        <button class="SquareButton" id = DPButton>
+            <div class="IcolassButton" ></div>
+
+            <div class ="TopBarText">DP</div>
+        </button> 
+
+        <button class="SquareButton" id = SFButton>
+            <div class="SanctumButton" ></div>
+
+            <div class ="TopBarText">FT</div>
+        </button> 
+
+
+    </div>
+
+    <div id = "WikiNavigationPanelFrame">
+        <div id = WikiNavigationPanelBackground></div>
+        <div id = "WikiNavigationPanel">
+
+            <!--
+                <div id = "MiniButtonListFrame">
+                    <div id = "MiniButtonListBackground"></div>
+
+                    <div id = MiniButtonList>
+                        <button class="NormalButton" id="MINIBUTTON">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">-</div>
+                        </button>
+                    </div>
+                </div>
+            --> 
+            
+        </div>
+    </div>
+
+    <div id="WikiInfoPanelFrame">
+    <div id="WikiInfoPanelFrameBackground"></div>
+
+    <div id="WikiInfoPanel" >
+        <div class = "Title1">Welcome to the 
+            Ashbound Chronicles
+            Wiki. </div>
+
+
+        <div class = WordsCentered>Please select a category.</div>
+            
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div id ="FullLeftRightTransition"></div>
     <div id ="LeftTransition"></div>
     <div id ="RightTransition"></div>
 
+    
+
     <script src="code.js"></script>
+
+    
 
 </body>
 
