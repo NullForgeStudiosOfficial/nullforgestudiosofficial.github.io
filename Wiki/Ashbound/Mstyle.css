@@ -964,6 +964,108 @@ body
     filter:brightness(100%);
 }
 
+#AUIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/AUIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#AoAIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/AoAIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#VTIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/VTIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#ACIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/ACIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#EoAIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/EoAIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#RRIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/RRIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#GLIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/GLIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#ATIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/ATIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#DPIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/DPIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:15%;
+    left:15%;
+}
+#FTIcon
+{
+    position:absolute;
+    background-image: url("../../UniversalAssets/FTIcon.png");
+    background-size: 100% 100%;
+    aspect-ratio: 1/1;
+    width:75%;
+    top:5%;
+    left:12%;
+}
+
+
 
 @media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
 {
