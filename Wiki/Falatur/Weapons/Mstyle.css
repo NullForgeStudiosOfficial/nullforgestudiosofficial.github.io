@@ -15,7 +15,7 @@
 #AUIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/AUIcon.png");
+    background-image: url("../../../UniversalAssets/AUIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -25,7 +25,7 @@
 #AoAIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/AoAIcon.png");
+    background-image: url("../../../UniversalAssets/AoAIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -35,7 +35,7 @@
 #VTIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/VTIcon.png");
+    background-image: url("../../../UniversalAssets/VTIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -45,7 +45,7 @@
 #ACIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/ACIcon.png");
+    background-image: url("../../../UniversalAssets/ACIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -55,7 +55,7 @@
 #EoAIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/EoAIcon.png");
+    background-image: url("../../../UniversalAssets/EoAIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -65,7 +65,7 @@
 #RRIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/RRIcon.png");
+    background-image: url("../../../UniversalAssets/RRIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -75,7 +75,7 @@
 #GLIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/GLIcon.png");
+    background-image: url("../../../UniversalAssets/GLIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -85,7 +85,7 @@
 #ATIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/ATIcon.png");
+    background-image: url("../../../UniversalAssets/ATIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -95,7 +95,7 @@
 #DPIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/DPIcon.png");
+    background-image: url("../../../UniversalAssets/DPIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
@@ -105,13 +105,14 @@
 #FTIcon
 {
     position:absolute;
-    background-image: url("../../UniversalAssets/FTIcon.png");
+    background-image: url("../../../UniversalAssets/FTIcon.png");
     background-size: 100% 100%;
     aspect-ratio: 1/1;
     width:75%;
     top:5%;
     left:12%;
 }
+
 
 #StartupBlack
 {
