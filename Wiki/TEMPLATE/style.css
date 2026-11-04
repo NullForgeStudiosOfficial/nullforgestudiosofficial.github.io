@@ -819,7 +819,7 @@ body
     padding-bottom: 3%;
 
     z-index: 1;
-    pointer-events: none;
+    pointer-events: auto;
 
     text-shadow:
     -5px -5px 10px black,

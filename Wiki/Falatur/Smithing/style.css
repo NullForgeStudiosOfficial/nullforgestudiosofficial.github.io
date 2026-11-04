@@ -741,6 +741,7 @@ body
     Right:0.50%;
     top:12.5%;
     background-color: black;
+    pointer-events: none;
 }
 
 #WikiInfoPanel
@@ -766,6 +767,7 @@ body
 
     overflow-y: auto;
     overflow-x: hidden;
+    pointer-events: none;
 
     z-index: 2;
     background:transparent;
@@ -820,13 +822,14 @@ body
     padding-bottom: 3%;
 
     z-index: 1;
-    pointer-events: none;
+    pointer-events: auto;
 
     text-shadow:
     -5px -5px 10px black,
      5px -5px 10px black,
     -5px  5px 10px black,
      5px  5px 10px black;
+
 }
 
 .WordsCentered
@@ -1041,6 +1044,7 @@ body
     flex-shrink: 0;
     width: 100%;
     height: auto;
+    pointer-events: auto;
 }
 
 #WikiInfoPanel > #SmithingBasicsPage
@@ -1058,6 +1062,144 @@ body
 {
     filter:brightness(150%);
 }
+
+#FTBCM
+{
+    position:relative;
+
+    width:90%;
+    aspect-ratio: 1386/501;
+    background-image: url(../../../UniversalAssets/FTBCM.png);
+    background-size: 100% 100%;
+}
+
+#FTUpholstoryFoam
+{
+    position:relative;
+
+    width:90%;
+    aspect-ratio: 1408/598;
+    background-image: url(../../../UniversalAssets/FTUpholstoryFoam.png);
+    background-size: 100% 100%;
+}
+
+#FTDAP
+{
+    position:relative;
+
+    width:90%;
+    aspect-ratio: 1192/614;
+    background-image: url(../../../UniversalAssets/FTDAP.png);
+    background-size: 100% 100%;
+}
+
+
+#FTRod
+{
+    position:relative;
+
+    width:90%;
+    aspect-ratio: 1148/480;
+    background-image: url(../../../UniversalAssets/FTRod.png);
+    background-size: 100% 100%;
+}
+
+#FTEVA6
+{
+    position:relative;
+
+    width:60%;
+    aspect-ratio: 1224/815;
+    background-image: url(../../../UniversalAssets/FTEVA6.png);
+    background-size: 100% 100%;
+}
+
+#FTTape
+{
+    position:relative;
+
+    width:75%;
+    aspect-ratio: 1203/569;
+    background-image: url(../../../UniversalAssets/FTTape.png);
+    background-size: 100% 100%;
+}
+
+#FTWashers
+{
+    position:relative;
+
+    width:75%;
+    aspect-ratio: 1236/764;
+    background-image: url(../../../UniversalAssets/FTWashers.png);
+    background-size: 100% 100%;
+}
+
+
+#FTSticks
+{
+    position:relative;
+
+    width:75%;
+    aspect-ratio: 1202/656;
+    background-image: url(../../../UniversalAssets/FTSticks.png);
+    background-size: 100% 100%;
+}
+
+#FTClamps
+{
+    position:relative;
+
+    width:75%;
+    aspect-ratio: 1225/629;
+    background-image: url(../../../UniversalAssets/FTClamps.png);
+    background-size: 100% 100%;
+}
+
+
+#HalfSandwhich
+{
+    position:relative;
+
+    width:20%;
+    aspect-ratio: 100/100;
+    background-image: url(../../../UniversalAssets/SandwhichHalf.png);
+    background-size: 100% 100%;
+    transform: rotate(90deg);
+}
+
+#SandwhichFull
+{
+    position:relative;
+
+    width:20%;
+    aspect-ratio: 100/100;
+    background-image: url(../../../UniversalAssets/SandwhichFull.png);
+    background-size: 100% 100%;
+    transform: rotate(90deg);
+}
+
+#SandwhichFullThin
+{
+    position:relative;
+
+    width:20%;
+    aspect-ratio: 100/100;
+    background-image: url(../../../UniversalAssets/SandwhichFullThin.png);
+    background-size: 100% 100%;
+    transform: rotate(90deg);
+}
+
+#SandwhichFullRotate
+{
+    position:relative;
+
+    width:20%;
+    aspect-ratio: 100/100;
+    background-image: url(../../../UniversalAssets/SandwhichFull.png);
+    background-size: 100% 100%;
+    
+}
+
 
 
 @media (max-width: 1600px) {
