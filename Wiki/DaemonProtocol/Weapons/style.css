@@ -1193,9 +1193,10 @@ body
 
 .WeaponName
 {
-    position: relative;
+    position: absolute;
     top: 3%;
-    left: 0%;
+    left: 5%;
+    width:90%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1204,9 +1205,22 @@ body
 
 .WeaponDamageType
 {
-    position: relative;
-    top: 7%;
-    left: 0%;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    width:90%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1vw,3vw);
+}
+
+.WeaponBonus
+{
+    position: absolute;
+    top: 16.5%;
+    left: 5%;
+    width:90%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1215,9 +1229,10 @@ body
 
 .WeaponAP
 {
-    position: relative;
-    top: 16.25%;
-    left: -20%;
+    position: absolute;
+    top: 22.75%;
+    left: 20%;
+    width:24%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1226,9 +1241,10 @@ body
 
 .WeaponSpeed
 {
-    position: relative;
-    top: 11.5%;
-    left: 30%;
+    position: absolute;
+    top: 22.75%;
+    left: 71%;
+    width:24%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1237,9 +1253,10 @@ body
 
 .WeaponReloadAP
 {
-    position: relative;
-    top: 13%;
-    left:-15%;
+    position: absolute;
+    top: 29%;
+    left: 23%;
+    width:24%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1248,9 +1265,10 @@ body
 
 .WeaponMaxAmmo
 {
-    position: relative;
-    top: 8.50%;
-    left:33%;
+    position: absolute;
+    top: 29%;
+    left: 73%;
+    width:24%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1259,9 +1277,10 @@ body
 
 .WeaponStrBonus
 {
-    position: relative;
-    top: 23%;
-    left:-31%;
+    position: absolute;
+    top: 48.5%;
+    left: 4%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1270,9 +1289,10 @@ body
 
 .WeaponDexBonus
 {
-    position: relative;
-    top: 18.5%;
-    left:0%;
+    position: absolute;
+    top: 48.5%;
+    left: 35%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1281,9 +1301,10 @@ body
 
 .WeaponVitBonus
 {
-    position: relative;
-    top: 13.5%;
-    left:32%;
+    position: absolute;
+    top: 48.5%;
+    left: 67%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1292,9 +1313,10 @@ body
 
 .WeaponIntBonus
 {
-    position: relative;
-    top: 21.5%;
-    left:-31%;
+    position: absolute;
+    top: 61%;
+    left: 4%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1303,9 +1325,10 @@ body
 
 .WeaponWisBonus
 {
-    position: relative;
-    top: 16.5%;
-    left:0%;
+    position: absolute;
+    top: 61%;
+    left: 35%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1314,9 +1337,10 @@ body
 
 .WeaponPsyBonus
 {
-    position: relative;
-    top: 11.5%;
-    left:32%;
+    position: absolute;
+    top: 61%;
+    left: 67%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1330,9 +1354,10 @@ body
 
 .WeaponRequirementSTR
 {
-    position: relative;
-    top: 26.75%;
-    left:-31%;
+    position: absolute;
+    top: 80.5%;
+    left: 4%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1341,9 +1366,10 @@ body
 
 .WeaponRequirementDEX
 {
-    position: relative;
-    top: 21.75%;
-    left:0%;
+    position: absolute;
+    top: 80.5%;
+    left: 35%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1352,9 +1378,10 @@ body
 
 .WeaponRequirementVIT
 {
-    position: relative;
-    top: 17%;
-    left:32%;
+    position: absolute;
+    top: 80.5%;
+    left: 67%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1363,9 +1390,10 @@ body
 
 .WeaponRequirementINT
 {
-    position: relative;
-    top: 25%;
-    left:-31%;
+    position: absolute;
+    top: 93%;
+    left: 4%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1374,9 +1402,10 @@ body
 
 .WeaponRequirementWIS
 {
-    position: relative;
-    top: 20%;
-    left:0%;
+    position: absolute;
+    top: 93%;
+    left: 35%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1385,9 +1414,10 @@ body
 
 .WeaponRequirementPSY
 {
-    position: relative;
-    top: 15.25%;
-    left:32%;
+    position: absolute;
+    top: 93%;
+    left: 67%;
+    width:29%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1398,9 +1428,11 @@ body
 
 .Weapon0Damage
 {
-    position: relative;
-    top: 10.5%;
-    left:10%;
+    position: absolute;
+    top: 9%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1409,9 +1441,11 @@ body
 
 .Weapon1Damage
 {
-    position: relative;
-    top: 14.5%;
-    left:10%;
+    position: absolute;
+    top: 21.5%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1420,9 +1454,11 @@ body
 
 .Weapon2Damage
 {
-    position: relative;
-    top: 19.50%;
-    left:10%;
+    position: absolute;
+    top: 34%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1431,9 +1467,11 @@ body
 
 .Weapon3Damage
 {
-    position: relative;
-    top: 25%;
-    left:10%;
+    position: absolute;
+    top: 47%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1442,9 +1480,11 @@ body
 
 .Weapon4Damage
 {
-    position: relative;
-    top: 29%;
-    left:10%;
+    position: absolute;
+    top: 59.5%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1453,9 +1493,11 @@ body
 
 .Weapon5Damage
 {
-    position: relative;
-    top: 33%;
-    left:10%;
+    position: absolute;
+    top: 72%;
+    left: 29%;
+    width:67%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
@@ -1465,9 +1507,11 @@ body
 
 .WeaponMaxDamage
 {
-    position: relative;
-    top: 40%;
-    left:23%;
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    width:46%;
+    height:11%;
     text-align: center;
     color: white;
     font-family: Lexend;
