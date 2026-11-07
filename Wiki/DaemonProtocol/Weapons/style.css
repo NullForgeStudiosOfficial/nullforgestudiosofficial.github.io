@@ -1065,8 +1065,13 @@ body
 }
 
 #InformationPanel,
-#ArmorListPanel,
-#ModifierPanel
+#OneHandedPanel,
+#TwoHandedPanel,
+#SideArmPanel,
+#RangedPanel,
+#ShieldsPanel,
+#CatalystPanel,
+#FistPanel
 {
     display: none;
     position: relative;
@@ -1128,7 +1133,346 @@ body
     background: rgba(60, 60, 60, 0.75);
 }
 
+.CardContainer
+{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13%;
+    align-items: flex-start;
+}
 
+
+.WeaponCard
+{
+    position: relative;
+    width: 24%;
+    padding-left:1%;
+    aspect-ratio: 1 / 2;
+    cursor: pointer;
+    transition: transform 0.25s ease-in-out;
+    transform-origin: center;
+    margin-bottom: 3%;
+}
+
+.CardFront,
+.CardBack
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    image-rendering: pixelated;
+}
+
+.CardFront
+{
+    background-image: url("../../../UniversalAssets/WeaponCardFront.png");
+}
+
+.CardBack
+{
+    background-image: url("../../../UniversalAssets/WeaponCardBack.png");
+}
+
+.WeaponCardBackground
+{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+
+    background-size: 6px 6px;
+    background-repeat: repeat;
+    z-index: -1;
+    filter: brightness(30%);
+    background-image: url("../../../UniversalAssets/VidulynButtonBackground.png");
+}
+
+.WeaponName
+{
+    position: relative;
+    top: 3%;
+    left: 0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1vw,3vw);
+}
+
+.WeaponDamageType
+{
+    position: relative;
+    top: 7%;
+    left: 0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1vw,3vw);
+}
+
+.WeaponAP
+{
+    position: relative;
+    top: 16.25%;
+    left: -20%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponSpeed
+{
+    position: relative;
+    top: 11.5%;
+    left: 30%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponReloadAP
+{
+    position: relative;
+    top: 13%;
+    left:-15%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponMaxAmmo
+{
+    position: relative;
+    top: 8.50%;
+    left:33%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponStrBonus
+{
+    position: relative;
+    top: 23%;
+    left:-31%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponDexBonus
+{
+    position: relative;
+    top: 18.5%;
+    left:0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponVitBonus
+{
+    position: relative;
+    top: 13.5%;
+    left:32%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponIntBonus
+{
+    position: relative;
+    top: 21.5%;
+    left:-31%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponWisBonus
+{
+    position: relative;
+    top: 16.5%;
+    left:0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponPsyBonus
+{
+    position: relative;
+    top: 11.5%;
+    left:32%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+
+
+
+
+
+.WeaponRequirementSTR
+{
+    position: relative;
+    top: 26.75%;
+    left:-31%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponRequirementDEX
+{
+    position: relative;
+    top: 21.75%;
+    left:0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponRequirementVIT
+{
+    position: relative;
+    top: 17%;
+    left:32%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponRequirementINT
+{
+    position: relative;
+    top: 25%;
+    left:-31%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponRequirementWIS
+{
+    position: relative;
+    top: 20%;
+    left:0%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+.WeaponRequirementPSY
+{
+    position: relative;
+    top: 15.25%;
+    left:32%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,1.5vw,3vw);
+}
+
+
+
+.Weapon0Damage
+{
+    position: relative;
+    top: 10.5%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+.Weapon1Damage
+{
+    position: relative;
+    top: 14.5%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+.Weapon2Damage
+{
+    position: relative;
+    top: 19.50%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+.Weapon3Damage
+{
+    position: relative;
+    top: 25%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+.Weapon4Damage
+{
+    position: relative;
+    top: 29%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+.Weapon5Damage
+{
+    position: relative;
+    top: 33%;
+    left:10%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2.5vw,3vw);
+}
+
+
+.WeaponMaxDamage
+{
+    position: relative;
+    top: 40%;
+    left:23%;
+    text-align: center;
+    color: white;
+    font-family: Lexend;
+    font-size: clamp(0.1vw,2vw,3vw);
+}
 
 
 

@@ -522,30 +522,92 @@ WeaponsButton.addEventListener("click", function()
 });
 
 
-let InformationButton = document.getElementById("InformationButton")
-let InformationPanel = document.getElementById("InformationPanel")
+
+let Pages =
+[
+    ["InformationButton", "InformationPanel"],
+    ["OneHandedButton", "OneHandedPanel"],
+    ["TwoHandedButton", "TwoHandedPanel"],
+    ["SideArmButton", "SideArmPanel"],
+    ["RangedButton", "RangedPanel"],
+    ["ShieldsButton", "ShieldsPanel"],
+    ["CatalystButton", "CatalystPanel"],
+    ["FistButton", "FistPanel"]
+];
 
 
 function ResetPages()
 {
-    
-    InformationPanel.style.display = "none";
+    Pages.forEach(([ButtonID, PanelID]) =>
+    {
+        let Button = document.getElementById(ButtonID);
+        let Panel = document.getElementById(PanelID);
 
+        Panel.style.display = "none";
 
-    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
-
+        Button.querySelector(".NormalButtonBackground").style.filter = "brightness(50%)";
+    });
 }
 
 
-InformationButton.addEventListener("click", function()
+Pages.forEach(([ButtonID, PanelID]) =>
 {
-    ResetPages();
-    InformationPanel.style.display = "block";
-    InformationButton.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+    let Button = document.getElementById(ButtonID);
+    let Panel = document.getElementById(PanelID);
+
+    Button.addEventListener("click", function()
+    {
+        ResetPages();
+
+        Panel.style.display = "block";
+
+        Button.querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
+    });
 });
 
 
+// Default Page
+ResetPages();
+document.getElementById("InformationPanel").style.display = "block";
+document.getElementById("InformationButton").querySelector(".NormalButtonBackground").style.filter = "brightness(150%)";
 
+
+
+function FlipCard(Card)
+{
+    if (Card.dataset.Flipping === "true")
+    {
+        return;
+    }
+
+    Card.dataset.Flipping = "true";
+    Card.style.transform = "rotateY(90deg)";
+
+    setTimeout(function()
+    {
+        let Front = Card.querySelector(".CardFront");
+        let Back = Card.querySelector(".CardBack");
+
+        if (Front.style.display === "none")
+        {
+            Front.style.display = "block";
+            Back.style.display = "none";
+        }
+        else
+        {
+            Front.style.display = "none";
+            Back.style.display = "block";
+        }
+
+        Card.style.transform = "rotateY(0deg)";
+
+        setTimeout(function()
+        {
+            Card.dataset.Flipping = "false";
+        }, 250);
+
+    }, 250);
+}
 //-----------------------------------------
 
 async function PreLoadEverything()

@@ -175,32 +175,1010 @@
                             <div class="NormalButtonBackground"></div>
                             <div class="SmolNavigationButtonText">Information</div>
                         </button>
+
+                        <button class="NormalButton" id="OneHandedButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">One Handed</div>
+                        </button>
+
+                        <button class="NormalButton" id="TwoHandedButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Two Handed</div>
+                        </button>
+
+                        <button class="NormalButton" id="SideArmButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Side Arms</div>
+                        </button>
+
+                        <button class="NormalButton" id="RangedButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Ranged </div>
+                        </button>
+
+                        <button class="NormalButton" id="ShieldsButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Shields </div>
+                        </button>
+
+                        <button class="NormalButton" id="CatalystButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Catalysts</div>
+                        </button>
+
+                        <button class="NormalButton" id="FistButton">
+                            <div class="NormalButtonBackground"></div>
+                            <div class="SmolNavigationButtonText">Fists</div>
+                        </button>
                     </div>
                 </div>
         </div>
     </div>
 
     <div id="WikiInfoPanelFrame">
-    <div id="WikiInfoPanelFrameBackground"></div>
+        <div id="WikiInfoPanelFrameBackground"></div>
 
-    <div id="WikiInfoPanel" >
-        <div id = "InformationPanel">
-            <div class = Title1>WIP</div>
+        <div id="WikiInfoPanel">
+            <div id="InformationPanel">
+                <div class = Title1>Weapons</div>
+
+                <div class = Words>Weapons are the primary ways to deal damage in Daemon Protocol. However, choosing a weapon isn't simply a matter of finding whichever one deals the most damage.
+
+                Every weapon has its own advantages, disadvantages, requirements, and limitations. 
+
+                Some are quick, some are powerful, and others offer greater flexibility at the cost of raw damage.
+
+                Understanding how weapons function is just as important as knowing how to use them.</div>
+
+                <div class = Title1>Action Points</div>
+                <div class = Words>Combat operates using "Action Points (AP)."
+
+                Each combatant receives 30 AP per round, which can be spent attacking, moving, reloading, and performing other actions.
+
+                Every weapon has an AP cost associated with attacking. This determines how frequently it can be used within a round.
+
+                Movement also consumes AP, at a rate of 1 AP per tile.
+
+                A powerful weapon may deal tremendous damage, but its AP cost could leave you with little room to reposition or perform additional actions.</div>
+
+                <div class = Title1>Damage</div>
+                <div class = Words>
+                Every weapon has a minimum and maximum base damage value.
+
+                However, base damage is only part of the equation.
+
+                Weapons also receive additional damage from the wielder's attributes. Different weapons benefit from different attributes, with some drawing from multiple attributes simultaneously.
+
+                Generally, the damage bonus is calculated using the weapon's weighted attributes and its attack AP cost.
+
+                Each AP spent contributes 3% of the relevant weighted attribute value to the attack's damage bonus.
+
+                For example, a weapon costing 10 AP to attack receives a damage bonus equal to 30% of its weighted attribute value.
+
+                Certain weapons have unique mechanics that modify how their damage is calculated.
+
+                Weapons also possess damage types, which determine how their attacks interact with applicable combat mechanics.</div>
+
+                <div class = Title1>Weapon Speed</div>
+                <div class = Words>Weapon Speed affects Initiative, not the number of attacks a weapon can perform.
+
+                At the beginning of combat, initiative is determined using a d100 roll, modified by the equipped weapon's Speed.
+
+                A positive Speed modifier improves initiative, while a negative modifier reduces it.
+
+                Once combat begins, the weapon's AP costs determine how frequently it can attack.
+
+                A weapon with high Speed isn't necessarily capable of attacking more frequently than a slower weapon.</div>
+
+                <div class = Title1>Weapon Requirements</div>
+                <div class = Words>Some weapons have attribute requirements.
+
+                These represent the attributes associated with properly wielding the weapon and are separate from its damage scaling.
+
+                A weapon's requirements, damage scaling, and AP costs should all be considered when deciding whether it suits a particular character.</div>
+
+                <div class = Title1>Weapon Proficiency</div>
+                <div class = Words>Characters develop proficiency through using weapons in combat.
+
+                Proficiency is tracked by weapon family, allowing characters to improve their familiarity with particular styles of combat.
+
+                Experience is earned through successful attacks:
+
+                - Hit: 1 EXP
+                - Critical Hit: 5 EXP
+                - Kill: 10 EXP
+
+                Each weapon family has its own proficiency progression and rewards, which are explained in their respective sections.</div>
+
+                <div class = Title1>Weapon Upgrades</div>
+                <div class = Words>Weapons can also be upgraded to improve their base damage.
+
+                Each upgrade increases the weapon's base damage by 15%, compounding with previous upgrades.
+
+                This increase applies to the weapon's base damage, not the additional damage received from character attributes.
+
+                Consequently, upgrading a weapon and improving the attributes it scales with are two separate methods of increasing its effectiveness.</div>
+
+                <div class = Title1>Additional Properties</div>
+                <div class = Words>Depending on the weapon, additional considerations may include ammunition capacity, reloading costs, effective range, hand requirements, and unique attack mechanics.
+
+                Not every weapon follows the same rules, and some possess properties that significantly alter how they function in combat.
+
+                These differences are covered in the individual weapon family sections.</div>
+
+                <hr>
+                <div class = Words>There is no single weapon designed to be the correct choice for every situation.
+
+                A weapon's effectiveness depends on its wielder, the circumstances of combat, and how its strengths and weaknesses are utilized.
+
+                Choose accordingly.</div>
+
+                <div class = Title1>Weapon Cards</div>
+                <div class = WordsCentered>Weapons will be presented to you in the form of cards. You may click/tap them to flip them for more information.</div>
+            </div>
+
+            <!--
+                <div class="WeaponCard" onclick="FlipCard(this)">
+
+                <div class="CardFront">
+                    <div class="WeaponCardBackground"></div>
+                    <div class="WeaponName">---</div>
+                    <div class="WeaponDamageType">---</div>
+                    
+                    
+                    <div class="WeaponAP">0</div>
+                    <div class="WeaponSpeed">0</div>
+                    <div class="WeaponReloadAP">0</div>
+                    <div class="WeaponMaxAmmo">0</div>
+
+                    <div class="WeaponStrBonus">0</div>
+                    <div class="WeaponDexBonus">0</div>
+                    <div class="WeaponVitBonus">0</div>
+                    <div class="WeaponIntBonus">0</div>
+                    <div class="WeaponWisBonus">0</div>
+                    <div class="WeaponPsyBonus">0</div>
+
+                    <div class="WeaponRequirementSTR">0</div>
+                    <div class="WeaponRequirementDEX">0</div>
+                    <div class="WeaponRequirementVIT">0</div>
+                    <div class="WeaponRequirementINT">0</div>
+                    <div class="WeaponRequirementWIS">0</div>
+                    <div class="WeaponRequirementPSY">0</div>
+                </div>
+
+                <div class="CardBack" style="display: none;">
+                    <div class="WeaponCardBackground"></div>
+                    <div class="Weapon0Damage">00 - 000</div>
+                    <div class="Weapon1Damage">00 - 000</div>
+                    <div class="Weapon2Damage">00 - 000</div>
+                    <div class="Weapon3Damage">00 - 000</div>
+                    <div class="Weapon4Damage">00 - 000</div>
+                    <div class="Weapon5Damage">00 - 000</div>
+                    <div class="WeaponMaxDamage">00 - 000</div>
+                </div>
+                -->
+
+            <div id="OneHandedPanel">
+                <div class = Title1>One Handed Weapons</div>
+                <div class = Words>One-handed weapons offer a balance between damage, speed, and versatility.
+
+                While they generally lack the raw power of larger two-handed weapons, their lower Action Point costs allow for more flexibility during combat.
+
+                Their greatest advantage is the ability to keep one hand free, allowing the wielder to equip an additional weapon, shield, or other compatible equipment.
+
+                Each weapon offers different strengths and weaknesses, making one-handed weapons suitable for a variety of combat styles.</div>
+
+                <div class = Title1>One Handed Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    <div class="WeaponCard" onclick="FlipCard(this)">
+                        <div class="CardFront">
+                            <div class="WeaponCardBackground"></div>
+                            <div class="WeaponName">Arming Sword</div>
+                            <div class="WeaponDamageType">Slashing</div>
+                            
+                            <div class="WeaponAP">16</div>
+                            <div class="WeaponSpeed">+0</div>
+                            <div class="WeaponReloadAP">N/A</div>
+                            <div class="WeaponMaxAmmo">N/A</div>
+
+                            <div class="WeaponStrBonus">50%</div>
+                            <div class="WeaponDexBonus">50%</div>
+                            <div class="WeaponVitBonus">0%</div>
+                            <div class="WeaponIntBonus">0%</div>
+                            <div class="WeaponWisBonus">0%</div>
+                            <div class="WeaponPsyBonus">0%</div>
+
+                            <div class="WeaponRequirementSTR">-40</div>
+                            <div class="WeaponRequirementDEX">-40</div>
+                            <div class="WeaponRequirementVIT">0</div>
+                            <div class="WeaponRequirementINT">0</div>
+                            <div class="WeaponRequirementWIS">0</div>
+                            <div class="WeaponRequirementPSY">0</div>
+                        </div>
+
+                        <div class="CardBack" style="display: none;">
+                            <div class="WeaponCardBackground"></div>
+                            <div class="Weapon0Damage">70 - 100</div>
+                            <div class="Weapon1Damage">81 - 115</div>
+                            <div class="Weapon2Damage">93 - 132</div>
+                            <div class="Weapon3Damage">107 - 152</div>
+                            <div class="Weapon4Damage">123 - 175</div>
+                            <div class="Weapon5Damage">141 - 201</div>
+                            <div class="WeaponMaxDamage">237 - 297</div>
+                        </div>
+                    </div>
+
+				    <div class="WeaponCard" onclick="FlipCard(this)">
+    					<div class="CardFront">
+						    <div class="WeaponCardBackground"></div>
+						    <div class="WeaponName">Short Sword</div>
+						    <div class="WeaponDamageType">Slashing</div>
+
+						    <div class="WeaponAP">16</div>
+						    <div class="WeaponSpeed">+15</div>
+						    <div class="WeaponReloadAP">N/A</div>
+						    <div class="WeaponMaxAmmo">N/A</div>
+
+						    <div class="WeaponStrBonus">30%</div>
+						    <div class="WeaponDexBonus">70%</div>
+						    <div class="WeaponVitBonus">0%</div>
+						    <div class="WeaponIntBonus">0%</div>
+						    <div class="WeaponWisBonus">0%</div>
+						    <div class="WeaponPsyBonus">0%</div>
+
+						    <div class="WeaponRequirementSTR">-50</div>
+						    <div class="WeaponRequirementDEX">-40</div>
+						    <div class="WeaponRequirementVIT">0</div>
+						    <div class="WeaponRequirementINT">0</div>
+						    <div class="WeaponRequirementWIS">0</div>
+						    <div class="WeaponRequirementPSY">0</div>
+					    </div>
+
+					    <div class="CardBack" style="display: none;">
+    						<div class="WeaponCardBackground"></div>
+						    <div class="Weapon0Damage">60 - 85</div>
+						    <div class="Weapon1Damage">69 - 98</div>
+						    <div class="Weapon2Damage">79 - 113</div>
+						    <div class="Weapon3Damage">91 - 130</div>
+						    <div class="Weapon4Damage">105 - 150</div>
+						    <div class="Weapon5Damage">121 - 173</div>
+						    <div class="WeaponMaxDamage">217 - 269</div>
+					    </div>
+				    </div>
+
+
+					<div class="WeaponCard" onclick="FlipCard(this)">
+						<div class="CardFront">
+							<div class="WeaponCardBackground"></div>
+							<div class="WeaponName">Rapier</div>
+							<div class="WeaponDamageType">Piercing</div>
+
+							<div class="WeaponAP">15</div>
+							<div class="WeaponSpeed">+30</div>
+							<div class="WeaponReloadAP">N/A</div>
+							<div class="WeaponMaxAmmo">N/A</div>
+
+							<div class="WeaponStrBonus">0%</div>
+							<div class="WeaponDexBonus">100%</div>
+							<div class="WeaponVitBonus">0%</div>
+							<div class="WeaponIntBonus">0%</div>
+							<div class="WeaponWisBonus">0%</div>
+							<div class="WeaponPsyBonus">0%</div>
+
+							<div class="WeaponRequirementSTR">-40</div>
+							<div class="WeaponRequirementDEX">-20</div>
+							<div class="WeaponRequirementVIT">0</div>
+							<div class="WeaponRequirementINT">0</div>
+							<div class="WeaponRequirementWIS">0</div>
+							<div class="WeaponRequirementPSY">0</div>
+						</div>
+
+						<div class="CardBack" style="display: none;">
+							<div class="WeaponCardBackground"></div>
+							<div class="Weapon0Damage">55 - 75</div>
+							<div class="Weapon1Damage">63 - 86</div>
+							<div class="Weapon2Damage">72 - 99</div>
+							<div class="Weapon3Damage">83 - 114</div>
+							<div class="Weapon4Damage">95 - 131</div>
+							<div class="Weapon5Damage">109 - 151</div>
+							<div class="WeaponMaxDamage">199 - 241</div>
+						</div>
+					</div>
+
+
+					<div class="WeaponCard" onclick="FlipCard(this)">
+						<div class="CardFront">
+							<div class="WeaponCardBackground"></div>
+							<div class="WeaponName">Hand Axe</div>
+							<div class="WeaponDamageType">Slashing</div>
+
+							<div class="WeaponAP">18</div>
+							<div class="WeaponSpeed">-15</div>
+							<div class="WeaponReloadAP">N/A</div>
+							<div class="WeaponMaxAmmo">N/A</div>
+
+							<div class="WeaponStrBonus">75%</div>
+							<div class="WeaponDexBonus">25%</div>
+							<div class="WeaponVitBonus">0%</div>
+							<div class="WeaponIntBonus">0%</div>
+							<div class="WeaponWisBonus">0%</div>
+							<div class="WeaponPsyBonus">0%</div>
+
+							<div class="WeaponRequirementSTR">-20</div>
+							<div class="WeaponRequirementDEX">-50</div>
+							<div class="WeaponRequirementVIT">0</div>
+							<div class="WeaponRequirementINT">0</div>
+							<div class="WeaponRequirementWIS">0</div>
+							<div class="WeaponRequirementPSY">0</div>
+						</div>
+
+						<div class="CardBack" style="display: none;">
+							<div class="WeaponCardBackground"></div>
+							<div class="Weapon0Damage">90 - 110</div>
+							<div class="Weapon1Damage">104 - 127</div>
+							<div class="Weapon2Damage">120 - 146</div>
+							<div class="Weapon3Damage">138 - 168</div>
+							<div class="Weapon4Damage">159 - 193</div>
+							<div class="Weapon5Damage">183 - 222</div>
+							<div class="WeaponMaxDamage">291 - 330</div>
+						</div>
+					</div>
+
+                    
+					<div class="WeaponCard" onclick="FlipCard(this)">
+						<div class="CardFront">
+							<div class="WeaponCardBackground"></div>
+							<div class="WeaponName">Warhammer</div>
+							<div class="WeaponDamageType">Bludgeoning</div>
+
+							<div class="WeaponAP">20</div>
+							<div class="WeaponSpeed">-30</div>
+							<div class="WeaponReloadAP">N/A</div>
+							<div class="WeaponMaxAmmo">N/A</div>
+
+							<div class="WeaponStrBonus">100%</div>
+							<div class="WeaponDexBonus">0%</div>
+							<div class="WeaponVitBonus">0%</div>
+							<div class="WeaponIntBonus">0%</div>
+							<div class="WeaponWisBonus">0%</div>
+							<div class="WeaponPsyBonus">0%</div>
+
+							<div class="WeaponRequirementSTR">-15</div>
+							<div class="WeaponRequirementDEX">-60</div>
+							<div class="WeaponRequirementVIT">0</div>
+							<div class="WeaponRequirementINT">0</div>
+							<div class="WeaponRequirementWIS">0</div>
+							<div class="WeaponRequirementPSY">0</div>
+						</div>
+
+						<div class="CardBack" style="display: none;">
+							<div class="WeaponCardBackground"></div>
+							<div class="Weapon0Damage">100 - 150</div>
+							<div class="Weapon1Damage">115 - 173</div>
+							<div class="Weapon2Damage">132 - 199</div>
+							<div class="Weapon3Damage">152 - 229</div>
+							<div class="Weapon4Damage">175 - 263</div>
+							<div class="Weapon5Damage">201 - 302</div>
+							<div class="WeaponMaxDamage">321 - 422</div>
+						</div>
+					</div>
+
+                
+                
+                
+                </div>
+
+                <div class = Title1>One Handed Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+            </div>
+
+            <div id="TwoHandedPanel">
+                <div class = Title1>Two Handed Weapons</div>
+                <div class = Words>Two-handed weapons prioritize raw power and damage output over speed and versatility.
+
+Generally requiring more Action Points to attack, these weapons deliver powerful strikes at the cost of fewer opportunities to act during combat.
+
+Their greatest disadvantage is the commitment of both hands, preventing the wielder from simultaneously equipping a shield or another weapon.
+
+While their attacks can be devastating, positioning, timing, and careful management of Action Points are essential to using them effectively.</div>
+
+                <div class = Title1>Two Handed Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+
+
+
+                <div class = Title1>Two Handed Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="SideArmPanel">
+                <div class = Title1>Side Arm Weapons</div>
+                <div class = Words>words</div>
+
+                <div class = Title1>Side Arm Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+                <div class = Title1>Side Arm Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="RangedPanel">
+                <div class = Title1>Ranged Weapons</div>
+                <div class = Words>words</div>
+
+                <div class = Title1>Ranged Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+                <div class = Title1>Ranged Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="ShieldsPanel">
+                <div class = Title1>Shield Weapons</div>
+                <div class = Words>words</div>
+
+                <div class = Title1>Shields List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+                <div class = Title1>Shield Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="CatalystPanel">
+                <div class = Title1>Catalyst Weapons</div>
+                <div class = Words>words</div>
+
+                <div class = Title1>Catalyst Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+                <div class = Title1>Catalyst Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="FistPanel">
+                <div class = Title1>Fist Weapons</div>
+                <div class = Words>words</div>
+
+                <div class = Title1>Fist Weapon List</div>
+                <br>
+                
+
+                <div class = CardContainer>
+                    
+                
+                </div>
+
+
+                <div class = Title1>Fist Weapon Abilities</div>
+                <br> <br>
+                <div class="TableEntry">
+                    <table class="Table">
+                        <thead>
+                            <tr>
+                                <th>Unlocked Level</th>
+                                <th>Ability Name</th>
+                                <th>Mana Cost</th>
+                                <th>AP Cost</th>
+                                <th>Passive</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>15</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>20</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+
+                            <tr>
+                                <td>25</td>
+                                <td>TBA</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>false</td>
+                                <td>---------------------TBA------------------</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
 
     <div id ="FullLeftRightTransition"></div>
     <div id ="LeftTransition"></div>
