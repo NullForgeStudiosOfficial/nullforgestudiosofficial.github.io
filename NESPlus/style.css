@@ -34,6 +34,7 @@
     padding-right: 0px;
 }
 
+
 html,
 body
 {
@@ -45,10 +46,16 @@ body
     background-color: black;
     image-rendering: pixelated;
     margin: 0px;
-    
 
 }
 
+#WebsiteContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+}
 
 #FullLeftRightTransition
 {
@@ -374,7 +381,7 @@ body
 {
     position:absolute;
     display:flex;
-    top:40%;
+    top:38%;
     width:15%;
     left: 42.5%;
     pointer-events: auto;
@@ -428,7 +435,7 @@ body
     top:35%;
     text-align: center;
     color:white;
-    font-size: clamp(0.5vw,1.50vw,3vw);
+    font-size: clamp(0.5vw,1.25vw,3vw);
 }
 
 

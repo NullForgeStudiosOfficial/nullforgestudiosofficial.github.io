@@ -27,15 +27,27 @@
     --door-width: clamp(10%, 90%, 90%);
 }
 
+
 html,
 body
 {
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:Lexend;
+    font-family:Ardron;
     color:white;
+    background-color: black;
     image-rendering: pixelated;
+    margin: 0px;
+
+}
+
+#WebsiteContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
 }
 
 
@@ -309,7 +321,7 @@ body
     width: 100%;
 
     text-align: center;
-    font-size: clamp(0.5vw,2.5vw,3vw);
+    font-size: clamp(0.5vw,1.75vw,3vw);
     font-family: Lexend;
     color: whitesmoke;
 

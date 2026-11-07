@@ -404,7 +404,6 @@ async function AuliTurnOffBoxes()
 {
     AuliBioInfoBox.style.display = "none";
     AuliPersonalInfoBox.style.display = "none";
-    AuliDevInfoBox.style.display = "none";
 }
 
 AuliExitButton.addEventListener("click", function()

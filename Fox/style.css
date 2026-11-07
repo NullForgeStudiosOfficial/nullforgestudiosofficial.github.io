@@ -39,15 +39,27 @@ a:visited
     --door-width: clamp(10%, 90%, 90%);
 }
 
+
 html,
 body
 {
     width:100%;
     height:100%;
     overflow:hidden;
-    font-family:Dancing;
+    font-family:Ardron;
     color:white;
+    background-color: black;
     image-rendering: pixelated;
+    margin: 0px;
+
+}
+
+#WebsiteContainer {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
 }
 
 
